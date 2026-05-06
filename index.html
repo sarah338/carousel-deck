@@ -1397,13 +1397,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <section class="slide" data-screen-label="08 Wedge">
   <div class="pageno"><svg><use href="#mark"/></svg>08 / 11</div>
   <div class="frame">
-    <p class="eyebrow" style="margin-bottom: 28px; color: var(--accent);">Wedge</p>
+    <p class="eyebrow" style="margin-bottom: 16px; color: var(--accent);">Wedge</p>
 
-    <h1 class="h1" style="margin: 0 0 24px; max-width: 1700px; font-size: 64px; line-height: 1.04;">
+    <h1 class="h1" style="margin: 0 0 14px; max-width: 1700px; font-size: 56px; line-height: 1.04;">
       Where she goes today is broken. <em style="color: var(--accent); font-style: italic;">Moderation</em> is the difference.
     </h1>
 
-    <p class="pull" style="margin: 0 0 56px; max-width: 1300px; font-size: 26px;">
+    <p class="pull" style="margin: 0 0 28px; max-width: 1300px; font-size: 22px;">
       Reddit and Facebook Groups are unmoderated, anonymous, and adversarial. Carousel is a founder-led WhatsApp Community &mdash; structured into sub-groups by cohort and topic, with a host who knows your name.
     </p>
 
@@ -1577,12 +1577,14 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       gap: 32px;
       align-items: stretch;
       width: 100%;
+      flex: 1;
+      overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .rmc-col {
       display: flex; flex-direction: column;
       padding: 28px 28px 28px;
       box-sizing: border-box;
-      min-height: 580px;
+      min-height: 0;
     }
     [data-screen-label="08 Wedge"] .rmc-broken { background: var(--bg-card); color: var(--ink); opacity: 0.92; }
     [data-screen-label="08 Wedge"] .rmc-good { background: var(--accent-pale); color: var(--ink); }
