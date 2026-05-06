@@ -1523,38 +1523,32 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <div class="wf-arrow wf-arrow-accent">→</div>
 
-      <!-- Stage 2: App -->
+      <!-- Stage 2: The payoff -->
       <div class="wf-stage wf-stage-hero">
         <div class="wf-badge wf-badge-accent">02</div>
-        <p class="wf-label" style="color: var(--accent);">The product</p>
-        <p class="wf-title">Downloads the Carousel app</p>
+        <p class="wf-label" style="color: var(--accent);">The payoff</p>
+        <p class="wf-title">She downloads Carousel.</p>
 
-        <!-- App mockup -->
-        <div class="wf-phone">
-          <div class="wf-phone-bar">
-            <span class="wf-phone-back">‹</span>
-            <span class="wf-phone-title">Carousel</span>
-            <span class="wf-phone-mark">
-              <svg viewBox="0 0 24 24" width="14" height="14"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg>
-            </span>
-          </div>
-          <div class="wf-app-body">
-            <p class="wf-app-greeting">Good morning, Maia.</p>
-            <div class="wf-app-stage-pill">Day 6 of stimulation · NYU Langone</div>
-
-            <div class="wf-app-card">
-              <p class="wf-app-card-eyebrow">Today</p>
-              <ul class="wf-app-tasks">
-                <li class="done">Menopur 75 IU · 7 PM ✓</li>
-                <li>Monitoring appt · 8:30 AM tomorrow</li>
-                <li>Check in with Maeve about how you're feeling</li>
-              </ul>
+        <div class="wf-payoff-list">
+          <div class="wf-payoff-item">
+            <div class="wf-payoff-dot"></div>
+            <div class="wf-payoff-text">
+              <p class="wf-payoff-head">Her protocol, in her pocket.</p>
+              <p class="wf-payoff-body">Personalized treatment tracker synced to her cycle — appointments, medications, monitoring, all in one place.</p>
             </div>
-
-            <div class="wf-app-row">
-              <div class="wf-app-chip">My Forecast</div>
-              <div class="wf-app-chip">Community</div>
-              <div class="wf-app-chip">Ask Maeve</div>
+          </div>
+          <div class="wf-payoff-item">
+            <div class="wf-payoff-dot"></div>
+            <div class="wf-payoff-text">
+              <p class="wf-payoff-head">Maeve, between appointments.</p>
+              <p class="wf-payoff-body">Her AI companion answers the questions she's afraid to ask her RE — at 11 PM, the night before retrieval.</p>
+            </div>
+          </div>
+          <div class="wf-payoff-item">
+            <div class="wf-payoff-dot"></div>
+            <div class="wf-payoff-text">
+              <p class="wf-payoff-head">Her community travels with her.</p>
+              <p class="wf-payoff-body">The sub-groups she found in WhatsApp live natively in the app — richer, searchable, always there.</p>
             </div>
           </div>
         </div>
@@ -1726,41 +1720,28 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       padding: 5px 13px; border-radius: 999px; letter-spacing: 0.04em;
     }
 
-    /* Carousel app */
-    [data-screen-label="08 Wedge"] .wf-app-body {
-      padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 12px;
+    /* Payoff list */
+    [data-screen-label="08 Wedge"] .wf-payoff-list {
+      margin-top: 24px; display: flex; flex-direction: column; gap: 28px;
     }
-    [data-screen-label="08 Wedge"] .wf-app-greeting {
+    [data-screen-label="08 Wedge"] .wf-payoff-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    [data-screen-label="08 Wedge"] .wf-payoff-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--accent); flex-shrink: 0; margin-top: 7px;
+    }
+    [data-screen-label="08 Wedge"] .wf-payoff-text {
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    [data-screen-label="08 Wedge"] .wf-payoff-head {
       font-family: 'Instrument Serif', serif; font-size: 22px;
-      color: var(--ink); margin: 0; letter-spacing: -0.005em;
+      line-height: 1.15; color: var(--ink); margin: 0;
+      letter-spacing: -0.006em;
     }
-    [data-screen-label="08 Wedge"] .wf-app-stage-pill {
-      display: inline-block; font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--accent);
-      background: rgba(149,74,45,0.10); padding: 5px 12px; border-radius: 999px;
-      align-self: flex-start;
-    }
-    [data-screen-label="08 Wedge"] .wf-app-card {
-      background: var(--bg-card); border-radius: 12px; padding: 14px 16px;
-    }
-    [data-screen-label="08 Wedge"] .wf-app-card-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 10px;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-mute); margin: 0 0 8px; font-weight: 500;
-    }
-    [data-screen-label="08 Wedge"] .wf-app-tasks {
-      list-style: none; padding: 0; margin: 0;
-      display: flex; flex-direction: column; gap: 6px;
-      font-family: 'Inter Tight', sans-serif; font-size: 13px;
-      line-height: 1.4; font-weight: 300; color: var(--ink-soft);
-    }
-    [data-screen-label="08 Wedge"] .wf-app-tasks li.done { color: var(--ink-mute); text-decoration: line-through; }
-    [data-screen-label="08 Wedge"] .wf-app-row { display: flex; gap: 8px; flex-wrap: wrap; }
-    [data-screen-label="08 Wedge"] .wf-app-chip {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 400;
-      padding: 7px 14px; border-radius: 999px;
-      border: 1px solid rgba(149,74,45,0.28); color: var(--accent);
+    [data-screen-label="08 Wedge"] .wf-payoff-body {
+      font-family: 'Inter Tight', sans-serif; font-size: 15px;
+      line-height: 1.5; color: var(--ink-soft); font-weight: 300; margin: 0;
     }
   </style>
 </section>
