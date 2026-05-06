@@ -1396,7 +1396,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 8. WEDGE -->
 <section class="slide" data-screen-label="08 Wedge">
   <div class="pageno"><svg><use href="#mark"/></svg>08 / 11</div>
-  <div class="frame">
+  <div class="frame" style="padding: 56px 110px 80px;">
     <p class="eyebrow" style="margin-bottom: 16px; color: var(--accent);">Wedge</p>
 
     <h1 class="h1" style="margin: 0 0 14px; max-width: 1700px; font-size: 56px; line-height: 1.04;">
@@ -1552,7 +1552,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
                   <div class="wa-group-preview"><strong>Maia:</strong> Honestly I&rsquo;ve been on Reddit at 2 AM&hellip;</div>
                 </div>
               </div>
-              <div class="wa-group">
+              <!-- topic group 2 removed to fit slide -->
+              <div class="wa-group" style="display:none;">
                 <div class="wa-group-icon wa-group-icon-topic">#</div>
                 <div class="wa-group-body">
                   <div class="wa-group-row">
@@ -1582,9 +1583,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="08 Wedge"] .rmc-col {
       display: flex; flex-direction: column;
-      padding: 28px 28px 28px;
+      padding: 24px 24px 24px;
       box-sizing: border-box;
       min-height: 0;
+      overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .rmc-broken { background: var(--bg-card); color: var(--ink); opacity: 0.92; }
     [data-screen-label="08 Wedge"] .rmc-good { background: var(--accent-pale); color: var(--ink); }
