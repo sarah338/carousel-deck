@@ -1612,9 +1612,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       border: 1px solid rgba(74,40,28,0.10);
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(74,40,28,0.10);
-      flex-shrink: 1;
+      flex: 1;
       min-height: 0;
       max-width: 900px;
+      display: flex;
+      flex-direction: column;
     }
     [data-screen-label="08 Wedge"] .wf-phone-bar {
       display: flex; align-items: center; justify-content: space-between;
@@ -1643,7 +1645,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     /* Community channel list */
     [data-screen-label="08 Wedge"] .wf-community-body {
-      display: flex; flex-direction: column;
+      display: flex; flex-direction: column; flex: 1; overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .wf-ch-section {
       padding: 10px 0 4px;
