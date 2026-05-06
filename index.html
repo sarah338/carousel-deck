@@ -493,8 +493,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <th class="grp-label-col"></th>
           <th class="lbl"></th>
           <th class="cap-col cap-col-first">Longitudinal<div class="th-sub">pre → during → post</div></th>
-          <th class="cap-col">Patient-direct<div class="th-sub">no employer gate</div></th>
-          <th class="cap-col">Condition-specific<div class="th-sub">egg freezing + IVF</div></th>
+          <th class="cap-col">Clinic-agnostic<div class="th-sub">works at any clinic</div></th>
           <th class="cap-col">AI companion<div class="th-sub">built for the arc</div></th>
           <th class="cap-col">Curated community<div class="th-sub">moderated, clinical</div></th>
         </tr>
@@ -504,40 +503,39 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <tr class="grp-start">
           <td class="grp-label-col grp-label-pts" rowspan="6"><span>Point solutions</span></td>
           <td class="lbl">Modern Fertility (Ro) &middot; Mira &middot; Inito &middot; Oova<div class="lbl-sub">At-home hormone &amp; cycle testing — single-purpose diagnostic tools</div></td>
-          <td></td><td><span class="dot-y"></span></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Perelel &middot; Rescripted &middot; Stix<div class="lbl-sub">Supplements, forums, content, D2C testing</div></td>
-          <td></td><td><span class="dot-y"></span></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Flo &middot; Natural Cycles<div class="lbl-sub">Cycle / ovulation tracking — not fertility-treatment</div></td>
-          <td></td><td><span class="dot-y"></span></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">EngagedMD &middot; Salve<div class="lbl-sub">Clinic-distributed workflow &middot; patient education, e-consent, messaging</div></td>
-          <td></td><td></td><td></td><td></td><td></td></tr>
+          <td></td><td></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Kindbody &middot; Spring Fertility<div class="lbl-sub">$300M+ raised &middot; clinic networks — supply side, not patient experience</div></td>
-          <td></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
+          <td></td><td></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Reddit &middot; ChatGPT<div class="lbl-sub">DIY content &amp; chat — no continuity, no clinical grounding</div></td>
-          <td></td><td><span class="dot-y"></span></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
 
         <!-- GROUP 2: Platforms -->
         <tr class="grp-start">
           <td class="grp-label-col grp-label-plat" rowspan="5"><span>Platforms</span></td>
           <td class="lbl">Maven Clinic<div class="lbl-sub">$1.7B valuation &middot; employer-benefits-led &middot; horizontal women's health</div></td>
-          <td></td><td></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Carrot<div class="lbl-sub">$115M raised &middot; employer-benefits-led &middot; fertility benefits</div></td>
-          <td></td><td></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Sunfish<div class="lbl-sub">Series A &middot; financial-led &middot; fertility financing &amp; access</div></td>
-          <td></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr>
           <td class="lbl">Frame &middot; Conceive &middot; Berry Fertility<div class="lbl-sub">Seed-stage &middot; patient-led D2C — early movers, pre-product-market fit</div></td>
-          <td></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
         <tr class="us-row">
           <td class="lbl us-lbl">Carousel<div class="lbl-sub" style="color: rgba(149,74,45,0.7);">Patient-experience-led</div></td>
-          <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
@@ -1371,7 +1369,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="eyebrow" style="margin-bottom: 16px; color: var(--accent);">Wedge</p>
 
     <h1 class="h1" style="margin: 0 0 12px; font-size: 60px; line-height: 1.05; max-width: 1600px;">
-      Moderated &amp; curated community is the wedge. <em style="color: var(--accent); font-style: italic;">The app is where she stays.</em>
+      Moderated &amp; curated community is the wedge.
     </h1>
 
     <p class="pull" style="margin: 0 0 20px; font-size: 22px; max-width: 1300px; color: var(--ink-soft);">
@@ -1381,10 +1379,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <!-- WhatsApp Community -->
     <div class="wedge-flow">
       <div class="wf-stage wf-stage-hero">
-        <div class="wf-badge wf-badge-accent">01</div>
-        <p class="wf-label" style="color: var(--accent);">The wedge</p>
-        <p class="wf-title">Joins the WhatsApp Beta Community</p>
-        <p class="wf-goal">Goal: 2,000 members by August 1, 2026</p>
+        <p class="wf-title" style="text-align: center;">Joins the WhatsApp Beta Community</p>
+        <p class="wf-goal" style="text-align: center;">Goal: 2,000 members by August 1, 2026</p>
 
         <!-- Rich WA community mockup -->
         <div class="wf-phone wf-phone-wide">
@@ -1505,6 +1501,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="08 Wedge"] .wf-arrow-accent { color: var(--accent-soft); }
     [data-screen-label="08 Wedge"] .wf-stage {
       display: flex; flex-direction: column; min-height: 0; overflow: hidden; flex: 1;
+      align-items: center;
     }
     [data-screen-label="08 Wedge"] .wf-badge {
       width: 36px; height: 36px; border-radius: 50%;
