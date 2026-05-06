@@ -1372,23 +1372,18 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       Moderated &amp; curated community is the wedge.
     </h1>
 
-    <p class="pull" style="margin: 0 0 20px; font-size: 22px; max-width: 1300px; color: var(--ink-soft);">
-      Invite-only WhatsApp Beta Community launching May 2026 — curated into sub-groups by stage, clinic, and topic.
-    </p>
+    <p class="wf-goal" style="margin: 0 0 28px; font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 400; color: var(--accent); letter-spacing: 0.01em;">Goal: 2,000 members by August 1, 2026 &nbsp;·&nbsp; Invite-only &nbsp;·&nbsp; May – August 2026</p>
 
-    <!-- WhatsApp Community -->
+    <!-- Two-phone layout -->
     <div class="wedge-flow">
-      <div class="wf-stage wf-stage-hero">
-        <p class="wf-title" style="text-align: center;">Joins the WhatsApp Beta Community</p>
-        <p class="wf-goal" style="text-align: center;">Goal: 2,000 members by August 1, 2026</p>
 
-        <!-- Rich WA community mockup -->
-        <div class="wf-phone wf-phone-wide">
+      <!-- Phone 1: Channel list -->
+      <div class="wf-phone-col">
+        <p class="wf-col-label">Sub-groups &amp; channels</p>
+        <div class="wf-phone">
           <div class="wf-phone-bar">
             <span class="wf-phone-back">‹</span>
-            <div class="wf-phone-title-block">
-              <span class="wf-phone-title">Carousel Fertility | Beta Community</span>
-            </div>
+            <span class="wf-phone-title">Carousel Fertility | WhatsApp Beta Community</span>
             <span class="wf-phone-dot"></span>
           </div>
           <div class="wf-date-bar">May – August 2026</div>
@@ -1482,6 +1477,47 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           </div>
         </div>
       </div>
+
+      <!-- Phone 2: Moderation in action -->
+      <div class="wf-phone-col">
+        <p class="wf-col-label">Moderation in action</p>
+        <div class="wf-phone">
+          <div class="wf-phone-bar wf-phone-bar-chat">
+            <span class="wf-phone-back">‹</span>
+            <div class="wf-chat-header">
+              <span class="wf-phone-title">#emotional-support</span>
+              <span class="wf-chat-member-count">14 members</span>
+            </div>
+            <span class="wf-phone-dot"></span>
+          </div>
+          <div class="wf-chat wf-chat-mod">
+            <div class="wf-msg wf-msg-member">
+              <span class="wf-who wf-who-member" style="color:#C4856A;">Maia</span>
+              Just got my Day 3 results. AMH 0.8 at 34. My nurse said "you're fine" — I don't feel fine. Is 0.8 really okay?
+            </div>
+            <div class="wf-msg wf-msg-sarah">
+              <span class="wf-who">Sarah · Moderator</span>
+              You're not overreacting. AMH 0.8 at 34 warrants attention — but your antral follicle count tells the fuller story. What was your AFC?
+            </div>
+            <div class="wf-msg wf-msg-sarah">
+              <span class="wf-who">Sarah · Moderator</span>
+              Moving this to #amh-and-numbers so the whole community can learn from it.
+            </div>
+            <div class="wf-msg wf-msg-member">
+              <span class="wf-who wf-who-member" style="color:#7D9E8C;">Nina</span>
+              I retrieved 9 eggs with AMH 0.7. AFC matters more — one data point.
+            </div>
+            <div class="wf-msg wf-msg-pin">
+              <span class="wf-pin-bar"></span>
+              <div class="wf-pin-body">
+                <span class="wf-pin-label">Pinned by Sarah</span>
+                Keep responses grounded in personal experience. No dosing advice. Medical questions belong in #amh-and-numbers.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -1489,19 +1525,20 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     [data-screen-label="08 Wedge"] .frame { overflow: hidden; }
     [data-screen-label="08 Wedge"] .wedge-flow {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       flex: 1;
       min-height: 0;
       overflow: hidden;
     }
-    [data-screen-label="08 Wedge"] .wf-arrow {
-      font-size: 28px; color: var(--rule); align-self: center;
-      padding-top: 56px; text-align: center;
+    [data-screen-label="08 Wedge"] .wf-phone-col {
+      display: flex; flex-direction: column; min-height: 0; overflow: hidden;
     }
-    [data-screen-label="08 Wedge"] .wf-arrow-accent { color: var(--accent-soft); }
-    [data-screen-label="08 Wedge"] .wf-stage {
-      display: flex; flex-direction: column; min-height: 0; overflow: hidden; flex: 1;
-      align-items: center;
+    [data-screen-label="08 Wedge"] .wf-col-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0 0 10px; text-align: center;
     }
     [data-screen-label="08 Wedge"] .wf-badge {
       width: 36px; height: 36px; border-radius: 50%;
@@ -1647,13 +1684,60 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       padding: 5px 13px; border-radius: 999px; letter-spacing: 0.04em;
     }
 
-    /* Payoff list */
-    [data-screen-label="08 Wedge"] .wf-payoff-list {
-      margin-top: 24px; display: flex; flex-direction: column; gap: 28px;
+    /* WhatsApp-style chat phone header */
+    [data-screen-label="08 Wedge"] .wf-phone-bar-chat {
+      background: #128C7E; padding: 10px 14px 10px;
     }
-    [data-screen-label="08 Wedge"] .wf-payoff-item {
-      display: flex; gap: 16px; align-items: flex-start;
+    [data-screen-label="08 Wedge"] .wf-phone-bar-chat .wf-phone-back { color: rgba(255,255,255,0.9); }
+    [data-screen-label="08 Wedge"] .wf-chat-header { display: flex; flex-direction: column; gap: 1px; }
+    [data-screen-label="08 Wedge"] .wf-phone-bar-chat .wf-phone-title { color: #fff; font-size: 14px; }
+    [data-screen-label="08 Wedge"] .wf-chat-member-count {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px;
+      color: rgba(255,255,255,0.75); font-weight: 300;
     }
+    [data-screen-label="08 Wedge"] .wf-phone-bar-chat .wf-phone-dot { background: rgba(255,255,255,0.5); }
+
+    /* Moderation chat body */
+    [data-screen-label="08 Wedge"] .wf-chat-mod {
+      background: #ECE5DD; padding: 12px 12px 14px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    [data-screen-label="08 Wedge"] .wf-msg-member {
+      background: #fff; color: #303030; align-self: flex-start;
+      border-bottom-left-radius: 3px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    }
+    [data-screen-label="08 Wedge"] .wf-msg-member .wf-who-member {
+      font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: none; margin-bottom: 3px;
+    }
+    [data-screen-label="08 Wedge"] .wf-chat-mod .wf-msg-sarah {
+      background: #fff; box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+    }
+    [data-screen-label="08 Wedge"] .wf-chat-mod .wf-who {
+      color: #128C7E; text-transform: none; letter-spacing: 0.04em;
+    }
+    [data-screen-label="08 Wedge"] .wf-msg-pin {
+      display: flex; gap: 8px; align-items: stretch;
+      background: #fff; border-radius: 8px; padding: 8px 10px;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.08); align-self: stretch;
+    }
+    [data-screen-label="08 Wedge"] .wf-pin-bar {
+      width: 3px; background: #128C7E; border-radius: 2px; flex-shrink: 0;
+    }
+    [data-screen-label="08 Wedge"] .wf-pin-body {
+      display: flex; flex-direction: column; gap: 3px;
+    }
+    [data-screen-label="08 Wedge"] .wf-pin-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: #128C7E;
+    }
+    [data-screen-label="08 Wedge"] .wf-msg-pin .wf-pin-body {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px;
+      font-weight: 300; color: #303030; line-height: 1.45;
+    }
+
+    /* unused payoff dot kept to avoid parse error */
     [data-screen-label="08 Wedge"] .wf-payoff-dot {
       width: 8px; height: 8px; border-radius: 50%;
       background: var(--accent); flex-shrink: 0; margin-top: 7px;
@@ -2062,7 +2146,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "Thirty interviews across NYU Langone, Weill Cornell, Spring, CCRM, Kindbody, Shady Grove, RMA. \n- Katie: most lonely thing I've ever done. \n- Maia: I wish I had known how many eggs I'd have at thirty versus thirty-five. \n- Nour: is there one person looking at me from start to finish?",
   "This is the competitive landscape. \n- The funded incumbents — Progyny, Maven, Carrot, Kindbody — billions raised, all employer-paid, all transactional. They show up during treatment because that is when the bill gets paid. Nothing before, nothing after.\n- The seed-stage direct competitors — Frame, Conceive, Berry — are closer to us in spirit, but each is picking one slice. Frame is concierge. Conceive is RMA-tied. Berry is bootstrapped clinical AI.\n- And then Reddit and ChatGPT — which is genuinely how patients are getting through this today. Forty interviews. Every single one of them.\n- Carousel is the only row with full coverage across the arc — pre, during, post — and the only one with curated community, emotional-support AI, and clinical AI, all built around her. Not the buyer.",
   "Carousel is the first longitudinal patient experience platform for the woman going through egg freezing and IVF. We meet her before the clinic. We hold her throughout active treatment. We support her after.\n- Education: tools and answers built for her body. No more asking ChatGPT or interpreting AMH through TikTok. Trustworthy, credible, personal.\n- Community: a room of women who actually get it. Goodbye Reddit threads and Facebook groups. Moderated, curated, matched to her stage.\n- Emotional support: an always-on companion through the swings. Through fear, anxiety, isolation, disappointment, hormones — an AI companion that holds.",
-  "",
+  "Invite-only WhatsApp Beta Community launching May 2026 — curated into sub-groups by stage, clinic, and topic. Goal: 2,000 members by August 1, 2026. The community is the wedge: she joins for free, she stays for the app.",
   "",
   "Where we are today: thirty interviews done. Barb Collura, former CEO of RESOLVE, formal advisor. Trademark filed. Twenty-five thousand on LinkedIn. This round buys the cold-start. Follow-on buys validation. Series A is earned.",
   ""
