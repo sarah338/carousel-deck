@@ -1579,6 +1579,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       align-items: stretch;
       width: 100%;
       flex: 1;
+      min-height: 0;
       overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .rmc-col {
@@ -1586,6 +1587,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       padding: 24px 24px 24px;
       box-sizing: border-box;
       min-height: 0;
+      max-height: 100%;
       overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .rmc-broken { background: var(--bg-card); color: var(--ink); opacity: 0.92; }
@@ -1660,7 +1662,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       margin-left: auto; margin-right: auto;
       width: 100%;
     }
-    [data-screen-label="08 Wedge"] .wa-frame { display: flex; flex-direction: column; }
+    [data-screen-label="08 Wedge"] .wa-frame { display: flex; flex-direction: column; flex: 1; min-height: 0; overflow: hidden; }
 
     [data-screen-label="08 Wedge"] .wa-topbar {
       display: grid; grid-template-columns: 16px 1fr 16px;
@@ -1698,7 +1700,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       border-bottom: 1px solid rgba(74,40,28,0.08);
     }
 
-    [data-screen-label="08 Wedge"] .wa-groups { display: flex; flex-direction: column; padding-bottom: 8px; }
+    [data-screen-label="08 Wedge"] .wa-groups { display: flex; flex-direction: column; padding-bottom: 8px; overflow: hidden; }
 
     [data-screen-label="08 Wedge"] .wa-group-section {
       font-family: 'Inter Tight', sans-serif; font-size: 9px;
