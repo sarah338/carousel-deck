@@ -1502,21 +1502,55 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
             <span class="wf-phone-dot"></span>
           </div>
           <div class="wf-chat wf-chat-mod">
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-member">
+                <span class="wf-who wf-who-member" style="color:#C4856A;">Maia</span>
+                Just got my Day 3 results. AMH 0.8 at 34. My nurse said "you're fine" — I don't feel fine. Is 0.8 really okay?
+              </div>
+              <div class="wf-reactions"><span>🙏 6</span></div>
+            </div>
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-sarah">
+                <span class="wf-who">Sarah · Moderator</span>
+                You're not overreacting. AMH 0.8 at 34 warrants attention — but your antral follicle count tells the fuller story. What was your AFC?
+              </div>
+              <div class="wf-reactions"><span>❤️ 11</span><span>👍 4</span></div>
+            </div>
             <div class="wf-msg wf-msg-member">
               <span class="wf-who wf-who-member" style="color:#C4856A;">Maia</span>
-              Just got my Day 3 results. AMH 0.8 at 34. My nurse said "you're fine" — I don't feel fine. Is 0.8 really okay?
+              AFC was 9. RE didn't mention it at all.
+            </div>
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-sarah">
+                <span class="wf-who">Sarah · Moderator</span>
+                AFC 9 at 34 is actually reassuring. AMH and AFC together tell the story — your RE should be reviewing both. You have more to work with than that number suggests.
+              </div>
+              <div class="wf-reactions"><span>❤️ 18</span><span>🙌 7</span></div>
+            </div>
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-member">
+                <span class="wf-who wf-who-member" style="color:#7D9E8C;">Nina</span>
+                I retrieved 9 eggs with AMH 0.7. AFC matters more — one data point. You've got this 💛
+              </div>
+              <div class="wf-reactions"><span>❤️ 9</span></div>
+            </div>
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-member">
+                <span class="wf-who wf-who-member" style="color:#A87FA8;">Priya</span>
+                Same situation last spring. Ended up with 7 mature eggs. The number on paper is not the whole picture.
+              </div>
+              <div class="wf-reactions"><span>🙏 5</span><span>👍 3</span></div>
             </div>
             <div class="wf-msg wf-msg-sarah">
               <span class="wf-who">Sarah · Moderator</span>
-              You're not overreacting. AMH 0.8 at 34 warrants attention — but your antral follicle count tells the fuller story. What was your AFC?
+              Moving this to #amh-and-numbers so the whole community can learn from it. Maia — you're in good hands here.
             </div>
-            <div class="wf-msg wf-msg-sarah">
-              <span class="wf-who">Sarah · Moderator</span>
-              Moving this to #amh-and-numbers so the whole community can learn from it.
-            </div>
-            <div class="wf-msg wf-msg-member">
-              <span class="wf-who wf-who-member" style="color:#7D9E8C;">Nina</span>
-              I retrieved 9 eggs with AMH 0.7. AFC matters more — one data point.
+            <div class="wf-msg-wrap">
+              <div class="wf-msg wf-msg-member">
+                <span class="wf-who wf-who-member" style="color:#C4856A;">Maia</span>
+                Thank you. I feel so much less alone right now 🤍
+              </div>
+              <div class="wf-reactions"><span>❤️ 24</span><span>🙌 12</span></div>
             </div>
             <div class="wf-msg wf-msg-pin">
               <span class="wf-pin-bar"></span>
@@ -1712,6 +1746,19 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="08 Wedge"] .wf-chat-mod {
       background: #ECE5DD; padding: 12px 12px 14px;
       display: flex; flex-direction: column; gap: 8px;
+      flex: 1; overflow-y: hidden;
+    }
+    [data-screen-label="08 Wedge"] .wf-msg-wrap {
+      display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+    }
+    [data-screen-label="08 Wedge"] .wf-reactions {
+      display: flex; gap: 4px; padding-left: 4px;
+    }
+    [data-screen-label="08 Wedge"] .wf-reactions span {
+      background: #fff; border-radius: 999px; padding: 1px 7px;
+      font-size: 10px; font-family: 'Inter Tight', sans-serif;
+      color: #555; box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+      letter-spacing: 0.02em; font-weight: 400;
     }
     [data-screen-label="08 Wedge"] .wf-msg-member {
       background: #fff; color: #303030; align-self: flex-start;
