@@ -1410,10 +1410,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       Invite-only WhatsApp Beta Community launching May 2026 — curated into sub-groups by stage, clinic, and topic.
     </p>
 
-    <!-- Flow: 2 stages -->
+    <!-- WhatsApp Community -->
     <div class="wedge-flow">
-
-      <!-- Stage 1: WhatsApp Community -->
       <div class="wf-stage wf-stage-hero">
         <div class="wf-badge wf-badge-accent">01</div>
         <p class="wf-label" style="color: var(--accent);">The wedge</p>
@@ -1520,40 +1518,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           </div>
         </div>
       </div>
-
-      <div class="wf-arrow wf-arrow-accent">→</div>
-
-      <!-- Stage 2: The payoff -->
-      <div class="wf-stage wf-stage-hero">
-        <div class="wf-badge wf-badge-accent">02</div>
-        <p class="wf-label" style="color: var(--accent);">The payoff</p>
-        <p class="wf-title">She downloads Carousel.</p>
-
-        <div class="wf-payoff-list">
-          <div class="wf-payoff-item">
-            <div class="wf-payoff-dot"></div>
-            <div class="wf-payoff-text">
-              <p class="wf-payoff-head">Her protocol, in her pocket.</p>
-              <p class="wf-payoff-body">Personalized treatment tracker synced to her cycle — appointments, medications, monitoring, all in one place.</p>
-            </div>
-          </div>
-          <div class="wf-payoff-item">
-            <div class="wf-payoff-dot"></div>
-            <div class="wf-payoff-text">
-              <p class="wf-payoff-head">Maeve, between appointments.</p>
-              <p class="wf-payoff-body">Her AI companion answers the questions she's afraid to ask her RE — at 11 PM, the night before retrieval.</p>
-            </div>
-          </div>
-          <div class="wf-payoff-item">
-            <div class="wf-payoff-dot"></div>
-            <div class="wf-payoff-text">
-              <p class="wf-payoff-head">Her community travels with her.</p>
-              <p class="wf-payoff-body">The sub-groups she found in WhatsApp live natively in the app — richer, searchable, always there.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
   </div>
@@ -1561,10 +1525,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     [data-screen-label="08 Wedge"] .frame { overflow: hidden; }
     [data-screen-label="08 Wedge"] .wedge-flow {
-      display: grid;
-      grid-template-columns: 2.2fr 36px 1.35fr;
-      gap: 0 24px;
-      align-items: start;
+      display: flex;
       flex: 1;
       min-height: 0;
       overflow: hidden;
@@ -1575,7 +1536,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="08 Wedge"] .wf-arrow-accent { color: var(--accent-soft); }
     [data-screen-label="08 Wedge"] .wf-stage {
-      display: flex; flex-direction: column; min-height: 0; overflow: hidden;
+      display: flex; flex-direction: column; min-height: 0; overflow: hidden; flex: 1;
     }
     [data-screen-label="08 Wedge"] .wf-badge {
       width: 36px; height: 36px; border-radius: 50%;
@@ -1610,6 +1571,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       box-shadow: 0 8px 32px rgba(74,40,28,0.10);
       flex-shrink: 1;
       min-height: 0;
+      max-width: 900px;
     }
     [data-screen-label="08 Wedge"] .wf-phone-bar {
       display: flex; align-items: center; justify-content: space-between;
