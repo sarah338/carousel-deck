@@ -493,79 +493,59 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <table class="cap-grid">
       <thead>
-        <tr class="grp-head">
-          <th class="grp-col"></th>
-          <th class="lbl"></th>
-          <th colspan="3" class="grp-h grp-h-time"><span>Moment in time</span></th>
-          <th colspan="4" class="grp-h grp-h-cap"><span>Capabilities</span></th>
-        </tr>
         <tr>
-          <th class="grp-col"></th>
           <th class="lbl"></th>
-          <th class="time-col time-col-first">Pre-<br/>treatment</th>
-          <th class="time-col">During<br/>treatment</th>
-          <th class="time-col time-col-last">Post-<br/>treatment</th>
-          <th class="cap-col cap-col-first">Curated<br/>community<div class="th-sub">moderated, clinical</div></th>
-          <th class="cap-col">Emotional-<br/>support AI<div class="th-sub">built for the arc</div></th>
-          <th class="cap-col">Clinical AI<div class="th-sub">personalized to her</div></th>
-          <th class="cap-col cap-col-last">Clinic<br/>SaaS<div class="th-sub">workflow / consent</div></th>
+          <th class="cap-col cap-col-first">Longitudinal<div class="th-sub">pre → during → post</div></th>
+          <th class="cap-col">Patient-direct<div class="th-sub">no employer gate</div></th>
+          <th class="cap-col">Condition-specific<div class="th-sub">egg freezing + IVF</div></th>
+          <th class="cap-col">AI companion<div class="th-sub">built for the arc</div></th>
+          <th class="cap-col">Curated community<div class="th-sub">moderated, clinical</div></th>
         </tr>
       </thead>
       <tbody>
         <!-- GROUP 1: Point solutions -->
-        <tr>
-          <td class="grp-col"></td>
-          <td colspan="8" style="padding: 10px 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); border-top: none; text-align: left;">Point solutions</td>
-        </tr>
+        <tr><td colspan="6" class="grp-section-lbl">Point solutions</td></tr>
         <tr class="grp-start">
-          <td class="grp-col"></td>
           <td class="lbl">Modern Fertility (Ro) &middot; Mira &middot; Inito &middot; Oova<div class="lbl-sub">At-home hormone &amp; cycle testing — single-purpose diagnostic tools</div></td>
-          <td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Perelel &middot; Rescripted &middot; Stix<div class="lbl-sub">Supplements, forums, content, D2C testing</div></td>
-          <td><span class="dot-h"></span></td><td></td><td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td></td><td><span class="dot-h"></span></td></tr>
+        <tr>
           <td class="lbl">Flo &middot; Natural Cycles<div class="lbl-sub">Cycle / ovulation tracking — not fertility-treatment</div></td>
-          <td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td></td><td><span class="dot-y"></span></td><td></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">EngagedMD &middot; Salve<div class="lbl-sub">Clinic-distributed workflow &middot; patient education, e-consent, messaging</div></td>
-          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td><span class="dot-y"></span></td></tr>
-        <tr><td class="grp-col"></td>
+          <td></td><td></td><td><span class="dot-h"></span></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Kindbody &middot; Spring Fertility<div class="lbl-sub">$300M+ raised &middot; clinic networks — supply side, not patient experience</div></td>
-          <td></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td><span class="dot-h"></span></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Reddit &middot; ChatGPT<div class="lbl-sub">DIY content &amp; chat — no continuity, no clinical grounding</div></td>
-          <td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <td></td><td><span class="dot-y"></span></td><td></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td></tr>
 
         <!-- GROUP 2: Vertical platforms -->
-        <tr>
-          <td class="grp-col"></td>
-          <td colspan="8" style="padding: 14px 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); border-top: none; text-align: left;">Vertical platforms</td>
-        </tr>
+        <tr><td colspan="6" class="grp-section-lbl" style="padding-top: 14px;">Vertical platforms</td></tr>
         <tr class="grp-start">
-          <td class="grp-col"></td>
           <td class="lbl">Maven Clinic<div class="lbl-sub">$1.7B valuation &middot; employer-benefits-led &middot; horizontal women's health</div></td>
-          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Carrot<div class="lbl-sub">$115M raised &middot; employer-benefits-led &middot; fertility benefits</div></td>
-          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td><span class="dot-h"></span></td><td></td><td><span class="dot-h"></span></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Sunfish<div class="lbl-sub">Financial-led &middot; fertility financing &amp; access</div></td>
-          <td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-        <tr><td class="grp-col"></td>
+          <td></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td></tr>
+        <tr>
           <td class="lbl">Frame &middot; Conceive &middot; Berry Fertility<div class="lbl-sub">Seed-stage &middot; patient-led D2C — early movers, pre-product-market fit</div></td>
-          <td><span class="dot-h"></span></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td></td><td><span class="dot-h"></span></td><td></td></tr>
+          <td><span class="dot-h"></span></td><td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td><span class="dot-h"></span></td></tr>
 
         <tr class="us-row grp-start">
-          <td class="grp-col"></td>
           <td class="lbl us-lbl">Carousel<div class="lbl-sub" style="color: rgba(149,74,45,0.7);">Patient-experience-led</div></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
           <td><span class="dot-y"></span></td>
-          <td><span class="dot-y"></span></td>
-          <td><span class="dot-h"></span></td>
         </tr>
       </tbody>
     </table>
@@ -576,53 +556,26 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     .slide-6.v-c .cap-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
     .slide-6.v-c .cap-grid th, .slide-6.v-c .cap-grid td {
-      padding: 2px 8px; border-bottom: 1px solid var(--rule-soft);
+      padding: 3px 8px; border-bottom: 1px solid var(--rule-soft);
       text-align: center; font-family: 'Inter Tight', sans-serif;
       font-size: 16px; font-weight: 300; color: var(--ink-soft); vertical-align: middle;
     }
-    .slide-6.v-c .cap-grid th { font-weight: 500; font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); padding-top: 0; padding-bottom: 10px; line-height: 1.3; }
+    .slide-6.v-c .cap-grid th { font-weight: 500; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); padding-top: 0; padding-bottom: 10px; line-height: 1.3; }
     .slide-6.v-c .cap-grid .th-sub { font-family:'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--ink-mute); letter-spacing: 0; text-transform: none; margin-top: 4px; font-weight: 400; }
-    .slide-6.v-c .cap-grid th.grp-col, .slide-6.v-c .cap-grid td.grp-col { width: 40px; min-width: 40px; max-width: 40px; padding: 0; vertical-align: middle; }
-    .slide-6.v-c .cap-grid td.lbl, .slide-6.v-c .cap-grid th.lbl { text-align: left; padding-left: 0; width: 420px; color: var(--ink); font-weight: 400; font-size: 20px; }
+    .slide-6.v-c .cap-grid td.lbl, .slide-6.v-c .cap-grid th.lbl { text-align: left; padding-left: 0; width: 480px; color: var(--ink); font-weight: 400; font-size: 19px; }
     .slide-6.v-c .cap-grid .lbl-sub { font-family:'Inter Tight', sans-serif; font-size:12px; color: var(--ink-mute); font-weight: 300; margin-top: 2px; letter-spacing: 0.02em; line-height: 1.3; }
+    .slide-6.v-c .cap-col-first { border-left: 1px solid var(--rule); }
+    .slide-6.v-c .grp-section-lbl {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+      text-align: left; padding: 10px 0 4px; border-bottom: 1px solid var(--rule);
+      border-top: none !important;
+    }
+    .slide-6.v-c .grp-start td { border-top: 1px solid var(--rule); padding-top: 8px; }
     .slide-6.v-c .us-row td { padding-top: 8px; padding-bottom: 8px; background: rgba(149,74,45,0.14); border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); }
-    .slide-6.v-c .us-row td.grp-col { border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); background: rgba(149,74,45,0.14); }
     .slide-6.v-c .us-lbl { font-family:'Instrument Serif', serif; font-size: 28px; color: var(--accent) !important; font-weight: 400 !important; }
-    .slide-6.v-c .grp-vlabel {
-      writing-mode: vertical-rl; transform: rotate(180deg);
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--ink-mute); font-weight: 500;
-      text-align: center; padding: 12px 0; line-height: 1.4;
-    }
-    .slide-6.v-c .grp-vlabel-sub {
-      display: block; font-style: italic; font-family:'Instrument Serif', serif;
-      font-size: 12px; letter-spacing: 0.02em; text-transform: none; color: var(--ink-mute);
-      font-weight: 400; margin-top: 6px;
-    }
-    .slide-6.v-c .grp-vlabel.adj { color: var(--accent-soft); font-style: italic; font-family:'Instrument Serif', serif; font-size: 14px; letter-spacing: 0.04em; text-transform: none; font-weight: 400; }
-    .slide-6.v-c .grp-start td:not(.grp-col) { border-top: 1px solid var(--rule); padding-top: 8px; }
-    .slide-6.v-c .grp-start td { padding-top: 8px; }
-    .slide-6.v-c .grp-start.adj td:not(.grp-col) { padding-top: 10px; }
-    .slide-6.v-c .grp-start.adj td.lbl { color: var(--ink); }
     .slide-6.v-c .dot-y { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
     .slide-6.v-c .dot-h { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); opacity: 0.3; }
-    /* Group header row */
-    .slide-6.v-c .cap-grid .grp-head th { border-bottom: none; padding: 0 0 6px; background: transparent; }
-    .slide-6.v-c .cap-grid .grp-h { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; letter-spacing: 0.01em; text-transform: none; color: var(--ink-mute); font-weight: 400; padding-bottom: 8px; position: relative; }
-    .slide-6.v-c .cap-grid .grp-h span { display: inline-block; padding: 0 12px; background: var(--bg); position: relative; z-index: 1; }
-    .slide-6.v-c .cap-grid .grp-h::after {
-      content: ""; position: absolute; left: 8px; right: 8px; bottom: 6px; height: 1px;
-      background: var(--ink-mute); opacity: 0.55;
-    }
-    /* Tiny down-ticks at each end of the bracket */
-    .slide-6.v-c .cap-grid .grp-h::before {
-      content: ""; position: absolute; left: 8px; right: 8px; bottom: 2px; height: 5px;
-      border-left: 1px solid var(--ink-mute); border-right: 1px solid var(--ink-mute);
-      opacity: 0.55;
-    }
-    /* Subtle vertical separator between the two groups */
-    .slide-6.v-c .cap-grid .cap-col-first { border-left: 1px solid var(--rule); }
-    .slide-6.v-c .cap-grid td.cap-col-first-cell { border-left: 1px solid var(--rule-soft); }
 
   </style>
 </section>
