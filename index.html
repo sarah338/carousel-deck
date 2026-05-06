@@ -1821,14 +1821,38 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     </p>
 
     <div class="bm-grid">
-      <!-- Left rail: the product -->
-      <aside class="bm-rail">
-        <p class="bm-rail-eyebrow">The product</p>
-        <p class="bm-rail-name">Carousel</p>
-        <p class="bm-rail-desc">A longitudinal patient experience platform &mdash; education, community, and emotional support for the woman in fertility care.</p>
-        <div class="bm-rail-foot">
-          <p class="bm-rail-foot-eyebrow">Same product, three sides of the table</p>
-        </div>
+      <!-- Left: flywheel -->
+      <aside class="bm-flywheel">
+        <svg viewBox="-5 -5 310 292" style="width:100%;max-width:300px;display:block;margin:auto;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="fw-arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0,1 L6,4 L0,7 Z" fill="#954A2D"/>
+            </marker>
+          </defs>
+          <!-- Guide ring -->
+          <circle cx="150" cy="158" r="68" fill="none" stroke="rgba(149,74,45,0.12)" stroke-width="1" stroke-dasharray="4 3"/>
+          <!-- Arcs clockwise: 01→02→03→01 -->
+          <path d="M 192,108 A 65,65 0 0,1 214,148" fill="none" stroke="#954A2D" stroke-width="2.5" stroke-linecap="round" marker-end="url(#fw-arr)" opacity="0.75"/>
+          <path d="M 171,219 A 65,65 0 0,1 129,219" fill="none" stroke="#954A2D" stroke-width="2.5" stroke-linecap="round" marker-end="url(#fw-arr)" opacity="0.75"/>
+          <path d="M 86,168 A 65,65 0 0,1 108,108" fill="none" stroke="#954A2D" stroke-width="2.5" stroke-linecap="round" marker-end="url(#fw-arr)" opacity="0.75"/>
+          <!-- Center logo mark -->
+          <circle cx="150" cy="158" r="22" fill="rgba(149,74,45,0.07)"/>
+          <circle cx="150" cy="158" r="14" fill="none" stroke="#954A2D" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="150" cy="158" r="8" fill="none" stroke="#954A2D" stroke-width="1.2" opacity="0.35"/>
+          <circle cx="150" cy="158" r="3" fill="#954A2D" opacity="0.5"/>
+          <!-- Node 01: top -->
+          <circle cx="150" cy="60" r="38" fill="#954A2D"/>
+          <text x="150" y="67" text-anchor="middle" fill="#F7F1E4" font-family="'Instrument Serif', Georgia, serif" font-size="22">01</text>
+          <text x="150" y="11" text-anchor="middle" fill="rgba(74,56,42,0.65)" font-family="'Inter Tight', sans-serif" font-size="9" letter-spacing="0.14em">DIRECT-TO-CONSUMER</text>
+          <!-- Node 02: bottom-right -->
+          <circle cx="235" cy="210" r="38" fill="#954A2D"/>
+          <text x="235" y="217" text-anchor="middle" fill="#F7F1E4" font-family="'Instrument Serif', Georgia, serif" font-size="22">02</text>
+          <text x="235" y="264" text-anchor="middle" fill="rgba(74,56,42,0.65)" font-family="'Inter Tight', sans-serif" font-size="9" letter-spacing="0.14em">CLINIC SAAS</text>
+          <!-- Node 03: bottom-left -->
+          <circle cx="65" cy="210" r="38" fill="#954A2D"/>
+          <text x="65" y="217" text-anchor="middle" fill="#F7F1E4" font-family="'Instrument Serif', Georgia, serif" font-size="22">03</text>
+          <text x="65" y="264" text-anchor="middle" fill="rgba(74,56,42,0.65)" font-family="'Inter Tight', sans-serif" font-size="9" letter-spacing="0.14em">EMPLOYER</text>
+        </svg>
       </aside>
 
       <!-- Right: three payer rows -->
@@ -1874,28 +1898,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="09 Business model"] .bm-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: stretch; }
-    [data-screen-label="09 Business model"] .bm-rail {
-      background: var(--accent); color: #F7F1E4;
-      padding: 36px 36px 32px;
-      display: flex; flex-direction: column;
-      box-sizing: border-box;
-    }
-    [data-screen-label="09 Business model"] .bm-rail-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(247,241,228,0.65); margin: 0 0 16px; font-weight: 400;
-    }
-    [data-screen-label="09 Business model"] .bm-rail-name {
-      font-family: 'Instrument Serif', serif; font-size: 80px; line-height: 0.95; margin: 0 0 18px; letter-spacing: -0.015em; color: #F7F1E4;
-    }
-    [data-screen-label="09 Business model"] .bm-rail-desc {
-      font-family: 'Inter Tight', sans-serif; font-size: 18px; line-height: 1.5; font-weight: 300;
-      color: rgba(247,241,228,0.88); margin: 0;
-    }
-    [data-screen-label="09 Business model"] .bm-rail-foot { margin-top: auto; padding-top: 32px; border-top: 1px solid rgba(247,241,228,0.22); }
-    [data-screen-label="09 Business model"] .bm-rail-foot-eyebrow {
-      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px;
-      color: rgba(247,241,228,0.85); margin: 0; line-height: 1.3;
+    [data-screen-label="09 Business model"] .bm-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: center; }
+    [data-screen-label="09 Business model"] .bm-flywheel {
+      display: flex; align-items: center; justify-content: center;
     }
 
     [data-screen-label="09 Business model"] .bm-rows { display: flex; flex-direction: column; }
@@ -1960,14 +1965,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <ul class="trc-bullets">
           <li><strong>30-interview</strong> patient discovery corpus — deep pre-product research in the category.</li>
           <li>Advisor: <strong>Barb Collura</strong>, former CEO of RESOLVE. Senior REI advisory in formation.</li>
-          <li>Trademark filed. Active investor pipeline. Pre-launch waitlist live.</li>
+          <li>In active conversations with a top NYC fertility clinic partner.</li>
+          <li>Pre-launch waitlist live.</li>
+          <li>Carousel WhatsApp Beta Community is live.</li>
         </ul>
       </div>
 
       <div class="trc-col trc-col-2">
         <div class="trc-dot"></div>
-        <p class="trc-when-tag">Months 0&ndash;6 &middot; What this round buys</p>
-        <p class="trc-when-num">Angel round</p>
+        <p class="trc-when-tag">Months 0&ndash;6 &middot; What this raise buys</p>
+        <p class="trc-when-num">May &ndash; Oct 2026</p>
         <ul class="trc-bullets">
           <li>Clinical co-founder onboarded. Clinical advisory board of <strong>3&ndash;5 REIs</strong> locked.</li>
           <li>MVP of the Carousel D2C app shipped to App Store and Google Play.</li>
@@ -1977,8 +1984,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <div class="trc-col trc-col-3">
         <div class="trc-dot"></div>
-        <p class="trc-when-tag">Months 6&ndash;18 &middot; What the next round buys</p>
-        <p class="trc-when-num">Pre-seed</p>
+        <p class="trc-when-tag">Months 6&ndash;18 &middot; What the next raise buys</p>
+        <p class="trc-when-num">Oct 2026 &ndash; Apr 2027</p>
         <ul class="trc-bullets">
           <li>D2C: <strong>10K&ndash;25K</strong> downloads, <strong>60%+</strong> activation, defensible cohort retention curves.</li>
           <li>First clinic SaaS pilot signed — paid or design-partner — with live engagement data.</li>
@@ -1989,7 +1996,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="trc-col trc-col-4">
         <div class="trc-dot trc-dot-accent"></div>
         <p class="trc-when-tag trc-accent-tag">Months 18&ndash;24 &middot; What earns it</p>
-        <p class="trc-when-num trc-accent-num">Series A</p>
+        <p class="trc-when-num trc-accent-num">Apr &ndash; Oct 2027</p>
         <ul class="trc-bullets">
           <li>D2C contribution-margin positive. Retention curves stable. Brand-level recognition in the category.</li>
           <li>Clinic SaaS: <strong>$500K+</strong> signed ARR. Multi-clinic reference base. NRR &gt; 100%.</li>
