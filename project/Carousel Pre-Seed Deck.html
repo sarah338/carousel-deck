@@ -1,0 +1,2148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Carousel Fertility — Pre-Seed</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+<script src="image-slot.js"></script>
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "v6": "c"
+}/*EDITMODE-END*/;
+</script>
+
+<style>
+  :root {
+    --bg:        #F7F1E4;
+    --bg-card:   #EFE7D5;
+    --ink:       #4A382A;
+    --ink-soft:  #6B5848;
+    --ink-mute:  #9A8978;
+    --accent:    #954A2D;
+    --accent-soft: #C99477;
+    --accent-pale: #E8D5C4;
+    --rule:      rgba(42,32,24,0.18);
+    --rule-soft: rgba(42,32,24,0.08);
+  }
+
+  html, body { margin: 0; padding: 0; background: #111; }
+  body { font-family: "Inter Tight", sans-serif; color: var(--ink); font-weight: 300; -webkit-font-smoothing: antialiased; }
+
+  .slide-6 { display: none !important; }
+  [data-v6="a"] .slide-6.v-a,
+  [data-v6="b"] .slide-6.v-b,
+  [data-v6="c"] .slide-6.v-c { display: block !important; }
+
+  section.slide {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .frame {
+    position: absolute; inset: 0;
+    padding: 100px 110px 120px 110px;
+    display: flex; flex-direction: column;
+    box-sizing: border-box;
+  }
+  .pageno {
+    position: absolute; right: 110px; bottom: 56px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400; font-size: 16px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .pageno svg { display: none; }
+  .confidential {
+    position: absolute; left: 110px; bottom: 56px;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400; font-size: 16px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .source {
+    position: absolute; right: 110px; top: 56px;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400; font-size: 14px;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .eyebrow {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: 400; font-size: 14px;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+
+  .display {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400; font-style: normal;
+    font-size: 192px; line-height: 0.96;
+    letter-spacing: -0.015em;
+    color: var(--ink); margin: 0; text-wrap: balance;
+  }
+  .h1 {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400; font-style: normal;
+    font-size: 88px; line-height: 1.08;
+    letter-spacing: -0.014em;
+    color: var(--ink); margin: 0; text-wrap: balance;
+  }
+  .frame > .eyebrow:first-of-type { margin: 0 0 32px 0 !important; color: var(--accent) !important; }
+  .frame > .h1 { margin: 0 0 56px 0 !important; max-width: 1620px !important; }
+  section.slide > .frame { justify-content: flex-start !important; }
+  .h2 {
+    font-family: "Instrument Serif", serif; font-weight: 400; font-style: normal;
+    font-size: 48px; line-height: 1.12; letter-spacing: -0.012em;
+    color: var(--ink); margin: 0; text-wrap: balance;
+  }
+  .pull {
+    font-family: "Instrument Serif", serif; font-style: normal; font-weight: 400;
+    font-size: 32px; line-height: 1.35; color: var(--ink-soft);
+    margin: 0; max-width: 1300px; letter-spacing: -0.004em;
+  }
+  .body {
+    font-family: "Inter Tight", sans-serif; font-weight: 300;
+    font-size: 22px; line-height: 1.5; color: var(--ink-soft); margin: 0;
+  }
+  .body-lg {
+    font-family: "Inter Tight", sans-serif; font-weight: 300;
+    font-size: 24px; line-height: 1.5; color: var(--ink); margin: 0;
+  }
+  .body strong, .body-lg strong { font-weight: 500; color: var(--ink); }
+
+  .quote {
+    font-family: "Instrument Serif", serif; font-style: normal; font-weight: 400;
+    font-size: 48px; line-height: 1.22; color: var(--ink); margin: 0;
+    letter-spacing: -0.012em; text-wrap: balance;
+  }
+  .quote-attr {
+    font-family: "Inter Tight", sans-serif; font-weight: 400; font-size: 14px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+    margin-top: 14px;
+  }
+
+  .stat {
+    font-family: "Instrument Serif", serif; font-weight: 400; font-style: normal;
+    color: var(--ink); line-height: 0.92; letter-spacing: -0.02em;
+  }
+
+  .rule { height: 1px; background: var(--rule); width: 100%; }
+  .rule-soft { height: 1px; background: var(--rule-soft); width: 100%; }
+
+  .tweaks {
+    position: fixed; right: 20px; bottom: 68px; z-index: 2147483600;
+    background: #fff; color: #1b1b1b; border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.24);
+    padding: 16px 18px; font-size: 13px;
+    display: none; min-width: 240px;
+    font-family: "Inter Tight", sans-serif;
+  }
+  .tweaks[data-open] { display: block; }
+  .tweaks h4 { margin: 0 0 10px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; font-weight: 500; }
+  .tweaks .group { margin-bottom: 14px; }
+  .tweaks .group:last-child { margin-bottom: 0; }
+  .tweaks .segment { display: inline-flex; background: #f1ece6; border-radius: 8px; padding: 3px; }
+  .tweaks .segment button {
+    appearance: none; border: 0; background: transparent; padding: 6px 12px;
+    font-family: inherit; font-size: 12px; border-radius: 6px; cursor: pointer; color: #555;
+  }
+  .tweaks .segment button[data-active] { background: white; color: #111; box-shadow: 0 1px 3px rgba(0,0,0,0.12); font-weight: 500; }
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <circle cx="20" cy="20" r="11" fill="none" stroke="currentColor" stroke-width="1.2"/>
+    <circle cx="20" cy="20" r="5"  fill="none" stroke="currentColor" stroke-width="1.2"/>
+  </symbol>
+</svg>
+
+<deck-stage width="1920" height="1080">
+
+<!-- 1. COVER -->
+<section class="slide" data-screen-label="01 Cover">
+  <div class="frame" style="padding: 0; display:grid; grid-template-columns: 1fr 1fr;">
+    <div style="position:relative; overflow:hidden; background: #3a2416;">
+      <img src="assets/cover-portrait.jpg" alt="" style="width:100%; height:100%; object-fit: cover; object-position: center center; display:block;"/>
+    </div>
+    <div style="padding: 120px 110px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
+      <h1 class="display" style="text-align: center; font-family: 'Instrument Serif'; color: rgb(99, 55, 28);">
+        Carousel<br/>Fertility
+      </h1>
+      <div style="margin-top: 96px; max-width: 720px;">
+        <p style="font-family:'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 28px; line-height: 1.55; color: var(--ink-soft); margin: 0;"></p>
+        <p class="eyebrow" style="margin-top: 32px;"></p>
+      </div>
+    </div>
+  </div>
+  <div class="confidential" style="left: auto; right: 110px; bottom: 56px; color: var(--ink-mute);">Carousel Fertility 2026 &middot; Confidential</div>
+</section>
+
+<!-- 2. FOUNDER -->
+<section class="slide" data-screen-label="02 Founder">
+  <div class="pageno"><svg><use href="#mark"/></svg>02 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Founder</p>
+    <h1 class="h1" style="margin: 0 0 56px; max-width: 1740px !important; font-size: 56px; line-height: 1.08;">17+ years of operating experience as Talkspace CXO, VP Marketing at SonderMind, Amazon, plus 3 rounds of egg freezing make Sarah uniquely right to lead.</h1>
+
+    <div style="display:grid; grid-template-columns: 320px 1fr; gap: 64px; flex: 1; align-items: start;">
+      <div>
+        <div style="width: 320px; height: 380px; background: var(--bg-card); overflow: hidden;">
+          <img src="assets/sarah-lewen.jpg" alt="Sarah Lewen" style="width:100%; height:100%; object-fit: cover; object-position: center 30%; display:block;"/>
+        </div>
+      </div>
+
+      <div style="padding-top: 4px;">
+        <p class="eyebrow" style="margin: 0 0 6px; color: var(--accent); font-size: 20px">Founder &amp; CEO</p>
+        <h3 style="font-family: 'Instrument Serif', serif; font-size: 50px; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 28px; line-height: 1.05">Sarah Lewen</h3>
+
+        <div class="bio-block">
+          <p class="bio-label" style="font-size: 20px">CHIEF EXPERIENCE OFFICER AT TALKSPACE</p>
+          <p class="bio-body">Led customer experience overhaul during Talkspace IPO in peak Covid.</p>
+        </div>
+
+        <div class="bio-block">
+          <p class="bio-label" style="font-size: 20px">VP MARKETING AT SONDERMIND</p>
+          <p class="bio-body">Owned $35M budget, 10-person team. Series C General Catalyst-backed digital mental health platform.</p>
+        </div>
+
+        <div class="bio-block">
+          <p class="bio-label" style="font-size: 20px">EX-AMAZON</p>
+          <p class="bio-body">4.5 years as L6 product management &amp; marketing leader across Amazon Fashion (B2C), Amazon Music (B2C), Amazon Advertising (B2B).</p>
+        </div>
+
+        <div class="bio-block">
+          <p class="bio-label" style="font-size: 20px">3X EGG FREEZE</p>
+          <p class="bio-body">Personal lived experience at CCRM Fertility and Spring Fertility.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: -56px; padding: 18px 0 0; border-top: 1px solid var(--rule);">
+      <div class="logo-row">
+        <img src="assets/logos/amazon.svg" alt="Amazon" class="lg-amazon"/>
+        <img src="assets/logos/talkspace.png" alt="Talkspace"/>
+        <img src="assets/logos/sondermind.png" alt="SonderMind" class="lg-sondermind"/>
+        <img src="assets/logos/amex.png" alt="American Express" class="lg-amex"/>
+        <img src="assets/logos/northwestern.png" alt="Northwestern University" class="lg-northwestern"/>
+      </div>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="02 Founder"] .logo-row { display: flex; align-items: center; justify-content: center; gap: 88px; flex-wrap: wrap; }
+    [data-screen-label="02 Founder"] .logo-row img { height: 40px; width: auto; max-width: 240px; opacity: 0.5; filter: grayscale(1); object-fit: contain; }
+    [data-screen-label="02 Founder"] .logo-row img.lg-amazon { height: 96px; width: 220px; max-width: 220px; object-position: center; }
+    [data-screen-label="02 Founder"] .logo-row img.lg-amex { height: 88px; max-width: 96px; }
+    [data-screen-label="02 Founder"] .logo-row img.lg-sondermind { height: 44px; }
+    [data-screen-label="02 Founder"] .logo-row img.lg-northwestern { height: 88px; }
+    [data-screen-label="02 Founder"] .bio-block { margin-bottom: 18px; }
+    [data-screen-label="02 Founder"] .bio-label { font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin: 0 0 6px; }
+    [data-screen-label="02 Founder"] .bio-body { font-family: 'Inter Tight', sans-serif; font-size: 18px; font-weight: 300; line-height: 1.55; color: var(--ink); margin: 0; max-width: 1180px; }
+  </style>
+</section>
+
+<!-- 3. MARKET -->
+<section class="slide" data-screen-label="03 Market">
+  <div class="pageno"><svg><use href="#mark"/></svg>03 / 11</div>
+  <div class="frame" style="padding: 64px 110px 56px;">
+    <p class="eyebrow" style="margin-bottom: 28px; color: var(--accent);">Market</p>
+
+    <h1 class="h1" style="margin: 0 0 18px; max-width: 1620px; font-size: 56px; line-height: 1.08;">A $122B market by 2030. Zero category leader for the patient.</h1>
+    <p class="pull" style="margin: 0 0 32px; max-width: 1500px; font-size: 28px; color: var(--ink-soft);">Carousel will capture asymmetric market share by putting the patient experience first.</p>
+
+    <!-- Four-quadrant grid with center medallion -->
+    <div style="position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; margin-bottom: 96px;">
+
+      <!-- Q1: top-left — pale clay -->
+      <div style="background: #E8D5C4; padding: 96px 72px 44px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative;">
+        <span style="position: absolute; top: 28px; left: 32px; padding: 8px 20px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Fertility services</span>
+        <p style="margin: 0; font-family: 'Inter Tight', sans-serif; font-size: 92px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">$122B</p>
+        <p style="margin: 18px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.4; color: var(--ink-soft); letter-spacing: -0.005em; white-space: nowrap;">By 2030, growing 14.5% a year —    up from $47B today.</p>
+        <p style="margin: 12px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: var(--ink-soft);">Precision Business Insights, 2024</p>
+      </div>
+
+      <!-- Q2: top-right — mid clay, right-aligned · FEMTECH MOMENTUM (velocity, not size) -->
+      <div style="background: #C99477; padding: 96px 72px 44px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; text-align: right;">
+        <span style="position: absolute; top: 28px; right: 32px; padding: 8px 20px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Femtech momentum</span>
+        <p style="margin: 0; font-family: 'Inter Tight', sans-serif; font-size: 92px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">16.4%</p>
+        <p style="margin: 18px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.4; color: #2A2018; letter-spacing: -0.005em; white-space: nowrap;">CAGR &mdash; the fastest-growing category in digital health.</p>
+        <p style="margin: 12px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; color: rgba(42,32,24,0.72);">Grand View Research, 2024</p>
+      </div>
+
+      <!-- Q3: bottom-left — deep clay -->
+      <div style="background: var(--accent); padding: 96px 72px 44px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative; color: #F7F1E4;">
+        <span style="position: absolute; top: 28px; left: 32px; padding: 8px 20px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Capital deployed</span>
+        <p style="margin: 0; font-family: 'Inter Tight', sans-serif; font-size: 92px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">$15B+</p>
+        <p style="margin: 18px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.4; letter-spacing: -0.005em; white-space: nowrap; opacity: 0.92;">Private capital into fertility since 2020 — the category is real.</p>
+        <p style="margin: 12px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; opacity: 0.82;">PitchBook &middot; Crunchbase, 2024</p>
+      </div>
+
+      <!-- Q4: bottom-right — darkest, right-aligned · PROVEN WTP (Maven per-member revenue) -->
+      <div style="background: #5C2E1C; padding: 96px 72px 44px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; color: #F7F1E4; text-align: right;">
+        <span style="position: absolute; top: 28px; right: 32px; padding: 8px 20px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Willingness to pay</span>
+        <p style="margin: 0; font-family: 'Inter Tight', sans-serif; font-size: 92px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">$2,300</p>
+        <p style="margin: 18px 0 0; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.4; letter-spacing: -0.005em; white-space: nowrap; opacity: 0.92;">Annual revenue per member at Maven &mdash; proof women pay for women&rsquo;s-health software.</p>
+        <p style="margin: 12px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; opacity: 0.82;">Sacra, 2025</p>
+      </div>
+
+      <!-- Center medallion -->
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 360px; height: 360px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; padding: 48px; box-sizing: border-box; box-shadow: 0 0 0 1px rgba(74,56,42,0.12);">
+        <p style="margin: 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; line-height: 1.2; color: var(--ink); text-align: center; letter-spacing: -0.005em;">
+          Now is the moment to redesign the fertility patient experience for the AI era.
+        </p>
+      </div>
+
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+</section>
+
+<!-- 4. PROBLEM -->
+<section class="slide" data-screen-label="04 Problem" style="background: var(--accent); color: #F7F1E4;">
+  <div class="pageno" style="color: rgba(247,241,228,0.7);"><svg style="filter: invert(1) brightness(2);"><use href="#mark"/></svg>04 / 11</div>
+  <div class="frame" style="justify-content: center !important; align-items: center; text-align: center;">
+    <p class="eyebrow" style="margin: 0 0 36px !important; color: rgba(247,241,228,0.7) !important;">Thesis</p>
+    <h1 class="h1" style="max-width: 1500px !important; font-size: 96px; line-height: 1.1; color: #F7F1E4; margin: 0 !important;">
+      Fertility medicine works.<br/>The experience around it is broken.<br/><span style="font-style: italic;">Carousel fixes that.</span>
+    </h1>
+  </div>
+  <div class="confidential" style="color: rgba(247,241,228,0.7);">Carousel 2026 &middot; Confidential</div>
+</section>
+
+<!-- 5. VOICE OF THE PATIENT -->
+<section class="slide" data-screen-label="05 Voice of the patient">
+  <div class="pageno"><svg><use href="#mark"/></svg>05 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 56px; color: var(--accent);">Voice of the patient</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; flex: 1;">
+
+      <!-- Quote 1 — pale clay -->
+      <article style="background: #E8D5C4; padding: 56px 48px 44px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <p style="font-family: 'Instrument Serif', serif; font-size: 44px; line-height: 1.18; color: var(--ink); letter-spacing: -0.005em; margin: 0; text-wrap: pretty;">
+          <span style="color: var(--accent); font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-right: 4px;">&ldquo;</span>It&rsquo;s the most lonely thing I&rsquo;ve ever done in my entire life. You don&rsquo;t get it unless you&rsquo;ve been through it.<span style="color: var(--accent); font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-left: 4px;">&rdquo;</span>
+        </p>
+        <p style="font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin: 36px 0 0;">Katie &middot; 35 &middot; IVF &amp; surrogacy</p>
+      </article>
+
+      <!-- Quote 2 — mid clay -->
+      <article style="background: #C99477; padding: 56px 48px 44px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <p style="font-family: 'Instrument Serif', serif; font-size: 44px; line-height: 1.18; color: var(--ink); letter-spacing: -0.005em; margin: 0; text-wrap: pretty;">
+          <span style="color: var(--accent); font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-right: 4px;">&ldquo;</span>I wish I had known how many eggs I&rsquo;d have at 30 versus 35. I could have done one round at 30 and gotten all the eggs I&rsquo;d ever need.<span style="color: var(--accent); font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-left: 4px;">&rdquo;</span>
+        </p>
+        <p style="font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #2A2018; margin: 36px 0 0;">Maia &middot; 39 &middot; Egg freezing</p>
+      </article>
+
+      <!-- Quote 3 — deep clay -->
+      <article style="background: var(--accent); padding: 56px 48px 44px; display: flex; flex-direction: column; justify-content: space-between; position: relative; color: #F7F1E4;">
+        <p style="font-family: 'Instrument Serif', serif; font-size: 44px; line-height: 1.18; letter-spacing: -0.005em; margin: 0; text-wrap: pretty;">
+          <span style="color: #5C2E1C; font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-right: 4px;">&ldquo;</span>Is there one person who&rsquo;s looking at me from start to finish?<span style="color: #5C2E1C; font-size: 1.4em; line-height: 0; vertical-align: -0.05em; margin-left: 4px;">&rdquo;</span>
+        </p>
+        <p style="font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,241,228,0.75); margin: 36px 0 0;">Nour &middot; 39 &middot; Egg freezing</p>
+      </article>
+
+    </div>
+
+    <p style="font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; color: var(--ink-soft); margin: 32px 0 0; letter-spacing: 0.005em; line-height: 1.5;">
+      Verbatim quotes from 30 patient interviews across NYU Langone, Weill Cornell, Spring Fertility, CCRM, Kindbody, Shady Grove &amp; RMA.
+    </p>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+</section>
+
+<!-- 6. COMPETITIVE — VARIANT A -->
+<section class="slide slide-6 v-a" data-screen-label="06 Competitive · A">
+  <div class="pageno"><svg><use href="#mark"/></svg>06 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Competitive landscape</p>
+    <h1 class="h1" style="margin-bottom: 56px; max-width: 1740px; font-size: 60px;">
+      Capital has poured into fertility. None of it has reached the patient.
+    </h1>
+
+    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 32px; margin-bottom: 48px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <div><p class="eyebrow" style="margin-bottom: 8px;">Maven</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$425M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; $1.7B val</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 8px;">Carrot</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$115M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; Series C</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 8px;">Modern Fertility</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$225M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Acquired by Ro &middot; 2021</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 8px;">Progyny</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$1.17B</p><p class="body" style="font-size: 14px; margin-top: 6px;">FY2024 revenue &middot; public</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 8px;">Kindbody</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$300M+</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; clinic network</p></div>
+    </div>
+
+    <div style="padding-left: 280px; position: relative;">
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-bottom: 20px;">
+        <div class="eyebrow" style="text-align:center;">Pre-treatment</div>
+        <div class="eyebrow" style="text-align:center;">During treatment</div>
+        <div class="eyebrow" style="text-align:center;">Post-treatment</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: 12px;">
+        <div class="cmp-row">
+          <div class="cmp-name" style="font-family:'Instrument Serif', serif; font-size: 24px; color: var(--accent);">Carousel</div>
+          <div class="cmp-bar" style="grid-column: 2 / span 3; background: var(--accent); color: #F7F1E4;">Always-on, longitudinal &mdash; pre, during, post</div>
+        </div>
+        <div class="rule-soft" style="margin: 4px 0;"></div>
+        <div class="cmp-row"><div class="cmp-name">Progyny &middot; Carrot &middot; Maven</div><div class="cmp-bar" style="grid-column: 2 / span 2;">Employer benefits navigation</div><div></div></div>
+        <div class="cmp-row"><div class="cmp-name">EngagedMD &middot; Salve</div><div></div><div class="cmp-bar" style="grid-column: 3 / span 1;">Clinic communications</div><div></div></div>
+        <div class="cmp-row"><div class="cmp-name">Alife &middot; Automate</div><div></div><div class="cmp-bar" style="grid-column: 3 / span 1;">Clinical AI for embryologists</div><div></div></div>
+        <div class="cmp-row"><div class="cmp-name">Frame &middot; Conceive</div><div class="cmp-bar" style="grid-column: 2 / span 2;">D2C apps with human coaching</div><div></div></div>
+      </div>
+    </div>
+    <p style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px; color: var(--ink-mute); margin: 24px 0 0;">
+      Funding sources: Crunchbase &middot; PitchBook &middot; company press (current as of 2026).
+    </p>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    .slide-6.v-a .cmp-row { display:grid; grid-template-columns: 280px 1fr 1fr 1fr; gap: 0; align-items:center; position: relative; left: -280px; }
+    .slide-6.v-a .cmp-name { font-family:'Inter Tight', sans-serif; font-size: 18px; color: var(--ink); font-weight: 400; padding-right: 24px; text-align:right; }
+    .slide-6.v-a .cmp-bar { height: 38px; display:flex; align-items:center; padding: 0 22px; font-family:'Inter Tight', sans-serif; font-size: 16px; color: var(--ink-soft); background: var(--bg-card); }
+  </style>
+</section>
+
+<!-- 6. COMPETITIVE — VARIANT B -->
+<section class="slide slide-6 v-b" data-screen-label="06 Competitive · B">
+  <div class="pageno"><svg><use href="#mark"/></svg>06 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Competitive landscape</p>
+    <h1 class="h1" style="margin-bottom: 40px; max-width: 1740px; font-size: 60px;">
+      Capital has poured in. The patient experience layer is still empty.
+    </h1>
+
+    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-bottom: 36px; padding: 18px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+      <div><p class="eyebrow" style="margin-bottom: 6px;">Maven</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$425M</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 6px;">Carrot</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$115M</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 6px;">Modern Fertility</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$225M exit</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 6px;">Progyny</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$1.17B rev</p></div>
+      <div><p class="eyebrow" style="margin-bottom: 6px;">Kindbody</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$300M+</p></div>
+    </div>
+
+    <div class="map-wrap">
+      <div class="ax-y">Always-on &middot; AI-first &nbsp;&rarr;</div>
+      <div class="ax-x">Patient-first &nbsp;&rarr;</div>
+
+      <div class="map-grid">
+        <div class="q q-tl"><div class="eyebrow">AI-first &middot; Buyer-first</div><div class="q-desc" style="color: var(--ink-mute);">Empty</div></div>
+        <div class="q q-tr"><div class="eyebrow" style="color: var(--accent);">AI-first &middot; Patient-first</div><div class="q-desc" style="color: var(--accent);">Carousel</div></div>
+        <div class="q q-bl"><div class="eyebrow">Point-in-time &middot; Buyer-first</div><div class="q-desc" style="color: var(--ink-soft);">Employer benefits, clinic software</div></div>
+        <div class="q q-br"><div class="eyebrow">Point-in-time &middot; Patient-first</div><div class="q-desc" style="color: var(--ink-soft);">D2C apps, human coaching</div></div>
+
+        <div class="axis-v"></div>
+        <div class="axis-h"></div>
+
+        <span class="dot" style="left: 16%; top: 80%;" data-name="Progyny"></span>
+        <span class="dot" style="left: 24%; top: 86%;" data-name="Carrot"></span>
+        <span class="dot" style="left: 32%; top: 74%;" data-name="Maven"></span>
+        <span class="dot" style="left: 22%; top: 60%;" data-name="EngagedMD"></span>
+        <span class="dot" style="left: 36%; top: 56%;" data-name="Salve"></span>
+        <span class="dot" style="left: 42%; top: 64%;" data-name="Alife"></span>
+        <span class="dot" style="left: 70%; top: 78%;" data-name="Frame &middot; Conceive"></span>
+
+        <div class="us" style="left: 78%; top: 22%;">
+          <div class="us-name">Carousel</div>
+          <div class="us-desc">Pre &middot; during &middot; post &mdash; full longitudinal arc.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    .slide-6.v-b .map-wrap { position: relative; height: 460px; padding: 16px 20px 56px 70px; box-sizing: border-box; }
+    .slide-6.v-b .ax-y, .slide-6.v-b .ax-x { position: absolute; font-family:'Inter Tight', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); }
+    .slide-6.v-b .ax-y { left: 0; top: 50%; transform-origin: left top; transform: rotate(-90deg) translateX(50%); white-space: nowrap; }
+    .slide-6.v-b .ax-x { bottom: 14px; left: calc(50% + 35px); transform: translateX(-50%); white-space: nowrap; }
+    .slide-6.v-b .map-grid { position: relative; height: 100%; width: 100%; background: var(--bg-card); }
+    .slide-6.v-b .axis-v { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--rule-soft); }
+    .slide-6.v-b .axis-h { position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--rule-soft); }
+    .slide-6.v-b .q { position: absolute; width: 50%; height: 50%; padding: 28px 32px; box-sizing: border-box; }
+    .slide-6.v-b .q-desc { font-family: 'Instrument Serif', serif; font-size: 22px; margin-top: 8px; line-height: 1.3; }
+    .slide-6.v-b .q-tl { top: 0; left: 0; }
+    .slide-6.v-b .q-tr { top: 0; right: 0; text-align: right; }
+    .slide-6.v-b .q-bl { bottom: 0; left: 0; }
+    .slide-6.v-b .q-br { bottom: 0; right: 0; text-align: right; }
+    .slide-6.v-b .dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--ink-mute); transform: translate(-50%,-50%); }
+    .slide-6.v-b .dot::after { content: attr(data-name); position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: 'Inter Tight', sans-serif; font-size: 14px; color: var(--ink-soft); white-space: nowrap; }
+    .slide-6.v-b .us { position: absolute; transform: translate(-50%,-50%); background: var(--accent); color: #F7F1E4; padding: 18px 24px; min-width: 320px; }
+    .slide-6.v-b .us-name { font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; }
+    .slide-6.v-b .us-desc { font-family: 'Inter Tight', sans-serif; font-size: 15px; color: rgba(247,241,228,0.85); line-height: 1.4; margin-top: 8px; }
+  </style>
+</section>
+
+<!-- 6. COMPETITIVE — VARIANT C -->
+<section class="slide slide-6 v-c" data-screen-label="06 Competitive · C">
+  <div class="pageno"><svg><use href="#mark"/></svg>06 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 18px; color: var(--accent);">Competitive landscape</p>
+    <div style="position: absolute; top: 110px; right: 110px; font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute);">
+      <span class="dot-y" style="display:inline-block; vertical-align: middle; margin-right:8px;"></span> full &nbsp;&middot;&nbsp;
+      <span class="dot-h" style="display:inline-block; vertical-align: middle; margin: 0 8px;"></span> partial
+    </div>
+    <h1 class="h1" style="margin-bottom: 20px; max-width: 1740px; font-size: 48px; font-weight: 400">Everyone solved for the buyer. Carousel solves for <em style="font-style: italic;">her</em> &mdash; longitudinally, AI-first.</h1>
+
+    <table class="cap-grid">
+      <thead>
+        <tr class="grp-head">
+          <th class="grp-col"></th>
+          <th class="lbl"></th>
+          <th colspan="3" class="grp-h grp-h-time"><span>Moment in time</span></th>
+          <th colspan="4" class="grp-h grp-h-cap"><span>Capabilities</span></th>
+        </tr>
+        <tr>
+          <th class="grp-col"></th>
+          <th class="lbl"></th>
+          <th class="time-col time-col-first">Pre-<br/>treatment</th>
+          <th class="time-col">During<br/>treatment</th>
+          <th class="time-col time-col-last">Post-<br/>treatment</th>
+          <th class="cap-col cap-col-first">Curated<br/>community<div class="th-sub">moderated, clinical</div></th>
+          <th class="cap-col">Emotional-<br/>support AI<div class="th-sub">built for the arc</div></th>
+          <th class="cap-col">Clinical AI<div class="th-sub">personalized to her</div></th>
+          <th class="cap-col cap-col-last">Clinic<br/>SaaS<div class="th-sub">workflow / consent</div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="grp-start">
+          <td class="grp-col"></td>
+          <td class="lbl">Progyny<div class="lbl-sub">Public &middot; $1.17B FY24 rev &middot; fertility benefits mgmt</div></td>
+          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Maven Clinic<div class="lbl-sub">$1.7B valuation &middot; horizontal women's health, not fertility-specific</div></td>
+          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Carrot<div class="lbl-sub">$115M raised &middot; fertility benefits, employer-paid</div></td>
+          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Kindbody &middot; Spring Fertility<div class="lbl-sub">$300M+ raised &middot; clinic networks</div></td>
+          <td></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">EngagedMD &middot; Salve<div class="lbl-sub">Clinic-distributed workflow &middot; patient education, e-consent, messaging</div></td>
+          <td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td><span class="dot-y"></span></td></tr>
+
+        <tr class="grp-start">
+          <td class="grp-col"></td>
+          <td class="lbl">Frame<div class="lbl-sub">Seed-stage &middot; D2C concierge + community, IVF-focused</div></td>
+          <td><span class="dot-h"></span></td><td><span class="dot-y"></span></td><td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Conceive<div class="lbl-sub">Seed-stage &middot; D2C membership + RMA partnership, IVF-focused</div></td>
+          <td><span class="dot-h"></span></td><td><span class="dot-y"></span></td><td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Berry Fertility<div class="lbl-sub">Bootstrapped &middot; egg-freeze + IVF &middot; ex-Google</div></td>
+          <td><span class="dot-y"></span></td><td><span class="dot-y"></span></td><td></td><td></td><td></td><td><span class="dot-h"></span></td><td></td></tr>
+
+        <tr class="grp-start">
+          <td class="grp-col"></td>
+          <td class="lbl">Reddit &middot; ChatGPT<div class="lbl-sub">DIY content &amp; chat &mdash; no continuity, no clinical grounding</div></td>
+          <td><span class="dot-h"></span></td><td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Modern Fertility (Ro)<div class="lbl-sub">Acquired by Ro &middot; at-home hormone testing</div></td>
+          <td><span class="dot-h"></span></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td class="grp-col"></td>
+          <td class="lbl">Rescripted &middot; Stix<div class="lbl-sub">Seed-stage &middot; forums, content, D2C testing</div></td>
+          <td><span class="dot-h"></span></td><td></td><td></td><td><span class="dot-h"></span></td><td></td><td></td><td></td></tr>
+
+        <tr class="grp-start adj">
+          <td class="grp-col"></td>
+          <td class="lbl">Flo &middot; Natural Cycles &middot; Inito &middot; Mira<div class="lbl-sub">Cycle / ovulation / hormone tracking &mdash; not fertility-treatment</div></td>
+          <td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+        <tr class="us-row grp-start">
+          <td class="grp-col"></td>
+          <td class="lbl us-lbl">Carousel</td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-y"></span></td>
+          <td><span class="dot-h"></span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 14px; text-align: left;">
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    .slide-6.v-c .cap-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .slide-6.v-c .cap-grid th, .slide-6.v-c .cap-grid td {
+      padding: 2px 8px; border-bottom: 1px solid var(--rule-soft);
+      text-align: center; font-family: 'Inter Tight', sans-serif;
+      font-size: 16px; font-weight: 300; color: var(--ink-soft); vertical-align: middle;
+    }
+    .slide-6.v-c .cap-grid th { font-weight: 500; font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); padding-top: 0; padding-bottom: 10px; line-height: 1.3; }
+    .slide-6.v-c .cap-grid .th-sub { font-family:'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--ink-mute); letter-spacing: 0; text-transform: none; margin-top: 4px; font-weight: 400; }
+    .slide-6.v-c .cap-grid th.grp-col, .slide-6.v-c .cap-grid td.grp-col { width: 40px; min-width: 40px; max-width: 40px; padding: 0; vertical-align: middle; }
+    .slide-6.v-c .cap-grid td.lbl, .slide-6.v-c .cap-grid th.lbl { text-align: left; padding-left: 0; width: 420px; color: var(--ink); font-weight: 400; font-size: 20px; }
+    .slide-6.v-c .cap-grid .lbl-sub { font-family:'Inter Tight', sans-serif; font-size:12px; color: var(--ink-mute); font-weight: 300; margin-top: 2px; letter-spacing: 0.02em; line-height: 1.3; }
+    .slide-6.v-c .us-row td { padding-top: 8px; padding-bottom: 8px; background: rgba(149,74,45,0.14); border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); }
+    .slide-6.v-c .us-row td.grp-col { border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent); background: rgba(149,74,45,0.14); }
+    .slide-6.v-c .us-lbl { font-family:'Instrument Serif', serif; font-size: 28px; color: var(--accent) !important; font-weight: 400 !important; }
+    .slide-6.v-c .grp-vlabel {
+      writing-mode: vertical-rl; transform: rotate(180deg);
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--ink-mute); font-weight: 500;
+      text-align: center; padding: 12px 0; line-height: 1.4;
+    }
+    .slide-6.v-c .grp-vlabel-sub {
+      display: block; font-style: italic; font-family:'Instrument Serif', serif;
+      font-size: 12px; letter-spacing: 0.02em; text-transform: none; color: var(--ink-mute);
+      font-weight: 400; margin-top: 6px;
+    }
+    .slide-6.v-c .grp-vlabel.adj { color: var(--accent-soft); font-style: italic; font-family:'Instrument Serif', serif; font-size: 14px; letter-spacing: 0.04em; text-transform: none; font-weight: 400; }
+    .slide-6.v-c .grp-start td:not(.grp-col) { border-top: 1px solid var(--rule); padding-top: 8px; }
+    .slide-6.v-c .grp-start td { padding-top: 8px; }
+    .slide-6.v-c .grp-start.adj td:not(.grp-col) { padding-top: 10px; }
+    .slide-6.v-c .grp-start.adj td.lbl { color: var(--ink); }
+    .slide-6.v-c .dot-y { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+    .slide-6.v-c .dot-h { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); opacity: 0.3; }
+    /* Group header row */
+    .slide-6.v-c .cap-grid .grp-head th { border-bottom: none; padding: 0 0 6px; background: transparent; }
+    .slide-6.v-c .cap-grid .grp-h { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 18px; letter-spacing: 0.01em; text-transform: none; color: var(--ink-mute); font-weight: 400; padding-bottom: 8px; position: relative; }
+    .slide-6.v-c .cap-grid .grp-h span { display: inline-block; padding: 0 12px; background: var(--bg); position: relative; z-index: 1; }
+    .slide-6.v-c .cap-grid .grp-h::after {
+      content: ""; position: absolute; left: 8px; right: 8px; bottom: 6px; height: 1px;
+      background: var(--ink-mute); opacity: 0.55;
+    }
+    /* Tiny down-ticks at each end of the bracket */
+    .slide-6.v-c .cap-grid .grp-h::before {
+      content: ""; position: absolute; left: 8px; right: 8px; bottom: 2px; height: 5px;
+      border-left: 1px solid var(--ink-mute); border-right: 1px solid var(--ink-mute);
+      opacity: 0.55;
+    }
+    /* Subtle vertical separator between the two groups */
+    .slide-6.v-c .cap-grid .cap-col-first { border-left: 1px solid var(--rule); }
+    .slide-6.v-c .cap-grid td.cap-col-first-cell { border-left: 1px solid var(--rule-soft); }
+
+  </style>
+</section>
+
+<!-- 7. PRODUCT -->
+<section class="slide" data-screen-label="07 Product">
+  <div class="pageno"><svg><use href="#mark"/></svg>07 / 11</div>
+  <div class="frame" style="padding-top: 40px;">
+    <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent);">Introducing Carousel</p>
+
+    <h1 class="h1" style="margin-bottom: 22px; max-width: 1700px; font-size: 48px">
+      The first longitudinal patient experience platform for women going through egg freezing &amp; IVF.
+    </h1>
+
+    <div class="rule" style="margin-bottom: 22px;"></div>
+
+    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px;">
+
+      <!-- 01 · EDUCATION — chat mockup -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">01<br/>Personalized Education</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 24px; font-size: 26px;">Clinically-vetted answers, just for her</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>9:41</span>
+              <span class="ph-icons">
+                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
+                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
+              </span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">My Forecast</span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
+            </div>
+
+            <div class="ph-person">
+              <image-slot id="mock1-jane" class="ph-avatar-slot" shape="circle" src="assets/portraits/community/jane.jpeg" placeholder="Jane"></image-slot>
+              <span class="ph-person-text">
+                <span class="ph-person-name">Jane Doe</span>
+                <span class="ph-person-stage">35 &middot; pre-treatment</span>
+              </span>
+            </div>
+
+            <div class="ph-calc">
+              <p class="calc-eyebrow">Clinical inputs</p>
+              <div class="calc-grid">
+                <div class="calc-cell"><span class="calc-k">Age</span><span class="calc-v">35</span></div>
+                <div class="calc-cell"><span class="calc-k">AMH</span><span class="calc-v">1.3 <em>ng/mL</em></span></div>
+                <div class="calc-cell"><span class="calc-k">AFC</span><span class="calc-v">9</span></div>
+                <div class="calc-cell"><span class="calc-k">FSH</span><span class="calc-v">8.4</span></div>
+                <div class="calc-cell"><span class="calc-k">BMI</span><span class="calc-v">22</span></div>
+                <div class="calc-cell"><span class="calc-k">Goal</span><span class="calc-v">3 kids</span></div>
+              </div>
+
+              <p class="calc-eyebrow" style="margin-top: 12px;">Forecast &middot; per cycle</p>
+              <div class="calc-stat-row">
+                <div class="calc-stat">
+                  <span class="calc-stat-num">8&ndash;12</span>
+                  <span class="calc-stat-lbl">mature eggs</span>
+                </div>
+                <div class="calc-stat">
+                  <span class="calc-stat-num">3&ndash;5</span>
+                  <span class="calc-stat-lbl">euploid embryos</span>
+                </div>
+              </div>
+
+              <p class="calc-eyebrow" style="margin-top: 12px;">Probability of 3 live births</p>
+              <div class="prob-rows">
+                <div class="prob-row">
+                  <span class="prob-lbl">1 retrieval</span>
+                  <span class="prob-bar"><span class="prob-fill" style="width: 18%;"></span></span>
+                  <span class="prob-pct">18%</span>
+                </div>
+                <div class="prob-row">
+                  <span class="prob-lbl">2 retrievals</span>
+                  <span class="prob-bar"><span class="prob-fill" style="width: 47%;"></span></span>
+                  <span class="prob-pct">47%</span>
+                </div>
+                <div class="prob-row prob-row-rec">
+                  <span class="prob-lbl">3 retrievals <em>recommended</em></span>
+                  <span class="prob-bar"><span class="prob-fill prob-fill-on" style="width: 72%;"></span></span>
+                  <span class="prob-pct prob-pct-on">72%</span>
+                </div>
+              </div>
+
+              <p class="calc-source"><em>Modeled on SART 2022 outcomes for AMH 1.0&ndash;1.5, age 35.</em></p>
+
+              <div class="calc-chat">
+                <div class="calc-chat-msg user">But how does this change if I want 2&nbsp;kids, or if I push my first round to 37 instead of 35?</div>
+                <div class="calc-chat-msg ai"><span class="ai-name">Carousel</span> Recalculating &mdash; here are both scenarios&hellip;</div>
+              </div>
+            </div>
+
+            <div class="ph-input">
+              <span class="ph-input-pill">Ask anything&hellip;</span>
+              <span class="ph-mic">&#x25CF;</span>
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">No more asking ChatGPT or interpreting AMH through TikTok. Trustworthy, credible, personal.</p>
+      </div>
+
+      <!-- 02 · COMMUNITY — filter + clinical moderator -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">02<br/>Moderated Community</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 24px; font-size: 26px;">Support system with clinical oversight</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>9:41</span>
+              <span class="ph-icons">
+                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
+                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
+              </span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">Community</span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
+            </div>
+
+            <div class="ph-mod">
+              <span class="ph-mod-dot"></span>
+              <span class="ph-mod-text"><strong>Dr.&nbsp;Lena Park, RN</strong> &middot; clinical mod &middot; <em>async &amp; live AMA</em></span>
+            </div>
+
+            <div class="ph-filter-row">
+              <p class="ph-filter-label">Find your room</p>
+              <div class="ph-chips">
+                <span class="chip chip-on">35&ndash;37</span>
+                <span class="chip chip-on">East Asian</span>
+                <span class="chip">NYC</span>
+                <span class="chip chip-on">NYU Langone</span>
+                <span class="chip">IVF cycle 2</span>
+                <span class="chip chip-more">+ DOR</span>
+              </div>
+            </div>
+
+            <div class="ph-rooms">
+              <div class="thread">
+                <div class="thread-head">
+                  <span class="thread-author">Maia &middot; <em>cycle 2</em></span>
+                  <span class="thread-verified">&#10003; clinical mod</span>
+                </div>
+                <p class="thread-body">&ldquo;Started estrogen priming on Friday. Day 3 and the headaches are real&mdash;anyone else?&rdquo;</p>
+                <div class="thread-reacts">
+                  <span class="react"><span class="react-ico react-heart"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>247</span>
+                  <span class="react"><span class="react-ico">&#10003;</span>84 same</span>
+                  <span class="react react-reply">&#x21A9; 47 replies</span>
+                </div>
+                <div class="thread-reply">
+                  <image-slot id="mock2-sara" class="reply-avatar-slot" shape="circle" src="assets/portraits/community/sara.png" placeholder="Sara"></image-slot>
+                  <span class="reply-text"><strong>Sara</strong> Yes &mdash; magnesium at night helped me. Hang in there.</span>
+                </div>
+                <div class="thread-actions">
+                  <span class="thread-action">Reply</span>
+                  <span class="thread-action">DM Maia &rarr;</span>
+                </div>
+              </div>
+
+              <div class="room room-compact">
+                <div class="room-top">
+                  <span class="room-name">NYU Langone &middot; 35&ndash;37</span>
+                  <span class="room-count">22 women &middot; 4 active now</span>
+                </div>
+              </div>
+              <div class="room room-compact">
+                <div class="room-top">
+                  <span class="room-name">LGBTQ &middot; egg freezing</span>
+                  <span class="room-count">31 women &middot; 2 active now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">Goodbye Reddit threads and Facebook groups. Moderated, curated, matched to her stage.</p>
+      </div>
+
+      <!-- 03 · EMOTIONAL SUPPORT — placeholder -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">03<br/>AI Emotional Support</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 24px; font-size: 26px;">An always-on companion through the swings</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>11:04</span>
+              <span class="ph-icons">
+                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
+                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
+              </span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">Maeve <em style="font-style: italic; color: var(--ink-mute); font-family:'Instrument Serif',serif;">&middot; your Carousel AI</em></span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
+            </div>
+
+            <div class="ph-thread">
+              <div class="thread-time">11:04 PM &middot; tonight</div>
+
+              <div class="th-row ai"><span class="th-who">Maeve</span>
+                <div class="th-msg ai">Hey, Jane. Tonight at 7 was night 1 of injections &mdash; you made it through your first time mixing Menopur. How are you feeling?</div>
+              </div>
+
+              <div class="th-row user">
+                <span class="th-who-row">
+                  <image-slot class="th-avatar-slot" shape="circle" src="assets/portraits/community/jane.jpeg" placeholder="Jane"></image-slot>
+                  <span class="th-who">Jane</span>
+                </span>
+                <div class="th-msg user">Honestly? Cried after. Hands shaking the whole time. Feel kind of dumb.</div>
+              </div>
+
+              <div class="th-row ai"><span class="th-who">Maeve</span>
+                <div class="th-msg ai">Not dumb. You held a syringe of $1,400 hormones, did the math on a 75-IU mix, and injected yourself. Crying after is the body finishing what it started.</div>
+                <div class="th-msg ai">I know you&rsquo;re single and dating has been hard. Doing this alone at 11&nbsp;PM can feel especially lonely. Where are you at with that tonight?</div>
+              </div>
+
+              <div class="th-typing">
+                <span></span><span></span><span></span>
+                <span class="th-typing-lbl">Jane is typing&hellip;</span>
+              </div>
+            </div>
+
+            <div class="ph-input">
+              <span class="ph-input-pill">Message Carousel&hellip;</span>
+              <span class="ph-mic">&#x25CF;</span>
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">Through fear, anxiety, isolation, disappointment, hormones &mdash; an AI companion that holds.</p>
+      </div>
+
+      <!-- 04 · MILESTONES — celebration mock -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">04<br/>Milestones</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 24px; font-size: 26px;">Wins witnessed by the women who get it</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>4:18</span>
+              <span class="ph-icons">
+                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
+                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
+              </span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">Milestones</span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
+            </div>
+
+            <div class="ph-mile-eyebrow">
+              <span class="ph-mile-mark">&#10022;</span>
+              <span>Today &middot; in your room</span>
+            </div>
+
+            <div class="ph-rooms" style="padding-top: 6px;">
+              <div class="thread mile-thread">
+                <div class="thread-head">
+                  <span class="thread-author">Maia &middot; <em>cycle 2</em></span>
+                  <span class="mile-tag">last injection</span>
+                </div>
+                <p class="mile-headline"><em>Done with stims.</em></p>
+                <p class="thread-body" style="color: var(--ink-soft);">&ldquo;Twelve nights of injections. Bruised, exhausted, hopeful. Trigger shot tomorrow. Whatever happens next, I made it through this part.&rdquo;</p>
+                <div class="thread-reacts">
+                  <span class="react"><span class="react-ico react-heart"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>312 cheered</span>
+                  <span class="react react-reply">&#x21A9; 47 replies</span>
+                </div>
+                <div class="thread-reply">
+                  <image-slot id="mock4-eliza" class="reply-avatar-slot" shape="circle" src="assets/portraits/community/eliza.png" placeholder="Eliza"></image-slot>
+                  <span class="reply-text"><strong>Eliza</strong> Starting mine Tuesday. Saving this. Thank you for sharing.</span>
+                </div>
+                <div class="thread-reply" style="margin-top: -2px;">
+                  <image-slot id="mock4-jules" class="reply-avatar-slot" shape="circle" src="assets/portraits/community/jules.png" placeholder="Jules"></image-slot>
+                  <span class="reply-text"><strong>Jules</strong> You showed up for yourself every night. Rest tonight &mdash; we&rsquo;re proud of you.</span>
+                </div>
+              </div>
+
+              <div class="mile-quiet">
+                <div class="mile-quiet-row">
+                  <span class="mile-quiet-mark"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>
+                  <span class="mile-quiet-text"><strong>Sara</strong> finished her first consult &middot; <em>Spring Fertility</em></span>
+                  <span class="mile-quiet-cheer">94 cheered</span>
+                </div>
+                <div class="mile-quiet-row">
+                  <span class="mile-quiet-mark"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>
+                  <span class="mile-quiet-text"><strong>Priya</strong> trigger shot tonight &middot; <em>cycle 3</em></span>
+                  <span class="mile-quiet-cheer">176 cheered</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ph-input">
+              <span class="ph-input-pill">Share a milestone&hellip;</span>
+              <span class="ph-mic">&#x25CF;</span>
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">Wins celebrated where they&rsquo;re understood &mdash; quietly, by women on the same path.</p>
+      </div>
+
+      <!-- 05 · MY WHOLE PICTURE — connected sources mock -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">05<br/>My Whole Picture</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 24px; font-size: 26px;">Every data point,<br/>in one place</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>9:41</span>
+              <span class="ph-icons">&#9679;&#9679;&#9679; &#9679;</span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">My Whole Picture</span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></span>
+            </div>
+
+            <div class="ph-body" style="padding: 18px 16px 8px; gap: 10px;">
+
+              <p class="src-eyebrow">Synced today &middot; 5 of 7 sources connected</p>
+
+              <div class="src-list">
+
+                <div class="src-row">
+                  <div class="src-name">Function Health</div>
+                  <div class="src-meta">AMH &middot; <em>1.3 ng/mL</em> &middot; 2d ago</div>
+                </div>
+
+                <div class="src-row">
+                  <div class="src-name">LabCorp</div>
+                  <div class="src-meta">FSH &middot; <em>8.4</em> &middot; AFC &middot; <em>9</em> &middot; 6d ago</div>
+                </div>
+
+                <div class="src-row">
+                  <div class="src-name">Inito</div>
+                  <div class="src-meta">Cycle day 9 &middot; <em>peak fertility</em> &middot; 1h ago</div>
+                </div>
+
+                <div class="src-row">
+                  <div class="src-name">Oura</div>
+                  <div class="src-meta">Sleep <em>6h&nbsp;12m</em> &middot; HRV <em>42</em> &middot; tonight</div>
+                </div>
+
+                <div class="src-row">
+                  <div class="src-name">NYU Langone &middot; OB/GYN</div>
+                  <div class="src-meta">Last visit Oct&nbsp;12 &middot; <em>baseline scan</em></div>
+                </div>
+
+                <div class="src-row src-row-add">
+                  <div class="src-name">+ Connect Mira, WHOOP, Parsley&hellip;</div>
+                  <div class="src-meta">2 more available</div>
+                </div>
+
+              </div>
+
+              <div class="src-foot">
+                <span class="src-foot-eyebrow">Carousel reads</span>
+                <span class="src-foot-text">Your AMH dropped 0.2 since spring. Worth a conversation with Dr. Park before cycle 2.</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">Lab results, wearables, and clinic notes &mdash; finally in one place.</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    /* Mock-only warmth tokens — scoped to the phone mocks, do not leak to deck */
+    .prod-col {
+      --mock-bg:        #F4E8DC;   /* warmer cream w/ dusty-rose tint */
+      --mock-bg-card:   #EBDAC8;   /* card surface */
+      --mock-bg-soft:   #F9EFE5;   /* lightest wash */
+      --mock-rose:      rgba(196,128,108,0.10);
+      --mock-rose-2:    rgba(196,128,108,0.18);
+      --mock-rule-soft: rgba(74,40,28,0.10);
+    }
+    .prod-col .phone {
+      width: 300px; height: 600px; margin: auto auto 0;
+      background: linear-gradient(180deg, #2f2218 0%, #1f1610 100%);
+      border-radius: 44px;
+      padding: 6px;
+      box-shadow:
+        0 24px 48px rgba(74,40,28,0.22),
+        0 4px 12px rgba(74,40,28,0.10),
+        inset 0 0 0 1px rgba(255,220,200,0.04);
+      box-sizing: border-box;
+    }
+    .prod-col .phone-screen {
+      width: 100%; height: 100%;
+      background:
+        radial-gradient(120% 80% at 50% 0%, rgba(255,232,214,0.85) 0%, rgba(244,232,220,0.0) 60%),
+        radial-gradient(140% 100% at 100% 100%, rgba(196,128,108,0.10) 0%, rgba(196,128,108,0) 55%),
+        var(--mock-bg);
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      display: flex; flex-direction: column;
+    }
+    .prod-col .phone-screen::after {
+      /* soft warm vignette */
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0) 55%, rgba(74,40,28,0.07) 100%);
+      border-radius: 34px;
+    }
+    .prod-col .ph-statusbar {
+      display:flex; justify-content: space-between; align-items: center;
+      padding: 14px 22px 6px;
+      font-family: 'Inter Tight', sans-serif; font-weight: 500; font-size: 13px;
+      color: var(--ink);
+    }
+    .prod-col .ph-icons { display:inline-flex; gap: 6px; align-items:center; color: var(--ink); }
+    .prod-col .ph-nav {
+      display:grid; grid-template-columns: 24px 1fr 24px;
+      align-items: center; padding: 10px 18px 14px;
+      border-bottom: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .ph-back { font-family: 'Inter Tight', sans-serif; font-size: 18px; color: var(--ink-mute); }
+    .prod-col .ph-title { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--ink); text-align: center; line-height: 1; }
+    .prod-col .ph-mark { width: 18px; height: 18px; }
+    .prod-col .ph-mark svg { width: 100%; height: 100%; fill: var(--accent); }
+    .prod-col .ph-body { flex: 1; padding: 18px 18px 8px; display:flex; flex-direction: column; gap: 8px; overflow: hidden; }
+    .prod-col .msg {
+      font-family: 'Inter Tight', sans-serif; font-weight: 300; font-size: 13px; line-height: 1.45;
+      padding: 12px 14px; border-radius: 14px; max-width: 88%;
+    }
+    .prod-col .msg-user {
+      align-self: flex-end; background: var(--accent); color: #F7F1E4;
+      border-bottom-right-radius: 4px;
+    }
+    .prod-col .msg-time {
+      align-self: center; font-family: 'Inter Tight', sans-serif;
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 4px 0;
+    }
+    .prod-col .msg-bot {
+      align-self: flex-start; background: var(--mock-bg-card); color: var(--ink);
+      border-bottom-left-radius: 4px;
+    }
+    .prod-col .msg-bot-eyebrow {
+      display:block; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); font-weight: 500; margin-bottom: 4px;
+    }
+    .prod-col .msg-bot-cta {
+      align-self: flex-start; background: transparent;
+      border: 1px solid var(--accent); color: var(--accent);
+      font-family: 'Instrument Serif', serif; font-size: 15px; font-weight: 400;
+      padding: 9px 14px; border-radius: 999px;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .prod-col .cta-arrow { font-size: 14px; }
+    .prod-col .ph-input {
+      display:flex; align-items: center; gap: 10px;
+      padding: 10px 14px 18px;
+      border-top: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .ph-input-pill {
+      flex: 1; padding: 10px 16px; border-radius: 999px;
+      background: var(--mock-bg-card); color: var(--ink-mute);
+      font-family: 'Inter Tight', sans-serif; font-size: 13px;
+    }
+    .prod-col .ph-mic { font-size: 16px; }
+    .prod-col .ph-person {
+      display:flex; align-items:center; gap: 10px;
+      padding: 10px 16px; border-bottom: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .ph-avatar {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--accent); color: #F7F1E4;
+      display:flex; align-items:center; justify-content:center;
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.05em;
+    }
+    .prod-col .ph-person-text { display:flex; flex-direction: column; line-height: 1.2; }
+    .prod-col .ph-person-name { font-family: 'Instrument Serif', serif; font-size: 16px; color: var(--ink); }
+    .prod-col .ph-person-stage { font-family: 'Inter Tight', sans-serif; font-size: 10px; letter-spacing: 0.06em; color: var(--ink-mute); font-weight: 300; }
+    /* Calculator (Education) */
+    .prod-col .ph-calc { flex: 1; padding: 14px 16px 8px; display:flex; flex-direction: column; overflow: hidden; }
+    .prod-col .calc-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0 0 6px;
+    }
+    .prod-col .calc-grid {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;
+      background: var(--mock-bg-card); border-radius: 10px; padding: 8px;
+    }
+    .prod-col .calc-cell { display:flex; flex-direction: column; gap: 1px; padding: 4px 6px; }
+    .prod-col .calc-k { font-family: 'Inter Tight', sans-serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute); }
+    .prod-col .calc-v { font-family: 'Instrument Serif', serif; font-size: 17px; color: var(--ink); line-height: 1.1; }
+    .prod-col .calc-v em { font-style: italic; font-size: 10px; color: var(--ink-mute); }
+    .prod-col .calc-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .prod-col .calc-stat {
+      background: var(--mock-bg-card); border-radius: 10px; padding: 10px 10px;
+      display: flex; flex-direction: column; gap: 2px; align-items: flex-start;
+    }
+    .prod-col .calc-stat-num { font-family: 'Instrument Serif', serif; font-size: 26px; color: var(--accent); line-height: 1; }
+    .prod-col .calc-stat-lbl { font-family: 'Inter Tight', sans-serif; font-size: 10px; color: var(--ink-soft); }
+    .prod-col .prob-rows { display: flex; flex-direction: column; gap: 6px; }
+    .prod-col .prob-row {
+      display: grid; grid-template-columns: 90px 1fr 36px; gap: 8px; align-items: center;
+    }
+    .prod-col .prob-lbl { font-family: 'Inter Tight', sans-serif; font-size: 11px; color: var(--ink-soft); text-align: left; font-weight: 300; }
+    .prod-col .prob-lbl em { font-family:'Instrument Serif',serif; font-style: italic; font-size: 10px; color: var(--accent); display:block; }
+    .prod-col .prob-bar { height: 6px; background: var(--mock-bg-card); border-radius: 999px; position: relative; overflow: hidden; }
+    .prod-col .prob-fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--accent-soft); border-radius: 999px; }
+    .prod-col .prob-fill-on { background: var(--accent); }
+    .prod-col .prob-pct { font-family: 'Instrument Serif', serif; font-size: 14px; color: var(--ink-soft); text-align: right; }
+    .prod-col .prob-pct-on { color: var(--accent); font-size: 16px; }
+    .prod-col .calc-source { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 10px; color: var(--ink-mute); margin: 8px 0 0; text-align: left; }
+    /* Align phones to a common baseline so 1-line vs 2-line eyebrows don't cause jagged bottoms */
+    .prod-col { display: flex; flex-direction: column; }
+    .prod-col > .phone { margin-top: auto; }
+    /* My Whole Picture (Connected sources) */
+    .prod-col .src-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0 0 4px; text-align: left; font-weight: 400;
+    }
+    .prod-col .src-list { display: flex; flex-direction: column; gap: 0; }
+    .prod-col .src-row {
+      display: flex; flex-direction: column; gap: 2px;
+      padding: 9px 2px; text-align: left;
+      border-bottom: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .src-row:last-child { border-bottom: none; }
+    .prod-col .src-name {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px;
+      color: var(--ink); font-weight: 400; letter-spacing: 0.01em;
+    }
+    .prod-col .src-meta {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px;
+      color: var(--ink-mute); font-weight: 300; line-height: 1.35;
+    }
+    .prod-col .src-meta em {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 12px; color: var(--accent); letter-spacing: 0;
+    }
+    .prod-col .src-row-add .src-name { color: var(--accent); }
+    .prod-col .src-row-add { border-bottom: none; padding-top: 12px; }
+    .prod-col .src-foot {
+      margin-top: auto; padding: 12px 12px;
+      background: var(--mock-bg-card); border-radius: 12px;
+      display: flex; flex-direction: column; gap: 4px; text-align: left;
+    }
+    .prod-col .src-foot-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 500;
+    }
+    .prod-col .src-foot-text {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 13px; color: var(--ink); line-height: 1.35;
+    }
+    .prod-col .calc-chat { display:flex; flex-direction: column; gap: 6px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--mock-rule-soft); }
+    .prod-col .calc-chat-msg {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; line-height: 1.4; font-weight: 300;
+      padding: 8px 10px; border-radius: 10px; max-width: 92%;
+    }
+    .prod-col .calc-chat-msg.user { background: var(--mock-bg-card); color: var(--ink); align-self: flex-end; border-bottom-right-radius: 4px; text-align: left; }
+    .prod-col .calc-chat-msg.ai { background: rgba(149,74,45,0.10); color: var(--ink-soft); align-self: flex-start; border-bottom-left-radius: 4px; text-align: left; }
+    .prod-col .calc-chat-msg .ai-name { font-family: 'Instrument Serif', serif; font-style: italic; color: var(--accent); margin-right: 4px; }
+    .prod-col .phone-placeholder {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; background: var(--mock-bg-card);
+    }
+    /* Emotional support thread */
+    .prod-col .ph-thread {
+      flex: 1; padding: 12px 14px 8px;
+      display: flex; flex-direction: column; gap: 10px; overflow: hidden;
+    }
+    .prod-col .thread-time {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--ink-mute); text-align: center; margin: 2px 0 4px;
+    }
+    .prod-col .th-msg {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; line-height: 1.45;
+      font-weight: 300; padding: 10px 12px; border-radius: 14px; max-width: 82%;
+    }
+    .prod-col .th-msg em { font-family: 'Instrument Serif', serif; font-style: italic; }
+    .prod-col .th-msg.ai {
+      background: rgba(149,74,45,0.10); color: var(--ink); align-self: flex-start;
+      border-bottom-left-radius: 4px; text-align: left;
+    }
+    .prod-col .th-msg.user {
+      background: var(--mock-bg-card); color: var(--ink); align-self: flex-end;
+      border-bottom-right-radius: 4px; text-align: left;
+    }
+    .prod-col .th-typing {
+      align-self: flex-end; display: inline-flex; align-items: center; gap: 4px;
+      padding: 6px 10px; background: var(--mock-bg-card); border-radius: 12px;
+    }
+    .prod-col .th-typing span:not(.th-typing-lbl) {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--ink-mute);
+      display: inline-block; opacity: 0.55;
+    }
+    .prod-col .th-typing-lbl {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px; letter-spacing: 0.06em;
+      color: var(--ink-mute); margin-left: 4px; font-weight: 300;
+    }
+    .prod-col .th-row { display: flex; flex-direction: column; gap: 4px; }
+    .prod-col .th-row.ai { align-items: flex-start; }
+    .prod-col .th-row.user { align-items: flex-end; }
+    .prod-col .th-who {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-mute); font-weight: 400;
+      padding: 0 4px;
+    }
+    .prod-col .th-row.ai .th-who { color: var(--accent); }
+    .prod-col .th-who-row {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 0 4px;
+    }
+    .prod-col .th-who-row .th-who { padding: 0; }
+    .prod-col .th-avatar-slot {
+      width: 18px; height: 18px; flex: 0 0 18px;
+      box-shadow: 0 0 0 1px rgba(42,32,24,0.10);
+    }
+    .prod-col .ph-placeholder-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0;
+    }
+    .prod-col .ph-placeholder-text {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 28px; color: var(--ink-mute); margin: 0;
+    }
+    /* Community */
+    .prod-col .ph-mod {
+      display:flex; align-items:center; gap: 8px;
+      padding: 10px 18px;
+      background: rgba(149,74,45,0.08);
+      border-bottom: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .ph-mod-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #2f8a55; box-shadow: 0 0 0 3px rgba(47,138,85,0.18);
+    }
+    .prod-col .ph-mod-text { font-family: 'Inter Tight', sans-serif; font-size: 11px; color: var(--ink-soft); font-weight: 300; }
+    .prod-col .ph-mod-text strong { font-weight: 500; color: var(--ink); }
+    .prod-col .ph-filter-row { padding: 14px 18px 10px; }
+    .prod-col .ph-filter-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0 0 8px;
+    }
+    .prod-col .ph-chips { display:flex; flex-wrap: wrap; gap: 5px; }
+    .prod-col .chip {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 400;
+      padding: 5px 10px; border-radius: 999px;
+      background: var(--mock-bg-card); color: var(--ink-soft);
+      border: 1px solid var(--mock-rule-soft);
+    }
+    .prod-col .chip-on {
+      background: var(--accent); color: #F7F1E4; border-color: var(--accent);
+    }
+    .prod-col .chip-more { color: var(--ink-mute); font-style: italic; font-family:'Instrument Serif',serif; font-size: 12px; }
+    .prod-col .ph-rooms { padding: 4px 18px 14px; display:flex; flex-direction: column; gap: 8px; }
+    .prod-col .room {
+      padding: 12px 14px; border-radius: 12px;
+      background: var(--mock-bg-card);
+    }
+    .prod-col .room-compact { padding: 9px 14px; }
+    .prod-col .thread {
+      padding: 12px 14px; border-radius: 12px; background: var(--mock-bg-card);
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .prod-col .thread-head { display:flex; justify-content: space-between; align-items: baseline; }
+    .prod-col .thread-author { font-family: 'Instrument Serif', serif; font-size: 14px; color: var(--ink); }
+    .prod-col .thread-author em { font-style: italic; color: var(--ink-mute); }
+    .prod-col .thread-verified { font-family: 'Inter Tight', sans-serif; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+    .prod-col .thread-body { font-family: 'Inter Tight', sans-serif; font-size: 11.5px; color: var(--ink); margin: 0; font-weight: 300; line-height: 1.4; text-align: left; }
+    .prod-col .thread-reacts { display: flex; flex-wrap: wrap; gap: 10px; }
+    .prod-col .react { font-family: 'Inter Tight', sans-serif; font-size: 10px; color: var(--ink-soft); display:inline-flex; align-items: center; gap: 3px; font-weight: 400; }
+    .prod-col .react-ico { color: var(--accent); font-size: 11px; display:inline-flex; align-items: center; }
+    .prod-col .react-ico.react-heart { color: var(--accent); }
+    .prod-col .react-ico svg { width: 12px; height: 11px; display: block; }
+    .prod-col .react-reply { color: var(--ink-mute); margin-left: auto; }
+    .prod-col .thread-reply { display:flex; align-items: flex-start; gap: 8px; padding: 8px 10px; background: rgba(196,128,108,0.10); border-radius: 8px; }
+    .prod-col .reply-avatar { width: 22px; height: 22px; flex: 0 0 22px; border-radius: 50%; background: var(--accent-soft); color: var(--ink); font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 500; display: inline-flex; align-items: center; justify-content: center; }
+    .prod-col .reply-text { font-family: 'Inter Tight', sans-serif; font-size: 10.5px; color: var(--ink-soft); font-weight: 300; line-height: 1.35; text-align: left; }
+    .prod-col .reply-text strong { font-family: 'Instrument Serif', serif; font-weight: 400; color: var(--ink); margin-right: 3px; font-size: 12px; }
+    .prod-col .thread-actions { display:flex; gap: 14px; padding-top: 4px; border-top: 1px solid var(--mock-rule-soft); }
+    .prod-col .thread-action { font-family: 'Inter Tight', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
+    .prod-col .thread-action:last-child { color: var(--accent); margin-left: auto; }
+    .prod-col .room-top { display:flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+    .prod-col .room-name { font-family: 'Instrument Serif', serif; font-size: 16px; color: var(--ink); }
+    .prod-col .room-count { font-family: 'Inter Tight', sans-serif; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
+    .prod-col .room-snippet { font-family: 'Inter Tight', sans-serif; font-size: 11px; color: var(--ink-soft); margin: 0; font-weight: 300; line-height: 1.4; }
+
+    .prod-col .pull { text-wrap: balance; }
+    .prod-col .ph-title { white-space: nowrap; }
+    .prod-col .chip { white-space: nowrap; }
+
+    /* Image-slot avatars — circle photos that the user can drop in.
+       Sized to match the JD/SK initial avatars they replaced. */
+    .prod-col .ph-avatar-slot {
+      width: 34px; height: 34px;
+      flex: 0 0 34px;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+    }
+    .prod-col .reply-avatar-slot {
+      width: 22px; height: 22px;
+      flex: 0 0 22px;
+      display: inline-block;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--accent-soft);
+      color: var(--ink);
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 9px; font-weight: 500; letter-spacing: 0.04em;
+    }
+    /* Make image-slot empty-state placeholder text fit the small circle */
+    .prod-col image-slot::part(placeholder),
+    .prod-col image-slot [part="placeholder"] {
+      font-size: 9px; letter-spacing: 0.04em; opacity: 0.7;
+    }
+
+    /* Milestones mock */
+    .prod-col .ph-mile-eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 22px 6px;
+      font-family: 'Inter Tight', sans-serif; font-size: 10px;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+    }
+    .prod-col .ph-mile-mark { color: var(--accent); font-size: 13px; letter-spacing: 0; }
+    .prod-col .mile-thread { background: var(--accent-pale); }
+    .prod-col .mile-tag {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); background: rgba(255,255,255,0.55);
+      padding: 2px 8px; border-radius: 999px;
+    }
+    .prod-col .mile-headline {
+      font-family: 'Instrument Serif', serif; font-size: 30px; line-height: 1.1;
+      color: var(--accent); margin: 2px 0 4px; text-align: left;
+      letter-spacing: -0.01em;
+    }
+    .prod-col .mile-headline em { font-style: italic; }
+    .prod-col .mile-quiet {
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 6px 2px 0;
+    }
+    .prod-col .mile-quiet-row {
+      display: flex; align-items: baseline; gap: 8px;
+      padding: 8px 12px; border-radius: 10px;
+      background: rgba(196,128,108,0.10);
+      font-family: 'Inter Tight', sans-serif; font-size: 11px;
+      color: var(--ink-soft); font-weight: 300;
+    }
+    .prod-col .mile-quiet-mark { color: var(--accent); font-size: 11px; flex: 0 0 auto; display:inline-flex; align-items: center; }
+    .prod-col .mile-quiet-mark svg { width: 13px; height: 12px; display: block; }
+    .prod-col .mile-quiet-text { flex: 1; text-align: left; }
+    .prod-col .mile-quiet-text strong { font-family: 'Instrument Serif', serif; font-weight: 400; color: var(--ink); font-size: 13px; margin-right: 2px; }
+    .prod-col .mile-quiet-text em { font-style: italic; color: var(--ink-mute); }
+    .prod-col .mile-quiet-cheer {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+      flex: 0 0 auto;
+    }
+  </style>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+</section>
+
+<!-- 8. WEDGE -->
+<section class="slide" data-screen-label="08 Wedge">
+  <div class="pageno"><svg><use href="#mark"/></svg>08 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 28px; color: var(--accent);">Wedge</p>
+
+    <h1 class="h1" style="margin: 0 0 24px; max-width: 1700px; font-size: 64px; line-height: 1.04;">
+      Where she goes today is broken. <em style="color: var(--accent); font-style: italic;">Moderation</em> is the difference.
+    </h1>
+
+    <p class="pull" style="margin: 0 0 56px; max-width: 1300px; font-size: 26px;">
+      Reddit and Facebook Groups are unmoderated, anonymous, and adversarial. Carousel is a founder-led WhatsApp Community &mdash; structured into sub-groups by cohort and topic, with a host who knows your name.
+    </p>
+
+    <div class="rm-compare">
+
+      <!-- LEFT: Reddit / Facebook chaos -->
+      <article class="rmc-col rmc-broken">
+        <header class="rmc-head">
+          <p class="rmc-label">What she has today</p>
+          <p class="rmc-title">Reddit &middot; Facebook Groups</p>
+          <ul class="rmc-tags">
+            <li>Anonymous</li>
+            <li>Unmoderated</li>
+            <li>Adversarial</li>
+          </ul>
+        </header>
+
+        <div class="rd-feed">
+          <div class="rd-bar">
+            <span class="rd-sub">r/eggfreezing</span>
+            <span class="rd-sub-meta">412k members &middot; public</span>
+          </div>
+
+          <div class="rd-post">
+            <p class="rd-author">u/throwaway_2am &middot; <span class="rd-time">3h</span></p>
+            <p class="rd-body">AMH 0.8 at 34. Am I cooked? Be honest.</p>
+            <p class="rd-meta">87 comments &middot; controversial</p>
+          </div>
+          <div class="rd-post">
+            <p class="rd-author">u/anon_8472 &middot; <span class="rd-time">6h</span></p>
+            <p class="rd-body">My RE said 12 eggs is &ldquo;great&rdquo; but my friend got 28. Did I get scammed??</p>
+            <p class="rd-meta">214 comments</p>
+          </div>
+          <div class="rd-post">
+            <p class="rd-author">u/deleted &middot; <span class="rd-time">9h</span></p>
+            <p class="rd-body">Honestly if you&rsquo;re over 35 don&rsquo;t bother. Save the $20k.</p>
+            <p class="rd-meta">441 comments &middot; locked</p>
+          </div>
+          <div class="rd-post rd-post-faded">
+            <p class="rd-author">u/burner_xx &middot; <span class="rd-time">11h</span></p>
+            <p class="rd-body">Anyone else&rsquo;s clinic push add-ons? PGT-A, ICSI, EmbryoScope&hellip;</p>
+            <p class="rd-meta">96 comments</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- RIGHT: Carousel WhatsApp Community -->
+      <article class="rmc-col rmc-good">
+        <header class="rmc-head">
+          <p class="rmc-label" style="color: var(--accent);">What Carousel is</p>
+          <p class="rmc-title">A moderated WhatsApp Community</p>
+          <ul class="rmc-tags rmc-tags-good">
+            <li>Founder-led</li>
+            <li>Sub-groups by cohort</li>
+            <li>A host who answers</li>
+          </ul>
+        </header>
+
+        <!-- WhatsApp Community list view -->
+        <div class="wa-phone">
+          <div class="wa-frame">
+
+            <!-- Top bar -->
+            <div class="wa-topbar">
+              <span class="wa-back">&lsaquo;</span>
+              <span class="wa-topbar-title">Communities</span>
+              <span class="wa-dots">&middot;&middot;&middot;</span>
+            </div>
+
+            <!-- Community header -->
+            <div class="wa-comm-head">
+              <img class="wa-comm-photo" src="assets/carousel-logo-circles.png" alt="Carousel"/>
+              <div class="wa-comm-info">
+                <div class="wa-comm-name">Carousel</div>
+                <div class="wa-comm-meta">Pre-Launch Beta &middot; 247 members</div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="wa-comm-desc">
+              <em>A founder-led community for women navigating fertility decisions. Hosted by Sarah Lewen.</em>
+            </div>
+
+            <!-- Groups list -->
+            <div class="wa-groups">
+              <div class="wa-group-section">Announcements</div>
+
+              <div class="wa-group">
+                <div class="wa-group-icon wa-group-icon-pin">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6m0 0l-3 3v3h6v-3l-3-3zm0 9v11"/></svg>
+                </div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">Announcements</span>
+                    <span class="wa-group-time">9:14 AM</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Sarah:</strong> This week&rsquo;s drop &mdash; the AMH framework I wish I&rsquo;d had at 35.</div>
+                </div>
+              </div>
+
+              <div class="wa-group-section">Cohort sub-groups</div>
+
+              <div class="wa-group wa-group-active">
+                <div class="wa-group-icon">EF</div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">EF &middot; cycle 2</span>
+                    <span class="wa-group-time wa-group-time-active">now</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Eliza:</strong> Day 6 of injections. Headaches are real but I made it.</div>
+                </div>
+                <div class="wa-unread">3</div>
+              </div>
+
+              <div class="wa-group">
+                <div class="wa-group-icon">IV</div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">IVF &middot; after loss</span>
+                    <span class="wa-group-time">8:42 AM</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Sarah:</strong> Holding space for everyone today &mdash; you&rsquo;re not alone in this.</div>
+                </div>
+              </div>
+
+              <div class="wa-group">
+                <div class="wa-group-icon">35</div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">Considering &middot; 35+</span>
+                    <span class="wa-group-time">Yesterday</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Priya:</strong> First consult next week. Anyone else nervous?</div>
+                </div>
+              </div>
+
+              <div class="wa-group-section">Topic sub-groups</div>
+
+              <div class="wa-group">
+                <div class="wa-group-icon wa-group-icon-topic">#</div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">amh-and-numbers</span>
+                    <span class="wa-group-time">7:30 AM</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Maia:</strong> Honestly I&rsquo;ve been on Reddit at 2 AM&hellip;</div>
+                </div>
+              </div>
+              <div class="wa-group">
+                <div class="wa-group-icon wa-group-icon-topic">#</div>
+                <div class="wa-group-body">
+                  <div class="wa-group-row">
+                    <span class="wa-group-name">cost-and-insurance</span>
+                    <span class="wa-group-time">Yesterday</span>
+                  </div>
+                  <div class="wa-group-preview"><strong>Sarah:</strong> New doc: navigating PPO carve-outs.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="08 Wedge"] .rm-compare {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 32px;
+      align-items: stretch;
+      width: 100%;
+    }
+    [data-screen-label="08 Wedge"] .rmc-col {
+      display: flex; flex-direction: column;
+      padding: 28px 28px 28px;
+      box-sizing: border-box;
+      min-height: 580px;
+    }
+    [data-screen-label="08 Wedge"] .rmc-broken { background: var(--bg-card); color: var(--ink); opacity: 0.92; }
+    [data-screen-label="08 Wedge"] .rmc-good { background: var(--accent-pale); color: var(--ink); }
+
+    [data-screen-label="08 Wedge"] .rmc-head { margin-bottom: 18px; }
+    [data-screen-label="08 Wedge"] .rmc-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      margin: 0 0 10px; font-weight: 500; color: var(--ink-mute);
+    }
+    [data-screen-label="08 Wedge"] .rmc-title {
+      font-family: 'Instrument Serif', serif; font-size: 36px; line-height: 1.05;
+      letter-spacing: -0.012em; margin: 0 0 14px; color: var(--ink);
+    }
+    [data-screen-label="08 Wedge"] .rmc-tags {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; flex-wrap: wrap; gap: 6px 8px;
+    }
+    [data-screen-label="08 Wedge"] .rmc-tags li {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 400;
+      letter-spacing: 0.06em; text-transform: lowercase;
+      padding: 4px 10px; border-radius: 999px;
+      border: 1px solid rgba(74,40,28,0.22); color: var(--ink-soft);
+    }
+    [data-screen-label="08 Wedge"] .rmc-tags-good li { border-color: var(--accent); color: var(--accent); }
+
+    /* Reddit feed */
+    [data-screen-label="08 Wedge"] .rd-feed {
+      margin-top: auto;
+      background: #FFF; border-radius: 10px;
+      border: 1px solid rgba(74,40,28,0.10);
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(74,40,28,0.06);
+    }
+    [data-screen-label="08 Wedge"] .rd-bar {
+      padding: 10px 14px; background: #F4ECDB;
+      border-bottom: 1px solid rgba(74,40,28,0.08);
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    [data-screen-label="08 Wedge"] .rd-sub { font-family: 'Instrument Serif', serif; font-size: 16px; color: var(--ink); }
+    [data-screen-label="08 Wedge"] .rd-sub-meta { font-family: 'Inter Tight', sans-serif; font-size: 10px; letter-spacing: 0.06em; color: var(--ink-mute); }
+    [data-screen-label="08 Wedge"] .rd-post {
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(74,40,28,0.08);
+    }
+    [data-screen-label="08 Wedge"] .rd-post-faded { opacity: 0.55; }
+    [data-screen-label="08 Wedge"] .rd-post:last-child { border-bottom: 0; }
+    [data-screen-label="08 Wedge"] .rd-author {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; color: var(--ink-mute);
+      margin: 0 0 4px; letter-spacing: 0.04em;
+    }
+    [data-screen-label="08 Wedge"] .rd-time { font-style: italic; }
+    [data-screen-label="08 Wedge"] .rd-body {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300; line-height: 1.4;
+      color: var(--ink); margin: 0 0 6px;
+    }
+    [data-screen-label="08 Wedge"] .rd-meta {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; color: var(--ink-mute);
+      margin: 0; letter-spacing: 0.04em;
+    }
+
+    /* WhatsApp Community phone */
+    [data-screen-label="08 Wedge"] .wa-phone {
+      margin-top: auto;
+      background: #FFF;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(74,40,28,0.14);
+      border: 1px solid rgba(74,40,28,0.10);
+      max-width: 460px;
+      margin-left: auto; margin-right: auto;
+      width: 100%;
+    }
+    [data-screen-label="08 Wedge"] .wa-frame { display: flex; flex-direction: column; }
+
+    [data-screen-label="08 Wedge"] .wa-topbar {
+      display: grid; grid-template-columns: 16px 1fr 16px;
+      align-items: center; gap: 10px;
+      padding: 10px 14px;
+      background: #F4ECDB;
+      border-bottom: 1px solid rgba(74,40,28,0.08);
+      font-family: 'Inter Tight', sans-serif;
+    }
+    [data-screen-label="08 Wedge"] .wa-back { font-size: 18px; color: var(--accent); }
+    [data-screen-label="08 Wedge"] .wa-topbar-title { font-size: 13px; font-weight: 500; color: var(--ink); }
+    [data-screen-label="08 Wedge"] .wa-dots { font-size: 14px; color: var(--ink-soft); letter-spacing: 0.05em; text-align: right; }
+
+    [data-screen-label="08 Wedge"] .wa-comm-head {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 16px 10px;
+    }
+    [data-screen-label="08 Wedge"] .wa-comm-photo {
+      width: 56px; height: 56px; border-radius: 14px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    [data-screen-label="08 Wedge"] .wa-comm-name {
+      font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.1; color: var(--ink);
+    }
+    [data-screen-label="08 Wedge"] .wa-comm-meta {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; letter-spacing: 0.06em;
+      color: var(--accent); font-weight: 500; margin-top: 2px;
+    }
+
+    [data-screen-label="08 Wedge"] .wa-comm-desc {
+      padding: 0 16px 14px;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 13px; line-height: 1.4; color: var(--ink-soft);
+      border-bottom: 1px solid rgba(74,40,28,0.08);
+    }
+
+    [data-screen-label="08 Wedge"] .wa-groups { display: flex; flex-direction: column; padding-bottom: 8px; }
+
+    [data-screen-label="08 Wedge"] .wa-group-section {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); padding: 12px 16px 4px; font-weight: 500;
+    }
+
+    [data-screen-label="08 Wedge"] .wa-group {
+      display: grid; grid-template-columns: 36px 1fr auto;
+      align-items: center; gap: 10px;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba(74,40,28,0.06);
+    }
+    [data-screen-label="08 Wedge"] .wa-group-active { background: rgba(149,74,45,0.06); }
+
+    [data-screen-label="08 Wedge"] .wa-group-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--accent); color: #F7F1E4;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: 'Instrument Serif', serif; font-size: 14px; font-weight: 400;
+    }
+    [data-screen-label="08 Wedge"] .wa-group-icon-pin {
+      background: #FFF7E2; color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    [data-screen-label="08 Wedge"] .wa-group-icon-pin svg { width: 16px; height: 16px; }
+    [data-screen-label="08 Wedge"] .wa-group-icon-topic { background: var(--accent-soft); color: var(--ink); font-family: 'Inter Tight', sans-serif; font-weight: 500; font-size: 16px; }
+
+    [data-screen-label="08 Wedge"] .wa-group-body { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+    [data-screen-label="08 Wedge"] .wa-group-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    [data-screen-label="08 Wedge"] .wa-group-name {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500; color: var(--ink);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    [data-screen-label="08 Wedge"] .wa-group-time {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; color: var(--ink-mute);
+      flex-shrink: 0;
+    }
+    [data-screen-label="08 Wedge"] .wa-group-time-active { color: var(--accent); font-weight: 500; }
+    [data-screen-label="08 Wedge"] .wa-group-preview {
+      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 300;
+      color: var(--ink-soft); line-height: 1.35;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    [data-screen-label="08 Wedge"] .wa-group-preview strong { font-weight: 500; color: var(--ink); }
+    [data-screen-label="08 Wedge"] .wa-unread {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--accent); color: #F7F1E4;
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 600;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+  </style>
+</section>
+
+<!-- 9. BUSINESS MODEL -->
+<section class="slide" data-screen-label="09 Business model">
+  <div class="pageno"><svg><use href="#mark"/></svg>09 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Business model</p>
+
+    <h1 class="h1" style="margin: 0 0 32px; max-width: 1620px; font-size: 80px; line-height: 1.05;">
+      One product. Three payers.
+    </h1>
+
+    <p class="pull" style="margin: 0 0 64px; max-width: 1280px;">
+      Each channel feeds the next. The patient signal we earn in Year 1 is the asset clinics license in Year 2 and employers buy in Year 3.
+    </p>
+
+    <div class="bm-grid">
+      <!-- Left rail: the product -->
+      <aside class="bm-rail">
+        <p class="bm-rail-eyebrow">The product</p>
+        <p class="bm-rail-name">Carousel</p>
+        <p class="bm-rail-desc">A longitudinal patient experience platform &mdash; education, community, and emotional support for the woman in fertility care.</p>
+        <div class="bm-rail-foot">
+          <p class="bm-rail-foot-eyebrow">Same product, three sides of the table</p>
+        </div>
+      </aside>
+
+      <!-- Right: three payer rows -->
+      <div class="bm-rows">
+        <article class="bm-row bm-row-1">
+          <div class="bm-row-num">01</div>
+          <div class="bm-row-meta">
+            <p class="bm-row-payer">Direct-to-consumer</p>
+            <p class="bm-row-when">Year 1 &middot; wedge</p>
+          </div>
+          <div class="bm-row-price">
+            <p class="bm-price-amt">$20<span class="bm-price-unit">/mo</span></p>
+            <p class="bm-price-payer">she pays</p>
+          </div>
+          <p class="bm-row-body">Highest-intent buyer in digital health. Generates the engagement data clinics will pay for.</p>
+        </article>
+
+        <article class="bm-row bm-row-2">
+          <div class="bm-row-num">02</div>
+          <div class="bm-row-meta">
+            <p class="bm-row-payer">Clinic SaaS</p>
+            <p class="bm-row-when">Year 2 &middot; earned</p>
+          </div>
+          <div class="bm-row-price">
+            <p class="bm-price-amt">$50K<span class="bm-price-unit">+ /clinic /yr</span></p>
+            <p class="bm-price-payer">clinics license</p>
+          </div>
+          <p class="bm-row-body">Patient experience is the lever clinics haven&rsquo;t pulled. We bring acquisition, retention, and ops lift.</p>
+        </article>
+
+        <article class="bm-row bm-row-3">
+          <div class="bm-row-num">03</div>
+          <div class="bm-row-meta">
+            <p class="bm-row-payer">Employer benefit</p>
+            <p class="bm-row-when">Year 3+ &middot; pulled in</p>
+          </div>
+          <div class="bm-row-price">
+            <p class="bm-price-amt">$10<span class="bm-price-unit"> PEPM</span></p>
+            <p class="bm-price-payer">employers pay</p>
+          </div>
+          <p class="bm-row-body">86% of companies plan to offer family-forming benefits in 2025. Progyny&rsquo;s $1.17B FY24 is the proof.</p>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="09 Business model"] .bm-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: stretch; }
+    [data-screen-label="09 Business model"] .bm-rail {
+      background: var(--accent); color: #F7F1E4;
+      padding: 36px 36px 32px;
+      display: flex; flex-direction: column;
+      box-sizing: border-box;
+    }
+    [data-screen-label="09 Business model"] .bm-rail-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(247,241,228,0.65); margin: 0 0 16px; font-weight: 400;
+    }
+    [data-screen-label="09 Business model"] .bm-rail-name {
+      font-family: 'Instrument Serif', serif; font-size: 80px; line-height: 0.95; margin: 0 0 18px; letter-spacing: -0.015em; color: #F7F1E4;
+    }
+    [data-screen-label="09 Business model"] .bm-rail-desc {
+      font-family: 'Inter Tight', sans-serif; font-size: 18px; line-height: 1.5; font-weight: 300;
+      color: rgba(247,241,228,0.88); margin: 0;
+    }
+    [data-screen-label="09 Business model"] .bm-rail-foot { margin-top: auto; padding-top: 32px; border-top: 1px solid rgba(247,241,228,0.22); }
+    [data-screen-label="09 Business model"] .bm-rail-foot-eyebrow {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px;
+      color: rgba(247,241,228,0.85); margin: 0; line-height: 1.3;
+    }
+
+    [data-screen-label="09 Business model"] .bm-rows { display: flex; flex-direction: column; }
+    [data-screen-label="09 Business model"] .bm-row {
+      display: grid; grid-template-columns: 56px 1.1fr 1fr 1.4fr; gap: 32px;
+      align-items: baseline;
+      padding: 32px 0 30px;
+      border-top: 1px solid var(--rule);
+    }
+    [data-screen-label="09 Business model"] .bm-row:last-child { border-bottom: 1px solid var(--rule); }
+    [data-screen-label="09 Business model"] .bm-row-num {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 32px; color: var(--accent); margin: 0; line-height: 1;
+    }
+    [data-screen-label="09 Business model"] .bm-row-payer {
+      font-family: 'Instrument Serif', serif; font-size: 36px; line-height: 1.1;
+      color: var(--ink); margin: 0 0 6px; letter-spacing: -0.01em;
+    }
+    [data-screen-label="09 Business model"] .bm-row-when {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 0; font-weight: 400;
+    }
+    [data-screen-label="09 Business model"] .bm-row-price { display: flex; flex-direction: column; gap: 4px; }
+    [data-screen-label="09 Business model"] .bm-price-amt {
+      font-family: 'Instrument Serif', serif; font-size: 44px; color: var(--ink);
+      margin: 0; line-height: 1; letter-spacing: -0.015em;
+    }
+    [data-screen-label="09 Business model"] .bm-price-unit {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: var(--ink-mute);
+    }
+    [data-screen-label="09 Business model"] .bm-price-payer {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); margin: 0; font-weight: 500;
+    }
+    [data-screen-label="09 Business model"] .bm-row-body {
+      font-family: 'Inter Tight', sans-serif; font-size: 17px; line-height: 1.5; font-weight: 300;
+      color: var(--ink-soft); margin: 0;
+    }
+  </style>
+</section>
+
+<!-- 10. TRACTION -->
+<section class="slide" data-screen-label="10 Traction">
+  <div class="pageno"><svg><use href="#mark"/></svg>10 / 11</div>
+  <div class="frame">
+    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Traction &amp; milestones</p>
+
+    <h1 class="h1" style="margin: 0 0 32px; max-width: 1620px; font-size: 80px; line-height: 1.05;">
+      Signal &rarr; cold-start &rarr; validation &rarr; scale.
+    </h1>
+
+    <p class="pull" style="margin: 0 0 64px; max-width: 1280px;">
+      Sequenced milestones, each one the credible reason for the next round. Pre-seed buys the cold-start. Follow-on buys validation. Series A is earned.
+    </p>
+
+    <div class="trc-rail">
+      <div class="trc-line"></div>
+
+      <article class="trc-stop trc-stop-1">
+        <div class="trc-dot"></div>
+        <div class="trc-when">
+          <p class="trc-when-tag">Today</p>
+          <p class="trc-when-num">Signal</p>
+        </div>
+        <div class="trc-detail">
+          <p class="trc-headline">The pre-product corpus is in.</p>
+          <ul class="trc-bullets">
+            <li><strong>30</strong> patient discovery interviews.</li>
+            <li>Barb Collura, former CEO of RESOLVE, formal advisor.</li>
+            <li>Trademark filed. Senior REI advisory in formation.</li>
+            <li>~25K LinkedIn audience. Pre-launch waitlist live.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="trc-stop trc-stop-2">
+        <div class="trc-dot"></div>
+        <div class="trc-when">
+          <p class="trc-when-tag">Months 0&ndash;6 &middot; this round</p>
+          <p class="trc-when-num">Cold-start</p>
+        </div>
+        <div class="trc-detail">
+          <p class="trc-headline">Ship the MVP and earn first measurable retention.</p>
+          <ul class="trc-bullets">
+            <li>Clinical co-founder onboarded. <strong>3&ndash;5 REI</strong> advisory locked.</li>
+            <li>MVP shipped to App Store and Google Play.</li>
+            <li><strong>5K&ndash;10K</strong> waitlist before launch.</li>
+            <li><strong>1K&ndash;2.5K</strong> downloads with measurable activation and 30-day retention.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="trc-stop trc-stop-3">
+        <div class="trc-dot"></div>
+        <div class="trc-when">
+          <p class="trc-when-tag">Months 6&ndash;18 &middot; follow-on</p>
+          <p class="trc-when-num">Validation</p>
+        </div>
+        <div class="trc-detail">
+          <p class="trc-headline">Prove three demand surfaces, not one.</p>
+          <ul class="trc-bullets">
+            <li>D2C: <strong>10K&ndash;25K</strong> downloads, <strong>60%+</strong> activation, defensible retention.</li>
+            <li>First clinic SaaS pilot signed with live engagement data.</li>
+            <li>First employer benefits pilot signed at <strong>$10 PEPM</strong>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="trc-stop trc-stop-4 trc-stop-final">
+        <div class="trc-dot trc-dot-final"></div>
+        <div class="trc-when">
+          <p class="trc-when-tag" style="color: var(--accent);">Months 18&ndash;24 &middot; Series A</p>
+          <p class="trc-when-num" style="color: var(--accent);">Scale</p>
+        </div>
+        <div class="trc-detail">
+          <p class="trc-headline" style="color: var(--accent);">Become unmissable on three tables at once.</p>
+          <ul class="trc-bullets">
+            <li>D2C contribution-margin positive; retention curves stable.</li>
+            <li>Clinic SaaS: <strong>$500K+</strong> signed ARR. Multi-clinic reference base. NRR &gt; 100%.</li>
+            <li>Employer: <strong>3&ndash;5</strong> employer pilots converted. Utilization above benchmark.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="10 Traction"] .trc-rail { position: relative; padding-left: 0; }
+    [data-screen-label="10 Traction"] .trc-line {
+      position: absolute; left: 7px; top: 14px; bottom: 14px; width: 1px;
+      background: linear-gradient(180deg, var(--rule) 0%, var(--rule) 70%, var(--accent) 100%);
+    }
+    [data-screen-label="10 Traction"] .trc-stop {
+      display: grid;
+      grid-template-columns: 16px 320px 1fr;
+      gap: 36px;
+      padding: 14px 0 24px;
+      align-items: baseline;
+      position: relative;
+    }
+    [data-screen-label="10 Traction"] .trc-stop + .trc-stop { border-top: 1px solid var(--rule-soft); padding-top: 24px; }
+    [data-screen-label="10 Traction"] .trc-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--bg);
+      box-shadow: 0 0 0 1px var(--accent), inset 0 0 0 3px var(--bg);
+      align-self: center;
+      transform: translateY(-2px);
+    }
+    [data-screen-label="10 Traction"] .trc-stop-1 .trc-dot { background: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    [data-screen-label="10 Traction"] .trc-dot-final { background: var(--accent) !important; box-shadow: 0 0 0 1px var(--accent), 0 0 0 6px rgba(149,74,45,0.18) !important; }
+    [data-screen-label="10 Traction"] .trc-when-tag {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 0 0 6px; font-weight: 400;
+    }
+    [data-screen-label="10 Traction"] .trc-when-num {
+      font-family: 'Instrument Serif', serif; font-size: 38px; line-height: 1;
+      color: var(--ink); margin: 0; letter-spacing: -0.01em;
+    }
+    [data-screen-label="10 Traction"] .trc-headline {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 26px; line-height: 1.25; color: var(--ink); margin: 0 0 12px; letter-spacing: -0.005em;
+    }
+    [data-screen-label="10 Traction"] .trc-bullets {
+      list-style: none; padding: 0; margin: 0;
+      font-family: 'Inter Tight', sans-serif; font-size: 17px; line-height: 1.55; font-weight: 300; color: var(--ink-soft);
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    [data-screen-label="10 Traction"] .trc-bullets li::before { content: "\2014"; color: var(--ink-mute); margin-right: 10px; }
+    [data-screen-label="10 Traction"] .trc-bullets strong { font-weight: 500; color: var(--ink); }
+  </style>
+</section>
+
+<!-- 11. THE ASK -->
+<section class="slide" data-screen-label="11 The ask">
+  <div class="pageno"><svg><use href="#mark"/></svg>11 / 11</div>
+  <div class="frame" style="padding: 110px 110px 120px;">
+
+    <p class="eyebrow" style="margin: 0 0 28px; color: var(--accent);">The ask</p>
+
+    <p class="ask-display">
+      $1M<span class="ask-display-mute"> pre-seed.</span>
+    </p>
+
+    <p class="ask-lede">
+      To close the milestones that earn the Series A.
+    </p>
+
+    <div class="ask-facts">
+      <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Round</p>
+        <p class="ask-fact-val">SAFE &middot; uncapped MFN</p>
+      </div>
+      <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Check sizes</p>
+        <p class="ask-fact-val">$25K &ndash; $250K</p>
+      </div>
+      <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Use of funds</p>
+        <p class="ask-fact-val">MVP &middot; clinical co-founder &middot; advisory</p>
+      </div>
+      <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Follow-on</p>
+        <p class="ask-fact-val">Series A in 18&ndash;24 months</p>
+      </div>
+    </div>
+
+    <div class="ask-foot">
+      <div class="ask-foot-l">
+        <p class="ask-foot-eyebrow">Let&rsquo;s talk.</p>
+        <p class="ask-foot-line"><a href="mailto:sarah@carouselfertility.com">sarah@carouselfertility.com</a></p>
+        <p class="ask-foot-line ask-foot-line-soft">www.carouselfertility.com</p>
+      </div>
+      <div class="ask-foot-r">
+        <p class="ask-foot-sig">&mdash; Sarah Lewen, founder</p>
+      </div>
+    </div>
+  </div>
+  <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="11 The ask"] .ask-display {
+      font-family: 'Instrument Serif', serif; font-weight: 400;
+      font-size: 280px; line-height: 0.92; letter-spacing: -0.02em;
+      color: var(--accent); margin: 0 0 18px;
+    }
+    [data-screen-label="11 The ask"] .ask-display-mute { color: var(--ink); font-style: italic; font-size: 0.55em; letter-spacing: -0.01em; }
+    [data-screen-label="11 The ask"] .ask-lede {
+      font-family: 'Instrument Serif', serif; font-size: 44px; line-height: 1.2;
+      color: var(--ink-soft); margin: 0 0 80px; max-width: 1300px; letter-spacing: -0.01em;
+    }
+    [data-screen-label="11 The ask"] .ask-facts {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 64px;
+    }
+    [data-screen-label="11 The ask"] .ask-fact { padding: 28px 32px 28px 0; border-right: 1px solid var(--rule-soft); }
+    [data-screen-label="11 The ask"] .ask-fact:last-child { border-right: 0; }
+    [data-screen-label="11 The ask"] .ask-fact:not(:first-child) { padding-left: 32px; }
+    [data-screen-label="11 The ask"] .ask-fact-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 10px; font-weight: 500;
+    }
+    [data-screen-label="11 The ask"] .ask-fact-val {
+      font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.2;
+      color: var(--ink); margin: 0; letter-spacing: -0.005em;
+    }
+    [data-screen-label="11 The ask"] .ask-foot {
+      margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 64px;
+    }
+    [data-screen-label="11 The ask"] .ask-foot-eyebrow {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 0 0 14px; font-weight: 400;
+    }
+    [data-screen-label="11 The ask"] .ask-foot-line {
+      font-family: 'Instrument Serif', serif; font-size: 32px; color: var(--ink); margin: 0 0 4px; letter-spacing: -0.005em;
+    }
+    [data-screen-label="11 The ask"] .ask-foot-line a { color: inherit; text-decoration: none; }
+    [data-screen-label="11 The ask"] .ask-foot-line-soft { color: var(--ink-mute); font-style: italic; font-size: 24px; }
+    [data-screen-label="11 The ask"] .ask-foot-sig {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 24px; color: var(--ink-mute); margin: 0;
+    }
+  </style>
+</section>
+
+</deck-stage>
+
+<div class="tweaks" id="tweaks" style="display:none;">
+  <div class="group" style="font-size: 11px; color: #888; line-height: 1.4;">
+    No tweaks active.
+  </div>
+</div>
+
+<script>
+  let tweakState = { ...TWEAK_DEFAULTS };
+
+  (function trimSlide6(){
+    const v = (window.TWEAK_DEFAULTS && window.TWEAK_DEFAULTS.v6) || tweakState.v6 || 'c';
+    ['a','b','c'].forEach(k => {
+      if (k === v) return;
+      document.querySelectorAll('.slide-6.v-' + k).forEach(el => el.remove());
+    });
+    document.documentElement.setAttribute('data-v6', v);
+  })();
+</script>
+
+<script type="application/json" id="speaker-notes">
+[
+  "",
+  "I'm a 17-year operator across consumer healthcare and consumer tech. \n- Chief Experience Officer at Talkspace through the IPO. \n- VP Marketing at SonderMind, Series C. \n- Four and a half years at Amazon as an L6 product and marketing leader. \n- And three egg-freezing cycles personally. I am building the company I needed.",
+  "Fertility is a $100B+ industry that everyone hates paying for — because the patient is put last. \n- $122B fertility services by 2030, growing 14.5% a year. $97B femtech, growing 16.4% — fastest-growing category in digital health. \n- Over $15B of private capital deployed since 2020. Almost none of it reaching the patient. \n- $15K+ out of pocket per egg-freezing cycle. Most women do 2 to 4 cycles. A demographic that pays — and is paying. \n- The dollars are flowing. None of them are anchored to her experience. That's the asymmetry. \n- Now is the moment to redesign the fertility patient experience for the AI era.",
+  "The medicine works. The experience around it is broken.\n- Egg retrievals today are safer, faster, and more precise than at any point in human history. The science is extraordinary.\n- And yet — the woman going through one of these cycles is essentially alone. She is alone with Reddit at two in the morning. She is alone with ChatGPT trying to interpret her hormone levels. She is alone with a clinic portal that gives her data without context.\n- This is the most consequential medical decision of her thirties. The decision that determines whether she'll have biological children. And we have built none of the connective tissue around it.\n- The medicine is twenty-first century. The experience is medieval.\n- That is the gap Carousel exists to close.",
+  "Thirty interviews across NYU Langone, Weill Cornell, Spring, CCRM, Kindbody, Shady Grove, RMA. \n- Katie: most lonely thing I've ever done. \n- Maia: I wish I had known how many eggs I'd have at thirty versus thirty-five. \n- Nour: is there one person looking at me from start to finish?",
+  "This is the competitive landscape. \n- The funded incumbents — Progyny, Maven, Carrot, Kindbody — billions raised, all employer-paid, all transactional. They show up during treatment because that is when the bill gets paid. Nothing before, nothing after.\n- The seed-stage direct competitors — Frame, Conceive, Berry — are closer to us in spirit, but each is picking one slice. Frame is concierge. Conceive is RMA-tied. Berry is bootstrapped clinical AI.\n- And then Reddit and ChatGPT — which is genuinely how patients are getting through this today. Forty interviews. Every single one of them.\n- Carousel is the only row with full coverage across the arc — pre, during, post — and the only one with curated community, emotional-support AI, and clinical AI, all built around her. Not the buyer.",
+  "Carousel is the first longitudinal patient experience platform for the woman going through egg freezing and IVF. We meet her before the clinic. We hold her throughout active treatment. We support her after.\n- Education: tools and answers built for her body. No more asking ChatGPT or interpreting AMH through TikTok. Trustworthy, credible, personal.\n- Community: a room of women who actually get it. Goodbye Reddit threads and Facebook groups. Moderated, curated, matched to her stage.\n- Emotional support: an always-on companion through the swings. Through fear, anxiety, isolation, disappointment, hormones — an AI companion that holds.",
+  "",
+  "",
+  "Where we are today: thirty interviews done. Barb Collura, former CEO of RESOLVE, formal advisor. Trademark filed. Twenty-five thousand on LinkedIn. This round buys the cold-start. Follow-on buys validation. Series A is earned.",
+  ""
+]
+</script>
+
+</body>
+</html>
