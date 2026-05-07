@@ -1569,6 +1569,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="08 Wedge"] .wedge-flow {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
       gap: 40px;
       flex: 1;
       min-height: 0;
@@ -1961,59 +1962,58 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       From signal to scale.
     </h1>
 
-    <p class="pull" style="margin: 0 0 52px; max-width: 1400px;">
+    <p class="pull" style="margin: 0 0 32px; max-width: 1400px;">
       Each round funds the work that earns the next. Milestones, not projections.
     </p>
 
-    <div class="trc-timeline">
+    <div class="trc-matrix">
 
-      <div class="trc-col trc-col-1">
-        <div class="trc-dot trc-dot-filled"></div>
-        <p class="trc-when-tag">March &ndash; May 2026</p>
-        <p class="trc-when-num">Months 1&ndash;3</p>
-        <ul class="trc-bullets">
-          <li><strong>30-interview</strong> patient discovery corpus — deep pre-product research in the category.</li>
-          <li>Advisor: <strong>Barb Collura</strong>, former CEO of RESOLVE. Senior REI advisory in formation.</li>
-          <li>In active conversations with a top NYC fertility clinic partner.</li>
-          <li>Pre-launch waitlist live.</li>
-          <li>Carousel WhatsApp Beta Community is live.</li>
-        </ul>
+      <!-- Header row -->
+      <div class="trc-corner"></div>
+      <div class="trc-head trc-head-now">
+        <span class="trc-head-tag">March &ndash; May 2026</span>
+        <span class="trc-head-num">Months 1&ndash;3</span>
+      </div>
+      <div class="trc-head">
+        <span class="trc-head-tag">June &ndash; December 2026</span>
+        <span class="trc-head-num">Months 4&ndash;10</span>
+      </div>
+      <div class="trc-head">
+        <span class="trc-head-tag">January &ndash; July 2027</span>
+        <span class="trc-head-num">Months 11&ndash;17</span>
+      </div>
+      <div class="trc-head">
+        <span class="trc-head-tag">August &ndash; February 2028</span>
+        <span class="trc-head-num">Months 18&ndash;24</span>
       </div>
 
-      <div class="trc-col trc-col-2">
-        <div class="trc-dot"></div>
-        <p class="trc-when-tag">June &ndash; December 2026</p>
-        <p class="trc-when-num">Months 4&ndash;10</p>
-        <ul class="trc-bullets">
-          <li>Clinical co-founder onboarded. Clinical advisory board of <strong>3&ndash;5 REIs</strong> locked.</li>
-          <li>MVP of the Carousel D2C app shipped to App Store and Google Play.</li>
-          <li><strong>5K&ndash;10K</strong> waitlist pre-launch. <strong>1K&ndash;2.5K</strong> downloads with measurable activation and 30-day retention.</li>
-          <li><strong>2–3 LOIs</strong> from clinic practices for design partnerships / pilots signed.</li>
-          <li>Founding Engineer / Product hire onboarded.</li>
-        </ul>
-      </div>
+      <!-- TEAM row -->
+      <div class="trc-cat">Team</div>
+      <div class="trc-cell trc-cell-now"><strong>Barb Collura</strong> (former CEO, RESOLVE) advisor. Senior REI advisory board in formation.</div>
+      <div class="trc-cell">Clinical co-founder onboarded. <strong>3&ndash;5 REI</strong> advisory board locked. <strong>Founding Engineer</strong> hired.</div>
+      <div class="trc-cell trc-cell-empty"></div>
+      <div class="trc-cell trc-cell-empty"></div>
 
-      <div class="trc-col trc-col-3">
-        <div class="trc-dot"></div>
-        <p class="trc-when-tag">January &ndash; July 2027</p>
-        <p class="trc-when-num">Months 11&ndash;17</p>
-        <ul class="trc-bullets">
-          <li>D2C: <strong>10K&ndash;25K</strong> downloads, <strong>60%+</strong> activation, defensible cohort retention curves.</li>
-          <li>First clinic SaaS pilot live with engagement data.</li>
-          <li>First employer benefits pilot signed at <strong>$10 PEPM</strong>.</li>
-        </ul>
-      </div>
+      <!-- PRODUCT row -->
+      <div class="trc-cat">Product</div>
+      <div class="trc-cell trc-cell-now"><strong>30-interview</strong> discovery corpus. Pre-launch waitlist live. WhatsApp Beta Community live.</div>
+      <div class="trc-cell">MVP shipped to App Store &amp; Google Play. <strong>1K&ndash;2.5K</strong> downloads, measurable 30-day retention.</div>
+      <div class="trc-cell"><strong>10K&ndash;25K</strong> downloads. <strong>60%+</strong> activation. Defensible cohort retention curves.</div>
+      <div class="trc-cell">D2C contribution-margin positive. Retention stable. Brand recognition in category.</div>
 
-      <div class="trc-col trc-col-4">
-        <div class="trc-dot trc-dot-accent"></div>
-        <p class="trc-when-tag trc-accent-tag">August &ndash; February 2028</p>
-        <p class="trc-when-num trc-accent-num">Months 18&ndash;24</p>
-        <ul class="trc-bullets">
-          <li>D2C contribution-margin positive. Retention curves stable. Brand-level recognition in the category.</li>
-          <li>Clinic SaaS: <strong>$500K+</strong> signed ARR. Multi-clinic reference base. NRR &gt; 100%.</li>
-          <li>Employer benefits: <strong>3&ndash;5</strong> pilots converted to paid contracts. Utilization above benchmarks.</li>
-        </ul>
-      </div>
+      <!-- PARTNERSHIPS row -->
+      <div class="trc-cat">Partner&shy;ships</div>
+      <div class="trc-cell trc-cell-now">Active conversations with top NYC fertility clinic partner.</div>
+      <div class="trc-cell"><strong>2&ndash;3 LOIs</strong> from clinic practices for design partnerships / pilots signed.</div>
+      <div class="trc-cell">First clinic SaaS pilot live with engagement data. First employer benefits pilot signed at <strong>$10 PEPM</strong>.</div>
+      <div class="trc-cell">Clinic SaaS: <strong>$500K+</strong> signed ARR, NRR &gt; 100%. <strong>3&ndash;5</strong> employer pilots converted to paid.</div>
+
+      <!-- FUNDRAISING row -->
+      <div class="trc-cat">Fund&shy;raising</div>
+      <div class="trc-cell trc-cell-now trc-cell-raise"><strong>$3M pre-seed</strong> &mdash; current raise.</div>
+      <div class="trc-cell trc-cell-empty"></div>
+      <div class="trc-cell trc-cell-raise-future">Seed round</div>
+      <div class="trc-cell trc-cell-raise-future">Series A</div>
 
     </div>
 
@@ -2021,45 +2021,79 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="10 Traction"] .trc-timeline {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      position: relative;
+    [data-screen-label="10 Traction"] .frame > .h1 { margin: 0 0 10px 0 !important; font-size: 64px !important; }
+    [data-screen-label="10 Traction"] .frame > .eyebrow:first-of-type { margin: 0 0 14px 0 !important; }
+
+    [data-screen-label="10 Traction"] .trc-matrix {
+      display: grid;
+      grid-template-columns: 88px repeat(4, 1fr);
+      grid-template-rows: auto repeat(4, 1fr);
+      flex: 1; min-height: 0;
+      border: 1px solid rgba(74,40,28,0.12);
+      border-radius: 10px;
+      overflow: hidden;
     }
-    [data-screen-label="10 Traction"] .trc-timeline::before {
-      content: ''; position: absolute;
-      left: 7px; right: 7px; top: 7px; height: 1px;
-      background: linear-gradient(90deg, var(--accent) 0%, var(--rule) 40%, var(--accent) 100%);
-      opacity: 0.35;
+    [data-screen-label="10 Traction"] .trc-corner {
+      background: rgba(74,40,28,0.03);
+      border-right: 1px solid rgba(74,40,28,0.10);
+      border-bottom: 1px solid rgba(74,40,28,0.10);
     }
-    [data-screen-label="10 Traction"] .trc-col {
-      padding: 0 40px 0 0; display: flex; flex-direction: column;
-      border-right: 1px solid var(--rule-soft); position: relative;
+    [data-screen-label="10 Traction"] .trc-head {
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 14px 16px 12px;
+      background: rgba(74,40,28,0.03);
+      border-left: 1px solid rgba(74,40,28,0.10);
+      border-bottom: 1px solid rgba(74,40,28,0.10);
     }
-    [data-screen-label="10 Traction"] .trc-col:not(:first-child) { padding-left: 40px; }
-    [data-screen-label="10 Traction"] .trc-col:last-child { border-right: none; padding-right: 0; }
-    [data-screen-label="10 Traction"] .trc-dot {
-      width: 14px; height: 14px; border-radius: 50%; margin-bottom: 18px;
-      background: var(--accent); box-shadow: 0 0 0 1.5px var(--accent);
-      flex-shrink: 0;
+    [data-screen-label="10 Traction"] .trc-head-now {
+      background: rgba(149,74,45,0.06);
+      border-left: 2px solid var(--accent);
     }
-    [data-screen-label="10 Traction"] .trc-when-tag {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--ink-mute); margin: 0 0 8px; font-weight: 400; line-height: 1.4;
+    [data-screen-label="10 Traction"] .trc-head-tag {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px;
+      font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-mute); display: block; margin-bottom: 4px;
     }
-    [data-screen-label="10 Traction"] .trc-when-num {
-      font-family: 'Instrument Serif', serif; font-size: 40px; line-height: 1;
-      color: var(--accent); margin: 0 0 20px; letter-spacing: -0.01em;
+    [data-screen-label="10 Traction"] .trc-head-num {
+      font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1;
+      color: var(--accent); letter-spacing: -0.01em; display: block;
     }
-    [data-screen-label="10 Traction"] .trc-bullets {
-      list-style: none; padding: 0; margin: 0;
-      font-family: 'Inter Tight', sans-serif; font-size: 16px; line-height: 1.5; font-weight: 300; color: var(--ink-soft);
-      display: flex; flex-direction: column; gap: 10px;
+    [data-screen-label="10 Traction"] .trc-cat {
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 0 10px;
+      font-family: 'Inter Tight', sans-serif; font-size: 9px;
+      font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent);
+      border-top: 1px solid rgba(74,40,28,0.10);
+      border-right: 1px solid rgba(74,40,28,0.12);
+      background: rgba(149,74,45,0.025);
     }
-    [data-screen-label="10 Traction"] .trc-bullets li::before { content: "\2014"; color: var(--ink-mute); margin-right: 8px; }
-    [data-screen-label="10 Traction"] .trc-bullets strong { font-weight: 500; color: var(--ink); }
-    [data-screen-label="10 Traction"] .trc-footer {
-      margin: 40px 0 0; font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 22px; color: var(--ink-mute); text-align: right; letter-spacing: -0.005em;
+    [data-screen-label="10 Traction"] .trc-cell {
+      padding: 14px 16px;
+      border-top: 1px solid rgba(74,40,28,0.08);
+      border-left: 1px solid rgba(74,40,28,0.08);
+      font-family: 'Inter Tight', sans-serif; font-size: 13.5px;
+      font-weight: 300; line-height: 1.5; color: var(--ink-soft);
+    }
+    [data-screen-label="10 Traction"] .trc-cell strong { font-weight: 500; color: var(--ink); }
+    [data-screen-label="10 Traction"] .trc-cell-now {
+      background: rgba(149,74,45,0.04);
+      border-left: 2px solid rgba(149,74,45,0.25);
+    }
+    [data-screen-label="10 Traction"] .trc-cell-empty {
+      background: rgba(74,40,28,0.015);
+    }
+    [data-screen-label="10 Traction"] .trc-cell-raise {
+      font-family: 'Inter Tight', sans-serif;
+    }
+    [data-screen-label="10 Traction"] .trc-cell-raise-future {
+      padding: 14px 16px;
+      border-top: 1px solid rgba(74,40,28,0.08);
+      border-left: 1px solid rgba(74,40,28,0.08);
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 17px; color: var(--ink-mute);
+      display: flex; align-items: center;
     }
   </style>
 </section>
@@ -2072,7 +2106,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="eyebrow" style="margin: 0 0 28px; color: var(--accent);">The ask</p>
 
     <p class="ask-display">
-      $2.5&ndash;3M<span class="ask-display-mute"> pre-seed.</span>
+      $3M<span class="ask-display-mute"> pre-seed.</span>
     </p>
 
     <div class="ask-facts">
