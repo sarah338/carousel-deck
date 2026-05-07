@@ -2056,21 +2056,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <!-- FUNDRAISING row -->
       <div class="trc-cat">Fundraising</div>
       <div class="trc-cell trc-cell-now trc-cell-empty"></div>
-      <div class="trc-cell trc-cell-now">
-        <ul class="trc-list">
-          <li>Pre-seed</li>
-        </ul>
-      </div>
-      <div class="trc-cell">
-        <ul class="trc-list">
-          <li>Seed round</li>
-        </ul>
-      </div>
-      <div class="trc-cell">
-        <ul class="trc-list">
-          <li>Series A</li>
-        </ul>
-      </div>
+      <div class="trc-cell trc-cell-now trc-cell-raise">Pre-seed</div>
+      <div class="trc-cell trc-cell-raise">Seed round</div>
+      <div class="trc-cell trc-cell-raise">Series A</div>
 
     </div>
 
@@ -2153,7 +2141,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       background: rgba(74,40,28,0.015);
     }
     [data-screen-label="10 Traction"] .trc-cell-raise {
-      font-family: 'Inter Tight', sans-serif;
+      font-family: 'Instrument Serif', sans-serif; font-style: italic;
+      font-size: 20px; color: var(--ink-mute); display: flex; align-items: center;
     }
     [data-screen-label="10 Traction"] .trc-cell-raise-future {
       padding: 10px 14px;
