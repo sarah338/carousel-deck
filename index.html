@@ -2031,7 +2031,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <!-- PARTNERSHIPS row -->
-      <div class="trc-cat">Partner&shy;ships</div>
+      <div class="trc-cat">Partnerships</div>
       <div class="trc-cell trc-cell-now">
         <ul class="trc-list">
           <li>Meetings with Weill Cornell top RE</li>
@@ -2058,11 +2058,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <!-- FUNDRAISING row -->
-      <div class="trc-cat">Fund&shy;raising</div>
+      <div class="trc-cat">Fundraising</div>
       <div class="trc-cell trc-cell-now trc-cell-empty"></div>
-      <div class="trc-cell">
+      <div class="trc-cell trc-cell-now">
         <ul class="trc-list">
-          <li>Pre-seed round closed</li>
+          <li>Pre-seed</li>
         </ul>
       </div>
       <div class="trc-cell trc-cell-raise-future">Seed round</div>
@@ -2079,8 +2079,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="10 Traction"] .trc-matrix {
       display: grid;
-      grid-template-columns: 76px repeat(4, 1fr);
-      grid-template-rows: auto repeat(4, auto);
+      grid-template-columns: 130px repeat(4, 1fr);
+      grid-template-rows: auto repeat(4, minmax(160px, auto));
       border: 1px solid rgba(74,40,28,0.12);
       border-radius: 10px;
       overflow: hidden;
@@ -2114,9 +2114,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="10 Traction"] .trc-cat {
       display: flex; align-items: center; justify-content: center;
       text-align: center;
-      padding: 0 8px;
-      font-family: 'Inter Tight', sans-serif; font-size: 9px;
-      font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 0 12px;
+      font-family: 'Inter Tight', sans-serif; font-size: 11px;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--accent);
       border-top: 1px solid rgba(74,40,28,0.10);
       border-right: 1px solid rgba(74,40,28,0.12);
