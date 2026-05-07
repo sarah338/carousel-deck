@@ -1602,7 +1602,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       border: 1px solid rgba(74,40,28,0.10);
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(74,40,28,0.10);
-      height: 700px;
+      height: 640px;
       max-width: 900px;
       display: flex;
       flex-direction: column;
@@ -2170,9 +2170,32 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <p class="ask-fact-eyebrow">Round</p>
         <p class="ask-fact-val">SAFE</p>
       </div>
-      <div class="ask-fact">
-        <p class="ask-fact-eyebrow">Use of funds</p>
-        <p class="ask-fact-val">MVP &middot; clinical co-founder &middot; advisory</p>
+    </div>
+
+    <div class="uof-grid">
+      <div class="uof-col">
+        <p class="uof-pct">~45%</p>
+        <p class="uof-amt">$1.35M</p>
+        <p class="uof-label">Team</p>
+        <p class="uof-body">Clinical co-founder. Founding engineer. Founding designer. Founder runway. The hires that ship the MVP and earn clinical credibility.</p>
+      </div>
+      <div class="uof-col">
+        <p class="uof-pct">~30%</p>
+        <p class="uof-amt">$0.9M</p>
+        <p class="uof-label">Product</p>
+        <p class="uof-body">Build, ship, and iterate the Carousel D2C app. Infrastructure, AI/ML personalization layer, hormone-test partner integration, longitudinal data architecture.</p>
+      </div>
+      <div class="uof-col">
+        <p class="uof-pct">~15%</p>
+        <p class="uof-amt">$0.45M</p>
+        <p class="uof-label">Go-to-market</p>
+        <p class="uof-body">Cold-start traction: D2C acquisition, content engine, community moderation, design-partner clinic activation. The work that turns an MVP into 10K–25K downloads.</p>
+      </div>
+      <div class="uof-col">
+        <p class="uof-pct">~10%</p>
+        <p class="uof-amt">$0.3M</p>
+        <p class="uof-label">Operations &amp; contingency</p>
+        <p class="uof-body">Legal, finance, infrastructure, runway buffer.</p>
       </div>
     </div>
 
@@ -2231,6 +2254,35 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="11 The ask"] .ask-foot-sig {
       font-family: 'Instrument Serif', serif; font-style: italic;
       font-size: 24px; color: var(--ink-mute); margin: 0;
+    }
+    [data-screen-label="11 The ask"] .uof-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 0; border-top: 1px solid var(--rule); margin-bottom: 48px;
+    }
+    [data-screen-label="11 The ask"] .uof-col {
+      padding: 28px 32px 28px 0;
+      border-right: 1px solid var(--rule-soft);
+    }
+    [data-screen-label="11 The ask"] .uof-col:last-child { border-right: 0; }
+    [data-screen-label="11 The ask"] .uof-col:not(:first-child) { padding-left: 32px; }
+    [data-screen-label="11 The ask"] .uof-pct {
+      font-family: 'Instrument Serif', serif; font-size: 52px;
+      line-height: 1; letter-spacing: -0.02em;
+      color: var(--accent); margin: 0 0 6px;
+    }
+    [data-screen-label="11 The ask"] .uof-amt {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 22px; line-height: 1.2; color: var(--ink-mute);
+      margin: 0 0 14px; letter-spacing: -0.005em;
+    }
+    [data-screen-label="11 The ask"] .uof-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px;
+      font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink); margin: 0 0 10px;
+    }
+    [data-screen-label="11 The ask"] .uof-body {
+      font-family: 'Inter Tight', sans-serif; font-size: 16px;
+      font-weight: 300; line-height: 1.55; color: var(--ink-soft); margin: 0;
     }
   </style>
 </section>
