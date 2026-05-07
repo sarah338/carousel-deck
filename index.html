@@ -1563,20 +1563,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 · Confidential</div>
   <style>
-    [data-screen-label="08 Wedge"] .frame { overflow: hidden; }
     [data-screen-label="08 Wedge"] .frame > .eyebrow:first-of-type { margin: 0 0 8px 0 !important; }
     [data-screen-label="08 Wedge"] .frame > .h1 { margin: 0 0 12px 0 !important; font-size: 40px !important; max-width: 1700px !important; }
     [data-screen-label="08 Wedge"] .wedge-flow {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr;
       gap: 40px;
-      flex: 1;
-      min-height: 0;
-      overflow: hidden;
     }
     [data-screen-label="08 Wedge"] .wf-phone-col {
-      display: flex; flex-direction: column; min-height: 0; overflow: hidden;
+      display: flex; flex-direction: column;
     }
     [data-screen-label="08 Wedge"] .wf-col-label {
       font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700;
@@ -1614,8 +1609,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       border: 1px solid rgba(74,40,28,0.10);
       overflow: hidden;
       box-shadow: 0 8px 32px rgba(74,40,28,0.10);
-      flex: 1;
-      min-height: 0;
+      height: 700px;
       max-width: 900px;
       display: flex;
       flex-direction: column;
@@ -1989,29 +1983,89 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- TEAM row -->
       <div class="trc-cat">Team</div>
-      <div class="trc-cell trc-cell-now"><strong>Barb Collura</strong> (former CEO, RESOLVE) advisor. Senior REI advisory board in formation.</div>
-      <div class="trc-cell">Clinical co-founder onboarded. <strong>3&ndash;5 REI</strong> advisory board locked. <strong>Founding Engineer</strong> hired.</div>
+      <div class="trc-cell trc-cell-now">
+        <ul class="trc-list">
+          <li>Barb Collura named as informal advisor</li>
+          <li>Senior REI advisory board in formation</li>
+          <li>In active discussions with 2&ndash;4 Chief Medical Officer candidates</li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>Fractional Chief Medical Officer signed</li>
+          <li><strong>3&ndash;5</strong> Clinical Advisory Board members signed</li>
+          <li>Founding Engineer / Product signed</li>
+        </ul>
+      </div>
       <div class="trc-cell trc-cell-empty"></div>
       <div class="trc-cell trc-cell-empty"></div>
 
       <!-- PRODUCT row -->
       <div class="trc-cat">Product</div>
-      <div class="trc-cell trc-cell-now"><strong>30-interview</strong> discovery corpus. Pre-launch waitlist live. WhatsApp Beta Community live.</div>
-      <div class="trc-cell">MVP shipped to App Store &amp; Google Play. <strong>1K&ndash;2.5K</strong> downloads, measurable 30-day retention.</div>
-      <div class="trc-cell"><strong>10K&ndash;25K</strong> downloads. <strong>60%+</strong> activation. Defensible cohort retention curves.</div>
-      <div class="trc-cell">D2C contribution-margin positive. Retention stable. Brand recognition in category.</div>
+      <div class="trc-cell trc-cell-now">
+        <ul class="trc-list">
+          <li>30 interviews with women who did egg freezing or IVF completed</li>
+          <li>Pre-launch waitlist live</li>
+          <li>Carousel WhatsApp Beta Community launched</li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>MVP created &amp; D2C v1 app shipped</li>
+          <li>Conversion of WhatsApp community to app</li>
+          <li>Achieve <strong>1K&ndash;2.5K</strong> downloads, measurable 30-day retention</li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li><strong>10K&ndash;25K</strong> downloads</li>
+          <li><strong>60%+</strong> activation</li>
+          <li>Defensible cohort retention curves</li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>D2C contribution-margin positive</li>
+          <li>Retention curves stable</li>
+          <li>Brand recognition in category</li>
+        </ul>
+      </div>
 
       <!-- PARTNERSHIPS row -->
       <div class="trc-cat">Partner&shy;ships</div>
-      <div class="trc-cell trc-cell-now">Active conversations with top NYC fertility clinic partner.</div>
-      <div class="trc-cell"><strong>2&ndash;3 LOIs</strong> from clinic practices for design partnerships / pilots signed.</div>
-      <div class="trc-cell">First clinic SaaS pilot live with engagement data. First employer benefits pilot signed at <strong>$10 PEPM</strong>.</div>
-      <div class="trc-cell">Clinic SaaS: <strong>$500K+</strong> signed ARR, NRR &gt; 100%. <strong>3&ndash;5</strong> employer pilots converted to paid.</div>
+      <div class="trc-cell trc-cell-now">
+        <ul class="trc-list">
+          <li>Meetings with Weill Cornell top RE</li>
+          <li>Meetings with Dr. Brian Levine, CCRM</li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li><strong>2&ndash;3 LOIs</strong> from clinic practices for design partnerships / pilots signed</li>
+        </ul>
+      </div>
+      <!-- Months 11-17 and 18-24 partnerships kept as-is below -->
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>First clinic SaaS pilot live with engagement data</li>
+          <li>First employer benefits pilot signed at <strong>$10 PEPM</strong></li>
+        </ul>
+      </div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>Clinic SaaS: <strong>$500K+</strong> signed ARR, NRR &gt; 100%</li>
+          <li><strong>3&ndash;5</strong> employer pilots converted to paid</li>
+        </ul>
+      </div>
 
       <!-- FUNDRAISING row -->
       <div class="trc-cat">Fund&shy;raising</div>
-      <div class="trc-cell trc-cell-now trc-cell-raise"><strong>$3M pre-seed</strong> &mdash; current raise.</div>
-      <div class="trc-cell trc-cell-empty"></div>
+      <div class="trc-cell trc-cell-now trc-cell-empty"></div>
+      <div class="trc-cell">
+        <ul class="trc-list">
+          <li>Pre-seed round closed</li>
+        </ul>
+      </div>
       <div class="trc-cell trc-cell-raise-future">Seed round</div>
       <div class="trc-cell trc-cell-raise-future">Series A</div>
 
@@ -2077,6 +2131,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-weight: 300; line-height: 1.45; color: var(--ink-soft);
     }
     [data-screen-label="10 Traction"] .trc-cell strong { font-weight: 500; color: var(--ink); }
+    [data-screen-label="10 Traction"] .trc-list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    [data-screen-label="10 Traction"] .trc-list li {
+      display: flex; gap: 7px; align-items: flex-start; line-height: 1.4;
+    }
+    [data-screen-label="10 Traction"] .trc-list li::before {
+      content: '–'; color: var(--accent); flex-shrink: 0; margin-top: 0;
+    }
     [data-screen-label="10 Traction"] .trc-cell-now {
       background: rgba(149,74,45,0.04);
       border-left: 2px solid rgba(149,74,45,0.25);
