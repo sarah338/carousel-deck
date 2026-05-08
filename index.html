@@ -2322,5 +2322,48 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 ]
 </script>
 
+
+<style>
+  @media print {
+    @page { size: 1920px 1080px; margin: 0; }
+    html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
+    .tweaks { display: none !important; }
+    deck-stage {
+      display: block !important;
+      position: static !important;
+      width: 1920px !important;
+      height: auto !important;
+      overflow: visible !important;
+      transform: none !important;
+    }
+    section.slide {
+      position: relative !important;
+      display: block !important;
+      width: 1920px !important;
+      height: 1080px !important;
+      transform: none !important;
+      break-after: page !important;
+      overflow: hidden !important;
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener('beforeprint', () => {
+    const stage = document.querySelector('deck-stage');
+    if (stage) {
+      stage.style.cssText = 'display:block;position:static;width:1920px;height:auto;overflow:visible;transform:none;';
+    }
+    document.querySelectorAll('section.slide').forEach(s => {
+      s.style.cssText = 'position:relative!important;display:block!important;width:1920px!important;height:1080px!important;transform:none!important;break-after:page!important;overflow:hidden!important;';
+    });
+  });
+  window.addEventListener('afterprint', () => {
+    const stage = document.querySelector('deck-stage');
+    if (stage) stage.style.cssText = '';
+    document.querySelectorAll('section.slide').forEach(s => s.style.cssText = '');
+  });
+</script>
+
 </body>
 </html>
