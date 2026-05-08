@@ -1613,29 +1613,21 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <section class="slide" data-screen-label="09 Business model">
   <div class="pageno"><svg><use href="#mark"/></svg>09 / 11</div>
   <div class="frame" style="padding-top: 48px;">
-    <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Business model</p>
-    <h1 class="h1" style="margin: 0 0 10px; max-width: 1700px; font-size: 56px; line-height: 1.08;">D2C builds the proof. Clinic partnerships build the moat. Employer benefits compound the flywheel.</h1>
-    <p class="poa-sub">One product. Two layers. Three buyers. Each channel earns the next.</p>
 
-    <!-- Gantt timeline strip -->
-    <div class="poa-gantt">
-      <div class="poa-grow">
-        <div class="poa-grow-row">
-          <span class="poa-gl">D2C</span>
-          <div class="poa-gt"><div class="poa-gb poa-b1" style="left:0%;width:37.5%"></div></div>
-        </div>
-        <div class="poa-grow-row">
-          <span class="poa-gl">Clinic</span>
-          <div class="poa-gt"><div class="poa-gb poa-b2" style="left:0%;width:75%"></div></div>
-        </div>
-        <div class="poa-grow-row">
-          <span class="poa-gl">Employer</span>
-          <div class="poa-gt"><div class="poa-gb poa-b3" style="left:75%;width:25%"></div></div>
-        </div>
+    <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Business model</p>
+    <h1 class="h1" style="margin: 0 0 8px; max-width: 1700px; font-size: 52px; line-height: 1.08;">D2C builds the proof. Clinic partnerships build the moat. Employer benefits compound the flywheel.</h1>
+    <p class="bm2-sub">One product. Two layers. Three buyers. Each channel earns the next.</p>
+
+    <!-- Gantt -->
+    <div class="bm2-gantt">
+      <div class="bm2-gantt-rows">
+        <div class="bm2-gr"><span class="bm2-gl">D2C</span><div class="bm2-gt"><div class="bm2-gb bm2-b1" style="left:0%;width:37.5%"></div></div></div>
+        <div class="bm2-gr"><span class="bm2-gl">Clinic</span><div class="bm2-gt"><div class="bm2-gb bm2-b2" style="left:0%;width:75%"></div></div></div>
+        <div class="bm2-gr"><span class="bm2-gl">Employer</span><div class="bm2-gt"><div class="bm2-gb bm2-b3" style="left:75%;width:25%"></div></div></div>
       </div>
-      <div class="poa-gaxis">
-        <span class="poa-gl" style="opacity:0"></span><!-- spacer -->
-        <div class="poa-gaxis-track">
+      <div class="bm2-gaxis">
+        <span class="bm2-gl" style="visibility:hidden">D2C</span>
+        <div class="bm2-gaxis-track">
           <span style="left:0%">Mo.&nbsp;0</span>
           <span style="left:25%">Mo.&nbsp;6</span>
           <span style="left:37.5%">Mo.&nbsp;9</span>
@@ -1646,230 +1638,200 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
     </div>
 
-    <!-- Three columns -->
-    <div class="poa-cols">
+    <!-- Three phase cards -->
+    <div class="bm2-cols">
 
-      <!-- Phase 1: D2C -->
-      <div class="poa-col poa-c1">
-        <div>
-          <div class="poa-col-top">
-            <span class="poa-phase-tag poa-tag-1">Phase 1</span>
-            <p class="poa-ch-name">D2C &mdash; Direct to Patient</p>
-            <div class="poa-chips">
-              <span class="poa-chip">Months 0&ndash;9 &middot; $20/mo subscription</span>
-            </div>
-          </div>
-          <ul class="poa-acts">
-            <li>Ship MVP: Maeve AI companion, community, milestone tracking, education library</li>
-            <li>Convert WhatsApp beta community to paid subscribers</li>
-            <li>Founder-led growth: LinkedIn, Instagram, warm referrals</li>
-            <li>Capture engagement data by cycle stage</li>
-          </ul>
+      <!-- Phase 1 -->
+      <div class="bm2-card bm2-card-1">
+        <div class="bm2-card-top">
+          <span class="bm2-tag bm2-tag-1">Phase 1</span>
+          <p class="bm2-ch">D2C &mdash; Direct to Patient</p>
+          <p class="bm2-timing">Months 0&ndash;9 &middot; $20 / month</p>
         </div>
-        <div class="poa-col-foot">
-          <div class="poa-milestone">
-            <div class="poa-m-row"><span class="poa-mnum">2,500</span><span class="poa-munit">&nbsp;paying subscribers</span></div>
-            <div class="poa-m-arr poa-arr-1">~$600K ARR</div>
-            <p class="poa-m-sub">10K+ patient engagement events captured</p>
-          </div>
-          <p class="poa-why"><em>Why first:</em> Lowest cost to launch. Founder-market fit. Builds the proof clinics need.</p>
+        <div class="bm2-card-mid">
+          <div class="bm2-big-num">2,500</div>
+          <div class="bm2-big-lbl">paying subscribers</div>
+          <div class="bm2-arr bm2-arr-1">~$600K ARR</div>
+        </div>
+        <div class="bm2-card-bot">
+          <p class="bm2-ctx">Convert WhatsApp beta community to paid. Ship Maeve AI, community, and education library. Grow through founder network.</p>
+          <p class="bm2-why"><em>Why first &mdash;</em> Lowest cost to start. Generates the engagement data clinics will pay for.</p>
         </div>
       </div>
 
-      <!-- Phase 2: Clinic -->
-      <div class="poa-col poa-c2">
-        <div>
-          <div class="poa-col-top">
-            <span class="poa-phase-tag poa-tag-2">Phase 2</span>
-            <p class="poa-ch-name">Clinic SaaS &mdash; Design Partners &rarr; Paid Pilots</p>
-            <div class="poa-chips">
-              <span class="poa-chip">Mo. 0&ndash;6: relationships &middot; Mo. 9&ndash;18: paid pilots &middot; $35&ndash;50K ACV</span>
-            </div>
-          </div>
-          <ul class="poa-acts">
-            <li>2&ndash;3 design partner relationships from day one (Extend already in motion)</li>
-            <li>Co-develop clinic dashboard with REI input</li>
-            <li>Use D2C engagement data to demonstrate patient value at clinic level</li>
-            <li>Convert design partners to paid SaaS pilots, Months 9&ndash;18</li>
-          </ul>
+      <!-- Phase 2 -->
+      <div class="bm2-card bm2-card-2">
+        <div class="bm2-card-top">
+          <span class="bm2-tag bm2-tag-2">Phase 2</span>
+          <p class="bm2-ch">Clinic SaaS &mdash; Design Partners &rarr; Pilots</p>
+          <p class="bm2-timing">Mo. 0&ndash;6: relationships &middot; Mo. 9&ndash;18: paid pilots &middot; $35&ndash;50K ACV</p>
         </div>
-        <div class="poa-col-foot">
-          <div class="poa-milestone">
-            <div class="poa-m-row"><span class="poa-mnum">2&ndash;3</span><span class="poa-munit">&nbsp;design partner clinics by Mo. 6</span></div>
-            <div class="poa-m-arr poa-arr-2">~$70K ARR</div>
-            <p class="poa-m-sub">from clinic pilots by Month 18</p>
-          </div>
-          <p class="poa-why"><em>Why parallel:</em> Clinic sales cycles are 6&ndash;9 months. Relationships start now, revenue follows D2C proof.</p>
+        <div class="bm2-card-mid">
+          <div class="bm2-big-num">2&ndash;3</div>
+          <div class="bm2-big-lbl">design partner clinics by Mo. 6</div>
+          <div class="bm2-arr bm2-arr-2">~$70K ARR</div>
+        </div>
+        <div class="bm2-card-bot">
+          <p class="bm2-ctx">Co-build the clinic dashboard with REI input. Convert design partners to $35&ndash;50K paid SaaS pilots using D2C proof.</p>
+          <p class="bm2-why"><em>Why parallel &mdash;</em> Clinic sales cycles are 6&ndash;9 months. Relationships start now, revenue follows.</p>
         </div>
       </div>
 
-      <!-- Phase 3: Employer -->
-      <div class="poa-col poa-c3">
-        <div>
-          <div class="poa-col-top">
-            <span class="poa-phase-tag poa-tag-3">Phase 3</span>
-            <p class="poa-ch-name">Employer Benefits &mdash; Scaled Distribution</p>
-            <div class="poa-chips">
-              <span class="poa-chip">Month 18+ &middot; Post-seed &middot; $10 PEPM</span>
-            </div>
-          </div>
-          <ul class="poa-acts">
-            <li>First employer conversations begin Month 12+</li>
-            <li>Leverage clinic credibility (Phase 2) and D2C usage data (Phase 1) as proof</li>
-            <li>Partner with benefits brokers (Mercer, Gallagher)</li>
-            <li>Positioned distinct from Maven/Carrot &mdash; fertility-specific, longitudinal</li>
-          </ul>
+      <!-- Phase 3 -->
+      <div class="bm2-card bm2-card-3">
+        <div class="bm2-card-top">
+          <span class="bm2-tag bm2-tag-3">Phase 3</span>
+          <p class="bm2-ch">Employer Benefits &mdash; Scaled Distribution</p>
+          <p class="bm2-timing">Month 18+ &middot; Post-seed &middot; $10 PEPM</p>
         </div>
-        <div class="poa-col-foot">
-          <div class="poa-milestone">
-            <div class="poa-m-row"><span class="poa-mnum">1&ndash;2</span><span class="poa-munit">&nbsp;employer pilots by Month 24</span></div>
-            <div class="poa-m-arr poa-arr-3">Seed-funded</div>
-            <p class="poa-m-sub">enterprise expansion post-seed</p>
-          </div>
-          <p class="poa-why"><em>Why last:</em> Employer buyers need both consumer brand and clinical credibility before saying yes.</p>
+        <div class="bm2-card-mid">
+          <div class="bm2-big-num">1&ndash;2</div>
+          <div class="bm2-big-lbl">employer pilots by Month 24</div>
+          <div class="bm2-arr bm2-arr-3">Seed-funded scale</div>
+        </div>
+        <div class="bm2-card-bot">
+          <p class="bm2-ctx">First conversations Month 12+. Leverage clinic credibility and D2C data. Close through brokers &mdash; Mercer, Gallagher.</p>
+          <p class="bm2-why"><em>Why last &mdash;</em> Employer buyers need consumer brand AND clinical proof before saying yes.</p>
         </div>
       </div>
 
-    </div><!-- /poa-cols -->
+    </div><!-- /bm2-cols -->
 
-    <!-- Bottom market callout -->
-    <div class="poa-bottom">
-      <p class="poa-bottom-text">Addressable market: ~400K U.S. fertility patients annually. At 10% blended penetration &middot; ~$300/patient/year (blended across channels) = $12M ARR opportunity. Pre-seed milestone: $500K&ndash;$1M ARR run-rate by seed round.</p>
-      <p class="poa-source">U.S. patient volume: SART 2023. Pricing: subscription benchmarks across women&rsquo;s health and digital health peer set.</p>
+    <!-- Bottom callout -->
+    <div class="bm2-bottom">
+      <p class="bm2-bottom-text">~400K U.S. fertility patients annually &middot; 10% blended penetration &middot; ~$300/patient/year = <strong>$12M ARR opportunity</strong>. Pre-seed milestone: $500K&ndash;$1M ARR by seed round.</p>
+      <p class="bm2-source">U.S. patient volume: SART 2023 &middot; Pricing: women&rsquo;s health and digital health subscription benchmarks</p>
     </div>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    /* Slide 09 Business model / Plan of Attack */
-    [data-screen-label="09 Business model"] .frame > .h1 { margin: 0 0 10px 0 !important; font-size: 56px !important; }
+    /* Slide 09 Business Model v2 */
+    [data-screen-label="09 Business model"] .frame > .h1 { margin: 0 0 8px 0 !important; font-size: 52px !important; }
 
-    .poa-sub {
+    .bm2-sub {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 22px; color: var(--ink-soft); margin: 0 0 18px; line-height: 1.3;
+      font-size: 22px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.3;
     }
 
-    /* Gantt strip */
-    .poa-gantt { margin-bottom: 18px; }
-    .poa-grow { display: flex; flex-direction: column; gap: 3px; margin-bottom: 6px; }
-    .poa-grow-row { display: flex; align-items: center; gap: 12px; }
-    .poa-gl {
-      font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ink-mute); flex: 0 0 64px; text-align: right;
+    /* Gantt */
+    .bm2-gantt { margin-bottom: 20px; }
+    .bm2-gantt-rows { display: flex; flex-direction: column; gap: 4px; margin-bottom: 5px; }
+    .bm2-gr { display: flex; align-items: center; gap: 12px; }
+    .bm2-gl {
+      font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 600;
+      letter-spacing: 0.20em; text-transform: uppercase;
+      color: var(--ink-mute); flex: 0 0 60px; text-align: right;
     }
-    .poa-gt {
-      flex: 1; height: 7px; background: rgba(149,74,45,0.07);
+    .bm2-gt {
+      flex: 1; height: 8px; background: rgba(149,74,45,0.08);
       border-radius: 4px; position: relative; overflow: hidden;
     }
-    .poa-gb { position: absolute; top: 0; height: 100%; border-radius: 4px; }
-    .poa-b1 { background: #954A2D; }
-    .poa-b2 { background: #A06432; opacity: 0.72; }
-    .poa-b3 { background: rgba(149,74,45,0.38); }
-    /* Axis row */
-    .poa-gaxis { display: flex; align-items: flex-start; gap: 12px; }
-    .poa-gaxis-track {
-      flex: 1; position: relative; height: 16px;
-    }
-    .poa-gaxis-track span {
+    .bm2-gb { position: absolute; top: 0; height: 100%; border-radius: 4px; }
+    .bm2-b1 { background: #954A2D; }
+    .bm2-b2 { background: #A06432; opacity: 0.70; }
+    .bm2-b3 { background: rgba(149,74,45,0.36); }
+    .bm2-gaxis { display: flex; align-items: flex-start; gap: 12px; }
+    .bm2-gaxis-track { flex: 1; position: relative; height: 14px; }
+    .bm2-gaxis-track span {
       position: absolute; transform: translateX(-50%);
       font-family: 'Inter Tight', sans-serif; font-size: 9px;
       letter-spacing: 0.08em; color: var(--ink-mute); white-space: nowrap;
     }
 
-    /* Three columns */
-    .poa-cols {
+    /* Cards grid */
+    .bm2-cols {
       display: grid; grid-template-columns: 1fr 1fr 1fr;
-      gap: 0; flex: 1; min-height: 0;
+      gap: 24px; flex: 1; min-height: 0;
     }
-    .poa-col {
-      padding: 0 28px 0 0;
-      border-right: 1px solid rgba(149,74,45,0.11);
+    .bm2-card {
       display: flex; flex-direction: column; justify-content: space-between;
+      border-radius: 4px; overflow: hidden;
+      border: 1px solid rgba(149,74,45,0.10);
     }
-    .poa-col:last-child { border-right: none; padding-right: 0; }
-    .poa-c2, .poa-c3 { padding-left: 28px; }
+    .bm2-card-1 { border-top: 4px solid #954A2D; }
+    .bm2-card-2 { border-top: 4px solid #A06432; }
+    .bm2-card-3 { border-top: 4px solid rgba(149,74,45,0.35); }
 
-    .poa-col-top { display: flex; flex-direction: column; gap: 5px; margin-bottom: 10px; }
-    .poa-phase-tag {
+    .bm2-card-top {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid rgba(149,74,45,0.08);
+      background: rgba(149,74,45,0.03);
+    }
+    .bm2-tag {
       font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 700;
-      letter-spacing: 0.24em; text-transform: uppercase;
-      display: inline-block; padding: 3px 10px; border-radius: 999px; align-self: flex-start;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      display: inline-block; padding: 3px 10px; border-radius: 999px;
+      margin-bottom: 8px;
     }
-    .poa-tag-1 { background: var(--accent); color: #F7F1E4; }
-    .poa-tag-2 { background: rgba(160,100,50,0.14); color: #A06432; border: 1px solid rgba(160,100,50,0.28); }
-    .poa-tag-3 { background: rgba(149,74,45,0.07); color: rgba(149,74,45,0.50); border: 1px solid rgba(149,74,45,0.18); }
-
-    .poa-ch-name {
-      font-family: 'Instrument Serif', serif; font-size: 19px;
-      color: var(--ink); margin: 0; line-height: 1.2;
+    .bm2-tag-1 { background: #954A2D; color: #F7F1E4; }
+    .bm2-tag-2 { background: rgba(160,100,50,0.14); color: #A06432; border: 1px solid rgba(160,100,50,0.28); }
+    .bm2-tag-3 { background: rgba(149,74,45,0.07); color: rgba(149,74,45,0.55); border: 1px solid rgba(149,74,45,0.18); }
+    .bm2-ch {
+      font-family: 'Instrument Serif', serif; font-size: 20px; line-height: 1.2;
+      color: var(--ink); margin: 0 0 5px;
     }
-    .poa-c2 .poa-ch-name { color: rgba(74,56,42,0.82); }
-    .poa-c3 .poa-ch-name { color: rgba(74,56,42,0.60); }
-
-    .poa-chips { display: flex; flex-direction: column; gap: 2px; }
-    .poa-chip {
+    .bm2-card-2 .bm2-ch { color: rgba(74,56,42,0.82); }
+    .bm2-card-3 .bm2-ch { color: rgba(74,56,42,0.60); }
+    .bm2-timing {
       font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 400;
-      letter-spacing: 0.04em; color: var(--ink-mute); line-height: 1.4;
+      letter-spacing: 0.04em; color: var(--ink-mute); margin: 0; line-height: 1.4;
     }
 
-    /* Activity list */
-    .poa-acts {
-      margin: 0; padding-left: 15px;
-      font-family: 'Inter Tight', sans-serif; font-size: 12.5px; font-weight: 300;
-      color: var(--ink-soft); line-height: 1.5;
-      display: flex; flex-direction: column; gap: 3px;
+    /* Middle: big numbers */
+    .bm2-card-mid {
+      padding: 24px 24px 20px;
+      flex: 1; display: flex; flex-direction: column; justify-content: center;
     }
-    .poa-c2 .poa-acts { color: rgba(74,56,42,0.62); }
-    .poa-c3 .poa-acts { color: rgba(74,56,42,0.48); }
+    .bm2-big-num {
+      font-family: 'Instrument Serif', serif; font-size: 72px;
+      line-height: 0.95; letter-spacing: -0.02em;
+      color: var(--ink); margin-bottom: 4px;
+    }
+    .bm2-card-2 .bm2-big-num { color: rgba(74,56,42,0.75); }
+    .bm2-card-3 .bm2-big-num { color: rgba(74,56,42,0.55); }
+    .bm2-big-lbl {
+      font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 400;
+      color: var(--ink-soft); margin-bottom: 14px; letter-spacing: 0.01em;
+    }
+    .bm2-arr {
+      font-family: 'Instrument Serif', serif; font-size: 34px;
+      line-height: 1; margin: 0;
+    }
+    .bm2-arr-1 { color: #954A2D; }
+    .bm2-arr-2 { color: #A06432; }
+    .bm2-arr-3 { color: rgba(149,74,45,0.44); }
 
-    /* Column foot: milestone + why */
-    .poa-col-foot {
-      border-top: 1px solid rgba(149,74,45,0.13);
-      padding-top: 10px;
-      display: flex; flex-direction: column; gap: 8px;
+    /* Bottom: context + why */
+    .bm2-card-bot {
+      padding: 16px 24px 20px;
+      border-top: 1px solid rgba(149,74,45,0.08);
+      background: rgba(149,74,45,0.02);
     }
-    .poa-milestone { display: flex; flex-direction: column; gap: 3px; }
-    .poa-m-row { display: flex; align-items: baseline; gap: 2px; flex-wrap: wrap; }
-    .poa-mnum {
-      font-family: 'Instrument Serif', serif; font-size: 36px;
-      color: var(--ink); line-height: 1;
+    .bm2-ctx {
+      font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 300;
+      color: var(--ink-soft); line-height: 1.55; margin: 0 0 10px;
     }
-    .poa-c2 .poa-mnum { color: rgba(74,56,42,0.78); }
-    .poa-c3 .poa-mnum { color: rgba(74,56,42,0.58); }
-    .poa-munit {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 300;
-      color: var(--ink-soft);
-    }
-    .poa-m-arr {
-      font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1; margin: 0;
-    }
-    .poa-arr-1 { color: var(--accent); }
-    .poa-arr-2 { color: #A06432; }
-    .poa-arr-3 { color: rgba(149,74,45,0.46); }
-    .poa-m-sub {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 300;
-      letter-spacing: 0.05em; color: var(--ink-mute); margin: 0;
-    }
-    .poa-why {
-      font-family: 'Inter Tight', sans-serif; font-size: 11.5px; font-weight: 300;
+    .bm2-why {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300;
       color: var(--ink-mute); margin: 0; line-height: 1.5;
+      padding-top: 8px; border-top: 1px solid rgba(149,74,45,0.08);
     }
-    .poa-why em { font-style: normal; font-weight: 500; color: var(--ink-soft); }
+    .bm2-why em { font-style: normal; font-weight: 500; color: var(--ink-soft); }
 
     /* Bottom callout */
-    .poa-bottom {
-      flex: 0 0 auto;
+    .bm2-bottom {
+      flex: 0 0 auto; margin-top: 16px;
       background: rgba(149,74,45,0.05);
-      border-top: 1.5px solid rgba(149,74,45,0.16);
-      padding: 10px 18px;
-      margin-top: 16px;
+      border-top: 1.5px solid rgba(149,74,45,0.15);
+      padding: 10px 20px;
     }
-    .poa-bottom-text {
-      font-family: 'Inter Tight', sans-serif; font-size: 12.5px; font-weight: 400;
+    .bm2-bottom-text {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 400;
       color: var(--ink-soft); margin: 0 0 3px; line-height: 1.5;
     }
-    .poa-source {
+    .bm2-bottom-text strong { font-weight: 600; color: var(--ink); }
+    .bm2-source {
       font-family: 'Inter Tight', sans-serif; font-size: 11px; font-style: italic;
       color: var(--ink-mute); margin: 0; letter-spacing: 0.02em;
     }
