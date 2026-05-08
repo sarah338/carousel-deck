@@ -12,7 +12,6 @@
 
 <script>
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "v6": "c"
 }/*EDITMODE-END*/;
 </script>
 
@@ -33,10 +32,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   html, body { margin: 0; padding: 0; background: #111; }
   body { font-family: "Inter Tight", sans-serif; color: var(--ink); font-weight: 300; -webkit-font-smoothing: antialiased; }
 
-  .slide-6 { display: none !important; }
-  [data-v6="a"] .slide-6.v-a,
-  [data-v6="b"] .slide-6.v-b,
-  [data-v6="c"] .slide-6.v-c { display: block !important; }
 
   section.slide {
     background: var(--bg);
@@ -364,124 +359,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
 </section>
 
-<!-- 6. COMPETITIVE — VARIANT A -->
-<section class="slide slide-6 v-a" data-screen-label="06 Competitive · A">
-  <div class="pageno"><svg><use href="#mark"/></svg>06 / 10</div>
-  <div class="frame">
-    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1" style="margin-bottom: 56px; max-width: 1740px; font-size: 60px;">
-      Capital has poured into fertility. None of it has reached the patient.
-    </h1>
-
-    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 32px; margin-bottom: 48px; padding: 24px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
-      <div><p class="eyebrow" style="margin-bottom: 8px;">Maven</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$425M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; $1.7B val</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 8px;">Carrot</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$115M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; Series C</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 8px;">Modern Fertility</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$225M</p><p class="body" style="font-size: 14px; margin-top: 6px;">Acquired by Ro &middot; 2021</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 8px;">Progyny</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$1.17B</p><p class="body" style="font-size: 14px; margin-top: 6px;">FY2024 revenue &middot; public</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 8px;">Kindbody</p><p style="font-family:'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0; line-height: 1;">$300M+</p><p class="body" style="font-size: 14px; margin-top: 6px;">Total raised &middot; clinic network</p></div>
-    </div>
-
-    <div style="padding-left: 280px; position: relative;">
-      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-bottom: 20px;">
-        <div class="eyebrow" style="text-align:center;">Pre-treatment</div>
-        <div class="eyebrow" style="text-align:center;">During treatment</div>
-        <div class="eyebrow" style="text-align:center;">Post-treatment</div>
-      </div>
-
-      <div style="display:flex; flex-direction:column; gap: 12px;">
-        <div class="cmp-row">
-          <div class="cmp-name" style="font-family:'Instrument Serif', serif; font-size: 24px; color: var(--accent);">Carousel</div>
-          <div class="cmp-bar" style="grid-column: 2 / span 3; background: var(--accent); color: #F7F1E4;">Always-on, longitudinal &mdash; pre, during, post</div>
-        </div>
-        <div class="rule-soft" style="margin: 4px 0;"></div>
-        <div class="cmp-row"><div class="cmp-name">Progyny &middot; Carrot &middot; Maven</div><div class="cmp-bar" style="grid-column: 2 / span 2;">Employer benefits navigation</div><div></div></div>
-        <div class="cmp-row"><div class="cmp-name">EngagedMD &middot; Salve</div><div></div><div class="cmp-bar" style="grid-column: 3 / span 1;">Clinic communications</div><div></div></div>
-        <div class="cmp-row"><div class="cmp-name">Alife &middot; Automate</div><div></div><div class="cmp-bar" style="grid-column: 3 / span 1;">Clinical AI for embryologists</div><div></div></div>
-        <div class="cmp-row"><div class="cmp-name">Frame &middot; Conceive</div><div class="cmp-bar" style="grid-column: 2 / span 2;">D2C apps with human coaching</div><div></div></div>
-      </div>
-    </div>
-    <p style="font-family: 'Instrument Serif', serif; font-style: italic; font-size: 14px; color: var(--ink-mute); margin: 24px 0 0;">
-      Funding sources: Crunchbase &middot; PitchBook &middot; company press (current as of 2026).
-    </p>
-  </div>
-  <div class="confidential">Carousel 2026 &middot; Confidential</div>
-  <style>
-    .slide-6.v-a .cmp-row { display:grid; grid-template-columns: 280px 1fr 1fr 1fr; gap: 0; align-items:center; position: relative; left: -280px; }
-    .slide-6.v-a .cmp-name { font-family:'Inter Tight', sans-serif; font-size: 18px; color: var(--ink); font-weight: 400; padding-right: 24px; text-align:right; }
-    .slide-6.v-a .cmp-bar { height: 38px; display:flex; align-items:center; padding: 0 22px; font-family:'Inter Tight', sans-serif; font-size: 16px; color: var(--ink-soft); background: var(--bg-card); }
-  </style>
-</section>
-
-<!-- 6. COMPETITIVE — VARIANT B -->
-<section class="slide slide-6 v-b" data-screen-label="06 Competitive · B">
-  <div class="pageno"><svg><use href="#mark"/></svg>06 / 10</div>
-  <div class="frame">
-    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1" style="margin-bottom: 40px; max-width: 1740px; font-size: 60px;">
-      Capital has poured in. The patient experience layer is still empty.
-    </h1>
-
-    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-bottom: 36px; padding: 18px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
-      <div><p class="eyebrow" style="margin-bottom: 6px;">Maven</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$425M</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 6px;">Carrot</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$115M</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 6px;">Modern Fertility</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$225M exit</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 6px;">Progyny</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$1.17B rev</p></div>
-      <div><p class="eyebrow" style="margin-bottom: 6px;">Kindbody</p><p style="font-family:'Instrument Serif', serif; font-size: 30px; color: var(--ink); margin: 0; line-height: 1;">$300M+</p></div>
-    </div>
-
-    <div class="map-wrap">
-      <div class="ax-y">Always-on &middot; AI-first &nbsp;&rarr;</div>
-      <div class="ax-x">Patient-first &nbsp;&rarr;</div>
-
-      <div class="map-grid">
-        <div class="q q-tl"><div class="eyebrow">AI-first &middot; Buyer-first</div><div class="q-desc" style="color: var(--ink-mute);">Empty</div></div>
-        <div class="q q-tr"><div class="eyebrow" style="color: var(--accent);">AI-first &middot; Patient-first</div><div class="q-desc" style="color: var(--accent);">Carousel</div></div>
-        <div class="q q-bl"><div class="eyebrow">Point-in-time &middot; Buyer-first</div><div class="q-desc" style="color: var(--ink-soft);">Employer benefits, clinic software</div></div>
-        <div class="q q-br"><div class="eyebrow">Point-in-time &middot; Patient-first</div><div class="q-desc" style="color: var(--ink-soft);">D2C apps, human coaching</div></div>
-
-        <div class="axis-v"></div>
-        <div class="axis-h"></div>
-
-        <span class="dot" style="left: 16%; top: 80%;" data-name="Progyny"></span>
-        <span class="dot" style="left: 24%; top: 86%;" data-name="Carrot"></span>
-        <span class="dot" style="left: 32%; top: 74%;" data-name="Maven"></span>
-        <span class="dot" style="left: 22%; top: 60%;" data-name="EngagedMD"></span>
-        <span class="dot" style="left: 36%; top: 56%;" data-name="Salve"></span>
-        <span class="dot" style="left: 42%; top: 64%;" data-name="Alife"></span>
-        <span class="dot" style="left: 70%; top: 78%;" data-name="Frame &middot; Conceive"></span>
-
-        <div class="us" style="left: 78%; top: 22%;">
-          <div class="us-name">Carousel</div>
-          <div class="us-desc">Pre &middot; during &middot; post &mdash; full longitudinal arc.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="confidential">Carousel 2026 &middot; Confidential</div>
-  <style>
-    .slide-6.v-b .map-wrap { position: relative; height: 460px; padding: 16px 20px 56px 70px; box-sizing: border-box; }
-    .slide-6.v-b .ax-y, .slide-6.v-b .ax-x { position: absolute; font-family:'Inter Tight', sans-serif; font-weight: 400; font-size: 14px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); }
-    .slide-6.v-b .ax-y { left: 0; top: 50%; transform-origin: left top; transform: rotate(-90deg) translateX(50%); white-space: nowrap; }
-    .slide-6.v-b .ax-x { bottom: 14px; left: calc(50% + 35px); transform: translateX(-50%); white-space: nowrap; }
-    .slide-6.v-b .map-grid { position: relative; height: 100%; width: 100%; background: var(--bg-card); }
-    .slide-6.v-b .axis-v { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--rule-soft); }
-    .slide-6.v-b .axis-h { position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--rule-soft); }
-    .slide-6.v-b .q { position: absolute; width: 50%; height: 50%; padding: 28px 32px; box-sizing: border-box; }
-    .slide-6.v-b .q-desc { font-family: 'Instrument Serif', serif; font-size: 22px; margin-top: 8px; line-height: 1.3; }
-    .slide-6.v-b .q-tl { top: 0; left: 0; }
-    .slide-6.v-b .q-tr { top: 0; right: 0; text-align: right; }
-    .slide-6.v-b .q-bl { bottom: 0; left: 0; }
-    .slide-6.v-b .q-br { bottom: 0; right: 0; text-align: right; }
-    .slide-6.v-b .dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--ink-mute); transform: translate(-50%,-50%); }
-    .slide-6.v-b .dot::after { content: attr(data-name); position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-family: 'Inter Tight', sans-serif; font-size: 14px; color: var(--ink-soft); white-space: nowrap; }
-    .slide-6.v-b .us { position: absolute; transform: translate(-50%,-50%); background: var(--accent); color: #F7F1E4; padding: 18px 24px; min-width: 320px; }
-    .slide-6.v-b .us-name { font-family: 'Instrument Serif', serif; font-size: 32px; line-height: 1; }
-    .slide-6.v-b .us-desc { font-family: 'Inter Tight', sans-serif; font-size: 15px; color: rgba(247,241,228,0.85); line-height: 1.4; margin-top: 8px; }
-  </style>
-</section>
-
-<!-- 6. COMPETITIVE — VARIANT C -->
-<section class="slide slide-6 v-c" data-screen-label="06 Competitive · C">
+<!-- 6. COMPETITIVE -->
+<section class="slide" data-screen-label="06 Competitive">
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 10</div>
   <div class="frame">
     <p class="eyebrow" style="margin-bottom: 18px; color: var(--accent);">Competitive landscape</p>
@@ -552,49 +431,49 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    .slide-6.v-c .cap-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
-    .slide-6.v-c .cap-grid th, .slide-6.v-c .cap-grid td {
+    [data-screen-label="06 Competitive"] .cap-grid { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    [data-screen-label="06 Competitive"] .cap-grid th, [data-screen-label="06 Competitive"] .cap-grid td {
       padding: 3px 8px; border-bottom: 1px solid var(--rule-soft);
       text-align: center; font-family: 'Inter Tight', sans-serif;
       font-size: 16px; font-weight: 300; color: var(--ink-soft); vertical-align: middle;
     }
-    .slide-6.v-c .cap-grid th { font-weight: 500; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); padding-top: 0; padding-bottom: 10px; line-height: 1.3; }
-    .slide-6.v-c .cap-grid .th-sub { font-family:'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--ink-mute); letter-spacing: 0; text-transform: none; margin-top: 4px; font-weight: 400; }
-    .slide-6.v-c .cap-grid td.lbl, .slide-6.v-c .cap-grid th.lbl { text-align: left; padding-left: 0; width: 480px; color: var(--ink); font-weight: 400; font-size: 19px; }
-    .slide-6.v-c .cap-grid .lbl-sub { font-family:'Inter Tight', sans-serif; font-size:12px; color: var(--ink-mute); font-weight: 300; margin-top: 2px; letter-spacing: 0.02em; line-height: 1.3; }
-    .slide-6.v-c .cap-col-first { border-left: 1px solid var(--rule); }
-    .slide-6.v-c .grp-label-col {
+    [data-screen-label="06 Competitive"] .cap-grid th { font-weight: 500; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); border-bottom: 1px solid var(--rule); padding-top: 0; padding-bottom: 10px; line-height: 1.3; }
+    [data-screen-label="06 Competitive"] .cap-grid .th-sub { font-family:'Instrument Serif', serif; font-style: italic; font-size: 13px; color: var(--ink-mute); letter-spacing: 0; text-transform: none; margin-top: 4px; font-weight: 400; }
+    [data-screen-label="06 Competitive"] .cap-grid td.lbl, [data-screen-label="06 Competitive"] .cap-grid th.lbl { text-align: left; padding-left: 0; width: 480px; color: var(--ink); font-weight: 400; font-size: 19px; }
+    [data-screen-label="06 Competitive"] .cap-grid .lbl-sub { font-family:'Inter Tight', sans-serif; font-size:12px; color: var(--ink-mute); font-weight: 300; margin-top: 2px; letter-spacing: 0.02em; line-height: 1.3; }
+    [data-screen-label="06 Competitive"] .cap-col-first { border-left: 1px solid var(--rule); }
+    [data-screen-label="06 Competitive"] .grp-label-col {
       width: 28px; min-width: 28px; max-width: 28px;
       padding: 0; border-bottom: none; vertical-align: middle; text-align: center;
     }
-    .slide-6.v-c .grp-label-col span {
+    [data-screen-label="06 Competitive"] .grp-label-col span {
       writing-mode: vertical-rl; transform: rotate(180deg);
       font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 700;
       letter-spacing: 0.26em; text-transform: uppercase; display: inline-block;
     }
-    .slide-6.v-c .grp-label-pts span { color: var(--ink-mute); }
-    .slide-6.v-c .grp-label-plat span { color: var(--accent); }
-    .slide-6.v-c .grp-label-adj span { color: var(--ink-mute); opacity: 0.5; }
-    .slide-6.v-c .adj-lbl { color: var(--ink-mute) !important; font-size: 16px !important; }
-    .slide-6.v-c .adj-lbl .lbl-sub { opacity: 0.7; }
-    .slide-6.v-c .grp-start td { border-top: 1px solid var(--rule); padding-top: 8px; }
-    .slide-6.v-c .grp-start .grp-label-col { border-top: 1px solid var(--rule); }
-    .slide-6.v-c .us-row td {
+    [data-screen-label="06 Competitive"] .grp-label-pts span { color: var(--ink-mute); }
+    [data-screen-label="06 Competitive"] .grp-label-plat span { color: var(--accent); }
+    [data-screen-label="06 Competitive"] .grp-label-adj span { color: var(--ink-mute); opacity: 0.5; }
+    [data-screen-label="06 Competitive"] .adj-lbl { color: var(--ink-mute) !important; font-size: 16px !important; }
+    [data-screen-label="06 Competitive"] .adj-lbl .lbl-sub { opacity: 0.7; }
+    [data-screen-label="06 Competitive"] .grp-start td { border-top: 1px solid var(--rule); padding-top: 8px; }
+    [data-screen-label="06 Competitive"] .grp-start .grp-label-col { border-top: 1px solid var(--rule); }
+    [data-screen-label="06 Competitive"] .us-row td {
       padding-top: 10px; padding-bottom: 10px;
       background: rgba(149,74,45,0.12);
       border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
     }
-    .slide-6.v-c .us-row .grp-label-col {
+    [data-screen-label="06 Competitive"] .us-row .grp-label-col {
       border-top: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
       background: rgba(149,74,45,0.12);
     }
-    .slide-6.v-c .us-lbl {
+    [data-screen-label="06 Competitive"] .us-lbl {
       font-family:'Instrument Serif', serif; font-size: 32px;
       color: var(--accent) !important; font-weight: 400 !important; letter-spacing: -0.01em;
     }
-    .slide-6.v-c .dot-y { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
-    .slide-6.v-c .dot-h { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); opacity: 0.3; }
-    .slide-6.v-c .us-row .dot-y { width: 20px; height: 20px; box-shadow: 0 0 0 3px rgba(149,74,45,0.18); }
+    [data-screen-label="06 Competitive"] .dot-y { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+    [data-screen-label="06 Competitive"] .dot-h { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); opacity: 0.3; }
+    [data-screen-label="06 Competitive"] .us-row .dot-y { width: 20px; height: 20px; box-shadow: 0 0 0 3px rgba(149,74,45,0.18); }
 
   </style>
 </section>
@@ -1856,18 +1735,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
 </div>
 
-<script>
-  let tweakState = { ...TWEAK_DEFAULTS };
-
-  (function trimSlide6(){
-    const v = (window.TWEAK_DEFAULTS && window.TWEAK_DEFAULTS.v6) || tweakState.v6 || 'c';
-    ['a','b','c'].forEach(k => {
-      if (k === v) return;
-      document.querySelectorAll('.slide-6.v-' + k).forEach(el => el.remove());
-    });
-    document.documentElement.setAttribute('data-v6', v);
-  })();
-</script>
 
 <script type="application/json" id="speaker-notes">
 [
