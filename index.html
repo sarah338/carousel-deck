@@ -2034,7 +2034,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <p class="eyebrow" style="margin: 0 0 20px; color: var(--accent);">The ask</p>
 
-    <p class="ask-headline">Raising <span class="ask-hl-amt">$2M</span> pre-seed on a SAFE at a $10M post-money cap.</p>
+    <p class="ask-headline">Carousel is raising a <span class="ask-hl-amt">$1M angel round</span> on a SAFE at a $10M post-money cap, closing in the next 30&ndash;45 days.</p>
 
     <div class="ask-section-hd">ROUND OVERVIEW</div>
     <div class="ask-facts">
@@ -2047,38 +2047,48 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <p class="ask-fact-val">$10M post-money</p>
       </div>
       <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Round size</p>
+        <p class="ask-fact-val">$1M angel round</p>
+      </div>
+      <div class="ask-fact">
+        <p class="ask-fact-eyebrow">Timeline</p>
+        <p class="ask-fact-val">First close: 2&ndash;3 weeks<br>Full close: 30&ndash;45 days</p>
+      </div>
+      <div class="ask-fact">
         <p class="ask-fact-eyebrow">Investors</p>
-        <p class="ask-fact-val">Angels + Strategic Operators</p>
+        <p class="ask-fact-val">Strategic angels and operators</p>
       </div>
     </div>
 
     <div class="uof-grid">
-      <div class="uof-hd">USE OF FUNDS</div>
+      <div class="uof-hd">USE OF FUNDS <span class="uof-hd-note">at $1M raised</span></div>
       <div class="uof-col">
-        <p class="uof-pct">~45%</p>
-        <p class="uof-amt">$1.35M</p>
-        <p class="uof-label">Team</p>
-        <p class="uof-body">Clinical leadership. Founding engineer. Founding designer. Founder runway. The hires that ship the MVP and earn clinical credibility.</p>
+        <p class="uof-pct">~30%</p>
+        <p class="uof-amt">$300K</p>
+        <p class="uof-label">Founder runway</p>
+        <p class="uof-body">Founder salary and operating costs through first close and into product launch.</p>
       </div>
       <div class="uof-col">
         <p class="uof-pct">~30%</p>
-        <p class="uof-amt">$0.9M</p>
-        <p class="uof-label">Product</p>
-        <p class="uof-body">Build, ship, and iterate the Carousel D2C app. Infrastructure, AI/ML personalization layer, hormone-test partner integration, longitudinal data architecture.</p>
+        <p class="uof-amt">$300K</p>
+        <p class="uof-label">Product &amp; engineering</p>
+        <p class="uof-body">Build and ship the Carousel D2C app. Contractor engineering, AI/ML layer, hormone-test integration, core data architecture.</p>
+      </div>
+      <div class="uof-col">
+        <p class="uof-pct">~25%</p>
+        <p class="uof-amt">$250K</p>
+        <p class="uof-label">Go-to-market &amp; community</p>
+        <p class="uof-body">D2C acquisition, content engine, community moderation, design-partner clinic activation. The work that turns an MVP into 15–25K patients reached.</p>
       </div>
       <div class="uof-col">
         <p class="uof-pct">~15%</p>
-        <p class="uof-amt">$0.45M</p>
-        <p class="uof-label">Go-to-market</p>
-        <p class="uof-body">Cold-start traction: D2C acquisition, content engine, community moderation, design-partner clinic activation. The work that turns an MVP into 15–25K patients reached.</p>
-      </div>
-      <div class="uof-col">
-        <p class="uof-pct">~10%</p>
-        <p class="uof-amt">$0.3M</p>
-        <p class="uof-label">Operations &amp; contingency</p>
+        <p class="uof-amt">$150K</p>
+        <p class="uof-label">Legal / ops / contingency</p>
         <p class="uof-body">Legal, finance, infrastructure, runway buffer.</p>
       </div>
     </div>
+
+    <p class="ask-follow-on">Institutional pre-seed of $1.5M&ndash;$2M follows in 4&ndash;6 months.</p>
 
     <div class="ask-foot">
       <div class="ask-foot-l">
@@ -2099,7 +2109,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="11 The ask"] .ask-hl-amt { color: var(--accent); }
     [data-screen-label="11 The ask"] .ask-facts {
-      display: grid; grid-template-columns: repeat(4, 1fr);
+      display: grid; grid-template-columns: repeat(5, 1fr);
       gap: 0;
       border-top: 1px solid var(--rule);
       border-bottom: 1px solid var(--rule);
@@ -2134,7 +2144,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="11 The ask"] .uof-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; margin-bottom: 48px;
+      gap: 0; margin-bottom: 20px;
+    }
+    [data-screen-label="11 The ask"] .uof-hd-note {
+      font-weight: 400; font-style: italic; letter-spacing: 0.04em;
+      text-transform: none; opacity: 0.65; margin-left: 10px;
+    }
+    [data-screen-label="11 The ask"] .ask-follow-on {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 22px; color: var(--accent); margin: 0 0 auto;
+      letter-spacing: -0.005em; line-height: 1.4;
     }
     [data-screen-label="11 The ask"] .ask-section-hd {
       background: rgba(125,56,32,0.09);
