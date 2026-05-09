@@ -168,21 +168,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
 <!-- 1. COVER -->
 <section class="slide" data-screen-label="01 Cover">
-  <div class="frame" style="padding: 0; display:grid; grid-template-columns: 1fr 1fr;">
-    <div style="position:relative; overflow:hidden; background: #3a2416;">
-      <img src="assets/cover-portrait.jpg" alt="" style="width:100%; height:100%; object-fit: cover; object-position: center center; display:block;"/>
-    </div>
-    <div style="padding: 120px 110px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;">
-      <h1 class="display" style="text-align: center; font-family: 'Instrument Serif'; color: rgb(99, 55, 28);">
-        Carousel<br/>Fertility
-      </h1>
-      <div style="margin-top: 96px; max-width: 720px;">
-        <p style="font-family:'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 28px; line-height: 1.55; color: var(--ink-soft); margin: 0;"></p>
-        <p class="eyebrow" style="margin-top: 32px;"></p>
-      </div>
-    </div>
+  <div style="position:absolute; inset:0; overflow:hidden;">
+    <img src="assets/cover-portrait.jpg" alt="" style="width:100%; height:100%; object-fit:cover; object-position:center center; display:block;"/>
+    <div style="position:absolute; inset:0; background: linear-gradient(to right, rgba(35,18,10,0.08) 0%, rgba(35,18,10,0.55) 55%, rgba(35,18,10,0.78) 100%);"></div>
   </div>
-  <div class="confidential" style="left: auto; right: 110px; bottom: 56px; color: var(--ink-mute);">Carousel Fertility 2026 &middot; Confidential</div>
+  <div style="position:absolute; inset:0; display:flex; flex-direction:column; justify-content:center; align-items:flex-end; padding: 0 110px;">
+    <h1 style="font-family:'Instrument Serif', serif; font-size:120px; font-weight:400; line-height:0.95; letter-spacing:-0.02em; color:#F7F1E4; margin:0; text-align:right;">Carousel<br>Fertility</h1>
+    <p style="font-family:'Instrument Serif', serif; font-style:italic; font-size:26px; color:rgba(247,241,228,0.65); margin:32px 0 0; text-align:right; line-height:1.5;">The fertility companion patients trust &mdash;<br>and the platform clinics need.</p>
+  </div>
+  <div class="confidential" style="left:auto; right:110px; bottom:56px; color:rgba(247,241,228,0.45);">Carousel Fertility 2026 &middot; Confidential</div>
 </section>
 
 <!-- 2. FOUNDER -->
