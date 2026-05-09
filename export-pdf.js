@@ -3,7 +3,6 @@
 // proxies Google Fonts through Node, screenshots, combines into PDF.
 const puppeteer  = require('puppeteer');
 const { PDFDocument } = require('pdf-lib');
-const https = require('https');
 const path  = require('path');
 const fs    = require('fs');
 
@@ -11,30 +10,9 @@ const W    = 1920;
 const H    = 1080;
 const HTML = `file://${path.join(__dirname, 'index.html')}`;
 const OUT  = path.join(__dirname, 'carousel-deck.pdf');
-const CACHE_DIR = path.join(__dirname, '.font-cache');
 
-function fetchBuffer(url) {
-  return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' } }, res => {
-      if (res.statusCode >= 300 && res.headers.location)
-        return fetchBuffer(res.headers.location).then(resolve).catch(reject);
-      const chunks = [];
-      res.on('data', c => chunks.push(c));
-      res.on('end', () => resolve(Buffer.concat(chunks)));
-      res.on('error', reject);
-    }).on('error', reject);
-  });
-}
-
-async function cachedFetch(url) {
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const key  = Buffer.from(url).toString('base64').replace(/[/+=]/g, '_').slice(-80);
-  const file = path.join(CACHE_DIR, key);
-  if (fs.existsSync(file)) return fs.readFileSync(file);
-  const buf = await fetchBuffer(url);
-  fs.writeFileSync(file, buf);
-  return buf;
-}
+// Pre-built CSS with all fonts embedded as base64 data URIs
+const EMBEDDED_FONT_CSS = fs.readFileSync(path.join(__dirname, 'fonts', 'embedded-fonts.css'));
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -46,18 +24,16 @@ async function cachedFetch(url) {
   // Match the deck's design size exactly so scale = 1.0
   await page.setViewport({ width: W, height: H, deviceScaleFactor: 2 });
 
-  // Proxy Google Fonts through Node (headless Chrome can't reach them directly)
+  // Serve embedded fonts — no network calls needed
   await page.setRequestInterception(true);
-  page.on('request', async req => {
+  page.on('request', req => {
     const u = req.url();
-    if (u.includes('fonts.googleapis.com') || u.includes('fonts.gstatic.com')) {
-      try {
-        const buf = await cachedFetch(u);
-        const ct  = u.includes('.ttf')   ? 'font/truetype'
-                  : u.includes('.woff2') ? 'font/woff2'
-                  : 'text/css; charset=utf-8';
-        req.respond({ status: 200, contentType: ct, body: buf });
-      } catch { req.abort(); }
+    if (u.includes('fonts.googleapis.com')) {
+      // Return pre-built CSS with data URIs instead of hitting the network
+      req.respond({ status: 200, contentType: 'text/css; charset=utf-8', body: EMBEDDED_FONT_CSS });
+    } else if (u.includes('fonts.gstatic.com')) {
+      // All font data is already embedded in the CSS above
+      req.abort();
     } else {
       req.continue();
     }
