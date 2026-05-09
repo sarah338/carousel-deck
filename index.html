@@ -1614,127 +1614,142 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="frame" style="padding-top: 64px; display: flex; flex-direction: column;">
 
     <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Business model</p>
-    <h1 class="h1" style="margin: 0 0 20px; max-width: 1700px; font-size: 52px; line-height: 1.1;">Carousel pairs a patient app with a clinic platform,<br>sold to patients now, clinics in parallel, and employers at scale.</h1>
+    <h1 class="h1" style="margin: 0 0 28px; max-width: 1700px; font-size: 52px; line-height: 1.1;">Carousel pairs a patient app with a clinic platform,<br>sold to patients now, clinics in parallel, and employers at scale.</h1>
 
-    <div class="bm6-main">
+    <!-- THREE-PHASE CASCADE -->
+    <div class="ph-cols">
 
-      <!-- STACKED AREA CHART — left 64% -->
-      <div class="bm6-chart">
-        <svg viewBox="0 0 1900 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMid meet">
-
-          <!-- Phase markers -->
-          <line x1="725"  y1="44" x2="725"  y2="640" stroke="rgba(149,74,45,0.20)" stroke-width="1.5" stroke-dasharray="6 4"/>
-          <line x1="1370" y1="44" x2="1370" y2="640" stroke="rgba(149,74,45,0.28)" stroke-width="1.5" stroke-dasharray="6 4"/>
-          <text x="725"  y="34" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="rgba(149,74,45,0.65)">MO. 9</text>
-          <text x="1370" y="34" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="20" font-weight="700" letter-spacing="3" fill="rgba(149,74,45,0.65)">MO. 18</text>
-
-          <!-- D2C fill (bottom layer — the foundation) -->
-          <path d="M 80,640 L 80,639 C 290,639 410,629 510,623 C 615,617 672,608 725,598 C 830,586 884,572 940,561 C 1082,536 1231,498 1370,466 C 1547,433 1687,393 1800,360 L 1800,640 Z" fill="#7D3820" opacity="0.93"/>
-
-          <!-- Clinic fill (stacks on D2C, starts growing at Mo.9) -->
-          <path d="M 80,639 C 290,639 410,629 510,623 C 615,617 672,608 725,598 C 824,582 877,533 940,495 C 1083,437 1232,391 1370,362 C 1547,332 1687,275 1800,230 L 1800,360 C 1687,393 1547,433 1370,466 C 1231,498 1082,536 940,561 C 884,572 830,586 725,598 C 672,608 615,617 510,623 C 410,629 290,639 80,639 Z" fill="#8B5520" opacity="0.85"/>
-
-          <!-- Employer fill (wedge from Mo.18) -->
-          <path d="M 1370,362 C 1547,335 1687,227 1800,177 L 1800,230 C 1687,275 1547,332 1370,362 Z" fill="#BF7030" opacity="0.80"/>
-
-          <!-- X-axis -->
-          <line x1="80" y1="640" x2="1800" y2="640" stroke="rgba(149,74,45,0.18)" stroke-width="1"/>
-
-          <!-- Ticks — every 6 months only -->
-          <line x1="80"   y1="636" x2="80"   y2="644" stroke="rgba(149,74,45,0.28)" stroke-width="1.5"/>
-          <line x1="510"  y1="636" x2="510"  y2="644" stroke="rgba(149,74,45,0.28)" stroke-width="1.5"/>
-          <line x1="940"  y1="636" x2="940"  y2="644" stroke="rgba(149,74,45,0.28)" stroke-width="1.5"/>
-          <line x1="1370" y1="636" x2="1370" y2="644" stroke="rgba(149,74,45,0.28)" stroke-width="1.5"/>
-          <line x1="1800" y1="636" x2="1800" y2="644" stroke="rgba(149,74,45,0.28)" stroke-width="1.5"/>
-
-          <!-- Month labels — every 6 months -->
-          <text x="80"   y="664" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="13" letter-spacing="1" fill="rgba(74,56,42,0.48)">Mo. 0</text>
-          <text x="510"  y="664" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="13" letter-spacing="1" fill="rgba(74,56,42,0.48)">Mo. 6</text>
-          <text x="940"  y="664" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="13" letter-spacing="1" fill="rgba(74,56,42,0.48)">Mo. 12</text>
-          <text x="1370" y="664" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="13" letter-spacing="1" fill="rgba(74,56,42,0.48)">Mo. 18</text>
-          <text x="1800" y="664" text-anchor="middle" font-family="Inter Tight, sans-serif" font-size="13" letter-spacing="1" fill="rgba(74,56,42,0.48)">Mo. 24</text>
-
-          <!-- Color legend — in chart white space upper-left -->
-          <rect x="240" y="200" width="22" height="22" rx="3" fill="#7D3820" opacity="0.90"/>
-          <text x="272" y="219" font-family="Inter Tight, sans-serif" font-size="26" font-weight="700" letter-spacing="1" fill="rgba(74,56,42,0.70)">D2C</text>
-          <rect x="240" y="262" width="22" height="22" rx="3" fill="#8B5520" opacity="0.85"/>
-          <text x="272" y="281" font-family="Inter Tight, sans-serif" font-size="26" font-weight="700" letter-spacing="1" fill="rgba(74,56,42,0.70)">Clinic</text>
-          <rect x="240" y="324" width="22" height="22" rx="3" fill="#BF7030" opacity="0.80"/>
-          <text x="272" y="343" font-family="Inter Tight, sans-serif" font-size="26" font-weight="700" letter-spacing="1" fill="rgba(74,56,42,0.70)">Employer</text>
-
-        </svg>
-      </div><!-- /bm6-chart -->
-
-      <!-- RIGHT PANEL — ARR / Milestone / Assumption -->
-      <div class="bm6-rpanel">
-
-        <div class="bm6-rp-hd">
-          <span></span>
-          <span class="bm6-rp-col-lbl">ARR</span>
-          <span class="bm6-rp-col-lbl">Milestone</span>
-        </div>
-
-        <div class="bm6-rp-row" style="border-left: 3px solid #7D3820;">
-          <div class="bm6-rp-chan" style="color:#7D3820;">D2C</div>
-          <div class="bm6-rp-arr" style="color:#7D3820;">$180K&ndash;<br>$360K</div>
-          <div class="bm6-rp-detail">
-            <p class="bm6-rp-ms">1,500&ndash;2,500 subscribers paying</p>
+      <!-- Mo. 0–9: D2C only -->
+      <div class="ph-col">
+        <p class="ph-period">Mo. 0 &ndash; 9</p>
+        <div class="ph-blocks">
+          <div class="ph-block ph-d2c">
+            <p class="ph-ch">D2C</p>
+            <p class="ph-price">$20 / month</p>
           </div>
         </div>
+        <div class="ph-foot">
+          <p class="ph-arr">$180K &ndash; $360K ARR</p>
+          <p class="ph-ms">1,500 &ndash; 2,500 subscribers</p>
+        </div>
+      </div>
 
-        <div class="bm6-rp-row" style="border-left: 3px solid #8B5520;">
-          <div class="bm6-rp-chan" style="color:#8B5520;">Clinic</div>
-          <div class="bm6-rp-arr" style="color:#8B5520;">~$70K</div>
-          <div class="bm6-rp-detail">
-            <p class="bm6-rp-ms">2&ndash;3 paid pilots signed by Mo. 9</p>
+      <!-- Divider -->
+      <div class="ph-arrow">&rarr;</div>
+
+      <!-- Mo. 9–18: D2C + Clinic -->
+      <div class="ph-col">
+        <p class="ph-period">Mo. 9 &ndash; 18</p>
+        <div class="ph-blocks">
+          <div class="ph-block ph-clinic">
+            <p class="ph-ch">Clinic</p>
+            <p class="ph-price">$35 &ndash; 50K ACV</p>
+          </div>
+          <div class="ph-block ph-d2c">
+            <p class="ph-ch">D2C</p>
+            <p class="ph-price">$20 / month</p>
           </div>
         </div>
+        <div class="ph-foot">
+          <p class="ph-arr">+ ~$70K clinic ARR</p>
+          <p class="ph-ms">2 &ndash; 3 paid pilots. D2C data earns the pitch.</p>
+        </div>
+      </div>
 
-        <div class="bm6-rp-row" style="border-left: 3px solid #BF7030;">
-          <div class="bm6-rp-chan" style="color:#BF7030;">Employer</div>
-          <div class="bm6-rp-arr" style="color:#BF7030;">Post-<br>seed</div>
-          <div class="bm6-rp-detail">
-            <p class="bm6-rp-ms">1&ndash;2 pilots after seed close</p>
+      <!-- Divider -->
+      <div class="ph-arrow">&rarr;</div>
+
+      <!-- Mo. 18+: All three -->
+      <div class="ph-col">
+        <p class="ph-period">Mo. 18+</p>
+        <div class="ph-blocks">
+          <div class="ph-block ph-employer">
+            <p class="ph-ch">Employer</p>
+            <p class="ph-price">$10 PEPM</p>
+          </div>
+          <div class="ph-block ph-clinic">
+            <p class="ph-ch">Clinic</p>
+            <p class="ph-price">$35 &ndash; 50K ACV</p>
+          </div>
+          <div class="ph-block ph-d2c">
+            <p class="ph-ch">D2C</p>
+            <p class="ph-price">$20 / month</p>
           </div>
         </div>
+        <div class="ph-foot">
+          <p class="ph-arr">$500K+ combined at seed</p>
+          <p class="ph-ms">1 &ndash; 2 employer pilots. Clinic logos unlock enterprise.</p>
+        </div>
+      </div>
 
-      </div><!-- /bm6-rpanel -->
+    </div><!-- /ph-cols -->
 
-    </div><!-- /bm6-main -->
-
-    <div class="bm6-mktstrip">
-      <p class="bm6-mktline">Addressable market: ~400K U.S. fertility patients annually &middot; ~10% blended penetration &middot; ~$200&ndash;$250/patient/year = <strong>~$9M ARR opportunity</strong>.</p>
-      <p class="bm6-mktline">Pre-seed milestone: $500K+ ARR run-rate by seed round.</p>
+    <div class="ph-mktstrip">
+      <p class="ph-mktline">Addressable market: ~400K U.S. fertility patients annually &middot; ~10% blended penetration &middot; ~$200&ndash;$250/patient/year = <strong>~$9M ARR opportunity</strong>.</p>
     </div>
-    <p class="bm6-src">U.S. patient volume: SART 2023 &middot; Pricing: women&rsquo;s health and digital health subscription benchmarks</p>
+    <p class="ph-src">U.S. patient volume: SART 2023 &middot; Pricing: women&rsquo;s health and digital health subscription benchmarks</p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="09 Business model"] .frame { display: flex; flex-direction: column; }
-    [data-screen-label="09 Business model"] .frame > .h1 { margin: 0 0 20px 0 !important; font-size: 52px !important; }
+    [data-screen-label="09 Business model"] .frame > .h1 { margin: 0 0 28px 0 !important; font-size: 52px !important; }
 
-    /* Main two-column layout */
-    .bm6-main { display: flex; gap: 36px; align-items: flex-start; margin-bottom: 10px; }
-    .bm6-chart { flex: 0 0 72%; }
-    .bm6-chart svg { width: 100%; height: auto; display: block; }
+    /* Column layout */
+    .ph-cols { display: flex; align-items: flex-start; gap: 0; flex: 1; min-height: 0; margin-bottom: 16px; }
+    .ph-col { flex: 1; display: flex; flex-direction: column; }
+    .ph-arrow { flex: 0 0 48px; display: flex; align-items: center; justify-content: center; font-size: 32px; color: rgba(149,74,45,0.28); padding-top: 56px; }
 
-    /* Right panel */
-    .bm6-rpanel { flex: 1; display: flex; flex-direction: column; padding-top: 44px; }
-    .bm6-rp-hd { display: grid; grid-template-columns: 68px 72px 1fr; gap: 10px; padding-bottom: 8px; border-bottom: 1.5px solid rgba(149,74,45,0.18); margin-bottom: 0; }
-    .bm6-rp-col-lbl { font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(74,56,42,0.38); }
-    .bm6-rp-row { display: grid; grid-template-columns: 68px 72px 1fr; gap: 10px; padding: 14px 0 14px 12px; border-bottom: 1px solid rgba(149,74,45,0.10); align-items: start; }
-    .bm6-rp-chan { font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; padding-top: 4px; }
-    .bm6-rp-arr { font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.15; }
-    .bm6-rp-detail { display: flex; flex-direction: column; gap: 5px; }
-    .bm6-rp-ms { font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 400; color: var(--ink); margin: 0; line-height: 1.4; }
-    .bm6-rp-as { font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300; color: var(--ink-mute); margin: 0; line-height: 1.4; }
+    /* Column header */
+    .ph-period {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.20em; text-transform: uppercase; color: var(--ink-mute);
+      margin: 0 0 12px; padding-bottom: 10px;
+      border-bottom: 1.5px solid rgba(149,74,45,0.18);
+    }
+
+    /* Stacked blocks */
+    .ph-blocks { display: flex; flex-direction: column; gap: 6px; height: 400px; margin-bottom: 16px; }
+    .ph-block {
+      flex: 1; display: flex; flex-direction: column; justify-content: center;
+      padding: 0 28px; border-left: 5px solid transparent;
+    }
+    .ph-d2c    { background: rgba(125,56,32,0.08);  border-left-color: #7D3820; }
+    .ph-clinic { background: rgba(139,85,32,0.10);  border-left-color: #8B5520; }
+    .ph-employer { background: rgba(191,112,48,0.10); border-left-color: #BF7030; }
+
+    /* Block text */
+    .ph-ch {
+      font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 700;
+      letter-spacing: 0.20em; text-transform: uppercase; margin: 0 0 6px;
+    }
+    .ph-d2c .ph-ch     { color: #7D3820; }
+    .ph-clinic .ph-ch  { color: #8B5520; }
+    .ph-employer .ph-ch { color: #BF7030; }
+
+    .ph-price {
+      font-family: 'Instrument Serif', serif; font-size: 34px; line-height: 1.1; margin: 0;
+    }
+    .ph-d2c .ph-price    { color: #7D3820; }
+    .ph-clinic .ph-price { color: #8B5520; }
+    .ph-employer .ph-price { color: #BF7030; }
+
+    /* Footer below blocks */
+    .ph-foot { border-top: 1px solid rgba(149,74,45,0.14); padding-top: 12px; }
+    .ph-arr {
+      font-family: 'Instrument Serif', serif; font-size: 22px; color: var(--ink);
+      margin: 0 0 4px; line-height: 1.2;
+    }
+    .ph-ms {
+      font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 300;
+      color: var(--ink-mute); margin: 0; line-height: 1.4;
+    }
 
     /* Bottom strip */
-    .bm6-mktstrip { border-top: 1.5px solid rgba(149,74,45,0.18); padding-top: 10px; margin-bottom: 5px; }
-    .bm6-mktline { font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 400; color: var(--ink-soft); margin: 0 0 2px; line-height: 1.5; }
-    .bm6-mktline strong { color: var(--accent); font-weight: 700; }
-    .bm6-src { font-family: 'Inter Tight', sans-serif; font-size: 11px; font-style: italic; letter-spacing: 0.04em; color: var(--ink-mute); margin: 0; }
+    .ph-mktstrip { border-top: 1.5px solid rgba(149,74,45,0.18); padding-top: 10px; margin-bottom: 5px; margin-top: auto; }
+    .ph-mktline { font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 400; color: var(--ink-soft); margin: 0; line-height: 1.5; }
+    .ph-mktline strong { color: var(--accent); font-weight: 700; }
+    .ph-src { font-family: 'Inter Tight', sans-serif; font-size: 11px; font-style: italic; letter-spacing: 0.04em; color: var(--ink-mute); margin: 0; }
   </style>
 </section>
 <!-- 9. TRACTION -->
