@@ -1,0 +1,23 @@
+{
+  "name": "repo",
+  "version": "1.0.0",
+  "description": "This is a **handoff bundle** from Claude Design (claude.ai/design).",
+  "main": "deck-stage.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarah338/carousel-deck.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarah338/carousel-deck/issues"
+  },
+  "homepage": "https://github.com/sarah338/carousel-deck#readme",
+  "dependencies": {
+    "puppeteer": "^24.43.0"
+  }
+}
