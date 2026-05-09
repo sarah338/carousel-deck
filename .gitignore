@@ -1,3 +1,4 @@
 node_modules/
 pdf-export/
 carousel-deck.pdf
+.font-cache/

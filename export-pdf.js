@@ -1,23 +1,26 @@
 #!/usr/bin/env node
-// Exports the deck as a pixel-perfect PDF with embedded fonts.
-// On first run, downloads fonts from Google and caches them locally.
+// Exports the deck as a PDF.
+// Strategy: proxy Google Fonts through Node (Chrome can't reach them but Node can),
+// activate the deck's print layout, screenshot each slide, combine into PDF.
 const puppeteer = require('puppeteer');
+const { PDFDocument } = require('pdf-lib');
 const https = require('https');
-const path = require('path');
-const fs = require('fs');
+const path  = require('path');
+const fs    = require('fs');
 
-const W = 1920;
-const H = 1080;
-const HTML      = `file://${path.join(__dirname, 'index.html')}`;
-const OUT       = path.join(__dirname, 'carousel-deck.pdf');
-const FONT_CACHE = path.join(__dirname, '.font-cache.css');
-const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@200;300;400;500&display=swap';
+const W   = 1920;
+const H   = 1080;
+const HTML = `file://${path.join(__dirname, 'index.html')}`;
+const OUT  = path.join(__dirname, 'carousel-deck.pdf');
+const CACHE_DIR = path.join(__dirname, '.font-cache');
 
-function get(url) {
+// ── Font proxy ────────────────────────────────────────────────────────────────
+
+function fetchBuffer(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' } }, res => {
       if (res.statusCode >= 300 && res.headers.location)
-        return get(res.headers.location).then(resolve).catch(reject);
+        return fetchBuffer(res.headers.location).then(resolve).catch(reject);
       const chunks = [];
       res.on('data', c => chunks.push(c));
       res.on('end', () => resolve(Buffer.concat(chunks)));
@@ -26,84 +29,108 @@ function get(url) {
   });
 }
 
-async function buildFontCSS() {
-  if (fs.existsSync(FONT_CACHE)) {
-    console.log('Fonts: using cache');
-    return fs.readFileSync(FONT_CACHE, 'utf8');
-  }
-  console.log('Fonts: downloading from Google...');
-  let css = (await get(FONTS_URL)).toString();
-  const urls = [...css.matchAll(/url\((https:\/\/[^)]+)\)/g)].map(m => m[1]);
-  for (const url of urls) {
-    const buf = await get(url);
-    css = css.replace(url, `data:font/woff2;base64,${buf.toString('base64')}`);
-    process.stdout.write('.');
-  }
-  console.log(` ${urls.length} files embedded`);
-  fs.writeFileSync(FONT_CACHE, css);
-  return css;
+async function cachedFetch(url) {
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  const key  = url.replace(/[^a-z0-9]/gi, '_').slice(-80);
+  const file = path.join(CACHE_DIR, key);
+  if (fs.existsSync(file)) return fs.readFileSync(file);
+  const buf = await fetchBuffer(url);
+  fs.writeFileSync(file, buf);
+  return buf;
 }
 
-(async () => {
-  const fontCSS = await buildFontCSS();
+// ── Main ──────────────────────────────────────────────────────────────────────
 
+(async () => {
   const browser = await puppeteer.launch({
     headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'],
+    args: [
+      '--no-sandbox', '--disable-setuid-sandbox',
+      '--font-render-hinting=none',
+      '--disable-web-security',
+    ],
   });
 
   const page = await browser.newPage();
   await page.setViewport({ width: W, height: H, deviceScaleFactor: 2 });
 
-  // Block Google Fonts requests — we'll inject them embedded instead
+  // Proxy all Google Fonts requests through Node so Chrome gets real fonts
   await page.setRequestInterception(true);
-  page.on('request', req => {
-    if (req.url().includes('fonts.googleapis') || req.url().includes('fonts.gstatic'))
-      req.abort();
-    else
+  page.on('request', async req => {
+    const u = req.url();
+    if (u.includes('fonts.googleapis.com') || u.includes('fonts.gstatic.com')) {
+      try {
+        const buf = await cachedFetch(u);
+        const ct  = u.includes('.ttf')   ? 'font/truetype'
+                  : u.includes('.woff2') ? 'font/woff2'
+                  : u.includes('.woff')  ? 'font/woff'
+                  : 'text/css; charset=utf-8';
+        req.respond({ status: 200, contentType: ct, body: buf });
+      } catch (e) {
+        req.abort();
+      }
+    } else {
       req.continue();
+    }
   });
 
-  await page.goto(HTML, { waitUntil: 'domcontentloaded' });
-  await new Promise(r => setTimeout(r, 400));
+  await page.goto(HTML, { waitUntil: 'networkidle0' });
+  await page.evaluateHandle('document.fonts.ready');
+  await new Promise(r => setTimeout(r, 800));
 
-  // Swap Google Fonts link for embedded fonts
-  await page.evaluate(css => {
-    document.querySelectorAll('link[href*="fonts.googleapis"]').forEach(l => l.remove());
-    const s = document.createElement('style');
-    s.textContent = css;
-    document.head.insertBefore(s, document.head.firstChild);
-  }, fontCSS);
-
-  // Activate print layout (same logic as the deck's own beforeprint handler)
-  await page.evaluate(() => {
+  // Activate print layout — set individual properties to preserve existing styles
+  const slideCount = await page.evaluate(() => {
     const stage = document.querySelector('deck-stage');
-    if (stage) stage.style.cssText =
-      'display:block;position:static;width:1920px;height:auto;overflow:visible;transform:none;';
-    document.querySelectorAll('section.slide').forEach(s => {
-      const bg    = s.style.background || s.style.backgroundColor || '';
-      const color = s.style.color || '';
-      s.style.cssText =
-        'position:relative!important;display:block!important;' +
-        'width:1920px!important;height:1080px!important;' +
-        'transform:none!important;break-after:page!important;overflow:hidden!important;';
-      if (bg)    s.style.background = bg;
-      if (color) s.style.color = color;
+    if (stage) {
+      stage.style.display   = 'block';
+      stage.style.position  = 'static';
+      stage.style.width     = '1920px';
+      stage.style.height    = 'auto';
+      stage.style.overflow  = 'visible';
+      stage.style.transform = 'none';
+    }
+    const slides = document.querySelectorAll('section.slide');
+    slides.forEach(s => {
+      s.style.setProperty('position',            'relative', 'important');
+      s.style.setProperty('display',             'block',    'important');
+      s.style.setProperty('width',               '1920px',   'important');
+      s.style.setProperty('height',              '1080px',   'important');
+      s.style.setProperty('transform',           'none',     'important');
+      s.style.setProperty('overflow',            'hidden',   'important');
+      s.style.setProperty('margin',              '0',        'important');
+      s.style.setProperty('print-color-adjust',  'exact',    'important');
+      s.style.setProperty('-webkit-print-color-adjust', 'exact', 'important');
     });
+    return slides.length;
   });
 
-  await page.emulateMediaType('print');
-  await new Promise(r => setTimeout(r, 600));
+  await new Promise(r => setTimeout(r, 400));
+  console.log(`Found ${slideCount} slides — capturing screenshots...`);
 
-  await page.pdf({
-    path: OUT,
-    width: `${W}px`,
-    height: `${H}px`,
-    printBackground: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
-  });
+  // Screenshot each slide by clipping at its y-offset
+  const pngs = [];
+  for (let i = 0; i < slideCount; i++) {
+    const png = await page.screenshot({
+      type: 'png',
+      clip: { x: 0, y: i * H, width: W, height: H },
+    });
+    pngs.push(png);
+    process.stdout.write(`  ✓ ${i + 1}/${slideCount}\n`);
+  }
 
   await browser.close();
+
+  // Combine PNGs into PDF with pdf-lib
+  console.log('Building PDF...');
+  const pdf = await PDFDocument.create();
+  for (const png of pngs) {
+    const img  = await pdf.embedPng(png);
+    const page = pdf.addPage([W, H]);
+    page.drawImage(img, { x: 0, y: 0, width: W, height: H });
+  }
+
+  const bytes = await pdf.save();
+  fs.writeFileSync(OUT, bytes);
   const mb = (fs.statSync(OUT).size / 1024 / 1024).toFixed(1);
   console.log(`✓ carousel-deck.pdf  (${mb} MB)  →  ${OUT}`);
 })();

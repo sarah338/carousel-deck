@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/sarah338/carousel-deck#readme",
   "dependencies": {
+    "pdf-lib": "^1.17.1",
     "puppeteer": "^24.43.0"
   }
 }
