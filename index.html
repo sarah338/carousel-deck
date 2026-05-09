@@ -1977,8 +1977,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
     </div>
 
-    <p class="ask-uof-eyebrow">Use of funds</p>
     <div class="uof-grid">
+      <div class="uof-hd">USE OF FUNDS</div>
       <div class="uof-col">
         <p class="uof-pct">~45%</p>
         <p class="uof-amt">$1.35M</p>
@@ -2022,11 +2022,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       color: var(--ink-soft); margin: 0 0 36px; max-width: 1480px; letter-spacing: -0.01em;
     }
     [data-screen-label="11 The ask"] .ask-hl-amt { color: var(--accent); }
-    [data-screen-label="11 The ask"] .ask-uof-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
-      margin: 0 0 0; padding-top: 4px;
-    }
     [data-screen-label="11 The ask"] .ask-facts {
       display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 0;
@@ -2063,11 +2058,19 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="11 The ask"] .uof-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; border-top: 1px solid var(--rule); margin-bottom: 48px;
+      gap: 0; margin-bottom: 48px;
+    }
+    [data-screen-label="11 The ask"] .uof-hd {
+      grid-column: 1 / -1;
+      background: #7D3820;
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: #F7F1E4;
+      padding: 14px 32px;
     }
     [data-screen-label="11 The ask"] .uof-col {
       padding: 28px 32px 28px 0;
       border-right: 1px solid var(--rule-soft);
+      border-top: 1px solid var(--rule);
     }
     [data-screen-label="11 The ask"] .uof-col:last-child { border-right: 0; }
     [data-screen-label="11 The ask"] .uof-col:not(:first-child) { padding-left: 32px; }
