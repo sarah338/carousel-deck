@@ -15,7 +15,7 @@ const CACHE_DIR = path.join(__dirname, '.font-cache');
 
 function fetchBuffer(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' } }, res => {
+    https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' } }, res => {
       if (res.statusCode >= 300 && res.headers.location)
         return fetchBuffer(res.headers.location).then(resolve).catch(reject);
       const chunks = [];
@@ -73,10 +73,25 @@ async function cachedFetch(url) {
   );
   console.log(`Found ${slideCount} slides — capturing...`);
 
+  // Hide the nav overlay permanently before capturing
+  await page.evaluate(() => {
+    const stage = document.querySelector('deck-stage');
+    const overlay = stage.shadowRoot?.querySelector('.overlay');
+    if (overlay) {
+      overlay.removeAttribute('data-visible');
+      overlay.style.cssText = 'display:none!important;';
+    }
+  });
+
   const pngs = [];
   for (let i = 0; i < slideCount; i++) {
-    // Use the deck's own API — handles visibility, opacity, everything
-    await page.evaluate((idx) => document.querySelector('deck-stage').goTo(idx), i);
+    await page.evaluate((idx) => {
+      const stage = document.querySelector('deck-stage');
+      stage.goTo(idx);
+      // Re-suppress overlay after each navigation
+      const overlay = stage.shadowRoot?.querySelector('.overlay');
+      if (overlay) overlay.style.cssText = 'display:none!important;';
+    }, i);
     await new Promise(r => setTimeout(r, 350));
     pngs.push(await page.screenshot({ type: 'png' }));
     process.stdout.write(`  ✓ ${i + 1}/${slideCount}\r`);
