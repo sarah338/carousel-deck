@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Exports the deck as a PDF: proxies Google Fonts through Node,
-// scrolls to each slide and screenshots it, combines with pdf-lib.
+// Uses deck-stage's own goTo() API to navigate each slide,
+// proxies Google Fonts through Node, screenshots, combines into PDF.
 const puppeteer  = require('puppeteer');
 const { PDFDocument } = require('pdf-lib');
 const https = require('https');
@@ -28,7 +28,7 @@ function fetchBuffer(url) {
 
 async function cachedFetch(url) {
   fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const key  = Buffer.from(url).toString('base64').replace(/\//g, '_').slice(-80);
+  const key  = Buffer.from(url).toString('base64').replace(/[/+=]/g, '_').slice(-80);
   const file = path.join(CACHE_DIR, key);
   if (fs.existsSync(file)) return fs.readFileSync(file);
   const buf = await fetchBuffer(url);
@@ -43,9 +43,10 @@ async function cachedFetch(url) {
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: W, height: H, deviceScaleFactor: 1 });
+  // Match the deck's design size exactly so scale = 1.0
+  await page.setViewport({ width: W, height: H, deviceScaleFactor: 2 });
 
-  // Proxy Google Fonts through Node so headless Chrome gets real fonts
+  // Proxy Google Fonts through Node (headless Chrome can't reach them directly)
   await page.setRequestInterception(true);
   page.on('request', async req => {
     const u = req.url();
@@ -66,48 +67,23 @@ async function cachedFetch(url) {
   await page.evaluateHandle('document.fonts.ready');
   await new Promise(r => setTimeout(r, 1000));
 
-  // Activate print layout using setProperty so existing inline styles are preserved
-  const slideCount = await page.evaluate(() => {
-    const stage = document.querySelector('deck-stage');
-    if (stage) {
-      stage.style.display   = 'block';
-      stage.style.position  = 'static';
-      stage.style.width     = '1920px';
-      stage.style.height    = 'auto';
-      stage.style.overflow  = 'visible';
-      stage.style.transform = 'none';
-    }
-    const slides = document.querySelectorAll('section.slide');
-    slides.forEach(s => {
-      s.style.setProperty('position',  'relative', 'important');
-      s.style.setProperty('display',   'block',    'important');
-      s.style.setProperty('width',     '1920px',   'important');
-      s.style.setProperty('height',    '1080px',   'important');
-      s.style.setProperty('transform', 'none',     'important');
-      s.style.setProperty('overflow',  'hidden',   'important');
-      s.style.setProperty('margin',    '0',        'important');
-      s.style.setProperty('padding',   '0',        'important');
-      s.style.setProperty('float',     'none',     'important');
-    });
-    return slides.length;
-  });
-
-  await new Promise(r => setTimeout(r, 400));
+  // deck-stage exposes goTo(i) and .length
+  const slideCount = await page.evaluate(() =>
+    document.querySelector('deck-stage').length
+  );
   console.log(`Found ${slideCount} slides — capturing...`);
 
   const pngs = [];
   for (let i = 0; i < slideCount; i++) {
-    // Scroll to this slide's position
-    await page.evaluate((y) => window.scrollTo(0, y), i * H);
-    await new Promise(r => setTimeout(r, 200));
-
-    const png = await page.screenshot({ type: 'png' });
-    pngs.push(png);
+    // Use the deck's own API — handles visibility, opacity, everything
+    await page.evaluate((idx) => document.querySelector('deck-stage').goTo(idx), i);
+    await new Promise(r => setTimeout(r, 350));
+    pngs.push(await page.screenshot({ type: 'png' }));
     process.stdout.write(`  ✓ ${i + 1}/${slideCount}\r`);
   }
-  console.log(`\nBuilding PDF...`);
 
   await browser.close();
+  console.log('\nBuilding PDF...');
 
   const pdf = await PDFDocument.create();
   for (const png of pngs) {
@@ -116,8 +92,7 @@ async function cachedFetch(url) {
     pdfPage.drawImage(img, { x: 0, y: 0, width: W, height: H });
   }
 
-  const bytes = await pdf.save();
-  fs.writeFileSync(OUT, bytes);
+  fs.writeFileSync(OUT, await pdf.save());
   const mb = (fs.statSync(OUT).size / 1024 / 1024).toFixed(1);
   console.log(`✓ carousel-deck.pdf  (${mb} MB)  →  ${OUT}`);
 })();
