@@ -2174,38 +2174,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <div class="asc-layout">
 
-      <!-- Left: Three comparable cards -->
-      <div class="asc-comps">
-        <div class="asc-comp-card">
-          <div class="asc-comp-top">
-            <span class="asc-comp-name">Maven Clinic</span>
-            <span class="asc-comp-metric">$1.7B valuation</span>
-          </div>
-          <p class="asc-comp-desc">Women&rsquo;s-health platform &middot; employer-benefits-led &middot; multi-phase coverage</p>
-          <p class="asc-comp-note">Maven generates ~$2,300 in revenue per enrolled member.</p>
-          <p class="asc-comp-src">Sacra, 2025 &middot; reported valuation, 2023</p>
-        </div>
-        <div class="asc-comp-card">
-          <div class="asc-comp-top">
-            <span class="asc-comp-name">Progyny</span>
-            <span class="asc-comp-metric">$1.17B FY24 revenue</span>
-          </div>
-          <p class="asc-comp-desc">Public company &middot; fertility benefits &middot; IPO&rsquo;d 2019 at ~$1B</p>
-          <p class="asc-comp-note">Pure-play fertility-benefits operator proves the category is investable at scale.</p>
-          <p class="asc-comp-src">Progyny FY24 10-K</p>
-        </div>
-        <div class="asc-comp-card">
-          <div class="asc-comp-top">
-            <span class="asc-comp-name">Carrot Fertility</span>
-            <span class="asc-comp-metric">$115M+ raised</span>
-          </div>
-          <p class="asc-comp-desc">Employer-benefits fertility &middot; Series C-stage</p>
-          <p class="asc-comp-note">Validates the breadth and capital flowing into the category.</p>
-          <p class="asc-comp-src">Crunchbase &middot; company disclosures</p>
-        </div>
-      </div>
-
-      <!-- Right: Carousel differentiation block -->
+      <!-- LEFT (hero): Carousel's position — the point of this whole slide -->
       <div class="asc-diff">
         <p class="asc-diff-eyebrow">What none of them has built:</p>
         <p class="asc-diff-body">The longitudinal patient-experience platform &mdash; built for the woman herself, direct to her or through her clinic, from fertility-curious through active treatment, recovery, and beyond.</p>
@@ -2218,6 +2187,35 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <li>$100M+ ARR potential at maturity</li>
           <li>Comparable economics to today&rsquo;s category leaders &mdash; built from a structurally distinct position no one else can reach without rebuilding their company</li>
         </ul>
+      </div>
+
+      <!-- RIGHT (context): Category precedents proving the market -->
+      <div class="asc-comps">
+        <p class="asc-comps-label">Market precedents</p>
+        <div class="asc-comp-card">
+          <div class="asc-comp-top">
+            <span class="asc-comp-name">Maven Clinic</span>
+            <span class="asc-comp-metric">$1.7B valuation</span>
+          </div>
+          <p class="asc-comp-desc">Women&rsquo;s health &middot; employer-led &middot; ~$2,300 revenue per member</p>
+          <p class="asc-comp-src">Sacra, 2025 &middot; reported valuation, 2023</p>
+        </div>
+        <div class="asc-comp-card">
+          <div class="asc-comp-top">
+            <span class="asc-comp-name">Progyny</span>
+            <span class="asc-comp-metric">$1.17B FY24 revenue</span>
+          </div>
+          <p class="asc-comp-desc">Public company &middot; fertility benefits &middot; IPO&rsquo;d 2019</p>
+          <p class="asc-comp-src">Progyny FY24 10-K</p>
+        </div>
+        <div class="asc-comp-card">
+          <div class="asc-comp-top">
+            <span class="asc-comp-name">Carrot Fertility</span>
+            <span class="asc-comp-metric">$115M+ raised</span>
+          </div>
+          <p class="asc-comp-desc">Employer-benefits fertility &middot; Series C-stage</p>
+          <p class="asc-comp-src">Crunchbase &middot; company disclosures</p>
+        </div>
       </div>
 
     </div>
@@ -2236,60 +2234,63 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="12 At Scale"] .asc-layout {
       display: flex; flex: 1; min-height: 0; gap: 20px;
     }
-    [data-screen-label="12 At Scale"] .asc-comps {
-      display: flex; flex-direction: column; gap: 10px;
-      flex: 0 0 52%; min-height: 0;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-card {
-      background: #E8D5C4; border-radius: 10px;
-      padding: 20px 26px 16px; border-left: 4px solid var(--accent);
-      display: flex; flex-direction: column; gap: 5px; flex: 1;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-top {
-      display: flex; align-items: baseline; gap: 18px; margin-bottom: 4px;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-name {
-      font-family: 'Instrument Serif', serif; font-size: 26px;
-      color: var(--ink); line-height: 1;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-metric {
-      font-family: 'Inter Tight', sans-serif; font-size: 22px; font-weight: 500;
-      color: #7D3820; letter-spacing: -0.02em;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-desc {
-      font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 300;
-      color: var(--ink-soft); margin: 0; line-height: 1.4;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-note {
-      font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 400;
-      color: var(--ink); margin: 2px 0 0; line-height: 1.4;
-    }
-    [data-screen-label="12 At Scale"] .asc-comp-src {
-      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 13px;
-      color: var(--ink-mute); margin: auto 0 0;
-    }
+    /* ── LEFT: Carousel hero block — dominant ── */
     [data-screen-label="12 At Scale"] .asc-diff {
       flex: 1; background: var(--accent); border-radius: 10px;
-      padding: 28px 32px; display: flex; flex-direction: column; gap: 12px;
+      padding: 32px 38px; display: flex; flex-direction: column; gap: 14px;
     }
     [data-screen-label="12 At Scale"] .asc-diff-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 700;
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 700;
       letter-spacing: 0.18em; text-transform: uppercase;
       color: rgba(247,241,228,0.65); margin: 0;
     }
     [data-screen-label="12 At Scale"] .asc-diff-body {
-      font-family: 'Instrument Serif', serif; font-size: 22px; line-height: 1.45;
+      font-family: 'Instrument Serif', serif; font-size: 28px; line-height: 1.4;
       color: #F7F1E4; margin: 0;
     }
     [data-screen-label="12 At Scale"] .asc-rule {
-      border: none; border-top: 1px solid rgba(247,241,228,0.2); margin: 2px 0;
+      border: none; border-top: 1px solid rgba(247,241,228,0.2); margin: 0;
     }
     [data-screen-label="12 At Scale"] .asc-diff-list {
-      font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 300;
-      color: rgba(247,241,228,0.88); line-height: 1.55; margin: 0; padding-left: 20px;
-      display: flex; flex-direction: column; gap: 10px;
+      font-family: 'Inter Tight', sans-serif; font-size: 19px; font-weight: 300;
+      color: rgba(247,241,228,0.9); line-height: 1.5; margin: 0; padding-left: 22px;
+      display: flex; flex-direction: column; gap: 12px;
     }
-    [data-screen-label="12 At Scale"] .asc-diff-list li::marker { color: rgba(247,241,228,0.5); }
+    [data-screen-label="12 At Scale"] .asc-diff-list li::marker { color: rgba(247,241,228,0.45); }
+    /* ── RIGHT: Company reference cards — supporting context ── */
+    [data-screen-label="12 At Scale"] .asc-comps {
+      display: flex; flex-direction: column; gap: 8px;
+      flex: 0 0 36%; min-height: 0;
+    }
+    [data-screen-label="12 At Scale"] .asc-comps-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute); margin: 0 0 2px;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-card {
+      background: #E8D5C4; border-radius: 8px;
+      padding: 14px 18px 12px; border-left: 3px solid var(--accent);
+      display: flex; flex-direction: column; gap: 4px; flex: 1;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-top {
+      display: flex; align-items: baseline; gap: 12px; margin-bottom: 3px;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-name {
+      font-family: 'Instrument Serif', serif; font-size: 22px;
+      color: var(--ink); line-height: 1;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-metric {
+      font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 500;
+      color: #7D3820; letter-spacing: -0.01em;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-desc {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300;
+      color: var(--ink-soft); margin: 0; line-height: 1.4;
+    }
+    [data-screen-label="12 At Scale"] .asc-comp-src {
+      font-family: 'Instrument Serif', serif; font-style: italic; font-size: 12px;
+      color: var(--ink-mute); margin: auto 0 0;
+    }
   </style>
 </section>
 
