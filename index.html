@@ -358,9 +358,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 6. COMPETITIVE -->
 <section class="slide" data-screen-label="06 Competitive">
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
-  <div class="frame" style="padding-bottom: 104px;">
+  <div class="frame" style="padding-bottom: 160px;">
     <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1" style="margin: 0 0 14px; font-size: 42px; line-height: 1.1;">Carousel is the only longitudinal patient-experience platform built for the woman herself.</h1>
+    <h1 class="h1">Carousel is the only longitudinal patient-experience platform built for the woman herself.</h1>
 
     <div class="comp2-chart">
 
@@ -377,49 +377,58 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
         <div class="comp2-inner">
 
-          <!-- 2×2 grid -->
+          <!-- Asymmetric 2×2: columns 58/42, rows 28/72 -->
           <div class="comp2-grid">
 
-            <!-- UL: Single phase × Platform — the gap nobody fills -->
-            <div class="comp2-q comp2-q-ul">
-              <div class="comp2-chips">
-                <span class="comp2-chip comp2-chip-clinic comp2-chip-dim">Frame</span>
-              </div>
+            <!-- UL: Single phase × Platform — near-vacant, very compressed -->
+            <div class="comp2-q-ul">
+              <span class="comp2-chip comp2-chip-clinic comp2-chip-dim">Frame</span>
               <p class="comp2-q-note">No one has built here.</p>
             </div>
 
             <!-- UR: Longitudinal × Platform — CAROUSEL HERO -->
-            <div class="comp2-q comp2-q-ur">
-              <div class="comp2-hero-inner">
-                <p class="comp2-hero-name">Carousel</p>
-                <p class="comp2-hero-desc">The longitudinal patient experience platform &mdash; for the woman fertility-curious, freezing eggs, going through IVF, and everything after</p>
-              </div>
+            <div class="comp2-q-ur">
+              <p class="comp2-hero-name">Carousel</p>
+              <p class="comp2-hero-desc">The longitudinal patient experience platform &mdash; for the woman fertility-curious, freezing eggs, going through IVF, and everything after</p>
             </div>
 
-            <!-- LL: Single phase × Point solution — dense colored chip cloud -->
-            <div class="comp2-q comp2-q-ll">
-              <div class="comp2-chips comp2-chips-dense">
-                <span class="comp2-chip comp2-chip-clinic">EngagedMD</span>
-                <span class="comp2-chip comp2-chip-clinic">Salve</span>
-                <span class="comp2-chip comp2-chip-clinic">Kindbody</span>
-                <span class="comp2-chip comp2-chip-clinic">Spring Fertility</span>
-                <span class="comp2-chip comp2-chip-direct">Modern Fertility</span>
-                <span class="comp2-chip comp2-chip-direct">Mira</span>
-                <span class="comp2-chip comp2-chip-direct">Inito</span>
-                <span class="comp2-chip comp2-chip-direct">Oova</span>
-                <span class="comp2-chip comp2-chip-direct">Flo</span>
-                <span class="comp2-chip comp2-chip-direct">Natural Cycles</span>
-                <span class="comp2-chip comp2-chip-direct">Sunfish</span>
-                <span class="comp2-chip comp2-chip-direct">Perelel</span>
-                <span class="comp2-chip comp2-chip-direct">Rescripted</span>
-                <span class="comp2-chip comp2-chip-direct">Stix</span>
-                <span class="comp2-chip comp2-chip-informal">Reddit</span>
-                <span class="comp2-chip comp2-chip-informal">ChatGPT</span>
+            <!-- LL: Single phase × Point solution — grouped chip clusters -->
+            <div class="comp2-q-ll">
+              <div class="comp2-group">
+                <p class="comp2-group-label">Clinic-sold tools</p>
+                <div class="comp2-chips">
+                  <span class="comp2-chip comp2-chip-clinic">EngagedMD</span>
+                  <span class="comp2-chip comp2-chip-clinic">Salve</span>
+                  <span class="comp2-chip comp2-chip-clinic">Kindbody</span>
+                  <span class="comp2-chip comp2-chip-clinic">Spring Fertility</span>
+                </div>
+              </div>
+              <div class="comp2-group">
+                <p class="comp2-group-label">Direct-to-consumer</p>
+                <div class="comp2-chips">
+                  <span class="comp2-chip comp2-chip-direct">Modern Fertility</span>
+                  <span class="comp2-chip comp2-chip-direct">Mira</span>
+                  <span class="comp2-chip comp2-chip-direct">Inito</span>
+                  <span class="comp2-chip comp2-chip-direct">Oova</span>
+                  <span class="comp2-chip comp2-chip-direct">Flo</span>
+                  <span class="comp2-chip comp2-chip-direct">Natural Cycles</span>
+                  <span class="comp2-chip comp2-chip-direct">Sunfish</span>
+                  <span class="comp2-chip comp2-chip-direct">Perelel</span>
+                  <span class="comp2-chip comp2-chip-direct">Rescripted</span>
+                  <span class="comp2-chip comp2-chip-direct">Stix</span>
+                </div>
+              </div>
+              <div class="comp2-group">
+                <p class="comp2-group-label">Informal alternatives</p>
+                <div class="comp2-chips">
+                  <span class="comp2-chip comp2-chip-informal">Reddit</span>
+                  <span class="comp2-chip comp2-chip-informal">ChatGPT</span>
+                </div>
               </div>
             </div>
 
             <!-- LR: Longitudinal × Point solution — employer benefit platforms -->
-            <div class="comp2-q comp2-q-lr">
+            <div class="comp2-q-lr">
               <div class="comp2-chips comp2-chips-employer">
                 <span class="comp2-chip comp2-chip-employer comp2-chip-lg">Maven Clinic</span>
                 <span class="comp2-chip comp2-chip-employer comp2-chip-lg">Carrot Fertility</span>
@@ -435,7 +444,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
             <span class="comp2-x-end">&larr; Single phase</span>
             <div class="comp2-legend">
               <span class="comp2-leg comp2-chip-employer">Employer benefit</span>
-              <span class="comp2-leg comp2-chip-clinic">Clinic tool</span>
+              <span class="comp2-leg comp2-chip-clinic">Clinic-sold</span>
               <span class="comp2-leg comp2-chip-direct">Direct-to-consumer</span>
               <span class="comp2-leg comp2-chip-informal">Informal</span>
             </div>
@@ -450,7 +459,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <p class="comp2-footer">Carousel doesn&rsquo;t replace these tools &mdash; it holds the woman across her entire fertility life, from the first question she Googles to long after her last cycle.</p>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    /* ── Slide 06 · Competitive 2×2 ── */
+    /* ── Slide 06 · Competitive — asymmetric 2×2 ── */
+    [data-screen-label="06 Competitive"] .frame > .h1 {
+      margin: 0 0 14px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
+    }
     [data-screen-label="06 Competitive"] .comp2-chart {
       display: flex; flex: 1; min-height: 0;
     }
@@ -478,58 +490,75 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="06 Competitive"] .comp2-grid {
       flex: 1; display: grid; min-height: 0;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 58fr 42fr;
+      grid-template-rows: 28fr 72fr;
       border: 1.5px solid rgba(74,40,28,0.13);
       border-radius: 10px; overflow: hidden;
     }
-    [data-screen-label="06 Competitive"] .comp2-q {
-      padding: 20px 24px 16px; display: flex; flex-direction: column;
-    }
+    /* ── Quadrant: UL — compressed, barely-there ── */
     [data-screen-label="06 Competitive"] .comp2-q-ul {
-      border-right: 1.5px solid rgba(74,40,28,0.11);
-      border-bottom: 1.5px solid rgba(74,40,28,0.11);
-      background: rgba(74,40,28,0.02);
+      border-right: 1.5px solid rgba(74,40,28,0.09);
+      border-bottom: 1.5px solid rgba(74,40,28,0.13);
+      background: rgba(74,40,28,0.015);
+      padding: 12px 18px;
+      display: flex; align-items: center; gap: 14px;
     }
+    /* ── Quadrant: UR — Carousel hero, bold terracotta ── */
     [data-screen-label="06 Competitive"] .comp2-q-ur {
-      border-bottom: 1.5px solid rgba(74,40,28,0.11);
-      background: rgba(149,74,45,0.09);
+      border-bottom: 1.5px solid rgba(74,40,28,0.13);
+      background: var(--accent);
+      padding: 18px 28px;
+      display: flex; flex-direction: column; justify-content: center; gap: 8px;
     }
+    /* ── Quadrant: LL — grouped chip clusters ── */
     [data-screen-label="06 Competitive"] .comp2-q-ll {
-      border-right: 1.5px solid rgba(74,40,28,0.11);
+      border-right: 1.5px solid rgba(74,40,28,0.09);
+      background: rgba(74,40,28,0.02);
+      padding: 22px 24px 20px;
+      display: flex; flex-direction: column; gap: 18px;
     }
-    /* ── Carousel hero ── */
-    [data-screen-label="06 Competitive"] .comp2-hero-inner {
-      display: flex; flex-direction: column; justify-content: center;
-      flex: 1; gap: 10px;
+    /* ── Quadrant: LR — employer platforms ── */
+    [data-screen-label="06 Competitive"] .comp2-q-lr {
+      background: rgba(149,74,45,0.06);
+      padding: 22px 28px 20px;
+      display: flex; flex-direction: column; justify-content: center; gap: 14px;
     }
+    /* ── Carousel hero typography ── */
     [data-screen-label="06 Competitive"] .comp2-hero-name {
-      font-family: 'Instrument Serif', serif; font-size: 72px; line-height: 1;
-      color: var(--accent); margin: 0; letter-spacing: -0.02em;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 60px; line-height: 1; letter-spacing: -0.02em;
+      color: #F7F1E4; margin: 0;
     }
     [data-screen-label="06 Competitive"] .comp2-hero-desc {
-      font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 300;
-      line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 440px;
+      font-family: 'Inter Tight', sans-serif; font-size: 14px; font-weight: 300;
+      line-height: 1.5; color: rgba(247,241,228,0.82); margin: 0; max-width: 400px;
+    }
+    /* ── Chip groups ── */
+    [data-screen-label="06 Competitive"] .comp2-group {
+      display: flex; flex-direction: column; gap: 7px;
+    }
+    [data-screen-label="06 Competitive"] .comp2-group-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin: 0;
     }
     /* ── Chips ── */
     [data-screen-label="06 Competitive"] .comp2-chips {
-      display: flex; flex-wrap: wrap; gap: 6px; align-content: flex-start; flex: 1;
+      display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start;
     }
-    [data-screen-label="06 Competitive"] .comp2-chips-dense { gap: 5px; }
     [data-screen-label="06 Competitive"] .comp2-chips-employer { gap: 8px; }
     [data-screen-label="06 Competitive"] .comp2-chip {
       font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 500;
       padding: 4px 11px; border-radius: 100px; white-space: nowrap;
     }
-    [data-screen-label="06 Competitive"] .comp2-chip-lg { font-size: 14px; padding: 6px 15px; }
-    [data-screen-label="06 Competitive"] .comp2-chip-dim { opacity: 0.35; }
+    [data-screen-label="06 Competitive"] .comp2-chip-lg { font-size: 14px; padding: 6px 16px; }
+    [data-screen-label="06 Competitive"] .comp2-chip-dim { opacity: 0.28; }
     [data-screen-label="06 Competitive"] .comp2-chip-employer { background: #FBF0E8; color: #8B4020; }
     [data-screen-label="06 Competitive"] .comp2-chip-clinic   { background: #EBF0F7; color: #3D5C85; }
     [data-screen-label="06 Competitive"] .comp2-chip-direct   { background: rgba(74,56,42,0.08); color: #4A382A; }
     [data-screen-label="06 Competitive"] .comp2-chip-informal { background: rgba(74,56,42,0.04); color: #9B856A; font-style: italic; font-weight: 300; }
     [data-screen-label="06 Competitive"] .comp2-q-note {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 12px; color: var(--ink-mute); margin: auto 0 0; line-height: 1.4;
+      font-size: 12px; color: var(--ink-mute); margin: 0; line-height: 1.4;
     }
     /* ── X-axis ── */
     [data-screen-label="06 Competitive"] .comp2-x-axis {
@@ -1681,69 +1710,48 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 9. CLINIC PROBLEM QUANTIFIED -->
 <section class="slide" data-screen-label="09 Clinic Quantified">
   <div class="pageno"><svg><use href="#mark"/></svg>09 / 13</div>
-  <div class="frame" style="padding-bottom: 104px;">
-    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">The clinic opportunity</p>
-    <h1 class="h1" style="margin: 0 0 8px; font-size: 40px; line-height: 1.1;">Patient experience isn&rsquo;t a soft problem for clinics. It&rsquo;s an unmeasured revenue leak.</h1>
-    <p class="cq-subhead">Every dropped cycle costs a clinic $20K+ in revenue and erodes the relationship that drives 2.3x cycle-per-patient economics. The patient-experience layer is the lever no one has pulled.</p>
+  <div class="frame" style="padding: 64px 110px 56px;">
+    <p class="eyebrow" style="margin-bottom: 20px; color: var(--accent);">The clinic opportunity</p>
+    <h1 class="h1">Patient experience isn&rsquo;t a soft problem for clinics. It&rsquo;s an unmeasured revenue leak.</h1>
 
-    <div class="cq-grid">
+    <div style="position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; margin-bottom: 120px;">
 
-      <!-- Stat 1: Dropout is structural — PRIMARY, largest numbers -->
-      <div class="cq-card cq-card-primary">
-        <p class="cq-card-tag">Dropout is structural</p>
-        <div class="cq-num-stack">
-          <div class="cq-num-row">
-            <span class="cq-num cq-num-hero">26.5%</span>
-            <span class="cq-num-desc">drop out after<br>their first IVF cycle</span>
-          </div>
-          <div class="cq-num-row">
-            <span class="cq-num cq-num-sub">47.3%</span>
-            <span class="cq-num-desc">have dropped out<br>by cycle 5</span>
-          </div>
-        </div>
-        <p class="cq-src">n = 16,073 patients &middot; 48,946 cycles &mdash; largest peer-reviewed cohort available &middot; Human Reproduction, 2021</p>
+      <!-- Q1: top-left — pale clay -->
+      <div style="background: #E8D5C4; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative;">
+        <span style="position: absolute; top: 22px; left: 28px; padding: 9px 22px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Dropout is structural</span>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">26.5%</p>
+        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: var(--ink-soft);">drop out after their first IVF cycle</p>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; line-height: 0.95;">47.3%</p>
+        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: var(--ink-soft);">have dropped out by cycle 5</p>
+        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; color: var(--ink-mute); line-height: 1.4;">n = 16,073 patients &middot; 48,946 cycles &mdash; Human Reproduction, 2021</p>
       </div>
 
-      <!-- Stat 2: Dollar value — PRIMARY -->
-      <div class="cq-card cq-card-primary">
-        <p class="cq-card-tag">Every dropout has a price tag</p>
-        <div class="cq-num-stack">
-          <div class="cq-num-row">
-            <span class="cq-num cq-num-hero">$22K</span>
-            <span class="cq-num-desc">cost of a single<br>IVF cycle in the US</span>
-          </div>
-          <div class="cq-num-row">
-            <span class="cq-num cq-num-sub">$50K+</span>
-            <span class="cq-num-desc">average patient spend across<br>2.3 cycles needed for a live birth</span>
-          </div>
-        </div>
-        <p class="cq-src">FertilityIQ &middot; U.S. HHS, 2019&ndash;2025</p>
+      <!-- Q2: top-right — mid clay, right-aligned -->
+      <div style="background: #C99477; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; text-align: right;">
+        <span style="position: absolute; top: 22px; right: 28px; padding: 9px 22px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Every dropout has a price tag</span>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">$22K</p>
+        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: #2A2018;">cost of a single IVF cycle in the US</p>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; line-height: 0.95;">$50K+</p>
+        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: #2A2018;">average patient spend across 2.3 cycles needed for a live birth</p>
+        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; color: rgba(42,32,24,0.72); line-height: 1.4;">FertilityIQ &middot; U.S. HHS, 2019&ndash;2025</p>
       </div>
 
-      <!-- Stat 3: PAC — SECONDARY -->
-      <div class="cq-card cq-card-secondary">
-        <p class="cq-card-tag">Patient acquisition costs are high and rising</p>
-        <span class="cq-num cq-num-md">$100&ndash;$3,800</span>
-        <p class="cq-num-desc-sm">per patient acquired, depending on market density and attribution sophistication</p>
-        <p class="cq-card-body">Reducing dropout is more economical than replacing every dropped patient with a newly acquired one.</p>
-        <p class="cq-src">Healthcare PE marketing analysis, 2025&ndash;2026</p>
+      <!-- Q3: bottom-left — deep terracotta -->
+      <div style="background: var(--accent); padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative; color: #F7F1E4;">
+        <span style="position: absolute; top: 22px; left: 28px; padding: 9px 22px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Patient acquisition cost</span>
+        <p style="margin: 0 0 6px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">$100&ndash;$3,800</p>
+        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.5; opacity: 0.92;">per patient acquired &mdash; reducing dropout retains revenue more efficiently than replacing every dropped patient with a newly acquired one</p>
+        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; opacity: 0.82; line-height: 1.4;">Healthcare PE marketing analysis, 2025&ndash;2026</p>
       </div>
 
-      <!-- Stat 4: Nurse hours — SECONDARY -->
-      <div class="cq-card cq-card-secondary">
-        <p class="cq-card-tag">Nurses absorb the communication burden</p>
-        <div class="cq-num-pair">
-          <div>
-            <span class="cq-num cq-num-md">9&ndash;16 hrs</span>
-            <p class="cq-num-desc-sm">per IVF cycle, per nurse</p>
-          </div>
-          <div>
-            <span class="cq-num cq-num-md">40%</span>
-            <p class="cq-num-desc-sm">reduction in admin workload achievable with the right platform</p>
-          </div>
-        </div>
-        <p class="cq-card-body">Communication is the #1 source of difficulty fertility clinic staff report.</p>
-        <p class="cq-src">Human Reproduction, 2025 &middot; peer-reviewed staff survey, 2017</p>
+      <!-- Q4: bottom-right — darkest brown, right-aligned -->
+      <div style="background: #5C2E1C; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; color: #F7F1E4; text-align: right;">
+        <span style="position: absolute; top: 22px; right: 28px; padding: 9px 22px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Nurses absorb the burden</span>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">9&ndash;16 hrs</p>
+        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; opacity: 0.92;">per IVF cycle, per nurse, on communication alone</p>
+        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95;">40%</p>
+        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; opacity: 0.92;">reduction in admin workload achievable with the right platform</p>
+        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; opacity: 0.82; line-height: 1.4;">Human Reproduction, 2025 &middot; peer-reviewed staff survey, 2017</p>
       </div>
 
     </div>
@@ -1751,63 +1759,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <p class="cq-footer">Carousel is the patient-experience layer that reduces dropout, lifts care-team capacity, and protects clinic revenue &mdash; sold to clinics for $35&ndash;50K/year. The math earns the line item.</p>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="09 Clinic Quantified"] .cq-subhead {
-      font-family: 'Inter Tight', sans-serif; font-size: 18px; font-weight: 300;
-      color: var(--ink-soft); margin: 0 0 14px; line-height: 1.5; max-width: 1380px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-grid {
-      display: grid; flex: 1; min-height: 0;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      gap: 14px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-card {
-      border-radius: 10px; padding: 20px 24px 16px;
-      border-left: 4px solid var(--accent); display: flex; flex-direction: column;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-card-primary {
-      background: rgba(149,74,45,0.06);
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-card-secondary {
-      background: rgba(74,40,28,0.03); border-left-color: rgba(149,74,45,0.35);
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-card-tag {
-      font-family: 'Inter Tight', sans-serif; font-size: 10.5px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
-      margin: 0 0 10px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-stack {
-      display: flex; flex-direction: column; gap: 6px; flex: 1;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-row {
-      display: flex; align-items: baseline; gap: 14px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-pair {
-      display: flex; gap: 24px; align-items: flex-start; flex: 1; margin-bottom: 6px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num {
-      font-family: 'Instrument Serif', serif; letter-spacing: -0.02em;
-      color: var(--ink); line-height: 1; white-space: nowrap;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-hero { font-size: 62px; color: var(--accent); }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-sub  { font-size: 42px; }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-md   { font-size: 36px; display: block; margin-bottom: 3px; }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-desc {
-      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300;
-      color: var(--ink-soft); line-height: 1.4;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-num-desc-sm {
-      font-family: 'Inter Tight', sans-serif; font-size: 12.5px; font-weight: 300;
-      color: var(--ink-soft); line-height: 1.4; margin: 0 0 6px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-card-body {
-      font-family: 'Inter Tight', sans-serif; font-size: 13.5px; font-weight: 300;
-      color: var(--ink-soft); line-height: 1.5; margin: auto 0 8px; flex: 1;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-src {
-      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 300;
-      color: var(--ink-mute); margin: 0; line-height: 1.4; padding-top: 8px;
-      border-top: 1px solid rgba(74,40,28,0.1);
+    [data-screen-label="09 Clinic Quantified"] .frame > .h1 {
+      margin: 0 0 28px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-footer {
       position: absolute; bottom: 88px; left: 110px; right: 110px;
@@ -2299,9 +2252,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     </div>
   </div>
-  <p class="asc-footer">The category leaders have been built around employers. The next category leader will be built around her.</p>
+
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
+    [data-screen-label="12 At Scale"] .frame > .h1 {
+      margin: 0 0 8px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
+    }
     [data-screen-label="12 At Scale"] .asc-subhead {
       font-family: 'Inter Tight', sans-serif; font-size: 18px; font-weight: 300;
       color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; max-width: 1500px;
@@ -2338,7 +2294,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       color: var(--ink); margin: 2px 0 0; line-height: 1.4;
     }
     [data-screen-label="12 At Scale"] .asc-comp-src {
-      font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 300;
+      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 300;
       color: var(--ink-mute); margin: auto 0 0;
     }
     [data-screen-label="12 At Scale"] .asc-diff {
@@ -2363,11 +2319,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       display: flex; flex-direction: column; gap: 8px;
     }
     [data-screen-label="12 At Scale"] .asc-diff-list li::marker { color: var(--accent); }
-    [data-screen-label="12 At Scale"] .asc-footer {
-      position: absolute; bottom: 88px; left: 110px; right: 110px;
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 16px; color: var(--ink-soft); margin: 0; line-height: 1.45;
-    }
   </style>
 </section>
 
@@ -2378,7 +2329,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <p class="eyebrow" style="margin: 0 0 20px; color: var(--accent);">The ask</p>
 
-    <p class="ask-headline"><span class="ask-hl-amt">Carousel is opening pre-seed &mdash; $1.5M on a SAFE.</span></p>
+    <p class="ask-headline"><span class="ask-hl-amt">Carousel is opening the pre-seed &mdash; $1.5M on a SAFE.</span></p>
     <p class="ask-subhead">Open to both strategic angels and an institutional lead. SAFE at a post-money cap. Closing in 60&ndash;90 days.</p>
 
     <div class="ask-section-hd">ROUND OVERVIEW</div>
@@ -2438,7 +2389,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-family: 'Instrument Serif', serif; font-size: 52px; line-height: 1.15;
       color: var(--ink); margin: 0 0 16px; max-width: 1480px; letter-spacing: -0.01em;
     }
-    [data-screen-label="13 The ask"] .ask-hl-amt { color: var(--accent); }
+    [data-screen-label="13 The ask"] .ask-hl-amt { color: var(--ink); }
     [data-screen-label="13 The ask"] .ask-subhead {
       font-family: 'Inter Tight', sans-serif; font-size: 22px; font-weight: 300;
       color: var(--ink-soft); margin: 0 0 30px; line-height: 1.5; letter-spacing: -0.005em;
