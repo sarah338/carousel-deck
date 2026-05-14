@@ -367,215 +367,184 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 6. COMPETITIVE -->
 <section class="slide" data-screen-label="06 Competitive">
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
-  <div class="frame" style="padding-bottom: 100px;">
-    <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1" style="margin: 0 0 10px; font-size: 44px; line-height: 1.1;">Built for the woman herself &mdash; across the years no one else has built for.</h1>
-    <p class="comp-subhead">Today&rsquo;s fertility tech serves employers, clinics, or single moments. Carousel is the first platform built for the patient herself, across her entire journey.</p>
+  <div class="frame" style="padding-bottom: 160px;">
+    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Competitive landscape</p>
+    <h1 class="h1">Carousel is the only longitudinal patient-experience platform built for the woman herself.</h1>
 
-    <div class="comp-chart">
+    <!-- Carousel hero: sits above and outside the four category buckets -->
+    <div class="cm-hero">
+      <div class="cm-hero-left">
+        <p class="cm-hero-name">Carousel</p>
+      </div>
+      <div class="cm-hero-right">
+        <p class="cm-hero-desc">The longitudinal patient-experience platform &mdash; direct to her, or through her clinic. From fertility-curious through active treatment, recovery, and everything after.</p>
+      </div>
+    </div>
 
-      <!-- Y-axis label -->
-      <div class="comp-y-label"><span>TIME HORIZON</span></div>
+    <!-- Connector: Carousel integrates with and sits above all four categories -->
+    <div class="cm-tie">
+      <div class="cm-tie-line"></div>
+      <p class="cm-tie-label">integrates with &amp; sits above the entire ecosystem</p>
+      <div class="cm-tie-line"></div>
+    </div>
 
-      <div class="comp-body">
-        <div class="comp-mid">
+    <!-- Four category buckets -->
+    <div class="cm-buckets">
 
-          <!-- Y-axis endpoints -->
-          <div class="comp-y-ends">
-            <span class="comp-yend">Multi-year<br>journey</span>
-            <span class="comp-yend">Single<br>moment</span>
-          </div>
-
-          <!-- 2×2 grid -->
-          <div class="comp-grid">
-
-            <!-- Upper-Left: CAROUSEL -->
-            <div class="comp-q comp-q-carousel">
-              <div class="comp-carousel-inner">
-                <p class="comp-carousel-name">Carousel</p>
-                <p class="comp-carousel-desc">The longitudinal patient experience platform &mdash; for the woman fertility-curious, freezing eggs, going through IVF, and everything after</p>
-              </div>
-            </div>
-
-            <!-- Upper-Right: Employer platforms -->
-            <div class="comp-q comp-q-institution">
-              <div class="comp-co-list">
-                <div class="comp-co">
-                  <span class="comp-co-name">Maven Clinic</span>
-                  <span class="comp-co-meta">$1.7B valuation &middot; employer-benefits women&rsquo;s health platform</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Carrot Fertility</span>
-                  <span class="comp-co-meta">$115M raised &middot; employer-benefits fertility</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Progyny</span>
-                  <span class="comp-co-meta">$1.17B FY24 revenue &middot; public &middot; employer-benefits fertility</span>
-                </div>
-              </div>
-              <p class="comp-q-label">Employer-sold, longitudinal, but the buyer is not the patient.</p>
-            </div>
-
-            <!-- Lower-Left: D2C point solutions -->
-            <div class="comp-q comp-q-patient-point">
-              <div class="comp-co-list comp-co-list-sm">
-                <div class="comp-co">
-                  <span class="comp-co-name">Modern Fertility (Ro)</span>
-                  <span class="comp-co-meta">at-home hormone testing</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Mira &middot; Inito &middot; Oova</span>
-                  <span class="comp-co-meta">at-home cycle diagnostics</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Sunfish</span>
-                  <span class="comp-co-meta">patient financing at the IVF transaction</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Perelel &middot; Rescripted &middot; Stix</span>
-                  <span class="comp-co-meta">supplements &amp; content</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Flo &middot; Natural Cycles</span>
-                  <span class="comp-co-meta">cycle tracking</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Reddit &middot; ChatGPT</span>
-                  <span class="comp-co-meta">unmoderated patient information</span>
-                </div>
-              </div>
-              <p class="comp-q-label">Patient-led, but each tool serves a single moment &mdash; together, women cobble these into a fragmented journey.</p>
-            </div>
-
-            <!-- Lower-Right: Clinic-side -->
-            <div class="comp-q comp-q-clinic">
-              <div class="comp-co-list">
-                <div class="comp-co">
-                  <span class="comp-co-name">EngagedMD</span>
-                  <span class="comp-co-meta">clinic-sold patient education &amp; e-consent</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Salve</span>
-                  <span class="comp-co-meta">clinic-sold patient communication</span>
-                </div>
-                <div class="comp-co">
-                  <span class="comp-co-name">Kindbody &middot; Spring Fertility</span>
-                  <span class="comp-co-meta">clinic networks (operations layer)</span>
-                </div>
-              </div>
-              <p class="comp-q-label">Clinic-side workflow tools, sold to institutions for operational moments.</p>
-            </div>
-
-          </div><!-- /comp-grid -->
-        </div><!-- /comp-mid -->
-
-        <!-- X-axis -->
-        <div class="comp-x-axis">
-          <span class="comp-x-end">Patient pays</span>
-          <span class="comp-x-label">WHO IS THE CUSTOMER?</span>
-          <span class="comp-x-end">Institution pays (employer, clinic, lab)</span>
+      <!-- B1: Clinic Infrastructure -->
+      <div class="cm-bucket">
+        <div class="cm-bk-head">
+          <p class="cm-bk-label">Clinic Infrastructure</p>
+          <p class="cm-bk-desc">Sold to fertility clinics. Workflow, e-consent, patient communication, clinic operations.</p>
         </div>
-      </div><!-- /comp-body -->
-    </div><!-- /comp-chart -->
+        <div class="cm-chips">
+          <span class="cm-chip">EngagedMD</span>
+          <span class="cm-chip">Salve</span>
+          <span class="cm-chip">Kindbody</span>
+          <span class="cm-chip">Spring Fertility</span>
+        </div>
+      </div>
 
-    <p class="comp-footer">Carousel doesn&rsquo;t replace these tools &mdash; it holds the woman across her entire fertility life, from the first question she Googles to long after her last cycle.</p>
+      <!-- B2: Direct-to-Consumer Tools (widest — most companies) -->
+      <div class="cm-bucket cm-bucket-wide">
+        <div class="cm-bk-head">
+          <p class="cm-bk-label">Direct-to-Consumer Tools</p>
+          <p class="cm-bk-desc">Sold to her, single moment in her journey. Diagnostics, financing, supplements, content.</p>
+        </div>
+        <div class="cm-chips">
+          <span class="cm-chip">Modern Fertility</span>
+          <span class="cm-chip">Mira</span>
+          <span class="cm-chip">Inito</span>
+          <span class="cm-chip">Oova</span>
+          <span class="cm-chip">Flo</span>
+          <span class="cm-chip">Natural Cycles</span>
+          <span class="cm-chip">Sunfish</span>
+          <span class="cm-chip">Perelel</span>
+          <span class="cm-chip">Rescripted</span>
+          <span class="cm-chip">Stix</span>
+          <span class="cm-chip">Frame</span>
+          <span class="cm-chip">Conceive</span>
+        </div>
+      </div>
+
+      <!-- B3: Employer Benefits -->
+      <div class="cm-bucket cm-bucket-employer">
+        <div class="cm-bk-head">
+          <p class="cm-bk-label">Employer Benefits Platforms</p>
+          <p class="cm-bk-desc">Sold to employers, used by her. Longitudinal coverage, but the buyer isn&rsquo;t the patient.</p>
+        </div>
+        <div class="cm-chips">
+          <span class="cm-chip">Maven Clinic</span>
+          <span class="cm-chip">Carrot Fertility</span>
+          <span class="cm-chip">Progyny</span>
+          <span class="cm-chip cm-chip-future">Carousel (Y3+)</span>
+        </div>
+      </div>
+
+      <!-- B4: Subpar Alternatives -->
+      <div class="cm-bucket cm-bucket-sm">
+        <div class="cm-bk-head">
+          <p class="cm-bk-label">Subpar Alternatives</p>
+          <p class="cm-bk-desc">What she uses today when nothing else fits.</p>
+        </div>
+        <div class="cm-chips">
+          <span class="cm-chip cm-chip-muted">Reddit</span>
+          <span class="cm-chip cm-chip-muted">ChatGPT</span>
+          <span class="cm-chip cm-chip-muted">friend group texts</span>
+        </div>
+      </div>
+
+    </div><!-- /cm-buckets -->
+
   </div>
+  <p class="cm-footer">Carousel doesn&rsquo;t replace these tools &mdash; it holds the woman across her entire fertility life, from the first question she Googles to long after her last cycle.</p>
   <div class="draft-stamp">Draft &mdash; In Development</div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="06 Competitive"] .comp-subhead {
-      font-family: 'Inter Tight', sans-serif; font-size: 20px; font-weight: 300;
-      color: var(--ink-soft); margin: 0 0 18px; line-height: 1.5; max-width: 1400px;
+    [data-screen-label="06 Competitive"] .frame > .h1 {
+      margin: 0 0 14px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
     }
-    [data-screen-label="06 Competitive"] .comp-chart {
-      display: flex; flex: 1; min-height: 0;
+    /* ── Hero ── */
+    [data-screen-label="06 Competitive"] .cm-hero {
+      display: flex; align-items: center; gap: 0;
+      background: var(--accent); border-radius: 10px;
+      padding: 0; margin-bottom: 10px; flex-shrink: 0; overflow: hidden;
     }
-    [data-screen-label="06 Competitive"] .comp-y-label {
-      width: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    [data-screen-label="06 Competitive"] .cm-hero-left {
+      flex-shrink: 0; padding: 16px 32px;
+      border-right: 1.5px solid rgba(247,241,228,0.2);
     }
-    [data-screen-label="06 Competitive"] .comp-y-label span {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
-      transform: rotate(-90deg); white-space: nowrap;
-    }
-    [data-screen-label="06 Competitive"] .comp-body {
-      display: flex; flex-direction: column; flex: 1; min-height: 0;
-    }
-    [data-screen-label="06 Competitive"] .comp-mid {
-      display: flex; flex: 1; min-height: 0;
-    }
-    [data-screen-label="06 Competitive"] .comp-y-ends {
-      display: flex; flex-direction: column; justify-content: space-between;
-      width: 80px; flex-shrink: 0; padding: 0 12px 0 6px;
-    }
-    [data-screen-label="06 Competitive"] .comp-yend {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 500;
-      color: var(--ink-mute); line-height: 1.35;
-    }
-    [data-screen-label="06 Competitive"] .comp-grid {
-      flex: 1; display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      border: 1.5px solid rgba(74,40,28,0.14);
-      border-radius: 10px; overflow: hidden;
-    }
-    [data-screen-label="06 Competitive"] .comp-q {
-      padding: 28px 32px 24px; display: flex; flex-direction: column; justify-content: space-between;
-    }
-    [data-screen-label="06 Competitive"] .comp-q-carousel {
-      background: rgba(149,74,45,0.07);
-      border-right: 1.5px solid rgba(74,40,28,0.14);
-      border-bottom: 1.5px solid rgba(74,40,28,0.14);
-    }
-    [data-screen-label="06 Competitive"] .comp-q-institution {
-      border-bottom: 1.5px solid rgba(74,40,28,0.14);
-    }
-    [data-screen-label="06 Competitive"] .comp-q-patient-point {
-      border-right: 1.5px solid rgba(74,40,28,0.14);
-    }
-    [data-screen-label="06 Competitive"] .comp-carousel-inner {
-      display: flex; flex-direction: column; justify-content: center; flex: 1; gap: 14px;
-    }
-    [data-screen-label="06 Competitive"] .comp-carousel-name {
-      font-family: 'Instrument Serif', serif; font-size: 64px; line-height: 1;
-      color: var(--accent); margin: 0; letter-spacing: -0.02em;
-    }
-    [data-screen-label="06 Competitive"] .comp-carousel-desc {
-      font-family: 'Inter Tight', sans-serif; font-size: 17px; font-weight: 300;
-      line-height: 1.5; color: var(--ink-soft); margin: 0; max-width: 520px;
-    }
-    [data-screen-label="06 Competitive"] .comp-co-list {
-      display: flex; flex-direction: column; gap: 9px; flex: 1;
-    }
-    [data-screen-label="06 Competitive"] .comp-co-list-sm { gap: 6px; }
-    [data-screen-label="06 Competitive"] .comp-co { display: flex; flex-direction: column; gap: 1px; }
-    [data-screen-label="06 Competitive"] .comp-co-name {
-      font-family: 'Inter Tight', sans-serif; font-size: 15px; font-weight: 500;
-      color: var(--ink); letter-spacing: -0.005em;
-    }
-    [data-screen-label="06 Competitive"] .comp-co-list-sm .comp-co-name { font-size: 13px; }
-    [data-screen-label="06 Competitive"] .comp-co-meta {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 300;
-      color: var(--ink-mute); line-height: 1.3;
-    }
-    [data-screen-label="06 Competitive"] .comp-co-list-sm .comp-co-meta { font-size: 11px; }
-    [data-screen-label="06 Competitive"] .comp-q-label {
+    [data-screen-label="06 Competitive"] .cm-hero-name {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 14px; color: var(--ink-mute); margin: 14px 0 0; line-height: 1.45;
+      font-size: 52px; line-height: 1; letter-spacing: -0.02em;
+      color: #F7F1E4; margin: 0;
     }
-    [data-screen-label="06 Competitive"] .comp-x-axis {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 9px 0 0 80px; flex-shrink: 0;
+    [data-screen-label="06 Competitive"] .cm-hero-right {
+      padding: 16px 28px;
     }
-    [data-screen-label="06 Competitive"] .comp-x-label {
+    [data-screen-label="06 Competitive"] .cm-hero-desc {
+      font-family: 'Inter Tight', sans-serif; font-size: 16px; font-weight: 300;
+      line-height: 1.5; color: rgba(247,241,228,0.88); margin: 0;
+    }
+    /* ── Connector ── */
+    [data-screen-label="06 Competitive"] .cm-tie {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 10px; flex-shrink: 0;
+    }
+    [data-screen-label="06 Competitive"] .cm-tie-line {
+      flex: 1; height: 1px; background: rgba(149,74,45,0.2);
+    }
+    [data-screen-label="06 Competitive"] .cm-tie-label {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 13px; color: var(--ink-mute); margin: 0; white-space: nowrap;
+    }
+    /* ── Four buckets ── */
+    [data-screen-label="06 Competitive"] .cm-buckets {
+      display: flex; flex: 1; min-height: 0; gap: 10px;
+    }
+    [data-screen-label="06 Competitive"] .cm-bucket {
+      flex: 1.5; display: flex; flex-direction: column; gap: 14px;
+      background: rgba(74,56,42,0.04); border-radius: 10px;
+      padding: 18px 20px 16px;
+      border-top: 3px solid rgba(149,74,45,0.22);
+    }
+    [data-screen-label="06 Competitive"] .cm-bucket-wide {
+      flex: 3; background: rgba(74,56,42,0.035);
+    }
+    [data-screen-label="06 Competitive"] .cm-bucket-employer {
+      background: rgba(149,74,45,0.05);
+    }
+    [data-screen-label="06 Competitive"] .cm-bucket-sm {
+      flex: 1; background: rgba(74,56,42,0.025);
+    }
+    [data-screen-label="06 Competitive"] .cm-bk-head { flex-shrink: 0; }
+    [data-screen-label="06 Competitive"] .cm-bk-label {
       font-family: 'Inter Tight', sans-serif; font-size: 11px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--accent); margin: 0 0 7px;
     }
-    [data-screen-label="06 Competitive"] .comp-x-end {
+    [data-screen-label="06 Competitive"] .cm-bk-desc {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 300;
+      color: var(--ink-soft); line-height: 1.45; margin: 0;
+    }
+    /* ── Chips ── */
+    [data-screen-label="06 Competitive"] .cm-chips {
+      display: flex; flex-wrap: wrap; gap: 5px; align-content: flex-start;
+    }
+    [data-screen-label="06 Competitive"] .cm-chip {
       font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 500;
-      color: var(--ink-mute);
+      padding: 4px 12px; border-radius: 100px; white-space: nowrap;
+      background: rgba(74,40,28,0.08); color: var(--ink);
     }
-    [data-screen-label="06 Competitive"] .comp-footer {
+    [data-screen-label="06 Competitive"] .cm-chip-future {
+      background: rgba(149,74,45,0.14); color: var(--accent); font-style: italic;
+    }
+    [data-screen-label="06 Competitive"] .cm-chip-muted {
+      background: rgba(74,40,28,0.04); color: var(--ink-mute);
+      font-style: italic; font-weight: 300;
+    }
+    /* ── Footer ── */
+    [data-screen-label="06 Competitive"] .cm-footer {
       position: absolute; bottom: 88px; left: 110px; right: 110px;
       font-family: 'Instrument Serif', serif; font-style: italic;
       font-size: 17px; color: var(--ink-soft); margin: 0; line-height: 1.45;
