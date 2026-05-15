@@ -367,221 +367,176 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 6. COMPETITIVE -->
 <section class="slide" data-screen-label="06 Competitive">
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
-  <div class="frame" style="padding-bottom: 170px;">
-    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Competitive landscape</p>
+  <div class="frame" style="padding-bottom: 80px;">
+    <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
     <h1 class="h1">Fertility tech has been built in fragments. Carousel builds across them.</h1>
 
-    <!-- 3×2 market map grid -->
-    <div class="mm-grid">
+    <!-- market map: top row → Carousel hero → bottom row -->
+    <div class="mm-layout">
 
-      <!-- B1: Clinical AI & Workflow -->
-      <div class="mm-bucket" style="--bk-accent: #7A5C42; --bk-bg: rgba(122,92,66,0.06);">
-        <div class="mm-bk-top">
+      <!-- Top row: B1 B2 B3 -->
+      <div class="mm-row">
+        <div class="mm-bucket" style="--bk-accent: #7A5C42; --bk-bg: rgba(122,92,66,0.06);">
           <p class="mm-cat">Clinical AI &amp; Workflow</p>
           <p class="mm-sub">Built for the clinic. Stim optimization, consent, operations.</p>
+          <div class="mm-cos">
+            <span class="mm-co">Alife</span>
+            <span class="mm-co">EngagedMD</span>
+            <span class="mm-co">Salve</span>
+          </div>
+          <p class="mm-note">Stim Assist &middot; Embryo Predict</p>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-lg">Alife</span>
-          <span class="mm-co mm-co-lg">EngagedMD</span>
-          <span class="mm-co mm-co-lg">Salve</span>
-        </div>
-        <p class="mm-note">Stim Assist &middot; Embryo Predict</p>
-      </div>
 
-      <!-- B2: At-Home Diagnostics & Tracking -->
-      <div class="mm-bucket" style="--bk-accent: #B5623E; --bk-bg: rgba(181,98,62,0.06);">
-        <div class="mm-bk-top">
+        <div class="mm-bucket" style="--bk-accent: #B5623E; --bk-bg: rgba(181,98,62,0.06);">
           <p class="mm-cat">At-Home Diagnostics &amp; Tracking</p>
-          <p class="mm-sub">Direct to her. Single-moment snapshots of her cycle and hormones.</p>
+          <p class="mm-sub">Direct to her. Single-moment snapshots of cycle and hormones.</p>
+          <div class="mm-cos">
+            <span class="mm-co">Modern Fertility</span>
+            <span class="mm-co">Mira</span>
+            <span class="mm-co">Inito</span>
+            <span class="mm-co">Oova</span>
+          </div>
+          <p class="mm-note">Modern Fertility acquired by Ro</p>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-lg">Modern Fertility</span>
-          <span class="mm-co mm-co-lg">Mira</span>
-          <span class="mm-co mm-co-lg">Inito</span>
-          <span class="mm-co mm-co-lg">Oova</span>
-        </div>
-        <p class="mm-note">Modern Fertility acquired by Ro</p>
-      </div>
 
-      <!-- B3: Preconception & TTC Coaching -->
-      <div class="mm-bucket" style="--bk-accent: #5E7A62; --bk-bg: rgba(94,122,98,0.06);">
-        <div class="mm-bk-top">
+        <div class="mm-bucket" style="--bk-accent: #5E7A62; --bk-bg: rgba(94,122,98,0.06);">
           <p class="mm-cat">Preconception &amp; TTC Coaching</p>
           <p class="mm-sub">Guided support for women trying to conceive.</p>
+          <div class="mm-cos">
+            <span class="mm-co">Frame</span>
+            <span class="mm-co">Conceive</span>
+          </div>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-lg">Frame</span>
-          <span class="mm-co mm-co-lg">Conceive</span>
+      </div><!-- /top row -->
+
+      <!-- Carousel hero — center of the map -->
+      <div class="mm-hero">
+        <div class="mm-hero-left">
+          <p class="mm-hero-eyebrow">Integrating across all of them</p>
+          <p class="mm-hero-name">Carousel</p>
         </div>
+        <div class="mm-hero-divider"></div>
+        <p class="mm-hero-desc">The longitudinal patient-experience platform built for the woman herself &mdash; direct to her, or through her clinic. From fertility-curious through active treatment, recovery, and everything after.</p>
       </div>
 
-      <!-- B4: Fertility Financing -->
-      <div class="mm-bucket" style="--bk-accent: #5A7080; --bk-bg: rgba(90,112,128,0.06);">
-        <div class="mm-bk-top">
+      <!-- Bottom row: B4 B5 B6 -->
+      <div class="mm-row">
+        <div class="mm-bucket" style="--bk-accent: #5A7080; --bk-bg: rgba(90,112,128,0.06);">
           <p class="mm-cat">Fertility Financing</p>
           <p class="mm-sub">Making IVF financially accessible to more patients.</p>
+          <div class="mm-cos">
+            <span class="mm-co mm-co-xl">Sunfish</span>
+          </div>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-xl">Sunfish</span>
-        </div>
-      </div>
 
-      <!-- B5: Employer Benefits Platforms — most prominent -->
-      <div class="mm-bucket mm-bucket-lead" style="--bk-accent: #954A2D; --bk-bg: rgba(149,74,45,0.08);">
-        <div class="mm-bk-top">
+        <div class="mm-bucket mm-bucket-lead" style="--bk-accent: #954A2D; --bk-bg: rgba(149,74,45,0.08);">
           <p class="mm-cat">Employer Benefits Platforms</p>
           <p class="mm-sub">Sold to employers. Used by her. Longitudinal — but the buyer isn&rsquo;t the patient.</p>
+          <div class="mm-cos">
+            <span class="mm-co mm-co-xl">Maven Clinic</span>
+            <span class="mm-co mm-co-xl">Progyny</span>
+            <span class="mm-co mm-co-xl">Carrot Fertility</span>
+          </div>
+          <p class="mm-note">$1.7B &nbsp;&middot;&nbsp; $1.17B FY24 &nbsp;&middot;&nbsp; $115M+</p>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-xl">Maven Clinic</span>
-          <span class="mm-co mm-co-xl">Progyny</span>
-          <span class="mm-co mm-co-xl">Carrot Fertility</span>
-        </div>
-        <p class="mm-note">$1.7B &nbsp;&middot;&nbsp; $1.17B FY24 &nbsp;&middot;&nbsp; $115M+</p>
-      </div>
 
-      <!-- B6: Clinic Networks -->
-      <div class="mm-bucket" style="--bk-accent: #8C6848; --bk-bg: rgba(140,104,72,0.06);">
-        <div class="mm-bk-top">
+        <div class="mm-bucket" style="--bk-accent: #8C6848; --bk-bg: rgba(140,104,72,0.06);">
           <p class="mm-cat">Clinic Networks</p>
           <p class="mm-sub">Vertically integrated clinic &amp; care delivery at scale.</p>
+          <div class="mm-cos">
+            <span class="mm-co">Kindbody</span>
+            <span class="mm-co">Spring Fertility</span>
+          </div>
         </div>
-        <div class="mm-cos">
-          <span class="mm-co mm-co-lg">Kindbody</span>
-          <span class="mm-co mm-co-lg">Spring Fertility</span>
-        </div>
-      </div>
+      </div><!-- /bottom row -->
 
-    </div><!-- /mm-grid -->
-
-    <!-- Carousel hero strip — below the map -->
-    <div class="mm-hero">
-      <div class="mm-hero-left">
-        <p class="mm-hero-eyebrow">Integrating across all of them</p>
-        <p class="mm-hero-name">Carousel</p>
-      </div>
-      <div class="mm-hero-divider"></div>
-      <p class="mm-hero-desc">The longitudinal patient-experience platform built for the woman herself &mdash; direct to her, or through her clinic. From fertility-curious through active treatment, recovery, and everything after.</p>
-    </div>
-
+    </div><!-- /mm-layout -->
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="06 Competitive"] .frame > .h1 {
-      margin: 0 0 16px 0 !important; font-size: 40px !important; line-height: 1.1 !important;
+      margin: 0 0 12px 0 !important; font-size: 56px !important; line-height: 1.08 !important;
     }
-    /* ── 3×2 Grid ── */
-    [data-screen-label="06 Competitive"] .mm-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 10px;
-      flex: 1;
-      min-height: 0;
-      margin-bottom: 12px;
+    /* ── Layout ── */
+    [data-screen-label="06 Competitive"] .mm-layout {
+      display: flex; flex-direction: column;
+      gap: 8px; flex: 1; min-height: 0;
+    }
+    [data-screen-label="06 Competitive"] .mm-row {
+      display: flex; gap: 8px; flex: 1; min-height: 0;
     }
     [data-screen-label="06 Competitive"] .mm-bucket {
+      flex: 1;
       background: var(--bk-bg);
       border-top: 4px solid var(--bk-accent);
-      border-radius: 10px;
-      padding: 20px 24px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      border-radius: 8px;
+      padding: 14px 18px 12px;
+      display: flex; flex-direction: column; gap: 7px;
     }
     [data-screen-label="06 Competitive"] .mm-bucket-lead {
       border-top-width: 5px;
-    }
-    [data-screen-label="06 Competitive"] .mm-bk-top {
-      flex-shrink: 0;
     }
     /* Category label */
     [data-screen-label="06 Competitive"] .mm-cat {
       font-family: 'Inter Tight', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--bk-accent);
-      margin: 0 0 6px;
+      color: var(--bk-accent); margin: 0;
     }
-    /* Category description */
+    /* Description */
     [data-screen-label="06 Competitive"] .mm-sub {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 14px; font-weight: 300;
-      line-height: 1.4; color: var(--ink-soft);
-      margin: 0;
+      font-size: 15px; font-weight: 300;
+      line-height: 1.35; color: var(--ink-soft); margin: 0;
     }
-    /* Company names row */
+    /* Company names */
     [data-screen-label="06 Competitive"] .mm-cos {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 4px 16px;
+      display: flex; flex-wrap: wrap;
+      align-items: baseline; gap: 2px 14px;
       flex: 1;
     }
     [data-screen-label="06 Competitive"] .mm-co {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 17px; font-weight: 500;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-    [data-screen-label="06 Competitive"] .mm-co-lg {
-      font-size: 20px; font-weight: 600;
+      font-size: 22px; font-weight: 400;
+      color: var(--ink-soft); white-space: nowrap;
     }
     [data-screen-label="06 Competitive"] .mm-co-xl {
-      font-size: 24px; font-weight: 700;
+      font-size: 26px; font-weight: 500;
     }
     [data-screen-label="06 Competitive"] .mm-note {
       font-family: 'Instrument Serif', serif;
       font-style: italic; font-size: 13px;
-      color: var(--ink-mute);
-      margin: 0; flex-shrink: 0;
+      color: var(--ink-mute); margin: 0; flex-shrink: 0;
     }
-    /* ── Carousel Hero Strip ── */
+    /* ── Carousel Hero — middle strip ── */
     [data-screen-label="06 Competitive"] .mm-hero {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      background: var(--accent);
-      border-radius: 10px;
-      overflow: hidden;
-      flex-shrink: 0;
+      display: flex; align-items: center; gap: 0;
+      background: var(--accent); border-radius: 10px;
+      overflow: hidden; flex-shrink: 0;
     }
     [data-screen-label="06 Competitive"] .mm-hero-left {
-      flex-shrink: 0;
-      padding: 16px 32px;
+      flex-shrink: 0; padding: 14px 30px;
     }
     [data-screen-label="06 Competitive"] .mm-hero-eyebrow {
       font-family: 'Inter Tight', sans-serif;
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(247,241,228,0.55);
-      margin: 0 0 4px;
+      color: rgba(247,241,228,0.55); margin: 0 0 3px;
     }
     [data-screen-label="06 Competitive"] .mm-hero-name {
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 54px; line-height: 1;
-      letter-spacing: -0.02em; color: #F7F1E4;
-      margin: 0;
+      font-style: italic; font-size: 58px; line-height: 1;
+      letter-spacing: -0.02em; color: #F7F1E4; margin: 0;
     }
     [data-screen-label="06 Competitive"] .mm-hero-divider {
       width: 1.5px; align-self: stretch;
-      background: rgba(247,241,228,0.18);
-      flex-shrink: 0;
+      background: rgba(247,241,228,0.18); flex-shrink: 0;
     }
     [data-screen-label="06 Competitive"] .mm-hero-desc {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 18px; font-weight: 300; line-height: 1.5;
+      font-size: 19px; font-weight: 300; line-height: 1.5;
       color: rgba(247,241,228,0.88);
-      padding: 20px 32px;
-      margin: 0;
-    }
-    /* ── Footer ── */
-    [data-screen-label="06 Competitive"] .mm-footer {
-      position: absolute;
-      bottom: 88px; left: 110px; right: 110px;
-      font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 16px;
-      color: var(--ink-soft); margin: 0; line-height: 1.45;
+      padding: 18px 30px; margin: 0;
     }
   </style>
 </section>
