@@ -371,21 +371,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
     <h1 class="h1">Fertility tech has been built in fragments. Carousel builds across them.</h1>
 
-    <!-- Carousel as the containing frame around all 6 categories -->
-    <div class="mm-frame">
+    <div class="mm-layout">
 
-      <!-- Carousel header — sits above and owns all 6 -->
-      <div class="mm-frame-hd">
-        <p class="mm-frame-name">Carousel</p>
-        <div class="mm-frame-div"></div>
-        <p class="mm-frame-desc">The longitudinal patient-experience platform built for the woman herself &mdash; direct to her, or through her clinic. From fertility-curious through active treatment, recovery, and everything after.</p>
-      </div>
-
-      <!-- 3×2 grid of categories — separated by thin lines -->
-      <div class="mm-grid">
-
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #7A5C42;">Clinical AI &amp; Workflow</p>
+      <!-- Top row: B1 B2 B3 -->
+      <div class="mm-row">
+        <div class="mm-bucket" style="--bk-accent: #7A5C42; --bk-bg: rgba(122,92,66,0.07);">
+          <p class="mm-cat">Clinical AI &amp; Workflow</p>
           <p class="mm-sub">Built for the clinic. Stim optimization, consent, operations.</p>
           <div class="mm-cos">
             <span class="mm-co">Alife</span>
@@ -393,9 +384,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
             <span class="mm-co">Salve</span>
           </div>
         </div>
-
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #B5623E;">At-Home Diagnostics &amp; Tracking</p>
+        <div class="mm-bucket" style="--bk-accent: #B5623E; --bk-bg: rgba(181,98,62,0.07);">
+          <p class="mm-cat">At-Home Diagnostics &amp; Tracking</p>
           <p class="mm-sub">Direct to her. Single-moment snapshots of her cycle and hormones.</p>
           <div class="mm-cos">
             <span class="mm-co">Modern Fertility</span>
@@ -404,26 +394,37 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
             <span class="mm-co">Oova</span>
           </div>
         </div>
-
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #5E7A62;">Preconception &amp; TTC Coaching</p>
+        <div class="mm-bucket" style="--bk-accent: #5E7A62; --bk-bg: rgba(94,122,98,0.07);">
+          <p class="mm-cat">Preconception &amp; TTC Coaching</p>
           <p class="mm-sub">Guided support for women trying to conceive.</p>
           <div class="mm-cos">
             <span class="mm-co">Frame</span>
             <span class="mm-co">Conceive</span>
           </div>
         </div>
+      </div>
 
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #5A7080;">Fertility Financing</p>
+      <!-- Carousel hero — centre of the map -->
+      <div class="mm-hero">
+        <div class="mm-hero-left">
+          <p class="mm-hero-eyebrow">Integrating across all of them</p>
+          <p class="mm-hero-name">Carousel</p>
+        </div>
+        <div class="mm-hero-divider"></div>
+        <p class="mm-hero-desc">The longitudinal patient-experience platform built for the woman herself &mdash; direct to her, or through her clinic. From fertility-curious through active treatment, recovery, and everything after.</p>
+      </div>
+
+      <!-- Bottom row: B4 B5 B6 -->
+      <div class="mm-row">
+        <div class="mm-bucket" style="--bk-accent: #5A7080; --bk-bg: rgba(90,112,128,0.07);">
+          <p class="mm-cat">Fertility Financing</p>
           <p class="mm-sub">Making IVF financially accessible to more patients.</p>
           <div class="mm-cos">
             <span class="mm-co">Sunfish</span>
           </div>
         </div>
-
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #954A2D;">Employer Benefits Platforms</p>
+        <div class="mm-bucket" style="--bk-accent: #954A2D; --bk-bg: rgba(149,74,45,0.09);">
+          <p class="mm-cat">Employer Benefits Platforms</p>
           <p class="mm-sub">Sold to employers. Used by her. Longitudinal &mdash; but the buyer isn&rsquo;t the patient.</p>
           <div class="mm-cos">
             <span class="mm-co">Maven Clinic</span>
@@ -431,94 +432,89 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
             <span class="mm-co">Carrot Fertility</span>
           </div>
         </div>
-
-        <div class="mm-bucket">
-          <p class="mm-cat" style="--cat-color: #8C6848;">Clinic Networks</p>
+        <div class="mm-bucket" style="--bk-accent: #8C6848; --bk-bg: rgba(140,104,72,0.07);">
+          <p class="mm-cat">Clinic Networks</p>
           <p class="mm-sub">Vertically integrated clinic &amp; care delivery at scale.</p>
           <div class="mm-cos">
             <span class="mm-co">Kindbody</span>
             <span class="mm-co">Spring Fertility</span>
           </div>
         </div>
+      </div>
 
-      </div><!-- /mm-grid -->
-    </div><!-- /mm-frame -->
+    </div>
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="06 Competitive"] .frame > .h1 {
-      margin: 0 0 14px 0 !important; font-size: 56px !important; line-height: 1.08 !important;
+      margin: 0 0 12px 0 !important; font-size: 56px !important; line-height: 1.08 !important;
     }
-    /* ── Outer Carousel frame ── */
-    [data-screen-label="06 Competitive"] .mm-frame {
-      flex: 1; min-height: 0;
+    [data-screen-label="06 Competitive"] .mm-layout {
       display: flex; flex-direction: column;
-      border: 2.5px solid var(--accent);
-      border-radius: 12px;
-      overflow: hidden;
+      gap: 8px; flex: 1; min-height: 0;
     }
-    /* Carousel header bar */
-    [data-screen-label="06 Competitive"] .mm-frame-hd {
-      background: var(--accent);
-      padding: 14px 28px;
-      display: flex; align-items: center; gap: 0;
-      flex-shrink: 0;
-    }
-    [data-screen-label="06 Competitive"] .mm-frame-name {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 56px; line-height: 1;
-      letter-spacing: -0.02em; color: #F7F1E4;
-      margin: 0; flex-shrink: 0; padding-right: 28px;
-    }
-    [data-screen-label="06 Competitive"] .mm-frame-div {
-      width: 1.5px; align-self: stretch;
-      background: rgba(247,241,228,0.22); flex-shrink: 0;
-      margin-right: 28px;
-    }
-    [data-screen-label="06 Competitive"] .mm-frame-desc {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 18px; font-weight: 300; line-height: 1.5;
-      color: rgba(247,241,228,0.88); margin: 0;
-    }
-    /* ── Inner 3×2 grid ── */
-    [data-screen-label="06 Competitive"] .mm-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 1px;
-      background: rgba(149,74,45,0.2);
-      flex: 1; min-height: 0;
+    [data-screen-label="06 Competitive"] .mm-row {
+      display: flex; gap: 8px; flex: 1; min-height: 0;
     }
     [data-screen-label="06 Competitive"] .mm-bucket {
-      background: var(--bg);
-      padding: 22px 26px;
+      flex: 1;
+      background: var(--bk-bg);
+      border-top: 4px solid var(--bk-accent);
+      border-radius: 8px;
+      padding: 16px 22px;
       display: flex; flex-direction: column;
-      justify-content: center; gap: 8px;
+      justify-content: center;
+      gap: 9px;
     }
-    /* Category label */
     [data-screen-label="06 Competitive"] .mm-cat {
       font-family: 'Inter Tight', sans-serif;
       font-size: 11px; font-weight: 700;
       letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--cat-color); margin: 0;
+      color: var(--bk-accent); margin: 0;
     }
-    /* Description */
     [data-screen-label="06 Competitive"] .mm-sub {
       font-family: 'Inter Tight', sans-serif;
       font-size: 15px; font-weight: 300;
       line-height: 1.35; color: var(--ink-soft); margin: 0;
     }
-    /* Company names */
     [data-screen-label="06 Competitive"] .mm-cos {
       display: flex; flex-wrap: wrap;
-      align-items: baseline; gap: 0 18px;
-      margin-top: 4px;
+      align-items: baseline; gap: 0 20px;
     }
     [data-screen-label="06 Competitive"] .mm-co {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 26px; font-weight: 400;
-      color: var(--ink); white-space: nowrap;
-      line-height: 1.3;
+      font-size: 30px; font-weight: 400;
+      color: var(--ink); white-space: nowrap; line-height: 1.25;
+    }
+    /* Carousel hero strip */
+    [data-screen-label="06 Competitive"] .mm-hero {
+      display: flex; align-items: center;
+      background: var(--accent); border-radius: 10px;
+      overflow: hidden; flex-shrink: 0;
+    }
+    [data-screen-label="06 Competitive"] .mm-hero-left {
+      flex-shrink: 0; padding: 12px 28px;
+    }
+    [data-screen-label="06 Competitive"] .mm-hero-eyebrow {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(247,241,228,0.55); margin: 0 0 2px;
+    }
+    [data-screen-label="06 Competitive"] .mm-hero-name {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-size: 56px; line-height: 1;
+      letter-spacing: -0.02em; color: #F7F1E4; margin: 0;
+    }
+    [data-screen-label="06 Competitive"] .mm-hero-divider {
+      width: 1.5px; align-self: stretch;
+      background: rgba(247,241,228,0.2); flex-shrink: 0;
+    }
+    [data-screen-label="06 Competitive"] .mm-hero-desc {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 18px; font-weight: 300; line-height: 1.5;
+      color: rgba(247,241,228,0.88);
+      padding: 16px 28px; margin: 0;
     }
   </style>
 </section>
