@@ -367,7 +367,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 6. COMPETITIVE -->
 <section class="slide" data-screen-label="06 Competitive">
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
-  <div class="frame" style="padding-bottom: 80px;">
+  <div class="frame" style="padding-top: 120px; padding-bottom: 150px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
     <h1 class="h1">Fertility tech has been built in fragments. Carousel builds across them.</h1>
 
@@ -468,22 +468,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="06 Competitive"] .mm-cat {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 700;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--bk-accent); margin: 0;
     }
     [data-screen-label="06 Competitive"] .mm-sub {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 15px; font-weight: 300;
+      font-size: 17px; font-weight: 300;
       line-height: 1.35; color: var(--ink-soft); margin: 0;
     }
     [data-screen-label="06 Competitive"] .mm-cos {
       display: flex; flex-wrap: wrap;
-      align-items: baseline; gap: 0 20px;
+      align-items: baseline; gap: 0 22px;
     }
     [data-screen-label="06 Competitive"] .mm-co {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 30px; font-weight: 400;
+      font-size: 32px; font-weight: 400;
       color: var(--ink); white-space: nowrap; line-height: 1.25;
     }
     /* Carousel hero strip */
@@ -533,10 +533,77 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px;">
 
-      <!-- 01 · EDUCATION — chat mockup -->
+      <!-- 01 · PERSONALIZED EDUCATION — article list -->
       <div class="prod-col" style="text-align:center;">
         <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">01<br/>Personalized Education</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Clinically-vetted answers,<br/>just for her</h3>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Clinically-vetted,<br/>tuned to where she is</h3>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="ph-statusbar">
+              <span>9:41</span>
+              <span class="ph-icons">
+                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
+                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
+              </span>
+            </div>
+            <div class="ph-nav">
+              <span class="ph-back">&larr;</span>
+              <span class="ph-title">My Learning <em style="font-size:11px;color:var(--ink-mute);">&middot; for Jane</em></span>
+              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
+            </div>
+            <div class="ph-body" style="padding:10px 16px 6px;display:flex;flex-direction:column;flex:1;overflow:hidden;">
+              <p class="learn-eyebrow">Curated for you &middot; cycle 2, day 9</p>
+              <div class="learn-list">
+                <div class="learn-row">
+                  <span class="learn-chev">&#9658;</span>
+                  <div class="learn-text">
+                    <p class="learn-title">What your AMH of 1.3 actually means at 35</p>
+                    <p class="learn-meta">4 min read &middot; <em>reviewed by Dr. Lena Park, RE</em></p>
+                  </div>
+                </div>
+                <div class="learn-row">
+                  <span class="learn-chev">&#9658;</span>
+                  <div class="learn-text">
+                    <p class="learn-title">Trigger shot night &mdash; what to expect</p>
+                    <p class="learn-meta">3 min read &middot; <em>queued for day 11</em></p>
+                  </div>
+                </div>
+                <div class="learn-row">
+                  <span class="learn-chev">&#9658;</span>
+                  <div class="learn-text">
+                    <p class="learn-title">Why your protocol uses Menopur</p>
+                    <p class="learn-meta">5 min read</p>
+                  </div>
+                </div>
+                <div class="learn-row">
+                  <span class="learn-chev">&#9658;</span>
+                  <div class="learn-text">
+                    <p class="learn-title">Mature vs. immature eggs at retrieval</p>
+                    <p class="learn-meta">6 min read</p>
+                  </div>
+                </div>
+                <div class="learn-row">
+                  <span class="learn-chev">&#9658;</span>
+                  <div class="learn-text">
+                    <p class="learn-title">Egg quality vs. egg quantity</p>
+                    <p class="learn-meta">7 min read</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ph-input">
+              <span class="ph-input-pill">Ask Maeve anything&hellip;</span>
+              <span class="ph-mic">&#x25CF;</span>
+            </div>
+          </div>
+        </div>
+        <p class="body" style="display:none;">Clinically reviewed education, sequenced for her cycle and protocol.</p>
+      </div>
+
+      <!-- 02 · PERSONALIZED FORECASTING — corrected SART data -->
+      <div class="prod-col" style="text-align:center;">
+        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">02<br/>Personalized Forecasting</p>
+        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Honest projections,<br/>grounded in national data</h3>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -551,15 +618,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
               <span class="ph-title">My Forecast</span>
               <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
             </div>
-
             <div class="ph-person">
-              <image-slot id="mock1-jane" class="ph-avatar-slot" shape="circle" src="assets/portraits/community/jane.jpeg" placeholder="Jane"></image-slot>
+              <image-slot id="mock2f-jane" class="ph-avatar-slot" shape="circle" src="assets/portraits/community/jane.jpeg" placeholder="Jane"></image-slot>
               <span class="ph-person-text">
                 <span class="ph-person-name">Jane Doe</span>
                 <span class="ph-person-stage">35 &middot; pre-treatment</span>
               </span>
             </div>
-
             <div class="ph-calc">
               <p class="calc-eyebrow">Clinical inputs</p>
               <div class="calc-grid">
@@ -568,60 +633,52 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
                 <div class="calc-cell"><span class="calc-k">AFC</span><span class="calc-v">9</span></div>
                 <div class="calc-cell"><span class="calc-k">FSH</span><span class="calc-v">8.4</span></div>
                 <div class="calc-cell"><span class="calc-k">BMI</span><span class="calc-v">22</span></div>
-                <div class="calc-cell"><span class="calc-k">Goal</span><span class="calc-v">3 kids</span></div>
+                <div class="calc-cell"><span class="calc-k">Goal</span><span class="calc-v">2 kids</span></div>
               </div>
-
-              <p class="calc-eyebrow" style="margin-top: 12px;">Forecast &middot; per cycle</p>
+              <p class="calc-eyebrow" style="margin-top: 10px;">Per-cycle expectations</p>
               <div class="calc-stat-row">
                 <div class="calc-stat">
-                  <span class="calc-stat-num">8&ndash;12</span>
+                  <span class="calc-stat-num">5&ndash;9</span>
                   <span class="calc-stat-lbl">mature eggs</span>
                 </div>
                 <div class="calc-stat">
-                  <span class="calc-stat-num">3&ndash;5</span>
+                  <span class="calc-stat-num">1&ndash;2</span>
                   <span class="calc-stat-lbl">euploid embryos</span>
                 </div>
               </div>
-
-              <p class="calc-eyebrow" style="margin-top: 12px;">Probability of 3 live births</p>
+              <p class="calc-eyebrow" style="margin-top: 10px;">Cumulative live birth probability</p>
+              <p class="calc-sub-eyebrow">per new IVF patient &middot; SART 2022</p>
               <div class="prob-rows">
                 <div class="prob-row">
-                  <span class="prob-lbl">1 retrieval</span>
-                  <span class="prob-bar"><span class="prob-fill" style="width: 18%;"></span></span>
-                  <span class="prob-pct">18%</span>
+                  <span class="prob-lbl">1 cycle</span>
+                  <span class="prob-bar"><span class="prob-fill" style="width:33%;"></span></span>
+                  <span class="prob-pct">~33%</span>
                 </div>
                 <div class="prob-row">
-                  <span class="prob-lbl">2 retrievals</span>
-                  <span class="prob-bar"><span class="prob-fill" style="width: 47%;"></span></span>
-                  <span class="prob-pct">47%</span>
+                  <span class="prob-lbl">2 cycles</span>
+                  <span class="prob-bar"><span class="prob-fill" style="width:49%;"></span></span>
+                  <span class="prob-pct">~49%</span>
                 </div>
-                <div class="prob-row prob-row-rec">
-                  <span class="prob-lbl">3 retrievals <em>recommended</em></span>
-                  <span class="prob-bar"><span class="prob-fill prob-fill-on" style="width: 72%;"></span></span>
-                  <span class="prob-pct prob-pct-on">72%</span>
+                <div class="prob-row">
+                  <span class="prob-lbl">3 cycles</span>
+                  <span class="prob-bar"><span class="prob-fill prob-fill-on" style="width:57%;"></span></span>
+                  <span class="prob-pct prob-pct-on">~57%</span>
                 </div>
               </div>
-
-              <p class="calc-source"><em>Modeled on SART 2022 outcomes for AMH 1.0&ndash;1.5, age 35.</em></p>
-
-              <div class="calc-chat">
-                <div class="calc-chat-msg user">But how does this change if I want 2&nbsp;kids, or if I push my first round to 37 instead of 35?</div>
-                <div class="calc-chat-msg ai"><span class="ai-name">Carousel</span> Recalculating &mdash; here are both scenarios&hellip;</div>
-              </div>
+              <p class="calc-source"><em>Based on SART national outcomes for women age 35&ndash;37. Your clinic&rsquo;s data may differ.</em></p>
             </div>
-
             <div class="ph-input">
-              <span class="ph-input-pill">Ask anything&hellip;</span>
+              <span class="ph-input-pill">Ask Maeve anything&hellip;</span>
               <span class="ph-mic">&#x25CF;</span>
             </div>
           </div>
         </div>
-        <p class="body" style="display:none;">No more asking ChatGPT or interpreting AMH through TikTok. Trustworthy, credible, personal.</p>
+        <p class="body" style="display:none;">Honest projections from SART national data, mapped to her clinical profile.</p>
       </div>
 
-      <!-- 02 · COMMUNITY — filter + clinical moderator -->
+      <!-- 03 · MODERATED COMMUNITY — filter + clinical moderator -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">02<br/>Moderated Community</p>
+        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">03<br/>Moderated Community</p>
         <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Support system<br/>with clinical oversight</h3>
         <div class="phone">
           <div class="phone-screen">
@@ -695,9 +752,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <p class="body" style="display:none;">Goodbye Reddit threads and Facebook groups. Moderated, curated, matched to her stage.</p>
       </div>
 
-      <!-- 03 · EMOTIONAL SUPPORT — placeholder -->
+      <!-- 04 · AI EMOTIONAL SUPPORT -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">03<br/>AI Emotional Support</p>
+        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">04<br/>AI Emotional Support</p>
         <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">An always-on companion through the swings</h3>
         <div class="phone">
           <div class="phone-screen">
@@ -747,75 +804,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           </div>
         </div>
         <p class="body" style="display:none;">Through fear, anxiety, isolation, disappointment, hormones &mdash; an AI companion that holds.</p>
-      </div>
-
-      <!-- 04 · MILESTONES — celebration mock -->
-      <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">04<br/>Milestones</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Wins witnessed by the women who get it</h3>
-        <div class="phone">
-          <div class="phone-screen">
-            <div class="ph-statusbar">
-              <span>4:18</span>
-              <span class="ph-icons">
-                <svg width="16" height="10" viewBox="0 0 16 10"><path d="M0 8h2v2H0zM4 6h2v4H4zM8 4h2v6H8zM12 1h2v9h-2z" fill="currentColor"/></svg>
-                <svg width="22" height="10" viewBox="0 0 22 10"><rect x="0.5" y="0.5" width="18" height="9" rx="2" fill="none" stroke="currentColor" opacity="0.6"/><rect x="2" y="2" width="14" height="6" rx="1" fill="currentColor"/><rect x="19.5" y="3" width="1.5" height="4" rx="0.5" fill="currentColor" opacity="0.6"/></svg>
-              </span>
-            </div>
-            <div class="ph-nav">
-              <span class="ph-back">&larr;</span>
-              <span class="ph-title">Milestones</span>
-              <span class="ph-mark"><svg viewBox="0 0 24 24"><use href="#mark"/></svg></span>
-            </div>
-
-            <div class="ph-mile-eyebrow">
-              <span class="ph-mile-mark">&#10022;</span>
-              <span>Today &middot; in your room</span>
-            </div>
-
-            <div class="ph-rooms" style="padding-top: 6px;">
-              <div class="thread mile-thread">
-                <div class="thread-head">
-                  <span class="thread-author">Maia &middot; <em>cycle 2</em></span>
-                  <span class="mile-tag">last injection</span>
-                </div>
-                <p class="mile-headline"><em>Done with stims.</em></p>
-                <p class="thread-body" style="color: var(--ink-soft);">&ldquo;Twelve nights of injections. Bruised, exhausted, hopeful. Trigger shot tomorrow. Whatever happens next, I made it through this part.&rdquo;</p>
-                <div class="thread-reacts">
-                  <span class="react"><span class="react-ico react-heart"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>312 cheered</span>
-                  <span class="react react-reply">&#x21A9; 47 replies</span>
-                </div>
-                <div class="thread-reply">
-                  <image-slot id="mock4-eliza" class="reply-avatar-slot" shape="circle" src="assets/portraits/community/eliza.png" placeholder="Eliza"></image-slot>
-                  <span class="reply-text">Eliza Starting mine Tuesday. Saving this. Thank you for sharing.</span>
-                </div>
-                <div class="thread-reply" style="margin-top: -2px;">
-                  <image-slot id="mock4-jules" class="reply-avatar-slot" shape="circle" src="assets/portraits/community/jules.png" placeholder="Jules"></image-slot>
-                  <span class="reply-text">Jules You showed up for yourself every night. Rest tonight &mdash; we&rsquo;re proud of you.</span>
-                </div>
-              </div>
-
-              <div class="mile-quiet">
-                <div class="mile-quiet-row">
-                  <span class="mile-quiet-mark"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>
-                  <span class="mile-quiet-text">Sara finished her first consult &middot; <em>Spring Fertility</em></span>
-                  <span class="mile-quiet-cheer">94 cheered</span>
-                </div>
-                <div class="mile-quiet-row">
-                  <span class="mile-quiet-mark"><svg viewBox="0 0 24 22"><path d="M12 20.4C5 16 1.5 12 1.5 7.7 1.5 4.7 4 2.2 7 2.2c2 0 3.7 1 5 2.5 1.3-1.5 3-2.5 5-2.5 3 0 5.5 2.5 5.5 5.5 0 4.3-3.5 8.3-10.5 12.7z" fill="currentColor"/></svg></span>
-                  <span class="mile-quiet-text">Priya trigger shot tonight &middot; <em>cycle 3</em></span>
-                  <span class="mile-quiet-cheer">176 cheered</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="ph-input">
-              <span class="ph-input-pill">Share a milestone&hellip;</span>
-              <span class="ph-mic">&#x25CF;</span>
-            </div>
-          </div>
-        </div>
-        <p class="body" style="display:none;">Wins celebrated where they&rsquo;re understood &mdash; quietly, by women on the same path.</p>
       </div>
 
       <!-- 05 · MY WHOLE PICTURE — connected sources mock -->
@@ -1025,6 +1013,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     .prod-col .prob-pct { font-family: 'Instrument Serif', serif; font-size: 14px; color: var(--ink-soft); text-align: right; }
     .prod-col .prob-pct-on { color: var(--accent); font-size: 16px; }
     .prod-col .calc-source { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 10px; color: var(--ink-mute); margin: 8px 0 0; text-align: left; }
+    .prod-col .calc-sub-eyebrow { font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 400; letter-spacing: 0.06em; color: var(--ink-mute); margin: -6px 0 6px; text-align: left; font-style: italic; }
+    /* Education article list */
+    .prod-col .learn-eyebrow { font-family: 'Inter Tight', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-mute); margin: 0 0 10px; }
+    .prod-col .learn-list { display: flex; flex-direction: column; gap: 9px; }
+    .prod-col .learn-row { display: flex; gap: 7px; align-items: flex-start; }
+    .prod-col .learn-chev { font-size: 9px; color: var(--accent); flex-shrink: 0; margin-top: 2px; line-height: 1; }
+    .prod-col .learn-text { flex: 1; }
+    .prod-col .learn-title { font-family: 'Inter Tight', sans-serif; font-size: 12px; font-weight: 500; color: var(--ink); line-height: 1.3; margin: 0 0 2px; }
+    .prod-col .learn-meta { font-family: 'Inter Tight', sans-serif; font-size: 10px; font-weight: 300; color: var(--ink-mute); margin: 0; line-height: 1.3; }
     /* Align phones to a common baseline so 1-line vs 2-line eyebrows don't cause jagged bottoms */
     .prod-col { display: flex; flex-direction: column; }
     .prod-col > .phone { margin-top: auto; }
