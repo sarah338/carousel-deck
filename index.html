@@ -641,7 +641,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
                   <span class="calc-stat-lbl">mature eggs</span>
                 </div>
                 <div class="calc-stat">
-                  <span class="calc-stat-num">1&ndash;2</span>
+                  <span class="calc-stat-num">0&ndash;1</span>
                   <span class="calc-stat-lbl">euploid embryos</span>
                 </div>
               </div>
@@ -874,15 +874,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     /* Mock-only warmth tokens — scoped to the phone mocks, do not leak to deck */
     .prod-col {
-      --mock-bg:        #EAE2D6;   /* neutral warm cream */
-      --mock-bg-card:   #E0D6C8;   /* card surface */
-      --mock-bg-soft:   #F2EBE0;   /* lightest wash */
+      --mock-bg:        #EAE2D6;
+      --mock-bg-card:   #E0D6C8;
+      --mock-bg-soft:   #F2EBE0;
       --mock-rose:      rgba(149,74,45,0.06);
       --mock-rose-2:    rgba(149,74,45,0.11);
       --mock-rule-soft: rgba(74,40,28,0.10);
+      display: flex; flex-direction: column; align-items: center;
     }
     .prod-col .phone {
-      width: 260px; height: 500px; margin: auto auto 0;
+      width: 260px; height: 500px; margin-top: auto; margin-bottom: 0;
       background: linear-gradient(180deg, #2f2218 0%, #1f1610 100%);
       border-radius: 44px;
       padding: 6px;
