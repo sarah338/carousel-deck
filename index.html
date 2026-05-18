@@ -2153,58 +2153,52 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 13. THE ASK -->
 <section class="slide" data-screen-label="13 The ask">
   <div class="pageno"><svg><use href="#mark"/></svg>13 / 13</div>
-  <div class="frame" style="padding: 110px 110px 120px;">
+  <div class="frame" style="padding: 72px 110px 120px;">
 
-    <p class="eyebrow" style="margin: 0 0 20px; color: var(--accent);">The ask</p>
+    <p class="eyebrow" style="margin: 0 0 12px; color: var(--accent);">The ask</p>
 
     <p class="ask-headline"><span class="ask-hl-amt">Carousel is opening the pre-seed &mdash; $1.5M on a SAFE.</span></p>
 
-    <div class="ask-section-hd">ROUND OVERVIEW</div>
     <div class="ask-facts">
-      <div class="ask-fact">
+      <div class="ask-fact ask-fact--1">
         <p class="ask-fact-eyebrow">Round</p>
         <p class="ask-fact-val">$1.5M pre-seed</p>
       </div>
-      <div class="ask-fact">
+      <div class="ask-fact ask-fact--2">
         <p class="ask-fact-eyebrow">Instrument</p>
         <p class="ask-fact-val">SAFE &middot; post-money cap</p>
       </div>
-      <div class="ask-fact">
+      <div class="ask-fact ask-fact--3">
         <p class="ask-fact-eyebrow">Timeline</p>
         <p class="ask-fact-val">Closing in 60&ndash;90 days</p>
       </div>
     </div>
 
     <div class="uof-grid">
-      <div class="uof-hd">USE OF FUNDS <span class="uof-hd-note">$1.5M</span></div>
+      <div class="uof-hd">Use of funds <span class="uof-hd-note">$1.5M</span></div>
       <div class="uof-col">
         <p class="uof-pct">~40%</p>
-        <p class="uof-amt">$600K</p>
-        <p class="uof-label">Team</p>
+        <p class="uof-amt">$600K &middot; Team</p>
         <p class="uof-body">Founding Clinical Advisor formalized. Founding Engineer / Product hired. Founder runway through MVP launch.</p>
       </div>
       <div class="uof-col">
         <p class="uof-pct">~35%</p>
-        <p class="uof-amt">$525K</p>
-        <p class="uof-label">Product</p>
-        <p class="uof-body">Build, ship, and iterate the Carousel D2C app. Infrastructure, AI/ML personalization layer, integration partnerships.</p>
+        <p class="uof-amt">$525K &middot; Product</p>
+        <p class="uof-body">Build, ship, and iterate the Carousel app. Infrastructure, AI/ML personalization layer, integration partnerships.</p>
       </div>
       <div class="uof-col">
         <p class="uof-pct">~15%</p>
-        <p class="uof-amt">$225K</p>
-        <p class="uof-label">Go-to-market &amp; community</p>
+        <p class="uof-amt">$225K &middot; Go-to-market</p>
         <p class="uof-body">D2C acquisition, content engine, founder-led community moderation, design-partner clinic activation.</p>
       </div>
       <div class="uof-col">
         <p class="uof-pct">~10%</p>
-        <p class="uof-amt">$150K</p>
-        <p class="uof-label">Legal / ops / contingency</p>
+        <p class="uof-amt">$150K &middot; Legal &amp; ops</p>
         <p class="uof-body">Legal, finance, infrastructure, runway buffer.</p>
       </div>
     </div>
 
     <div class="ask-foot">
-      <p class="ask-milestone">This round funds the milestones that earn institutional pre-seed: MVP shipped, founding clinical advisor formalized, first design-partner clinic LOI, early D2C signal. Institutional pre-seed of $1.5&ndash;2M follows in 6&ndash;9 months at a priced step-up.</p>
       <p class="ask-foot-eyebrow">Let&rsquo;s talk.</p>
       <p class="ask-foot-line"><a href="mailto:sarah@carouselfertility.com">sarah@carouselfertility.com</a></p>
       <p class="ask-foot-line ask-foot-line-soft">www.carouselfertility.com</p>
@@ -2214,96 +2208,79 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     [data-screen-label="13 The ask"] .ask-headline {
       font-family: 'Instrument Serif', serif; font-size: 52px; line-height: 1.15;
-      color: var(--ink); margin: 0 0 16px; max-width: 1480px; letter-spacing: -0.01em;
+      color: var(--ink); margin: 0 0 20px; max-width: 1480px; letter-spacing: -0.01em;
     }
     [data-screen-label="13 The ask"] .ask-hl-amt { color: var(--ink); }
-    [data-screen-label="13 The ask"] .ask-subhead {
-      font-family: 'Inter Tight', sans-serif; font-size: 22px; font-weight: 300;
-      color: var(--ink-soft); margin: 0 0 30px; line-height: 1.5; letter-spacing: -0.005em;
-    }
     [data-screen-label="13 The ask"] .ask-facts {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 28px;
+      gap: 10px; margin-bottom: 12px;
     }
-    [data-screen-label="13 The ask"] .ask-fact { padding: 22px 32px 22px 0; border-right: 1px solid var(--rule-soft); }
-    [data-screen-label="13 The ask"] .ask-fact:last-child { border-right: 0; }
-    [data-screen-label="13 The ask"] .ask-fact:not(:first-child) { padding-left: 32px; }
+    [data-screen-label="13 The ask"] .ask-fact {
+      border-radius: 10px; padding: 24px 32px;
+    }
+    [data-screen-label="13 The ask"] .ask-fact--1 { background: var(--accent); }
+    [data-screen-label="13 The ask"] .ask-fact--2 { background: #C99477; }
+    [data-screen-label="13 The ask"] .ask-fact--3 { background: #E8D5C4; }
     [data-screen-label="13 The ask"] .ask-fact-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--accent); margin: 0 0 8px; font-weight: 500;
+      font-family: 'Inter Tight', sans-serif; font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase;
+      margin: 0 0 10px; font-weight: 700;
     }
+    [data-screen-label="13 The ask"] .ask-fact--1 .ask-fact-eyebrow { color: rgba(247,241,228,0.7); }
+    [data-screen-label="13 The ask"] .ask-fact--2 .ask-fact-eyebrow { color: #2A1508; }
+    [data-screen-label="13 The ask"] .ask-fact--3 .ask-fact-eyebrow { color: var(--ink-soft); }
     [data-screen-label="13 The ask"] .ask-fact-val {
-      font-family: 'Instrument Serif', serif; font-size: 26px; line-height: 1.25;
-      color: var(--ink); margin: 0; letter-spacing: -0.005em;
+      font-family: 'Instrument Serif', serif; font-size: 36px; line-height: 1.2;
+      margin: 0; letter-spacing: -0.01em;
     }
-    [data-screen-label="13 The ask"] .ask-section-hd {
-      background: rgba(125,56,32,0.09);
-      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: #7D3820;
-      padding: 14px 32px; margin-bottom: 0;
-    }
+    [data-screen-label="13 The ask"] .ask-fact--1 .ask-fact-val { color: #F7F1E4; }
+    [data-screen-label="13 The ask"] .ask-fact--2 .ask-fact-val,
+    [data-screen-label="13 The ask"] .ask-fact--3 .ask-fact-val { color: var(--ink); }
     [data-screen-label="13 The ask"] .uof-grid {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 0; margin-bottom: 0;
+      gap: 10px; margin-bottom: 0;
     }
     [data-screen-label="13 The ask"] .uof-hd {
       grid-column: 1 / -1;
-      background: rgba(125,56,32,0.09);
-      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase; color: #7D3820;
-      padding: 14px 32px;
+      background: #5C2E1C;
+      font-family: 'Inter Tight', sans-serif; font-size: 18px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #F7F1E4;
+      padding: 16px 32px; border-radius: 10px 10px 0 0;
     }
     [data-screen-label="13 The ask"] .uof-hd-note {
       font-weight: 400; font-style: italic; letter-spacing: 0.04em;
       text-transform: none; opacity: 0.65; margin-left: 10px;
     }
     [data-screen-label="13 The ask"] .uof-col {
-      padding: 22px 32px 22px 0;
-      border-right: 1px solid var(--rule-soft);
-      border-top: 1px solid var(--rule);
+      background: #E8D5C4; border-radius: 0 0 8px 8px;
+      padding: 22px 28px 24px;
     }
-    [data-screen-label="13 The ask"] .uof-col:last-child { border-right: 0; }
-    [data-screen-label="13 The ask"] .uof-col:not(:first-child) { padding-left: 32px; }
     [data-screen-label="13 The ask"] .uof-pct {
-      font-family: 'Instrument Serif', serif; font-size: 44px;
+      font-family: 'Instrument Serif', serif; font-size: 64px;
       line-height: 1; letter-spacing: -0.02em;
       color: var(--accent); margin: 0 0 4px;
     }
     [data-screen-label="13 The ask"] .uof-amt {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 20px; line-height: 1.2; color: var(--ink-mute);
-      margin: 0 0 10px; letter-spacing: -0.005em;
-    }
-    [data-screen-label="13 The ask"] .uof-label {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px;
-      font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--ink); margin: 0 0 8px;
+      font-family: 'Inter Tight', sans-serif; font-weight: 600;
+      font-size: 17px; line-height: 1.2; color: var(--ink);
+      margin: 0 0 10px; letter-spacing: 0.01em; text-transform: uppercase;
     }
     [data-screen-label="13 The ask"] .uof-body {
-      font-family: 'Inter Tight', sans-serif; font-size: 15px;
-      font-weight: 300; line-height: 1.5; color: var(--ink-soft); margin: 0;
+      font-family: 'Inter Tight', sans-serif; font-size: 17px;
+      font-weight: 400; line-height: 1.5; color: var(--ink-soft); margin: 0;
     }
     [data-screen-label="13 The ask"] .ask-foot {
-      position: absolute; bottom: 100px; left: 110px; right: 110px;
+      position: absolute; bottom: 88px; left: 110px; right: 110px;
       display: flex; flex-direction: column; gap: 0;
     }
-    [data-screen-label="13 The ask"] .ask-milestone {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 18px; color: var(--ink-soft); margin: 0 0 18px;
-      letter-spacing: -0.005em; line-height: 1.45; max-width: 1200px;
-    }
     [data-screen-label="13 The ask"] .ask-foot-eyebrow {
-      font-family: 'Inter Tight', sans-serif; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-mute); margin: 0 0 10px; font-weight: 400;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 28px; color: var(--ink-soft); margin: 0 0 6px;
     }
     [data-screen-label="13 The ask"] .ask-foot-line {
-      font-family: 'Instrument Serif', serif; font-size: 28px; color: var(--ink); margin: 0 0 3px; letter-spacing: -0.005em;
+      font-family: 'Instrument Serif', serif; font-size: 36px; color: var(--ink); margin: 0 0 3px; letter-spacing: -0.01em;
     }
     [data-screen-label="13 The ask"] .ask-foot-line a { color: inherit; text-decoration: none; }
-    [data-screen-label="13 The ask"] .ask-foot-line-soft { color: var(--ink-mute); font-style: italic; font-size: 20px; }
+    [data-screen-label="13 The ask"] .ask-foot-line-soft { color: var(--ink-mute); font-style: italic; font-size: 24px; }
   </style>
 </section>
 
