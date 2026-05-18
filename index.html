@@ -1897,13 +1897,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="frame">
     <p class="eyebrow" style="margin-bottom: 18px; color: var(--accent);">Path to traction</p>
 
-    <h1 class="h1" style="margin: 0 0 32px; max-width: 1620px; font-size: 44px; line-height: 1.15;">From thirty interviews to a clinic-proven model &mdash; the sequence that earns the seed.</h1>
+    <h1 class="h1" style="margin: 0 0 32px; max-width: 1620px; font-size: 44px; line-height: 1.15;">From thirty interviews to a clinic-proven model &mdash; the sequence that earns the Series A.</h1>
 
     <!-- Phase cards -->
     <div class="trc-cards">
 
       <div class="trc-card trc-card--now">
-        <span class="trc-phase">Now</span>
+        <span class="trc-phase">Angel / Pre-Seed</span>
         <p class="trc-title">Pre-product</p>
         <ul class="trc-pts">
           <li>30 patient interviews complete</li>
@@ -1913,7 +1913,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="trc-card trc-card--next">
-        <span class="trc-phase">Next &middot; 0&ndash;9 mo</span>
+        <span class="trc-phase">Pre-Seed</span>
         <p class="trc-title">Build &amp; Activate</p>
         <ul class="trc-pts">
           <li>MVP shipped</li>
@@ -1923,7 +1923,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="trc-card trc-card--then">
-        <span class="trc-phase">Then &middot; 9&ndash;18 mo</span>
+        <span class="trc-phase">Seed</span>
         <p class="trc-title">Prove the Model</p>
         <ul class="trc-pts">
           <li>Pilot producing engagement &amp; retention data</li>
@@ -1932,11 +1932,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="trc-card trc-card--seed">
-        <span class="trc-phase">Seed &middot; 18 mo+</span>
+        <span class="trc-phase">Series A</span>
         <p class="trc-title">Scale</p>
         <ul class="trc-pts">
           <li>Multi-clinic rollout</li>
-          <li>Raise seed against proven clinic ROI</li>
+          <li>Raise Series A against proven clinic ROI</li>
         </ul>
       </div>
 
@@ -1956,8 +1956,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       gap: 24px; flex: 1; min-height: 0; margin-bottom: 32px;
     }
     [data-screen-label="11 Traction"] .trc-card {
-      border-radius: 10px; padding: 36px 32px 28px;
-      display: flex; flex-direction: column; gap: 16px;
+      border-radius: 10px; padding: 40px 36px;
+      display: flex; flex-direction: column; justify-content: center; gap: 20px;
     }
     [data-screen-label="11 Traction"] .trc-card--now  { background: var(--accent); color: #F7F1E4; }
     [data-screen-label="11 Traction"] .trc-card--next { background: #C99477; }
@@ -1965,9 +1965,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="11 Traction"] .trc-card--seed { background: rgba(149,74,45,0.08); border: 1.5px dashed rgba(149,74,45,0.3); }
 
     [data-screen-label="11 Traction"] .trc-phase {
-      font-family: 'Inter Tight', sans-serif; font-size: 13px;
-      font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
-      opacity: 0.65;
+      font-family: 'Inter Tight', sans-serif; font-size: 16px;
+      font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+      opacity: 0.72;
     }
     [data-screen-label="11 Traction"] .trc-card--now .trc-phase { color: #F7F1E4; }
     [data-screen-label="11 Traction"] .trc-card--next .trc-phase,
@@ -1976,7 +1976,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-title {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 38px; line-height: 1.1; letter-spacing: -0.01em; margin: 0;
+      font-size: 48px; line-height: 1.05; letter-spacing: -0.01em; margin: 0;
     }
     [data-screen-label="11 Traction"] .trc-card--now .trc-title { color: #F7F1E4; }
     [data-screen-label="11 Traction"] .trc-card--next .trc-title,
@@ -1985,12 +1985,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-pts {
       list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 10px;
+      display: flex; flex-direction: column; gap: 12px;
     }
     [data-screen-label="11 Traction"] .trc-pts li {
-      font-family: 'Inter Tight', sans-serif; font-size: 19px;
-      font-weight: 300; line-height: 1.4;
-      padding-left: 16px; position: relative;
+      font-family: 'Inter Tight', sans-serif; font-size: 22px;
+      font-weight: 300; line-height: 1.35;
+      padding-left: 18px; position: relative;
     }
     [data-screen-label="11 Traction"] .trc-pts li::before {
       content: "·"; position: absolute; left: 0;
@@ -2007,7 +2007,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-closer {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 32px; line-height: 1.4; color: var(--ink); margin: 0;
+      font-size: 34px; line-height: 1.4; color: var(--ink); margin: 0;
     }
   </style>
 </section>
