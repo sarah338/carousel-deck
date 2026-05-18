@@ -530,7 +530,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Introducing Carousel</p>
 
     <h1 class="h1" style="margin-bottom: 14px; max-width: 1700px; font-size: 56px">
-      The first longitudinal patient experience platform for women going through egg freezing &amp; IVF.
+      The first AI-first longitudinal patient experience platform for women going through egg freezing &amp; IVF.
     </h1>
 
     <div class="rule" style="margin-bottom: 14px;"></div>
@@ -1823,14 +1823,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="10 Business model"] .frame > .h1 { margin: 0 0 32px 0 !important; font-size: 52px !important; line-height: 1.1 !important; }
 
     [data-screen-label="10 Business model"] .bm-seq {
-      display: flex; flex-direction: column;
+      display: flex; flex-direction: column; flex: 1; min-height: 0;
       border-top: 1.5px solid rgba(149,74,45,0.18);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
     [data-screen-label="10 Business model"] .bm-row {
-      display: grid; grid-template-columns: 120px 1fr 320px;
-      gap: 40px; align-items: center;
-      padding: 20px 0;
+      display: grid; grid-template-columns: 140px 1fr 360px;
+      gap: 48px; align-items: center;
+      flex: 1;
+      padding: 0;
       border-bottom: 1px solid rgba(149,74,45,0.10);
     }
     [data-screen-label="10 Business model"] .bm-timing {
@@ -1838,9 +1839,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="10 Business model"] .bm-badge {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 700;
+      font-size: 13px; font-weight: 700;
       letter-spacing: 0.22em; text-transform: uppercase;
-      padding: 6px 16px; border-radius: 999px;
+      padding: 8px 20px; border-radius: 999px;
     }
     [data-screen-label="10 Business model"] .bm-badge--now {
       background: var(--accent); color: #F7F1E4;
@@ -1853,42 +1854,42 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="10 Business model"] .bm-who {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 22px; font-weight: 600;
-      color: var(--ink); margin: 0 0 6px; letter-spacing: -0.01em;
+      font-size: 30px; font-weight: 600;
+      color: var(--ink); margin: 0 0 8px; letter-spacing: -0.02em;
     }
     [data-screen-label="10 Business model"] .bm-row--2 .bm-who,
     [data-screen-label="10 Business model"] .bm-row--3 .bm-who { opacity: 0.7; }
     [data-screen-label="10 Business model"] .bm-desc {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 16px; font-weight: 400; line-height: 1.55;
+      font-size: 20px; font-weight: 400; line-height: 1.5;
       color: var(--ink-soft); margin: 0;
     }
     [data-screen-label="10 Business model"] .bm-row--2 .bm-desc,
     [data-screen-label="10 Business model"] .bm-row--3 .bm-desc { opacity: 0.75; }
     [data-screen-label="10 Business model"] .bm-rationale {
-      border-left: 2px solid rgba(149,74,45,0.2); padding-left: 20px;
+      border-left: 2px solid rgba(149,74,45,0.2); padding-left: 24px;
     }
     [data-screen-label="10 Business model"] .bm-rat-lbl {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent); margin: 0 0 4px; opacity: 0.7;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 6px; opacity: 0.7;
     }
     [data-screen-label="10 Business model"] .bm-rat-text {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 15px; font-weight: 300; font-style: italic;
+      font-size: 19px; font-weight: 300; font-style: italic;
       line-height: 1.5; color: var(--ink-mute); margin: 0;
     }
     [data-screen-label="10 Business model"] .bm-mechanic {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 16px; font-weight: 400; line-height: 1.6;
+      font-size: 19px; font-weight: 400; line-height: 1.6;
       color: var(--ink-soft); margin: 0 0 16px;
     }
     [data-screen-label="10 Business model"] .bm-honesty {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 17px; font-weight: 400; line-height: 1.5;
+      font-size: 21px; font-weight: 400; line-height: 1.5;
       color: var(--accent);
       border-left: 3px solid var(--accent);
-      padding: 10px 20px;
+      padding: 12px 24px;
     }
   </style>
 </section>
@@ -1950,15 +1951,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="11 Traction"] .frame > .h1 { margin: 0 0 32px 0 !important; font-size: 44px !important; line-height: 1.15 !important; }
+    [data-screen-label="11 Traction"] .frame > .h1 { margin: 0 0 28px 0 !important; font-size: 52px !important; line-height: 1.1 !important; }
 
     [data-screen-label="11 Traction"] .trc-cards {
       display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 20px; flex: 1; min-height: 0; margin-bottom: 28px;
+      gap: 24px; flex: 1; min-height: 0; margin-bottom: 32px;
     }
     [data-screen-label="11 Traction"] .trc-card {
-      border-radius: 10px; padding: 28px 28px 24px;
-      display: flex; flex-direction: column; gap: 12px;
+      border-radius: 10px; padding: 36px 32px 28px;
+      display: flex; flex-direction: column; gap: 16px;
     }
     [data-screen-label="11 Traction"] .trc-card--now  { background: var(--accent); color: #F7F1E4; }
     [data-screen-label="11 Traction"] .trc-card--next { background: #C99477; }
@@ -1966,7 +1967,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="11 Traction"] .trc-card--seed { background: rgba(149,74,45,0.08); border: 1.5px dashed rgba(149,74,45,0.3); }
 
     [data-screen-label="11 Traction"] .trc-phase {
-      font-family: 'Inter Tight', sans-serif; font-size: 11px;
+      font-family: 'Inter Tight', sans-serif; font-size: 13px;
       font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
       opacity: 0.65;
     }
@@ -1977,7 +1978,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-title {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 28px; line-height: 1.1; letter-spacing: -0.01em; margin: 0;
+      font-size: 38px; line-height: 1.1; letter-spacing: -0.01em; margin: 0;
     }
     [data-screen-label="11 Traction"] .trc-card--now .trc-title { color: #F7F1E4; }
     [data-screen-label="11 Traction"] .trc-card--next .trc-title,
@@ -1986,12 +1987,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-pts {
       list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 7px;
+      display: flex; flex-direction: column; gap: 10px;
     }
     [data-screen-label="11 Traction"] .trc-pts li {
-      font-family: 'Inter Tight', sans-serif; font-size: 16px;
+      font-family: 'Inter Tight', sans-serif; font-size: 19px;
       font-weight: 300; line-height: 1.4;
-      padding-left: 14px; position: relative;
+      padding-left: 16px; position: relative;
     }
     [data-screen-label="11 Traction"] .trc-pts li::before {
       content: "·"; position: absolute; left: 0;
@@ -2008,7 +2009,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="11 Traction"] .trc-closer {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 24px; line-height: 1.4; color: var(--ink); margin: 0;
+      font-size: 32px; line-height: 1.4; color: var(--ink); margin: 0;
     }
   </style>
 </section>
