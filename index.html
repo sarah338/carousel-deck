@@ -416,19 +416,19 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <div class="asc-rows">
 
       <div class="asc-comp-row">
-        <span class="asc-name"><img class="asc-logo" src="assets/logos/maven.svg" alt="Maven Clinic"></span>
+        <span class="asc-name"><img class="asc-logo" src="assets/logos/maven.png" alt="Maven Clinic"></span>
         <span class="asc-val">$1.7B</span>
         <span class="asc-tag">Employer &amp; health-plan led &middot; CNBC 2024</span>
       </div>
       <div class="asc-divider"></div>
       <div class="asc-comp-row">
-        <span class="asc-name"><img class="asc-logo" src="assets/logos/progyny.svg" alt="Progyny"></span>
+        <span class="asc-name"><img class="asc-logo" src="assets/logos/Progyny.png" alt="Progyny"></span>
         <span class="asc-val">$1.09B <span class="asc-val-sub">FY23</span></span>
         <span class="asc-tag">Public &middot; fertility benefits &middot; SEC filings</span>
       </div>
       <div class="asc-divider"></div>
       <div class="asc-comp-row">
-        <span class="asc-name"><img class="asc-logo" src="assets/logos/carrot.svg" alt="Carrot Fertility"></span>
+        <span class="asc-name"><img class="asc-logo" src="assets/logos/carrot.png" alt="Carrot Fertility"></span>
         <span class="asc-val">Series C <span class="asc-val-sub">&middot; $115M raised</span></span>
         <span class="asc-tag">Employer-benefits fertility &middot; Crunchbase</span>
       </div>
@@ -455,8 +455,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       display: flex; align-items: center;
     }
     [data-screen-label="05 At Scale"] .asc-logo {
-      height: 44px; width: auto; max-width: 300px;
-      opacity: 0.85;
+      max-height: 56px; height: auto; width: auto; max-width: 300px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+      object-fit: contain;
     }
     [data-screen-label="05 At Scale"] .asc-val {
       font-family: 'Inter Tight', sans-serif; font-size: 80px; font-weight: 500;
