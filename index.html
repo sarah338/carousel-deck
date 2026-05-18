@@ -317,8 +317,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <div class="bu-funnel">
 
       <div class="bu-tier bu-tier--tam">
+        <div class="bu-spine">TAM</div>
         <div class="bu-left">
-          <span class="bu-label">TAM &middot; clinic-led entry market</span>
+          <span class="bu-label">Clinic-led entry market</span>
           <span class="bu-num">~$32M<span class="bu-num-sm"> / year</span></span>
         </div>
         <div class="bu-right">
@@ -328,8 +329,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="bu-tier bu-tier--sam">
+        <div class="bu-spine">SAM</div>
         <div class="bu-left">
-          <span class="bu-label">SAM &middot; serviceable US clinics</span>
+          <span class="bu-label">Serviceable US clinics</span>
           <span class="bu-num">~$21M<span class="bu-num-sm"> / year</span></span>
         </div>
         <div class="bu-right">
@@ -339,8 +341,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
       <div class="bu-tier bu-tier--som">
+        <div class="bu-spine">SOM</div>
         <div class="bu-left">
-          <span class="bu-label">SOM &middot; Series A target</span>
+          <span class="bu-label">Series A target</span>
           <span class="bu-num">~$2M ARR<span class="bu-num-sm"> &middot; by Series A</span></span>
         </div>
         <div class="bu-right">
@@ -361,9 +364,23 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       gap: 18px; margin: 0 auto; max-width: 1700px;
     }
     [data-screen-label="04 Market bottom up"] .bu-tier {
-      display: grid; grid-template-columns: 360px 1fr;
-      gap: 48px; align-items: center;
-      padding: 28px 56px; border-radius: 10px;
+      display: grid; grid-template-columns: 110px 1fr 1fr;
+      gap: 40px; align-items: center;
+      padding: 32px 40px 32px 32px; border-radius: 10px;
+      min-height: 160px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-spine {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 64px; font-weight: 700;
+      letter-spacing: 0.14em;
+      line-height: 1;
+      align-self: stretch;
+      display: flex; align-items: center; justify-content: center;
+      padding: 8px 0;
+      color: rgba(247,241,228,0.95);
+      border-right: 1px solid rgba(247,241,228,0.18);
     }
     [data-screen-label="04 Market bottom up"] .bu-tier--tam { width: 100%; background: var(--accent); color: #F7F1E4; }
     [data-screen-label="04 Market bottom up"] .bu-tier--sam { width: 82%; background: #C99477; color: #F7F1E4; }
@@ -455,11 +472,14 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       display: flex; align-items: center;
     }
     [data-screen-label="05 At Scale"] .asc-logo {
-      max-height: 60px; height: auto; width: auto; max-width: 300px;
+      max-height: 64px; height: auto; width: auto; max-width: 360px;
       object-fit: contain;
     }
+    [data-screen-label="05 At Scale"] .asc-logo[alt="Progyny"] {
+      max-height: 96px;
+    }
     [data-screen-label="05 At Scale"] .asc-logo[alt="Carrot Fertility"] {
-      max-height: 80px;
+      max-height: 110px;
     }
     [data-screen-label="05 At Scale"] .asc-val {
       font-family: 'Inter Tight', sans-serif; font-size: 80px; font-weight: 500;
