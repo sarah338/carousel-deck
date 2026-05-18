@@ -377,7 +377,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
   <div class="frame" style="padding-top: 100px; padding-bottom: 80px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">The journey</p>
-    <h1 class="h1">Considering egg freezing is the front door for most women.<br/>Carousel is the only platform that stays with her through her <em>entire longitudinal</em> journey.</h1>
+    <h1 class="h1">Every other player touches one moment. Carousel stays for her <em>entire</em> journey &mdash; including the gap no one owns.</h1>
 
     <div class="ja-stack">
 
@@ -455,8 +455,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-label">Treatment</p>
         </div>
         <div class="ja-stage ja-stage-abyss" style="grid-column: 7;">
-          <p class="ja-num ja-num-abyss">&hellip;and again</p>
-          <p class="ja-label ja-label-abyss">The gap recurs.</p>
+          <p class="ja-num ja-num-abyss">The abyss</p>
+          <p class="ja-label ja-label-abyss">And it happens<br/>again.</p>
         </div>
       </div>
 
@@ -484,12 +484,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       background: linear-gradient(to right,
         transparent 0,
         transparent 42.857%,
-        rgba(60,40,30,0.045) 42.857%,
-        rgba(60,40,30,0.045) 57.143%,
+        rgba(60,40,30,0.028) 42.857%,
+        rgba(60,40,30,0.028) 57.143%,
         transparent 57.143%,
         transparent 85.714%,
-        rgba(60,40,30,0.045) 85.714%,
-        rgba(60,40,30,0.045) 100%);
+        rgba(60,40,30,0.028) 85.714%,
+        rgba(60,40,30,0.028) 100%);
     }
 
     /* ============ Layer 1: brackets ============ */
@@ -649,22 +649,25 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Layer 3: Carousel line ============ */
     [data-screen-label="06 Journey"] .ja-carousel {
       position: relative;
-      margin-top: 8px;
-      padding-top: 14px;
+      margin-top: 12px;
+      padding-top: 18px;
     }
     [data-screen-label="06 Journey"] .ja-carousel-line {
-      height: 5px;
+      height: 10px;
       background: var(--accent);
-      border-radius: 3px;
-      box-shadow: 0 6px 22px rgba(149,74,45,0.32);
+      border-radius: 6px;
+      box-shadow:
+        0 0 0 1px rgba(149,74,45,0.18),
+        0 10px 36px rgba(149,74,45,0.50),
+        0 4px 14px rgba(149,74,45,0.35);
     }
     [data-screen-label="06 Journey"] .ja-carousel-label {
       text-align: center;
       font-family: 'Instrument Serif', serif;
       font-style: italic;
-      font-size: 22px; font-weight: 400;
-      color: var(--accent);
-      margin: 12px 0 0;
+      font-size: 20px; font-weight: 400;
+      color: var(--ink-mute);
+      margin: 16px 0 0;
       letter-spacing: -0.005em;
     }
 
