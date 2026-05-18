@@ -310,15 +310,99 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 4. MARKET: BOTTOM UP (placeholder) -->
 <section class="slide" data-screen-label="04 Market bottom up">
   <div class="pageno"><svg><use href="#mark"/></svg>04 / 14</div>
-  <div class="frame">
-    <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Market: bottom up</p>
-    <h1 class="h1">Bottom-up TAM build &mdash; coming next.</h1>
-    <div style="margin-top: 48px; padding: 56px 64px; border: 1.5px dashed var(--rule); border-radius: 8px; max-width: 1180px;">
-      <p style="font-family: 'Inter Tight', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); margin: 0 0 16px;">Placeholder</p>
-      <p style="font-family: 'Inter Tight', sans-serif; font-size: 20px; font-weight: 300; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 980px;">Patient-anchored bottom-up math: addressable women per stage &times; willingness-to-pay &times; reachable channels. Builds the SOM Carousel can credibly capture from the cold-start through Series A.</p>
+  <div class="frame" style="padding-top: 72px;">
+    <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Market: bottom-up</p>
+    <h1 class="h1" style="margin: 0 0 44px; max-width: 1500px; font-size: 52px; line-height: 1.1;">Bottom-up, the math is anchored to verified patient volume.</h1>
+
+    <div class="bu-funnel">
+
+      <div class="bu-tier bu-tier--tam">
+        <div class="bu-left">
+          <span class="bu-label">TAM</span>
+          <span class="bu-num">~$580M<span class="bu-num-sm"> / year</span></span>
+        </div>
+        <div class="bu-right">
+          <p class="bu-logic">251,542 US ART patients/yr &times; $2,300 category revenue per woman.</p>
+          <p class="bu-source">CDC ART Surveillance 2022 &middot; Sacra 2025</p>
+        </div>
+      </div>
+
+      <div class="bu-tier bu-tier--sam">
+        <div class="bu-left">
+          <span class="bu-label">SAM</span>
+          <span class="bu-num">~$200&ndash;420M<span class="bu-num-sm"> / year</span></span>
+        </div>
+        <div class="bu-right">
+          <p class="bu-logic">Clinic-reachable egg-freezing &amp; IVF cohort (~184K freezing cycles/yr), under stated clinic- and patient-penetration assumptions.</p>
+          <p class="bu-source">CDC ART Surveillance 2022 &middot; range is assumption-driven</p>
+        </div>
+      </div>
+
+      <div class="bu-tier bu-tier--som">
+        <div class="bu-left">
+          <span class="bu-label">SOM</span>
+          <span class="bu-num">The hypothesis<br>this round funds</span>
+        </div>
+        <div class="bu-right">
+          <p class="bu-logic">First 3&ndash;10 clinics, near verified $2,300/woman. Capture rate is what the pilot proves &mdash; not modeled here.</p>
+        </div>
+      </div>
+
     </div>
+
+    <p class="bu-footer">TAM and SAM are anchored to verified patient volume. SOM is the hypothesis this round funds.</p>
+
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
+  <style>
+    [data-screen-label="04 Market bottom up"] .bu-funnel {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 18px; margin: 0 auto; max-width: 1700px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-tier {
+      display: grid; grid-template-columns: 360px 1fr;
+      gap: 48px; align-items: center;
+      padding: 28px 56px; border-radius: 10px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-tier--tam { width: 100%; background: var(--accent); color: #F7F1E4; }
+    [data-screen-label="04 Market bottom up"] .bu-tier--sam { width: 82%; background: #C99477; color: #F7F1E4; }
+    [data-screen-label="04 Market bottom up"] .bu-tier--som { width: 64%; background: #5C2E1C; color: #F7F1E4; }
+
+    [data-screen-label="04 Market bottom up"] .bu-left {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-label {
+      font-family: 'Inter Tight', sans-serif; font-size: 14px;
+      font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      opacity: 0.7;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-num {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 48px; line-height: 1.05; letter-spacing: -0.01em;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-num-sm {
+      font-family: 'Inter Tight', sans-serif; font-style: normal;
+      font-size: 18px; font-weight: 300; opacity: 0.8; letter-spacing: 0;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-right {
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-logic {
+      font-family: 'Inter Tight', sans-serif; font-size: 19px;
+      font-weight: 300; line-height: 1.4; margin: 0;
+      color: rgba(247,241,228,0.92);
+    }
+    [data-screen-label="04 Market bottom up"] .bu-source {
+      font-family: 'Inter Tight', sans-serif; font-size: 12px;
+      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(247,241,228,0.6); margin: 0;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-footer {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 22px; line-height: 1.4; color: var(--ink);
+      margin: 40px auto 0; text-align: center; max-width: 1200px;
+    }
+  </style>
 </section>
 
 <!-- 5. MARKET: AT SCALE -->
@@ -896,7 +980,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Solution</p>
 
     <h1 class="h1" style="margin-bottom: 14px; max-width: 1700px; font-size: 56px">
-      The AI-first longitudinal patient experience platform for women going through egg freezing &amp; IVF.
+      Carousel is the AI-first, digitally-native, longitudinal patient experience platform<br>for women on their fertility journey.
     </h1>
 
     <div class="rule" style="margin-bottom: 14px;"></div>
@@ -905,8 +989,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- 01 · PERSONALIZED FORECASTING — corrected SART data -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">01<br/>Personalized Forecast</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Honest projections,<br/>grounded in national data</h3>
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">01<br/>Forecast</p>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -981,8 +1064,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- 02 · PERSONALIZED EDUCATION — article list -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">02<br/>Personalized Education</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Clinically-vetted,<br/>tuned to where she is</h3>
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">02<br/>Education</p>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -1048,8 +1130,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- 03 · MODERATED COMMUNITY — filter + clinical moderator -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">03<br/>Moderated Community</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Support system<br/>with clinical oversight</h3>
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">03<br/>Community</p>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -1124,8 +1205,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- 04 · AI EMOTIONAL SUPPORT -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">04<br/>AI Emotional Support</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">An always-on companion through the swings</h3>
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">04<br/>Emotional Support</p>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -1178,8 +1258,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- 05 · MY WHOLE PICTURE — connected sources mock -->
       <div class="prod-col" style="text-align:center;">
-        <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent); font-size: 17px;">05<br/>My Whole Picture</p>
-        <h3 class="pull" style="color: var(--ink); margin-bottom: 14px; font-size: 24px;">Every data point,<br/>in one place</h3>
+        <p class="eyebrow" style="margin-bottom: 14px; color: var(--accent); font-size: 17px;">05<br/>Data Integration</p>
         <div class="phone">
           <div class="phone-screen">
             <div class="ph-statusbar">
@@ -2167,39 +2246,51 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <div class="trc-cards">
 
       <div class="trc-card trc-card--now">
+        <span class="trc-when">Today &middot; Q2 2026</span>
         <span class="trc-phase">Angel / Pre-Seed</span>
         <p class="trc-title">Pre-product</p>
         <ul class="trc-pts">
-          <li>30 patient interviews complete</li>
-          <li>Advisor signed: Barb Collura, RESOLVE CEO</li>
-          <li>MVP scoped</li>
+          <li>30 longitudinal patient interviews complete</li>
+          <li>Advisor signed: Barb Collura, former RESOLVE CEO</li>
+          <li>Trademark filed; LinkedIn audience ~25K</li>
+          <li>MVP scoped; clinical advisory in formation</li>
         </ul>
       </div>
 
       <div class="trc-card trc-card--next">
+        <span class="trc-when">Q3 2026 &ndash; Q1 2027</span>
         <span class="trc-phase">Pre-Seed</span>
         <p class="trc-title">Build &amp; Activate</p>
         <ul class="trc-pts">
-          <li>MVP shipped</li>
-          <li>Founding clinical advisor signed</li>
+          <li>MVP shipped to App Store &amp; Google Play</li>
+          <li>Founding clinical co-founder onboarded</li>
+          <li>Clinical advisory board of 3&ndash;5 REIs locked</li>
+          <li>5K&ndash;10K waitlist; first 1K&ndash;2.5K downloads with measured 30-day retention</li>
           <li>First design-partner clinic live</li>
         </ul>
       </div>
 
       <div class="trc-card trc-card--then">
+        <span class="trc-when">Q2 &ndash; Q3 2027</span>
         <span class="trc-phase">Seed</span>
         <p class="trc-title">Prove the Model</p>
         <ul class="trc-pts">
-          <li>Pilot producing engagement &amp; retention data</li>
+          <li>D2C scale: 10K&ndash;25K downloads, 60%+ activation</li>
+          <li>Defensible cohort retention curves</li>
+          <li>First clinic SaaS pilot signed with live engagement data</li>
+          <li>First employer benefits pilot signed at $10 PEPM</li>
           <li>Early dropout-reduction signal</li>
         </ul>
       </div>
 
       <div class="trc-card trc-card--seed">
+        <span class="trc-when">Q4 2027</span>
         <span class="trc-phase">Series A</span>
         <p class="trc-title">Scale</p>
         <ul class="trc-pts">
-          <li>Multi-clinic rollout</li>
+          <li>D2C contribution-margin positive; stable retention</li>
+          <li>Clinic SaaS: $500K+ signed ARR, multi-clinic reference base, NRR &gt; 100%</li>
+          <li>3&ndash;5 employer pilots converted to paid contracts</li>
           <li>Raise Series A against proven clinic ROI</li>
         </ul>
       </div>
@@ -2219,16 +2310,27 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       gap: 24px; flex: 1; min-height: 0; margin-bottom: 32px;
     }
     [data-screen-label="13 Traction"] .trc-card {
-      border-radius: 10px; padding: 40px 36px;
-      display: flex; flex-direction: column; justify-content: center; gap: 20px;
+      border-radius: 10px; padding: 32px 30px;
+      display: flex; flex-direction: column; justify-content: flex-start; gap: 14px;
     }
     [data-screen-label="13 Traction"] .trc-card--now  { background: var(--accent); color: #F7F1E4; }
     [data-screen-label="13 Traction"] .trc-card--next { background: #C99477; }
     [data-screen-label="13 Traction"] .trc-card--then { background: #8B4520; }
     [data-screen-label="13 Traction"] .trc-card--seed { background: #5C2E1C; }
 
+    [data-screen-label="13 Traction"] .trc-when {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px;
+      font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+      padding-bottom: 10px; border-bottom: 1px solid currentColor;
+      align-self: flex-start;
+    }
+    [data-screen-label="13 Traction"] .trc-card--now  .trc-when { color: #F7F1E4; border-color: rgba(247,241,228,0.45); }
+    [data-screen-label="13 Traction"] .trc-card--next .trc-when { color: var(--accent); border-color: rgba(149,74,45,0.55); }
+    [data-screen-label="13 Traction"] .trc-card--then .trc-when { color: #F7F1E4; border-color: rgba(247,241,228,0.4); }
+    [data-screen-label="13 Traction"] .trc-card--seed .trc-when { color: #F7F1E4; border-color: rgba(247,241,228,0.4); }
+
     [data-screen-label="13 Traction"] .trc-phase {
-      font-family: 'Inter Tight', sans-serif; font-size: 16px;
+      font-family: 'Inter Tight', sans-serif; font-size: 15px;
       font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
       opacity: 0.72;
     }
@@ -2239,7 +2341,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     [data-screen-label="13 Traction"] .trc-title {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 48px; line-height: 1.05; letter-spacing: -0.01em; margin: 0;
+      font-size: 38px; line-height: 1.05; letter-spacing: -0.01em; margin: 0 0 4px;
     }
     [data-screen-label="13 Traction"] .trc-card--now .trc-title { color: #F7F1E4; }
     [data-screen-label="13 Traction"] .trc-card--next .trc-title,
@@ -2251,9 +2353,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       display: flex; flex-direction: column; gap: 12px;
     }
     [data-screen-label="13 Traction"] .trc-pts li {
-      font-family: 'Inter Tight', sans-serif; font-size: 22px;
-      font-weight: 300; line-height: 1.35;
-      padding-left: 18px; position: relative;
+      font-family: 'Inter Tight', sans-serif; font-size: 16px;
+      font-weight: 300; line-height: 1.4;
+      padding-left: 16px; position: relative;
     }
     [data-screen-label="13 Traction"] .trc-pts li::before {
       content: "·"; position: absolute; left: 0;
