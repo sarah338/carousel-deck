@@ -1746,210 +1746,141 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 10. BUSINESS MODEL -->
 <section class="slide" data-screen-label="10 Business model">
   <div class="pageno"><svg><use href="#mark"/></svg>10 / 13</div>
-  <div class="frame" style="padding-top: 68px; display: flex; flex-direction: column;">
+  <div class="frame" style="padding: 64px 110px 64px;">
 
-    <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Business model</p>
-    <h1 class="h1" style="margin: 0 0 22px; max-width: 1700px; font-size: 52px; line-height: 1.1;">Carousel pairs a patient app with a clinic platform,<br>sold to patients now, clinics in parallel, and employers at scale.</h1>
+    <p class="eyebrow" style="margin-bottom: 20px; color: var(--accent);">Business model</p>
+    <h1 class="h1" style="margin: 0 0 32px; font-size: 52px; line-height: 1.1;">One product. The woman&rsquo;s experience is the same regardless of who pays.</h1>
 
-    <div class="bm8-rows">
+    <!-- Sequenced payer rows -->
+    <div class="bm-seq">
 
-      <!-- D2C -->
-      <div class="bm8-row" style="--ch: #7D3820;">
-        <div class="bm8-left">
-          <span class="bm8-tag">D2C &middot; Patients &middot; Now</span>
-          <p class="bm8-price">$20</p>
-          <p class="bm8-unit">/ month</p>
+      <!-- 1. CLINIC — NOW -->
+      <div class="bm-row bm-row--1">
+        <div class="bm-timing">
+          <span class="bm-badge bm-badge--now">Now</span>
         </div>
-        <div class="bm8-mid">
-          <p class="bm8-strategy">Direct-to-patient subscription. Convert WhatsApp Beta Community to paid. Ship Maeve AI, curated community, milestone tracking, and education library. Founder-led growth on LinkedIn and Instagram.</p>
-          <p class="bm8-why"><span class="bm8-why-lbl">Why now.</span> Lowest cost to launch. Generates the engagement data that earns the clinic and employer pitch.</p>
+        <div class="bm-body">
+          <p class="bm-who">Clinic</p>
+          <p class="bm-desc">The entry hypothesis. The clinic adopts Carousel because reducing dropout protects cycle revenue. We sell the outcome, not the software.</p>
         </div>
-        <div class="bm8-right">
-          <p class="bm8-ms-fig">1,500&ndash;2,500<br>subscribers</p>
-          <p class="bm8-ms-arr">$180K&ndash;$360K ARR &middot; Month 18</p>
+        <div class="bm-rationale">
+          <p class="bm-rat-lbl">Why first</p>
+          <p class="bm-rat-text">It&rsquo;s where the money problem is. The wedge that makes everything else credible.</p>
         </div>
       </div>
 
-      <!-- Clinic -->
-      <div class="bm8-row" style="--ch: #8B5520;">
-        <div class="bm8-left">
-          <span class="bm8-tag">Clinic &middot; In parallel</span>
-          <p class="bm8-price">$35&ndash;50K</p>
-          <p class="bm8-unit">/ clinic ACV</p>
+      <!-- 2. EMPLOYER — LATER -->
+      <div class="bm-row bm-row--2">
+        <div class="bm-timing">
+          <span class="bm-badge bm-badge--later">Later</span>
         </div>
-        <div class="bm8-mid">
-          <p class="bm8-strategy">Build 2&ndash;3 design partner clinic relationships from day one. Co-develop the clinic dashboard with REI input. Convert design partners to paid SaaS pilots at Month 9, using D2C engagement data as the proof point.</p>
-          <p class="bm8-why"><span class="bm8-why-lbl">Why parallel.</span> Clinic sales cycles are 6&ndash;9 months. Relationships start now; revenue follows.</p>
+        <div class="bm-body">
+          <p class="bm-who">Employer</p>
+          <p class="bm-desc">Maven and Carrot proved employers pay for fertility benefits. That lane is occupied and the sales motion is 12+ months out.</p>
         </div>
-        <div class="bm8-right">
-          <p class="bm8-ms-fig">2&ndash;3 paid<br>pilots</p>
-          <p class="bm8-ms-arr">~$70&ndash;150K ARR &middot; Month 18</p>
+        <div class="bm-rationale">
+          <p class="bm-rat-lbl">Why later</p>
+          <p class="bm-rat-text">Validated demand, wrong time. We need the clinic proof point first.</p>
         </div>
       </div>
 
-      <!-- Employer -->
-      <div class="bm8-row" style="--ch: #BF7030;">
-        <div class="bm8-left">
-          <span class="bm8-tag">Employer &middot; At scale</span>
-          <p class="bm8-price">$10</p>
-          <p class="bm8-unit">per employee / month</p>
+      <!-- 3. HEALTH PLAN / SYSTEM — LATEST -->
+      <div class="bm-row bm-row--3">
+        <div class="bm-timing">
+          <span class="bm-badge bm-badge--latest">Latest</span>
         </div>
-        <div class="bm8-mid">
-          <p class="bm8-strategy">First conversations begin Month 12+. Position distinct from Maven and Carrot &mdash; fertility-specific, longitudinal, integrated with clinic care.</p>
-          <p class="bm8-why"><span class="bm8-why-lbl">Why last.</span> Enterprise buyers need both consumer brand and clinical credibility before signing.</p>
+        <div class="bm-body">
+          <p class="bm-who">Health Plan &middot; System &middot; Medicaid</p>
+          <p class="bm-desc">Real at scale. Year-plus motion. Requires everything above to be true first.</p>
         </div>
-        <div class="bm8-right">
-          <p class="bm8-ms-fig">1&ndash;2 employer<br>pilots</p>
-          <p class="bm8-ms-arr">Seed-funded &middot; enterprise scale</p>
+        <div class="bm-rationale">
+          <p class="bm-rat-lbl">Why latest</p>
+          <p class="bm-rat-text">Largest pool, slowest buyer. Built for after we&rsquo;ve earned the right to be in the room.</p>
         </div>
       </div>
 
-    </div><!-- /bm8-rows -->
+    </div><!-- /bm-seq -->
 
-    <div class="bm8-footer">
-      <p class="bm8-summary">Pre-seed milestone: $500K+ ARR run-rate across all three channels by seed round. Addressable market: ~400K U.S. fertility patients annually &middot; ~10% blended penetration &middot; ~$200&ndash;250/patient/year = ~$8&ndash;10M ARR opportunity.</p>
-      <p class="bm8-src">U.S. patient volume: SART 2023 &middot; Pricing: subscription benchmarks across women&rsquo;s health and digital health peer set.</p>
+    <!-- B2B2C mechanic -->
+    <p class="bm-mechanic">The clinic adopts Carousel because it makes or saves them money. The strongest form &mdash; revenue-share or white-label, where the clinic gains a line of business &mdash; is upside we&rsquo;ll model with pilot data, not before.</p>
+
+    <!-- Honesty line -->
+    <div class="bm-honesty">
+      The precise revenue model &mdash; ACV, per-patient, contract structure &mdash; is what this round&rsquo;s diligence produces. A hypothesis now, not a spreadsheet.
     </div>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="10 Business model"] .frame { display: flex; flex-direction: column; }
-    [data-screen-label="10 Business model"] .frame > .h1 { margin: 0 0 22px 0 !important; font-size: 52px !important; }
+    [data-screen-label="10 Business model"] .frame > .h1 { margin: 0 0 32px 0 !important; font-size: 52px !important; line-height: 1.1 !important; }
 
-    .bm8-rows {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-height: 0;
+    [data-screen-label="10 Business model"] .bm-seq {
+      display: flex; flex-direction: column;
       border-top: 1.5px solid rgba(149,74,45,0.18);
-      margin-bottom: 14px;
+      margin-bottom: 24px;
     }
-
-    .bm8-row {
-      display: grid;
-      grid-template-columns: 230px 1fr 300px;
-      gap: 52px;
-      flex: 1;
-      align-items: center;
-      border-bottom: 1px solid rgba(149,74,45,0.12);
+    [data-screen-label="10 Business model"] .bm-row {
+      display: grid; grid-template-columns: 120px 1fr 320px;
+      gap: 40px; align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(149,74,45,0.10);
     }
-
-    .bm8-left {
-      display: flex;
-      flex-direction: column;
-      border-left: 3px solid var(--ch);
-      padding-left: 22px;
+    [data-screen-label="10 Business model"] .bm-timing {
+      display: flex; align-items: center; justify-content: flex-start;
     }
-
-    .bm8-tag {
+    [data-screen-label="10 Business model"] .bm-badge {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--ch);
-      opacity: 0.72;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 999px;
     }
-
-    .bm8-price {
-      font-family: 'Instrument Serif', serif;
-      font-size: 64px;
-      line-height: 1.0;
-      color: var(--ch);
-      margin: 8px 0 3px;
+    [data-screen-label="10 Business model"] .bm-badge--now {
+      background: var(--accent); color: #F7F1E4;
     }
-
-    .bm8-unit {
+    [data-screen-label="10 Business model"] .bm-badge--later {
+      background: rgba(149,74,45,0.15); color: var(--accent);
+    }
+    [data-screen-label="10 Business model"] .bm-badge--latest {
+      background: rgba(149,74,45,0.07); color: var(--ink-mute);
+    }
+    [data-screen-label="10 Business model"] .bm-who {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ch);
-      opacity: 0.48;
-      margin: 0;
+      font-size: 22px; font-weight: 600;
+      color: var(--ink); margin: 0 0 6px; letter-spacing: -0.01em;
     }
-
-    .bm8-mid {
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-    }
-
-    .bm8-strategy {
+    [data-screen-label="10 Business model"] .bm-row--2 .bm-who,
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-who { opacity: 0.7; }
+    [data-screen-label="10 Business model"] .bm-desc {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.58;
-      color: var(--ink);
-      margin: 0;
+      font-size: 16px; font-weight: 400; line-height: 1.55;
+      color: var(--ink-soft); margin: 0;
     }
-
-    .bm8-why {
+    [data-screen-label="10 Business model"] .bm-row--2 .bm-desc,
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-desc { opacity: 0.75; }
+    [data-screen-label="10 Business model"] .bm-rationale {
+      border-left: 2px solid rgba(149,74,45,0.2); padding-left: 20px;
+    }
+    [data-screen-label="10 Business model"] .bm-rat-lbl {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 15px;
-      font-weight: 300;
-      font-style: italic;
-      line-height: 1.52;
-      color: var(--ink-mute);
-      margin: 0;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 4px; opacity: 0.7;
     }
-
-    .bm8-why-lbl {
-      font-style: normal;
-      font-weight: 700;
-      color: var(--ch);
-      letter-spacing: 0.04em;
-    }
-
-    .bm8-right {
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .bm8-ms-fig {
-      font-family: 'Instrument Serif', serif;
-      font-size: 26px;
-      line-height: 1.2;
-      color: var(--ch);
-      margin: 0;
-    }
-
-    .bm8-ms-arr {
+    [data-screen-label="10 Business model"] .bm-rat-text {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      color: var(--ch);
-      opacity: 0.65;
-      margin: 0;
+      font-size: 15px; font-weight: 300; font-style: italic;
+      line-height: 1.5; color: var(--ink-mute); margin: 0;
     }
-
-    .bm8-footer {
-      border-top: 1.5px solid rgba(149,74,45,0.18);
-      padding-top: 10px;
-    }
-
-    .bm8-summary {
+    [data-screen-label="10 Business model"] .bm-mechanic {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--ink-soft);
-      margin: 0 0 4px;
-      line-height: 1.52;
+      font-size: 16px; font-weight: 400; line-height: 1.6;
+      color: var(--ink-soft); margin: 0 0 16px;
     }
-
-    .bm8-src {
+    [data-screen-label="10 Business model"] .bm-honesty {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px;
-      font-style: italic;
-      letter-spacing: 0.04em;
-      color: var(--ink-mute);
-      margin: 0;
+      font-size: 17px; font-weight: 400; line-height: 1.5;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding: 10px 20px;
     }
   </style>
 </section>
