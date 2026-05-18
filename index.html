@@ -471,8 +471,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="06 Competitive"] .mm-cat {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 15px; font-weight: 700;
-      letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 17px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
       color: var(--bk-accent); margin: 0;
     }
     [data-screen-label="06 Competitive"] .mm-sub {
@@ -1646,7 +1646,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 9. CLINIC PROBLEM QUANTIFIED -->
 <section class="slide" data-screen-label="09 Clinic Quantified">
   <div class="pageno"><svg><use href="#mark"/></svg>09 / 13</div>
-  <div class="frame" style="padding: 56px 110px 60px;">
+  <div class="frame" style="padding: 56px 110px 60px; overflow: hidden;">
     <p class="eyebrow" style="margin-bottom: 16px; color: var(--accent);">The clinic opportunity</p>
     <h1 class="h1">Poor patient experience is a measurable revenue leak for clinics.</h1>
 
@@ -1710,20 +1710,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       flex: 1; min-height: 0;
       display: flex; flex-direction: column;
       overflow: hidden;
+      margin-bottom: 12px;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-step {
-      flex: 1; display: flex; align-items: center; gap: 28px;
+      flex: 1; min-height: 0;
+      display: flex; align-items: center; gap: 28px;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-connector {
-      flex-shrink: 0; height: 28px;
+      flex-shrink: 0; height: 24px;
       display: flex; align-items: center;
-      font-size: 28px; color: var(--ink-mute);
+      font-size: 24px; color: var(--ink-mute);
       font-family: 'Inter Tight', sans-serif; line-height: 1;
-      padding-left: 90px;
+      padding-left: 85px;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-box {
-      width: 210px; flex-shrink: 0; border-radius: 10px;
-      height: 100%;
+      width: 200px; flex-shrink: 0; border-radius: 10px;
+      min-height: 0; height: 100%;
       display: flex; align-items: center; justify-content: center;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-n {
@@ -1740,9 +1742,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-style: italic; font-size: 15px; margin: 0; line-height: 1.4;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-human {
+      flex-shrink: 0;
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 26px; line-height: 1.4;
-      color: var(--ink); margin: 16px 0 0;
+      font-style: italic; font-size: 24px; line-height: 1.4;
+      color: var(--ink); margin: 10px 0 0;
     }
   </style>
 </section>
@@ -1815,20 +1818,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="10 Business model"] .frame > .h1 { margin: 0 0 32px 0 !important; font-size: 52px !important; line-height: 1.1 !important; }
+    [data-screen-label="10 Business model"] .frame > .h1 { margin: 0 0 24px 0 !important; font-size: 52px !important; line-height: 1.1 !important; }
 
     [data-screen-label="10 Business model"] .bm-seq {
       display: flex; flex-direction: column; flex: 1; min-height: 0;
-      border-top: 1.5px solid rgba(149,74,45,0.18);
-      margin-bottom: 20px;
+      gap: 10px; margin-bottom: 18px;
     }
     [data-screen-label="10 Business model"] .bm-row {
-      display: grid; grid-template-columns: 140px 1fr 360px;
-      gap: 48px; align-items: center;
-      flex: 1;
-      padding: 0;
-      border-bottom: 1px solid rgba(149,74,45,0.10);
+      display: grid; grid-template-columns: 160px 1fr 340px;
+      gap: 40px; align-items: center;
+      flex: 1; min-height: 0;
+      padding: 24px 32px; border-radius: 10px;
     }
+    [data-screen-label="10 Business model"] .bm-row--1 { background: var(--accent); }
+    [data-screen-label="10 Business model"] .bm-row--2 { background: #C99477; }
+    [data-screen-label="10 Business model"] .bm-row--3 { background: #E8D5C4; }
+
     [data-screen-label="10 Business model"] .bm-timing {
       display: flex; align-items: center; justify-content: flex-start;
     }
@@ -1839,52 +1844,59 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       padding: 8px 20px; border-radius: 999px;
     }
     [data-screen-label="10 Business model"] .bm-badge--now {
-      background: var(--accent); color: #F7F1E4;
+      background: rgba(247,241,228,0.2); color: #F7F1E4;
     }
     [data-screen-label="10 Business model"] .bm-badge--later {
-      background: rgba(149,74,45,0.15); color: var(--accent);
+      background: rgba(74,40,28,0.15); color: #3A1F0E;
     }
     [data-screen-label="10 Business model"] .bm-badge--latest {
-      background: rgba(149,74,45,0.07); color: var(--ink-mute);
+      background: rgba(74,40,28,0.12); color: var(--ink-soft);
     }
     [data-screen-label="10 Business model"] .bm-who {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 30px; font-weight: 600;
-      color: var(--ink); margin: 0 0 8px; letter-spacing: -0.02em;
+      font-size: 34px; font-weight: 600;
+      margin: 0 0 8px; letter-spacing: -0.02em;
     }
+    [data-screen-label="10 Business model"] .bm-row--1 .bm-who { color: #F7F1E4; }
     [data-screen-label="10 Business model"] .bm-row--2 .bm-who,
-    [data-screen-label="10 Business model"] .bm-row--3 .bm-who { opacity: 0.7; }
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-who { color: var(--ink); }
     [data-screen-label="10 Business model"] .bm-desc {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 20px; font-weight: 400; line-height: 1.5;
-      color: var(--ink-soft); margin: 0;
+      font-size: 18px; font-weight: 400; line-height: 1.5; margin: 0;
     }
+    [data-screen-label="10 Business model"] .bm-row--1 .bm-desc { color: rgba(247,241,228,0.88); }
     [data-screen-label="10 Business model"] .bm-row--2 .bm-desc,
-    [data-screen-label="10 Business model"] .bm-row--3 .bm-desc { opacity: 0.75; }
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-desc { color: var(--ink-soft); }
     [data-screen-label="10 Business model"] .bm-rationale {
-      border-left: 2px solid rgba(149,74,45,0.2); padding-left: 24px;
+      border-left: 2px solid rgba(247,241,228,0.25); padding-left: 24px;
+    }
+    [data-screen-label="10 Business model"] .bm-row--2 .bm-rationale,
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-rationale {
+      border-left: 2px solid rgba(74,40,28,0.18);
     }
     [data-screen-label="10 Business model"] .bm-rat-lbl {
       font-family: 'Inter Tight', sans-serif;
       font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--accent); margin: 0 0 6px; opacity: 0.7;
+      text-transform: uppercase; margin: 0 0 6px;
     }
+    [data-screen-label="10 Business model"] .bm-row--1 .bm-rat-lbl { color: rgba(247,241,228,0.55); }
+    [data-screen-label="10 Business model"] .bm-row--2 .bm-rat-lbl,
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-rat-lbl { color: var(--accent); opacity: 0.7; }
     [data-screen-label="10 Business model"] .bm-rat-text {
       font-family: 'Inter Tight', sans-serif;
       font-size: 19px; font-weight: 300; font-style: italic;
-      line-height: 1.5; color: var(--ink-mute); margin: 0;
+      line-height: 1.45; margin: 0;
     }
-    [data-screen-label="10 Business model"] .bm-mechanic {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 19px; font-weight: 400; line-height: 1.6;
-      color: var(--ink-soft); margin: 0 0 16px;
-    }
+    [data-screen-label="10 Business model"] .bm-row--1 .bm-rat-text { color: rgba(247,241,228,0.75); }
+    [data-screen-label="10 Business model"] .bm-row--2 .bm-rat-text,
+    [data-screen-label="10 Business model"] .bm-row--3 .bm-rat-text { color: var(--ink-mute); }
     [data-screen-label="10 Business model"] .bm-honesty {
+      flex-shrink: 0;
       font-family: 'Inter Tight', sans-serif;
-      font-size: 21px; font-weight: 400; line-height: 1.5;
+      font-size: 20px; font-weight: 400; line-height: 1.5;
       color: var(--accent);
       border-left: 3px solid var(--accent);
-      padding: 12px 24px;
+      padding: 10px 24px;
     }
   </style>
 </section>
