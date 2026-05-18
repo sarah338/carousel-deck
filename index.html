@@ -377,76 +377,42 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
   <div class="frame" style="padding-top: 100px; padding-bottom: 80px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1">Fertility tech has been built in fragments. Carousel builds across them.</h1>
+    <h1 class="h1">Fertility tech is built in fragments. Carousel owns the entry point none of them do &mdash; the woman, from her first thought.</h1>
 
-    <div class="mm-layout">
+    <div class="mm-tree">
 
-      <!-- Top row: B1 B2 B3 -->
-      <div class="mm-row">
-        <div class="mm-bucket" style="--bk-accent: #7A5C42; --bk-bg: rgba(122,92,66,0.07);">
-          <p class="mm-cat">Clinical AI &amp; Workflow</p>
-          <p class="mm-sub">Built for the clinic &mdash; stim optimization, consent, operations.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Alife</span>
-            <span class="mm-co">EngagedMD</span>
-            <span class="mm-co">Salve</span>
-          </div>
+      <aside class="mm-source">
+        <div class="mm-source-box">
+          <p class="mm-source-name">Carousel</p>
+          <p class="mm-source-tag">She starts here &mdash;<br/>from her first thought</p>
         </div>
-        <div class="mm-bucket" style="--bk-accent: #B5623E; --bk-bg: rgba(181,98,62,0.07);">
-          <p class="mm-cat">At-Home Diagnostics &amp; Tracking</p>
-          <p class="mm-sub">Direct to her &mdash; single-moment snapshots of cycle and hormones.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Modern Fertility</span>
-            <span class="mm-co">Mira</span>
-            <span class="mm-co">Inito</span>
-            <span class="mm-co">Oova</span>
-          </div>
-        </div>
-        <div class="mm-bucket" style="--bk-accent: #5E7A62; --bk-bg: rgba(94,122,98,0.07);">
-          <p class="mm-cat">Preconception &amp; TTC Coaching</p>
-          <p class="mm-sub">Guided support before treatment begins.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Frame</span>
-            <span class="mm-co">Conceive</span>
-          </div>
-        </div>
-      </div>
+        <p class="mm-source-foot">Everything else is downstream<br/>of the relationship</p>
+      </aside>
 
-      <!-- Carousel hero — centre of the map -->
-      <div class="mm-hero">
-        <div class="mm-hero-left">
-          <p class="mm-hero-name">Carousel</p>
+      <div class="mm-branches">
+        <div class="mm-branch">
+          <p class="mm-b-cat">Clinical AI &amp; workflow</p>
+          <p class="mm-b-cos">Alife &middot; EngagedMD &middot; Salve</p>
         </div>
-        <p class="mm-hero-desc">The always-on companion for the woman herself &mdash; from fertility-curious through treatment and everything after. The longitudinal layer no one has built.</p>
-      </div>
-
-      <!-- Bottom row: B4 B5 B6 -->
-      <div class="mm-row">
-        <div class="mm-bucket" style="--bk-accent: #5A7080; --bk-bg: rgba(90,112,128,0.07);">
-          <p class="mm-cat">Fertility Financing</p>
-          <p class="mm-sub">Making IVF financially accessible.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Sunfish</span>
-            <span class="mm-co">Gaia</span>
-            <span class="mm-co">Future Family</span>
-          </div>
+        <div class="mm-branch">
+          <p class="mm-b-cat">At-home diagnostics</p>
+          <p class="mm-b-cos">Modern Fertility &middot; Mira &middot; Oova</p>
         </div>
-        <div class="mm-bucket" style="--bk-accent: #954A2D; --bk-bg: rgba(149,74,45,0.09);">
-          <p class="mm-cat">Employer Benefits Platforms</p>
-          <p class="mm-sub">Sold to employers. Used by her.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Maven Clinic</span>
-            <span class="mm-co">Progyny</span>
-            <span class="mm-co">Carrot Fertility</span>
-          </div>
+        <div class="mm-branch">
+          <p class="mm-b-cat">Preconception coaching</p>
+          <p class="mm-b-cos">Frame &middot; Conceive</p>
         </div>
-        <div class="mm-bucket" style="--bk-accent: #8C6848; --bk-bg: rgba(140,104,72,0.07);">
-          <p class="mm-cat">Clinic Networks</p>
-          <p class="mm-sub">Vertically integrated clinic and care delivery.</p>
-          <div class="mm-cos">
-            <span class="mm-co">Kindbody</span>
-            <span class="mm-co">Spring Fertility</span>
-          </div>
+        <div class="mm-branch">
+          <p class="mm-b-cat">Fertility financing</p>
+          <p class="mm-b-cos">Sunfish &middot; Gaia &middot; Future Family</p>
+        </div>
+        <div class="mm-branch">
+          <p class="mm-b-cat">Employer benefits</p>
+          <p class="mm-b-cos">Maven <span class="mm-b-note">(sold to employers)</span> &middot; Progyny &middot; Carrot</p>
+        </div>
+        <div class="mm-branch">
+          <p class="mm-b-cat">Clinic networks</p>
+          <p class="mm-b-cos">Kindbody &middot; Spring Fertility</p>
         </div>
       </div>
 
@@ -455,78 +421,95 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="06 Competitive"] .frame > .h1 {
-      margin: 0 0 28px 0 !important; font-size: 56px !important; line-height: 1.08 !important;
+      margin: 0 0 56px 0 !important; font-size: 52px !important; line-height: 1.1 !important; max-width: 1700px;
     }
-    [data-screen-label="06 Competitive"] .mm-layout {
-      display: flex; flex-direction: column;
-      gap: 8px; margin: auto 0;
-      border: 3px solid var(--accent);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    [data-screen-label="06 Competitive"] .mm-row {
-      display: flex; gap: 8px; height: 210px;
-    }
-    [data-screen-label="06 Competitive"] .mm-bucket {
+    [data-screen-label="06 Competitive"] .mm-tree {
+      display: grid;
+      grid-template-columns: 420px 80px 1fr;
+      gap: 0;
+      align-items: center;
       flex: 1;
-      background: var(--bk-bg);
-      border-top: 4px solid var(--bk-accent);
-      border-radius: 8px;
-      padding: 16px 22px;
-      display: flex; flex-direction: column;
-      justify-content: center;
-      gap: 9px;
+      margin: auto 0;
     }
-    [data-screen-label="06 Competitive"] .mm-cat {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 17px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--bk-accent); margin: 0;
+    [data-screen-label="06 Competitive"] .mm-source {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
     }
-    [data-screen-label="06 Competitive"] .mm-sub {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 18px; font-weight: 300;
-      line-height: 1.35; color: var(--ink-soft); margin: 0;
-      white-space: nowrap;
+    [data-screen-label="06 Competitive"] .mm-source-box {
+      position: relative;
+      background: rgba(149,74,45,0.10);
+      border: 1.5px solid rgba(149,74,45,0.55);
+      border-radius: 12px;
+      padding: 30px 36px;
+      text-align: center;
+      min-width: 320px;
     }
-    [data-screen-label="06 Competitive"] .mm-cos {
-      display: flex; flex-wrap: wrap;
-      align-items: baseline; gap: 0 22px;
+    [data-screen-label="06 Competitive"] .mm-source-box::after {
+      content: ''; position: absolute;
+      left: 100%; top: 50%;
+      width: 80px; height: 1.5px;
+      background: rgba(149,74,45,0.35);
     }
-    [data-screen-label="06 Competitive"] .mm-co {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 26px; font-weight: 400;
-      color: var(--ink); white-space: nowrap; line-height: 1.25;
-    }
-    /* Carousel hero strip */
-    [data-screen-label="06 Competitive"] .mm-hero {
-      display: flex; align-items: center;
-      background: var(--accent); border-radius: 10px;
-      overflow: hidden; flex-shrink: 0;
-    }
-    [data-screen-label="06 Competitive"] .mm-hero-left {
-      flex-shrink: 0; padding: 12px 28px;
-    }
-    [data-screen-label="06 Competitive"] .mm-hero-eyebrow {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(247,241,228,0.55); margin: 0 0 2px;
-    }
-    [data-screen-label="06 Competitive"] .mm-hero-name {
+    [data-screen-label="06 Competitive"] .mm-source-name {
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 56px; line-height: 1;
-      letter-spacing: -0.02em; color: #F7F1E4; margin: 0;
+      font-size: 56px; font-weight: 400;
+      letter-spacing: -0.01em; color: var(--ink);
+      margin: 0 0 14px;
+      line-height: 1;
     }
-    [data-screen-label="06 Competitive"] .mm-hero-divider {
-      width: 1.5px; align-self: stretch;
-      background: rgba(247,241,228,0.2); flex-shrink: 0;
-    }
-    [data-screen-label="06 Competitive"] .mm-hero-desc {
+    [data-screen-label="06 Competitive"] .mm-source-tag {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 18px; font-weight: 300; line-height: 1.5;
-      color: rgba(247,241,228,0.88);
-      padding: 16px 28px; margin: 0;
+      font-size: 18px; font-weight: 400;
+      color: var(--accent);
+      margin: 0; line-height: 1.4;
+    }
+    [data-screen-label="06 Competitive"] .mm-source-foot {
+      position: absolute;
+      top: 100%; left: 50%;
+      transform: translate(-50%, 28px);
+      width: max-content; max-width: 360px;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px; font-weight: 300;
+      color: var(--ink-soft);
+      margin: 0; text-align: center; line-height: 1.45;
+    }
+    [data-screen-label="06 Competitive"] .mm-branches {
+      display: flex; flex-direction: column;
+      gap: 14px;
+      position: relative;
+    }
+    [data-screen-label="06 Competitive"] .mm-branches::before {
+      content: ''; position: absolute;
+      left: -40px; top: 30px; bottom: 30px;
+      width: 1.5px;
+      background: rgba(149,74,45,0.35);
+    }
+    [data-screen-label="06 Competitive"] .mm-branch {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 16px 24px;
+    }
+    [data-screen-label="06 Competitive"] .mm-branch::before {
+      content: ''; position: absolute;
+      left: -40px; top: 50%;
+      width: 40px; height: 1.5px;
+      background: rgba(149,74,45,0.35);
+    }
+    [data-screen-label="06 Competitive"] .mm-b-cat {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 20px; font-weight: 600;
+      color: var(--ink);
+      margin: 0 0 4px;
+    }
+    [data-screen-label="06 Competitive"] .mm-b-cos {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 17px; font-weight: 300;
+      color: var(--ink-soft);
+      margin: 0; line-height: 1.4;
+    }
+    [data-screen-label="06 Competitive"] .mm-b-note {
+      font-style: italic; color: var(--accent); font-weight: 400;
     }
   </style>
 </section>
