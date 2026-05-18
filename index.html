@@ -1646,62 +1646,99 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 9. CLINIC PROBLEM QUANTIFIED -->
 <section class="slide" data-screen-label="09 Clinic Quantified">
   <div class="pageno"><svg><use href="#mark"/></svg>09 / 13</div>
-  <div class="frame" style="padding: 64px 110px 56px;">
+  <div class="frame" style="padding: 64px 110px 72px;">
     <p class="eyebrow" style="margin-bottom: 20px; color: var(--accent);">The clinic opportunity</p>
     <h1 class="h1">Patient experience isn&rsquo;t a soft problem for clinics. It&rsquo;s an unmeasured revenue leak.</h1>
 
-    <div style="position: relative; flex: 1; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; margin-bottom: 120px;">
+    <!-- Left-to-right chain -->
+    <div class="cq-chain">
 
-      <!-- Q1: top-left — pale clay -->
-      <div style="background: #E8D5C4; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative;">
-        <span style="position: absolute; top: 22px; left: 28px; padding: 9px 22px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Dropout is structural</span>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">26.5%</p>
-        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: var(--ink-soft);">drop out after their first IVF cycle</p>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; line-height: 0.95;">47.3%</p>
-        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: var(--ink-soft);">have dropped out by cycle 5</p>
-        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; color: var(--ink-mute); line-height: 1.4;">n = 16,073 patients &middot; 48,946 cycles &mdash; Human Reproduction, 2021</p>
+      <div class="cq-node" style="background: #E8D5C4;">
+        <p class="cq-n" style="color: var(--ink);">~500</p>
+        <p class="cq-l" style="color: var(--ink-soft);">cycles per year<br/>at a mid-size clinic</p>
       </div>
 
-      <!-- Q2: top-right — mid clay, right-aligned -->
-      <div style="background: #C99477; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; text-align: right;">
-        <span style="position: absolute; top: 22px; right: 28px; padding: 9px 22px; background: var(--accent); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Every dropout has a price tag</span>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; color: var(--ink); letter-spacing: -0.045em; line-height: 0.95;">$22K</p>
-        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: #2A2018;">cost of a single IVF cycle in the US</p>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; color: var(--ink); letter-spacing: -0.03em; line-height: 0.95;">$50K+</p>
-        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; color: #2A2018;">average patient spend across 2.3 cycles needed for a live birth</p>
-        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; color: rgba(42,32,24,0.72); line-height: 1.4;">FertilityIQ &middot; U.S. HHS, 2019&ndash;2025</p>
+      <div class="cq-arr">&rarr;</div>
+
+      <div class="cq-node" style="background: #C99477;">
+        <p class="cq-n" style="color: var(--ink);">$22K</p>
+        <p class="cq-l" style="color: #2A2018;">average revenue<br/>per IVF cycle</p>
+        <p class="cq-src" style="color: rgba(42,32,24,0.6);">FertilityIQ &middot; HHS, 2024</p>
       </div>
 
-      <!-- Q3: bottom-left — deep terracotta -->
-      <div style="background: var(--accent); padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; position: relative; color: #F7F1E4;">
-        <span style="position: absolute; top: 22px; left: 28px; padding: 9px 22px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Patient acquisition cost</span>
-        <p style="margin: 0 0 6px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">$100&ndash;$3,800</p>
-        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.5; opacity: 0.92;">per patient acquired &mdash; reducing dropout retains revenue more efficiently than replacing every dropped patient with a newly acquired one</p>
-        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; opacity: 0.82; line-height: 1.4;">Healthcare PE marketing analysis, 2025&ndash;2026</p>
+      <div class="cq-arr">&rarr;</div>
+
+      <div class="cq-node" style="background: var(--accent);">
+        <p class="cq-n" style="color: #F7F1E4;">26.5%</p>
+        <p class="cq-l" style="color: rgba(247,241,228,0.85);">drop out after<br/>their first cycle</p>
+        <p class="cq-src" style="color: rgba(247,241,228,0.55);">Human Reproduction, 2021 &middot; n=16,073</p>
       </div>
 
-      <!-- Q4: bottom-right — darkest brown, right-aligned -->
-      <div style="background: #5C2E1C; padding: 72px 60px 36px; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end; position: relative; color: #F7F1E4; text-align: right;">
-        <span style="position: absolute; top: 22px; right: 28px; padding: 9px 22px; background: rgba(247,241,228,0.16); color: #F7F1E4; font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; border-radius: 999px;">Nurses absorb the burden</span>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 72px; font-weight: 500; letter-spacing: -0.045em; line-height: 0.95;">9&ndash;16 hrs</p>
-        <p style="margin: 0 0 16px; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; opacity: 0.92;">per IVF cycle, per nurse, on communication alone</p>
-        <p style="margin: 0 0 4px; font-family: 'Inter Tight', sans-serif; font-size: 48px; font-weight: 500; letter-spacing: -0.03em; line-height: 0.95;">40%</p>
-        <p style="margin: 0 0 auto; font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.4; opacity: 0.92;">reduction in admin workload achievable with the right platform</p>
-        <p style="margin: 10px 0 0; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 15px; opacity: 0.82; line-height: 1.4;">Human Reproduction, 2025 &middot; peer-reviewed staff survey, 2017</p>
+      <div class="cq-arr" style="color: var(--accent);">&rarr;</div>
+
+      <div class="cq-node" style="background: #5C2E1C;">
+        <p class="cq-n" style="color: #F7F1E4;">~$2.9M</p>
+        <p class="cq-l" style="color: rgba(247,241,228,0.85);">annual revenue<br/>exposure per clinic</p>
+        <p class="cq-src" style="color: rgba(247,241,228,0.45);">500 &times; 26.5% &times; $22K</p>
       </div>
 
     </div>
+
+    <!-- Honesty line -->
+    <div class="cq-honesty">
+      Exposure is real and sourced. How much of it Carousel recovers is the hypothesis the pilot proves.
+    </div>
+
+    <!-- Human line -->
+    <p class="cq-human">
+      Every dropout is a woman who gave up because the experience failed her &mdash; not the medicine. The clinic loses the revenue. She loses the chance. Same broken thing causes both.
+    </p>
+
   </div>
-  <p class="cq-footer">Carousel is the patient-experience layer that reduces dropout, lifts care-team capacity, and protects clinic revenue &mdash; sold to clinics for $35&ndash;50K/year. The math earns the line item.</p>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="09 Clinic Quantified"] .frame > .h1 {
-      margin: 0 0 28px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
+      margin: 0 0 36px 0 !important; font-size: 44px !important; line-height: 1.1 !important;
     }
-    [data-screen-label="09 Clinic Quantified"] .cq-footer {
-      position: absolute; bottom: 88px; left: 110px; right: 110px;
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 16px; color: var(--ink-soft); margin: 0; line-height: 1.45;
+    [data-screen-label="09 Clinic Quantified"] .cq-chain {
+      display: flex; align-items: stretch; gap: 0; flex-shrink: 0;
+      margin-bottom: 32px;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-node {
+      flex: 1; padding: 28px 28px 24px;
+      display: flex; flex-direction: column; justify-content: flex-start; gap: 8px;
+      border-radius: 10px;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-arr {
+      flex-shrink: 0; width: 48px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 36px; color: var(--ink-mute);
+      font-family: 'Inter Tight', sans-serif;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-n {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 64px; font-weight: 500;
+      letter-spacing: -0.045em; line-height: 0.95; margin: 0;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-l {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px; font-weight: 400; line-height: 1.4; margin: 0;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-src {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-size: 13px; margin: auto 0 0; line-height: 1.4;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-honesty {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 17px; font-weight: 400; line-height: 1.5;
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding: 10px 20px; margin-bottom: 24px;
+    }
+    [data-screen-label="09 Clinic Quantified"] .cq-human {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic; font-size: 26px; line-height: 1.4;
+      color: var(--ink); margin: 0; max-width: 1200px;
     }
   </style>
 </section>
