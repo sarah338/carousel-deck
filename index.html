@@ -310,9 +310,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 4. MARKET: BOTTOM UP (placeholder) -->
 <section class="slide" data-screen-label="04 Market bottom up">
   <div class="pageno"><svg><use href="#mark"/></svg>04 / 14</div>
-  <div class="frame" style="padding-top: 72px;">
-    <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Market: bottom-up</p>
-    <h1 class="h1" style="margin: 0 0 44px; max-width: 1700px; font-size: 50px; line-height: 1.1;">To clear $2M ARR by Series A, Carousel needs ~6% of US fertility clinics &mdash; not a hockey stick.</h1>
+  <div class="frame" style="padding-top: 64px; padding-bottom: 110px;">
+    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Market: bottom-up</p>
+    <h1 class="h1" style="margin: 0 0 24px; max-width: 1700px; font-size: 42px; line-height: 1.1;">To clear $2M ARR by Series A, Carousel needs ~7% of US fertility clinics &mdash; not a hockey stick.</h1>
 
     <div class="bu-funnel">
 
@@ -347,7 +347,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <span class="bu-num">~$2M ARR<span class="bu-num-sm"> &middot; by Series A</span></span>
         </div>
         <div class="bu-right">
-          <p class="bu-logic">~28 clinics &asymp; ~6% of US fertility clinics.</p>
+          <p class="bu-logic">~30 clinics &asymp; ~7% of US fertility clinics.</p>
           <p class="bu-source">Bottoms-up from clinic-SaaS economics &middot; penetration, not a hockey stick</p>
         </div>
       </div>
@@ -358,8 +358,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <p class="bu-audit-label">Assumptions &amp; sources</p>
       <ul class="bu-audit-list">
         <li><span class="bu-audit-tag bu-audit-tag--src">SOURCED</span> ~457 US fertility clinics (CDC ART Surveillance 2022). ~400 SART-reporting clinics is the serviceable subset.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$70K blended ACV per clinic = ~$50K platform fee + ~$20K per-patient usage. Clinic-SaaS pricing benchmark; to be validated in pilot.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~28 paying clinics by Series A &rarr; ~$2M ARR &rarr; ~6% of US fertility clinics.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$50&ndash;75K blended ACV per clinic &mdash; benchmarked at ~2&ndash;3% of the ~$2.75M annual dropout exposure per clinic (Slide 8). Final structure (platform + usage) validated in pilot.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~30 paying clinics by Series A &rarr; ~$2M ARR &rarr; ~7% of US fertility clinics.</li>
         <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> Per-clinic ACV will vary with clinic volume; ~$70K is a blended midpoint.</li>
       </ul>
     </div>
@@ -371,24 +371,24 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <style>
     [data-screen-label="04 Market bottom up"] .bu-funnel {
       display: flex; flex-direction: column; align-items: center;
-      gap: 18px; margin: 0 auto; max-width: 1700px;
+      gap: 10px; margin: 0 auto; max-width: 1700px;
     }
     [data-screen-label="04 Market bottom up"] .bu-tier {
-      display: grid; grid-template-columns: 110px 1fr 1fr;
-      gap: 40px; align-items: center;
-      padding: 32px 40px 32px 32px; border-radius: 10px;
-      min-height: 160px;
+      display: grid; grid-template-columns: 90px 1fr 1fr;
+      gap: 28px; align-items: center;
+      padding: 16px 32px 16px 24px; border-radius: 10px;
+      min-height: 102px;
     }
     [data-screen-label="04 Market bottom up"] .bu-spine {
       writing-mode: vertical-rl;
       transform: rotate(180deg);
       font-family: 'Inter Tight', sans-serif;
-      font-size: 64px; font-weight: 700;
+      font-size: 44px; font-weight: 700;
       letter-spacing: 0.14em;
       line-height: 1;
       align-self: stretch;
       display: flex; align-items: center; justify-content: center;
-      padding: 8px 0;
+      padding: 4px 0;
       color: rgba(247,241,228,0.95);
       border-right: 1px solid rgba(247,241,228,0.18);
     }
@@ -397,27 +397,27 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="04 Market bottom up"] .bu-tier--som { width: 64%; background: #5C2E1C; color: #F7F1E4; }
 
     [data-screen-label="04 Market bottom up"] .bu-left {
-      display: flex; flex-direction: column; gap: 6px;
+      display: flex; flex-direction: column; gap: 4px;
     }
     [data-screen-label="04 Market bottom up"] .bu-label {
-      font-family: 'Inter Tight', sans-serif; font-size: 14px;
-      font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
+      font-family: 'Inter Tight', sans-serif; font-size: 12px;
+      font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
       opacity: 0.7;
     }
     [data-screen-label="04 Market bottom up"] .bu-num {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 48px; line-height: 1.05; letter-spacing: -0.01em;
+      font-size: 38px; line-height: 1.05; letter-spacing: -0.01em;
     }
     [data-screen-label="04 Market bottom up"] .bu-num-sm {
       font-family: 'Inter Tight', sans-serif; font-style: normal;
-      font-size: 18px; font-weight: 300; opacity: 0.8; letter-spacing: 0;
+      font-size: 15px; font-weight: 300; opacity: 0.8; letter-spacing: 0;
     }
     [data-screen-label="04 Market bottom up"] .bu-right {
-      display: flex; flex-direction: column; gap: 8px;
+      display: flex; flex-direction: column; gap: 4px;
     }
     [data-screen-label="04 Market bottom up"] .bu-logic {
-      font-family: 'Inter Tight', sans-serif; font-size: 19px;
-      font-weight: 300; line-height: 1.4; margin: 0;
+      font-family: 'Inter Tight', sans-serif; font-size: 15px;
+      font-weight: 300; line-height: 1.35; margin: 0;
       color: rgba(247,241,228,0.92);
     }
     [data-screen-label="04 Market bottom up"] .bu-source {
@@ -426,35 +426,35 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       color: rgba(247,241,228,0.6); margin: 0;
     }
     [data-screen-label="04 Market bottom up"] .bu-audit {
-      margin: 28px auto 0; max-width: 1500px;
-      padding: 18px 24px;
+      margin: 14px auto 0; max-width: 1500px;
+      padding: 12px 18px;
       border: 1px dashed rgba(60,40,30,0.25);
       border-radius: 8px;
       background: rgba(247,241,228,0.4);
     }
     [data-screen-label="04 Market bottom up"] .bu-audit-label {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 600;
+      font-size: 10px; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--ink-mute);
-      margin: 0 0 10px;
+      margin: 0 0 6px;
     }
     [data-screen-label="04 Market bottom up"] .bu-audit-list {
       list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 6px;
+      display: flex; flex-direction: column; gap: 3px;
     }
     [data-screen-label="04 Market bottom up"] .bu-audit-list li {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 13px; font-weight: 300;
-      line-height: 1.45; color: var(--ink-soft);
-      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 11.5px; font-weight: 300;
+      line-height: 1.4; color: var(--ink-soft);
+      display: flex; align-items: flex-start; gap: 8px;
     }
     [data-screen-label="04 Market bottom up"] .bu-audit-tag {
       flex: 0 0 auto;
       font-family: 'Inter Tight', sans-serif;
-      font-size: 9px; font-weight: 700;
+      font-size: 8px; font-weight: 700;
       letter-spacing: 0.16em; text-transform: uppercase;
-      padding: 3px 7px; border-radius: 3px;
+      padding: 2px 6px; border-radius: 3px;
       line-height: 1;
       margin-top: 2px;
     }
@@ -466,8 +466,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="04 Market bottom up"] .bu-footer {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 20px; line-height: 1.4; color: var(--ink);
-      margin: 20px auto 0; text-align: center; max-width: 1200px;
+      font-size: 16px; line-height: 1.4; color: var(--ink);
+      margin: 14px auto 0; text-align: center; max-width: 1300px;
     }
   </style>
 </section>
