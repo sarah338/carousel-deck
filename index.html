@@ -380,14 +380,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     <h1 class="h1">Fertility tech is built in fragments. Carousel owns the entry point none of them do &mdash; the woman, from her first thought.</h1>
 
     <div class="mm-tree">
-
-      <aside class="mm-source">
-        <div class="mm-source-box">
-          <p class="mm-source-name">Carousel</p>
-          <p class="mm-source-tag">She starts here &mdash;<br/>from her first thought</p>
+      <div class="mm-source-col">
+        <div class="mm-source-wrap">
+          <div class="mm-source-box">
+            <p class="mm-source-name">Carousel</p>
+            <p class="mm-source-tag">She starts here &mdash;<br/>from her first thought</p>
+          </div>
+          <p class="mm-source-foot">Everything else is downstream<br/>of the relationship</p>
         </div>
-        <p class="mm-source-foot">Everything else is downstream<br/>of the relationship</p>
-      </aside>
+      </div>
 
       <div class="mm-branches">
         <div class="mm-branch">
@@ -415,44 +416,42 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="mm-b-cos">Kindbody &middot; Spring Fertility</p>
         </div>
       </div>
-
     </div>
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
     [data-screen-label="06 Competitive"] .frame > .h1 {
-      margin: 0 0 56px 0 !important; font-size: 52px !important; line-height: 1.1 !important; max-width: 1700px;
+      margin: 0 0 56px 0 !important; font-size: 52px !important; line-height: 1.1 !important; max-width: 1700px !important;
     }
     [data-screen-label="06 Competitive"] .mm-tree {
-      display: grid;
-      grid-template-columns: 420px 80px 1fr;
-      gap: 0;
+      display: flex;
       align-items: center;
       flex: 1;
-      margin: auto 0;
+      gap: 0;
+      width: 100%;
+      min-height: 0;
     }
-    [data-screen-label="06 Competitive"] .mm-source {
-      display: flex; align-items: center; justify-content: center;
+    [data-screen-label="06 Competitive"] .mm-source-col {
+      flex: 0 0 460px;
+      display: flex;
+      align-items: center; justify-content: center;
+    }
+    [data-screen-label="06 Competitive"] .mm-source-wrap {
       position: relative;
+      width: 380px;
     }
     [data-screen-label="06 Competitive"] .mm-source-box {
-      position: relative;
       background: rgba(149,74,45,0.10);
       border: 1.5px solid rgba(149,74,45,0.55);
       border-radius: 12px;
-      padding: 30px 36px;
+      padding: 36px 44px;
       text-align: center;
-      min-width: 320px;
-    }
-    [data-screen-label="06 Competitive"] .mm-source-box::after {
-      content: ''; position: absolute;
-      left: 100%; top: 50%;
-      width: 80px; height: 1.5px;
-      background: rgba(149,74,45,0.35);
+      width: 100%;
+      box-sizing: border-box;
     }
     [data-screen-label="06 Competitive"] .mm-source-name {
       font-family: 'Instrument Serif', serif;
-      font-size: 56px; font-weight: 400;
+      font-size: 64px; font-weight: 400;
       letter-spacing: -0.01em; color: var(--ink);
       margin: 0 0 14px;
       line-height: 1;
@@ -466,45 +465,58 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="06 Competitive"] .mm-source-foot {
       position: absolute;
       top: 100%; left: 50%;
-      transform: translate(-50%, 28px);
+      transform: translateX(-50%);
+      margin-top: 28px;
       width: max-content; max-width: 360px;
       font-family: 'Inter Tight', sans-serif;
       font-size: 16px; font-weight: 300;
       color: var(--ink-soft);
-      margin: 0; text-align: center; line-height: 1.45;
+      text-align: center; line-height: 1.5;
+    }
+    [data-screen-label="06 Competitive"] .mm-source-box {
+      position: relative;
+    }
+    [data-screen-label="06 Competitive"] .mm-source-box::after {
+      content: ''; position: absolute;
+      left: 100%; top: 50%;
+      width: 60px; height: 1.5px;
+      background: rgba(149,74,45,0.4);
     }
     [data-screen-label="06 Competitive"] .mm-branches {
+      flex: 1 1 auto;
       display: flex; flex-direction: column;
-      gap: 14px;
+      gap: 16px;
+      min-width: 0;
       position: relative;
+      padding-left: 60px;
     }
     [data-screen-label="06 Competitive"] .mm-branches::before {
       content: ''; position: absolute;
-      left: -40px; top: 30px; bottom: 30px;
+      left: 20px; top: 36px; bottom: 36px;
       width: 1.5px;
-      background: rgba(149,74,45,0.35);
+      background: rgba(149,74,45,0.4);
     }
     [data-screen-label="06 Competitive"] .mm-branch {
       position: relative;
       background: var(--bg-card);
       border-radius: 8px;
-      padding: 16px 24px;
+      padding: 18px 28px;
     }
     [data-screen-label="06 Competitive"] .mm-branch::before {
       content: ''; position: absolute;
       left: -40px; top: 50%;
       width: 40px; height: 1.5px;
-      background: rgba(149,74,45,0.35);
+      background: rgba(149,74,45,0.4);
     }
     [data-screen-label="06 Competitive"] .mm-b-cat {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 20px; font-weight: 600;
+      font-size: 22px; font-weight: 600;
       color: var(--ink);
       margin: 0 0 4px;
     }
     [data-screen-label="06 Competitive"] .mm-b-cos {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 17px; font-weight: 300;
+      font-size: 18px; font-weight: 300;
       color: var(--ink-soft);
       margin: 0; line-height: 1.4;
     }
