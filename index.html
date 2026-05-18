@@ -324,7 +324,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         </div>
         <div class="bu-right">
           <p class="bu-logic">457 US fertility clinics &times; ~$70K blended ACV.</p>
-          <p class="bu-source">Clinic-led entry market &mdash; the wedge, not the ceiling.</p>
+          <p class="bu-source">CDC ART Surveillance 2022</p>
         </div>
       </div>
 
@@ -332,11 +332,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="bu-spine">SAM</div>
         <div class="bu-left">
           <span class="bu-label">Serviceable US clinics</span>
-          <span class="bu-num">~$21M<span class="bu-num-sm"> / year</span></span>
+          <span class="bu-num">~$28M<span class="bu-num-sm"> / year</span></span>
         </div>
         <div class="bu-right">
-          <p class="bu-logic">~300 serviceable US clinics &times; ~$70K ACV.</p>
-          <p class="bu-source">Clinic-SaaS pricing assumption &middot; serviceable subset of CDC 457</p>
+          <p class="bu-logic">~400 serviceable (SART-reporting) clinics &times; ~$70K ACV.</p>
+          <p class="bu-source">SART 2022&ndash;2023</p>
         </div>
       </div>
 
@@ -354,7 +354,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     </div>
 
-    <p class="bu-footer">This is the clinic-led entry market. The category is $92.6B (Slide 3); the payer expansion is where the venture-scale market lives (Slide 12).</p>
+    <div class="bu-audit">
+      <p class="bu-audit-label">Assumptions &amp; sources</p>
+      <ul class="bu-audit-list">
+        <li><span class="bu-audit-tag bu-audit-tag--src">SOURCED</span> ~457 US fertility clinics (CDC ART Surveillance 2022). ~400 SART-reporting clinics is the serviceable subset.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$70K blended ACV per clinic = ~$50K platform fee + ~$20K per-patient usage. Clinic-SaaS pricing benchmark; to be validated in pilot.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~28 paying clinics by Series A &rarr; ~$2M ARR &rarr; ~6% of US fertility clinics.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> Per-clinic ACV will vary with clinic volume; ~$70K is a blended midpoint.</li>
+      </ul>
+    </div>
+
+    <p class="bu-footer">Clinic-led entry market. Category context: $92.6B (Slide 3). Payer expansion is the venture-scale path (Slide 12).</p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
@@ -415,10 +425,49 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
       color: rgba(247,241,228,0.6); margin: 0;
     }
+    [data-screen-label="04 Market bottom up"] .bu-audit {
+      margin: 28px auto 0; max-width: 1500px;
+      padding: 18px 24px;
+      border: 1px dashed rgba(60,40,30,0.25);
+      border-radius: 8px;
+      background: rgba(247,241,228,0.4);
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-label {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 10px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-list {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-list li {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px; font-weight: 300;
+      line-height: 1.45; color: var(--ink-soft);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-tag {
+      flex: 0 0 auto;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 3px 7px; border-radius: 3px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-tag--src {
+      background: rgba(149,74,45,0.14); color: var(--accent);
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-tag--asm {
+      background: rgba(60,40,30,0.10); color: var(--ink-mute);
+    }
     [data-screen-label="04 Market bottom up"] .bu-footer {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 22px; line-height: 1.4; color: var(--ink);
-      margin: 40px auto 0; text-align: center; max-width: 1200px;
+      font-size: 20px; line-height: 1.4; color: var(--ink);
+      margin: 20px auto 0; text-align: center; max-width: 1200px;
     }
   </style>
 </section>
