@@ -320,10 +320,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="bu-spine">TAM</div>
         <div class="bu-left">
           <span class="bu-label">Clinic-led entry market</span>
-          <span class="bu-num">~$32M<span class="bu-num-sm"> / year</span></span>
+          <span class="bu-num">~$37M<span class="bu-num-sm"> / year</span></span>
         </div>
         <div class="bu-right">
-          <p class="bu-logic">457 US fertility clinics &times; ~$70K blended ACV.</p>
+          <p class="bu-logic">457 US fertility clinics &times; ~$80K blended ACV.</p>
           <p class="bu-source">CDC ART Surveillance 2022</p>
         </div>
       </div>
@@ -332,10 +332,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="bu-spine">SAM</div>
         <div class="bu-left">
           <span class="bu-label">Serviceable US clinics</span>
-          <span class="bu-num">~$28M<span class="bu-num-sm"> / year</span></span>
+          <span class="bu-num">~$32M<span class="bu-num-sm"> / year</span></span>
         </div>
         <div class="bu-right">
-          <p class="bu-logic">~400 serviceable (SART-reporting) clinics &times; ~$70K ACV.</p>
+          <p class="bu-logic">~400 serviceable (SART-reporting) clinics &times; ~$80K ACV.</p>
           <p class="bu-source">SART 2022&ndash;2023</p>
         </div>
       </div>
@@ -344,10 +344,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="bu-spine">SOM</div>
         <div class="bu-left">
           <span class="bu-label">Series A target</span>
-          <span class="bu-num">~$2M ARR<span class="bu-num-sm"> &middot; by Series A</span></span>
+          <span class="bu-num">~$2.16M ARR<span class="bu-num-sm"> &middot; net, by Series A</span></span>
         </div>
         <div class="bu-right">
-          <p class="bu-logic">~30 clinics &asymp; ~7% of US fertility clinics.</p>
+          <p class="bu-logic">~30 clinics &times; ~$80K ACV &times; 0.9 (net) &asymp; ~7% of US fertility clinics.</p>
           <p class="bu-source">Bottoms-up from clinic-SaaS economics &middot; penetration, not a hockey stick</p>
         </div>
       </div>
@@ -358,9 +358,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <p class="bu-audit-label">Assumptions &amp; sources</p>
       <ul class="bu-audit-list">
         <li><span class="bu-audit-tag bu-audit-tag--src">SOURCED</span> ~457 US fertility clinics (CDC ART Surveillance 2022). ~400 SART-reporting clinics is the serviceable subset.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$50&ndash;75K blended ACV per clinic &mdash; benchmarked at ~2&ndash;3% of the ~$2.75M annual dropout exposure per clinic (Slide 8). Final structure (platform + usage) validated in pilot.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~30 paying clinics by Series A &rarr; ~$2M ARR &rarr; ~7% of US fertility clinics.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> Per-clinic ACV will vary with clinic volume; ~$70K is a blended midpoint.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$80K blended ACV = ~$50K platform fee + per-patient usage (~400 patients &times; ~$75). Platform pricing &mdash; validated in pilot.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~30 paying clinics &times; ~$80K ACV &times; 0.9 net &rarr; ~$2.16M ARR &rarr; ~7% of US fertility clinics.</li>
+        <li><span class="bu-audit-tag bu-audit-tag--floor">FLOOR</span> At point-tool pricing (~$42K ACV), the same ramp produces ~$1.1M. $2M is the platform-pricing case, validated in pilot.</li>
       </ul>
     </div>
 
@@ -463,6 +463,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="04 Market bottom up"] .bu-audit-tag--asm {
       background: rgba(60,40,30,0.10); color: var(--ink-mute);
+    }
+    [data-screen-label="04 Market bottom up"] .bu-audit-tag--floor {
+      background: rgba(60,40,30,0.18); color: var(--ink);
     }
     [data-screen-label="04 Market bottom up"] .bu-footer {
       font-family: 'Instrument Serif', serif; font-style: italic;
@@ -652,10 +655,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="cq-arrow">↓</div>
 
       <div class="cq-row cq-row--4">
-        <p class="cq-n">~$2.75M</p>
+        <p class="cq-n">~$1.69M</p>
         <div class="cq-body">
           <p class="cq-lbl">annual revenue exposure per clinic</p>
-          <p class="cq-src">500 &times; 25% &times; $22K</p>
+          <p class="cq-src">500 &times; 25% &times; $13,500</p>
         </div>
       </div>
 
