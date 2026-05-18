@@ -377,7 +377,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>06 / 13</div>
   <div class="frame" style="padding-top: 100px; padding-bottom: 80px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">The journey</p>
-    <h1 class="h1">Egg freezing is the front door. Carousel is the only thing that stays &mdash; through the whole journey, including the gap no one owns.</h1>
+    <h1 class="h1">Considering egg freezing is the front door for most women. Carousel is the only platform<br/>that stays with her through her <em>entire</em> journey.</h1>
 
     <div class="ja-stack">
 
@@ -388,7 +388,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-frag-cos">Modern Fertility &middot; Mira &middot; Oova</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag" style="grid-column: 1 / span 2; grid-row: 2;">
+        <div class="ja-frag" style="grid-column: 5 / span 2; grid-row: 2;">
           <p class="ja-frag-cat">IVF preconception coaching</p>
           <p class="ja-frag-cos">Frame &middot; Conceive</p>
           <div class="ja-frag-bar"></div>
@@ -399,7 +399,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <div class="ja-frag-bar"></div>
         </div>
         <div class="ja-frag" style="grid-column: 2 / span 1; grid-row: 4;">
-          <p class="ja-frag-cat">Employer benefits <span class="ja-frag-note">sold to employers</span></p>
+          <p class="ja-frag-cat">Employer benefits</p>
           <p class="ja-frag-cos">Maven &middot; Progyny &middot; Carrot</p>
           <div class="ja-frag-bar"></div>
         </div>
@@ -410,8 +410,16 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         </div>
         <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 6;">
           <p class="ja-frag-cat">Clinic networks</p>
-          <p class="ja-frag-cos">Kindbody &middot; Spring Fertility</p>
+          <p class="ja-frag-cos">CCRM &middot; Shady Grove &middot; Kindbody &middot; Spring Fertility</p>
           <div class="ja-frag-bar"></div>
+        </div>
+      </div>
+
+      <!-- Secondary entry: subordinate "second door" feeding the arc at col 5 -->
+      <div class="ja-second-door">
+        <div class="ja-second-entry" style="grid-column: 5;">
+          <p class="ja-second-text">or enters here</p>
+          <p class="ja-second-sub">straight to IVF &mdash; no freeze</p>
         </div>
       </div>
 
@@ -460,9 +468,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     </div>
 
-    <p class="ja-foot">
-      Every other player touches one moment. Carousel is the only one that holds her across all of them &mdash; including the one no one owns.
-    </p>
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
@@ -498,7 +503,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="06 Journey"] .ja-frag {
       display: flex; flex-direction: column;
       min-width: 0;
-      padding: 0 6px;
+      padding: 0 20px;
     }
     [data-screen-label="06 Journey"] .ja-frag-cat {
       font-family: 'Inter Tight', sans-serif;
@@ -518,13 +523,62 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-size: 15px; font-weight: 400;
       color: var(--ink);
       margin: 0 0 4px;
-      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      line-height: 1.35;
     }
     [data-screen-label="06 Journey"] .ja-frag-bar {
       height: 8px;
       border-top: 1.5px solid rgba(60,40,30,0.32);
       border-left: 1.5px solid rgba(60,40,30,0.32);
       border-right: 1.5px solid rgba(60,40,30,0.32);
+    }
+
+    /* ============ Secondary entry door ============ */
+    [data-screen-label="06 Journey"] .ja-second-door {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      padding: 0 0 6px;
+    }
+    [data-screen-label="06 Journey"] .ja-second-entry {
+      position: relative;
+      text-align: center;
+      padding: 0 20px 26px;
+    }
+    [data-screen-label="06 Journey"] .ja-second-text {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 17px; font-weight: 400;
+      color: var(--ink-mute);
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: -0.005em;
+    }
+    [data-screen-label="06 Journey"] .ja-second-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px; font-weight: 400; font-style: italic;
+      color: var(--ink-mute);
+      margin: 3px 0 0;
+      line-height: 1.2;
+    }
+    [data-screen-label="06 Journey"] .ja-second-entry::before {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 14px;
+      background: rgba(60,40,30,0.4);
+    }
+    [data-screen-label="06 Journey"] .ja-second-entry::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid rgba(60,40,30,0.4);
     }
 
     /* ============ Layer 2: arc ============ */
