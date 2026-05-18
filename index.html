@@ -1646,53 +1646,46 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 9. CLINIC PROBLEM QUANTIFIED -->
 <section class="slide" data-screen-label="09 Clinic Quantified">
   <div class="pageno"><svg><use href="#mark"/></svg>09 / 13</div>
-  <div class="frame" style="padding: 56px 110px 60px; overflow: hidden;">
+  <div class="frame" style="padding: 56px 110px 56px;">
     <p class="eyebrow" style="margin-bottom: 16px; color: var(--accent);">The clinic opportunity</p>
-    <h1 class="h1">Poor patient experience is a measurable revenue leak for clinics.</h1>
+    <h1 class="h1" style="margin: 0 0 24px; font-size: 52px; line-height: 1.08;">Poor patient experience is a measurable revenue leak for clinics.</h1>
 
-    <!-- Diagonal staircase: each step shifts right, box = number only, text to the right -->
-    <div class="cq-stair">
+    <div class="cq-rows">
 
-      <div class="cq-step" style="margin-left: 0;">
-        <div class="cq-box" style="background: #E8D5C4;">
-          <p class="cq-n" style="color: var(--ink);">~500</p>
-        </div>
-        <p class="cq-lbl" style="color: var(--ink-soft);">cycles per year at a mid-size clinic</p>
-      </div>
-
-      <div class="cq-connector" style="margin-left: 0;">&#8600;</div>
-
-      <div class="cq-step" style="margin-left: 16%;">
-        <div class="cq-box" style="background: #C99477;">
-          <p class="cq-n" style="color: var(--ink);">$22K</p>
-        </div>
-        <div>
-          <p class="cq-lbl" style="color: #2A2018;">average revenue per IVF cycle</p>
-          <p class="cq-src" style="color: rgba(42,32,24,0.55);">FertilityIQ &middot; HHS, 2024</p>
+      <div class="cq-row cq-row--1">
+        <p class="cq-n">~500</p>
+        <div class="cq-body">
+          <p class="cq-lbl">cycles per year at a mid-size clinic</p>
         </div>
       </div>
 
-      <div class="cq-connector" style="margin-left: 16%;">&#8600;</div>
+      <div class="cq-arrow">↓</div>
 
-      <div class="cq-step" style="margin-left: 32%;">
-        <div class="cq-box" style="background: var(--accent);">
-          <p class="cq-n" style="color: #F7F1E4;">26.5%</p>
-        </div>
-        <div>
-          <p class="cq-lbl" style="color: var(--ink-soft);">drop out after their first cycle</p>
-          <p class="cq-src" style="color: var(--ink-mute);">Human Reproduction, 2021 &middot; n=16,073</p>
+      <div class="cq-row cq-row--2">
+        <p class="cq-n">$22K</p>
+        <div class="cq-body">
+          <p class="cq-lbl">average revenue per IVF cycle</p>
+          <p class="cq-src">FertilityIQ &middot; HHS, 2024</p>
         </div>
       </div>
 
-      <div class="cq-connector" style="margin-left: 32%;">&#8600;</div>
+      <div class="cq-arrow">↓</div>
 
-      <div class="cq-step" style="margin-left: 48%;">
-        <div class="cq-box" style="background: #5C2E1C;">
-          <p class="cq-n" style="color: #F7F1E4;">~$2.9M</p>
+      <div class="cq-row cq-row--3">
+        <p class="cq-n">26.5%</p>
+        <div class="cq-body">
+          <p class="cq-lbl">drop out after their first cycle</p>
+          <p class="cq-src">Human Reproduction, 2021 &middot; n=16,073</p>
         </div>
-        <div>
-          <p class="cq-lbl" style="color: var(--ink-soft);">annual revenue exposure per clinic</p>
-          <p class="cq-src" style="color: var(--ink-mute);">500 &times; 26.5% &times; $22K</p>
+      </div>
+
+      <div class="cq-arrow">↓</div>
+
+      <div class="cq-row cq-row--4">
+        <p class="cq-n">~$2.9M</p>
+        <div class="cq-body">
+          <p class="cq-lbl">annual revenue exposure per clinic</p>
+          <p class="cq-src">500 &times; 26.5% &times; $22K</p>
         </div>
       </div>
 
@@ -1703,49 +1696,62 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="09 Clinic Quantified"] .frame > .h1 {
-      margin: 0 0 24px 0 !important; font-size: 52px !important; line-height: 1.08 !important;
+    [data-screen-label="09 Clinic Quantified"] .frame {
+      display: flex; flex-direction: column;
     }
-    [data-screen-label="09 Clinic Quantified"] .cq-stair {
+    [data-screen-label="09 Clinic Quantified"] .cq-rows {
       flex: 1; min-height: 0;
       display: flex; flex-direction: column;
-      overflow: hidden;
-      margin-bottom: 12px;
+      gap: 0; margin-bottom: 16px;
     }
-    [data-screen-label="09 Clinic Quantified"] .cq-step {
+    [data-screen-label="09 Clinic Quantified"] .cq-row {
       flex: 1; min-height: 0;
-      display: flex; align-items: center; gap: 28px;
-    }
-    [data-screen-label="09 Clinic Quantified"] .cq-connector {
-      flex-shrink: 0; height: 24px;
       display: flex; align-items: center;
-      font-size: 24px; color: var(--ink-mute);
-      font-family: 'Inter Tight', sans-serif; line-height: 1;
-      padding-left: 85px;
+      gap: 48px; padding: 0 40px;
+      border-radius: 10px;
     }
-    [data-screen-label="09 Clinic Quantified"] .cq-box {
-      width: 200px; flex-shrink: 0; border-radius: 10px;
-      min-height: 0; height: 100%;
-      display: flex; align-items: center; justify-content: center;
+    [data-screen-label="09 Clinic Quantified"] .cq-row--1 { background: #E8D5C4; }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--2 { background: #C99477; }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--3 { background: var(--accent); }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--4 { background: #5C2E1C; }
+    [data-screen-label="09 Clinic Quantified"] .cq-arrow {
+      flex-shrink: 0; height: 20px;
+      display: flex; align-items: center;
+      font-size: 18px; color: var(--ink-mute);
+      padding-left: 20px;
     }
     [data-screen-label="09 Clinic Quantified"] .cq-n {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 72px; font-weight: 500;
+      font-size: 76px; font-weight: 500;
       letter-spacing: -0.045em; line-height: 1; margin: 0;
+      flex-shrink: 0; width: 280px; text-align: center;
     }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--1 .cq-n,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--2 .cq-n { color: var(--ink); }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--3 .cq-n,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--4 .cq-n { color: #F7F1E4; }
+    [data-screen-label="09 Clinic Quantified"] .cq-body { flex: 1; }
     [data-screen-label="09 Clinic Quantified"] .cq-lbl {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 22px; font-weight: 400; line-height: 1.35; margin: 0 0 4px;
+      font-size: 26px; font-weight: 400; line-height: 1.3; margin: 0 0 6px;
     }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--1 .cq-lbl,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--2 .cq-lbl { color: var(--ink); }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--3 .cq-lbl,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--4 .cq-lbl { color: #F7F1E4; }
     [data-screen-label="09 Clinic Quantified"] .cq-src {
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 15px; margin: 0; line-height: 1.4;
+      font-style: italic; font-size: 17px; margin: 0; line-height: 1.4;
     }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--1 .cq-src,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--2 .cq-src { color: var(--ink-soft); }
+    [data-screen-label="09 Clinic Quantified"] .cq-row--3 .cq-src,
+    [data-screen-label="09 Clinic Quantified"] .cq-row--4 .cq-src { color: rgba(247,241,228,0.7); }
     [data-screen-label="09 Clinic Quantified"] .cq-human {
       flex-shrink: 0;
       font-family: 'Instrument Serif', serif;
-      font-style: italic; font-size: 24px; line-height: 1.4;
-      color: var(--ink); margin: 10px 0 0;
+      font-style: italic; font-size: 22px; line-height: 1.4;
+      color: var(--ink); margin: 0;
     }
   </style>
 </section>
