@@ -310,171 +310,125 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 4. MARKET: BOTTOM UP (placeholder) -->
 <section class="slide" data-screen-label="04 Market bottom up">
   <div class="pageno"><svg><use href="#mark"/></svg>04 / 14</div>
-  <div class="frame" style="padding-top: 72px; padding-bottom: 90px;">
-    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Market &middot; where Carousel plays</p>
-    <h1 class="h1" style="margin: 0 0 32px; max-width: 1700px; font-size: 46px; line-height: 1.1;">The clinic is our entry. The market behind it is the one Progyny is still 6% into.</h1>
+  <div class="frame" style="padding-top: 64px; padding-bottom: 90px;">
+    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Market &middot; the employer-funded fertility opportunity</p>
+    <h1 class="h1" style="margin: 0 0 28px; max-width: 1700px; font-size: 46px; line-height: 1.1;">The wedge is small. The market behind it is $18B &mdash; and Progyny is six percent in.</h1>
 
-    <div class="mkt-grid">
+    <div class="mkt-rows">
 
-      <div class="mkt-panel mkt-panel--prize">
-        <p class="mkt-label">The employer-funded fertility market</p>
-        <p class="mkt-sub"><em>What Progyny built &mdash; and barely scratched.</em></p>
-
-        <div class="mkt-hero">
-          <span class="mkt-hero-num">~106M</span>
-          <span class="mkt-hero-lbl">covered lives &middot; Progyny&rsquo;s stated TAM</span>
-          <span class="mkt-hero-src">Progyny 10-K, FY2024</span>
+      <div class="mkt-row mkt-row--tam">
+        <div class="mkt-row-hero">
+          <span class="mkt-row-num">~$20B</span>
         </div>
-
-        <ul class="mkt-beats">
-          <li>
-            <span class="mkt-beat-num">86%</span>
-            <div class="mkt-beat-body">
-              <span class="mkt-beat-text">of US employers plan to offer family-forming and reproductive support in 2025.</span>
-              <span class="mkt-beat-src">Business Group on Health &times; Fidelity Investments, 2024</span>
-            </div>
-          </li>
-          <li>
-            <span class="mkt-beat-num">47% &rarr; 70%</span>
-            <div class="mkt-beat-body">
-              <span class="mkt-beat-text">of large employers covered IVF in 2024 &mdash; up from 22% in 2019. Among jumbo employers, 70%.</span>
-              <span class="mkt-beat-src">Mercer National Survey of Employer-Sponsored Health Plans, 2024</span>
-            </div>
-          </li>
-          <li>
-            <span class="mkt-beat-num">$1.29B</span>
-            <div class="mkt-beat-body">
-              <span class="mkt-beat-text">Progyny&rsquo;s 2025 revenue. ~100% client retention. The category leader is still growing.</span>
-              <span class="mkt-beat-src">Progyny FY2025 earnings</span>
-            </div>
-          </li>
-        </ul>
+        <div class="mkt-row-body">
+          <p class="mkt-row-label">US employer-funded fertility benefits &middot; at saturation</p>
+          <p class="mkt-row-math">106M covered lives &times; ~$200 revenue per covered life</p>
+          <p class="mkt-row-src">Progyny 10-K FY2024 &middot; Progyny FY2025 earnings</p>
+        </div>
       </div>
 
-      <div class="mkt-panel mkt-panel--wedge">
-        <p class="mkt-label">Our wedge</p>
-        <p class="mkt-sub"><em>The clinic channel.</em></p>
-
-        <div class="mkt-hero">
-          <span class="mkt-hero-num">~500</span>
-          <span class="mkt-hero-lbl">US fertility clinics &middot; 251,542 patients/yr &middot; 184K egg &amp; embryo freezing cycles</span>
-          <span class="mkt-hero-src">CDC ART Surveillance, 2022</span>
+      <div class="mkt-row mkt-row--sam mkt-row--hero">
+        <div class="mkt-row-hero">
+          <span class="mkt-row-num">~$18B</span>
         </div>
+        <div class="mkt-row-body">
+          <p class="mkt-row-label">Unpenetrated self-insured large-employer market</p>
+          <p class="mkt-row-math">94M covered lives (TAM minus current incumbents) &times; ~$200</p>
+          <p class="mkt-row-src">Derived from Progyny, Maven, Carrot public filings</p>
+        </div>
+      </div>
 
-        <p class="mkt-beat-single">The clinic is where willingness-to-pay is fastest to validate and where founder access is real. It&rsquo;s also where the dropout problem is most measurable &mdash; and most expensive.</p>
+      <div class="mkt-row mkt-row--som">
+        <div class="mkt-row-hero">
+          <span class="mkt-row-num">~$180M</span>
+        </div>
+        <div class="mkt-row-body">
+          <p class="mkt-row-label">Path to ~1% share by Year 5</p>
+          <p class="mkt-row-math">Clinic-led entry through Series A. Employer ramp post-pilot. Maven hit ~1% by year 5 &mdash; and is still growing.</p>
+          <p class="mkt-row-src">Penetration math, not hockey stick</p>
+        </div>
       </div>
 
     </div>
 
-    <p class="mkt-spine"><strong>One product. The payer evolves.</strong> <em>Carousel enters through the clinic because the money problem is sharpest there. Employer, health plan, and Medicaid expansion are the venture-scale path &mdash; earned, not assumed.</em></p>
+    <p class="mkt-spine"><strong>One product. The payer evolves.</strong> <em>The clinic is the wedge. The employer market is the prize.</em></p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="04 Market bottom up"] .mkt-grid {
-      display: grid;
-      grid-template-columns: 60fr 40fr;
-      gap: 24px;
+    [data-screen-label="04 Market bottom up"] .mkt-rows {
+      display: flex; flex-direction: column;
+      gap: 12px;
       max-width: 1700px; margin: 0 auto;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-panel {
-      display: flex; flex-direction: column;
-      padding: 36px 40px;
+    [data-screen-label="04 Market bottom up"] .mkt-row {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 22px 40px;
       border-radius: 10px;
-      min-height: 480px;
-      color: #F7F1E4;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-panel--prize {
-      background: var(--accent);
+    [data-screen-label="04 Market bottom up"] .mkt-row--tam {
+      background: #E8D5C4; color: var(--ink);
     }
-    [data-screen-label="04 Market bottom up"] .mkt-panel--wedge {
-      background: #C99477;
+    [data-screen-label="04 Market bottom up"] .mkt-row--sam {
+      background: var(--accent); color: #F7F1E4;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-label {
+    [data-screen-label="04 Market bottom up"] .mkt-row--som {
+      background: #5C2E1C; color: #F7F1E4;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row--hero {
+      padding: 40px 48px;
+      grid-template-columns: 420px 1fr;
+      gap: 56px;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row-hero {
+      display: flex; align-items: center;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row-num {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 13px; font-weight: 700;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      opacity: 0.85; margin: 0 0 6px;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-sub {
-      font-family: 'Instrument Serif', serif;
-      font-size: 18px; line-height: 1.3;
-      margin: 0 0 28px;
-      color: rgba(247,241,228,0.78);
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-sub em {
-      font-style: italic;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-hero {
-      display: flex; flex-direction: column; gap: 8px;
-      margin: 0 0 26px;
-      padding-bottom: 22px;
-      border-bottom: 1px solid rgba(247,241,228,0.24);
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-hero-num {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 124px; font-weight: 500;
+      font-size: 80px; font-weight: 500;
       letter-spacing: -0.045em; line-height: 0.95;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-panel--wedge .mkt-hero-num {
-      font-size: 108px;
+    [data-screen-label="04 Market bottom up"] .mkt-row--hero .mkt-row-num {
+      font-size: 130px;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-hero-lbl {
+    [data-screen-label="04 Market bottom up"] .mkt-row-body {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row-label {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 26px; line-height: 1.2; letter-spacing: -0.005em;
+      margin: 0;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row--hero .mkt-row-label {
+      font-size: 34px;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row-math {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 16px; font-weight: 400;
-      letter-spacing: 0.01em;
-      opacity: 0.88;
-      line-height: 1.35;
+      font-size: 16px; font-weight: 300;
+      line-height: 1.4; margin: 4px 0 0;
+      opacity: 0.92;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-hero-src {
+    [data-screen-label="04 Market bottom up"] .mkt-row--hero .mkt-row-math {
+      font-size: 18px;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-row-src {
       font-family: 'Inter Tight', sans-serif;
       font-size: 10px; font-weight: 500;
       letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(247,241,228,0.65);
-      margin-top: 4px;
+      opacity: 0.65;
+      margin: 6px 0 0;
     }
-    [data-screen-label="04 Market bottom up"] .mkt-beats {
-      list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 18px;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beats li {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 22px;
-      align-items: baseline;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beat-num {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 28px; font-weight: 500;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beat-body {
-      display: flex; flex-direction: column; gap: 4px;
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beat-text {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 15px; font-weight: 300;
-      line-height: 1.45;
-      color: rgba(247,241,228,0.94);
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beat-src {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 9.5px; font-weight: 500;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      color: rgba(247,241,228,0.6);
-    }
-    [data-screen-label="04 Market bottom up"] .mkt-beat-single {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 16px; font-weight: 300;
-      line-height: 1.5;
-      color: rgba(247,241,228,0.94);
-      margin: 0;
+    [data-screen-label="04 Market bottom up"] .mkt-row--tam .mkt-row-src {
+      color: var(--ink-mute);
+      opacity: 1;
     }
     [data-screen-label="04 Market bottom up"] .mkt-spine {
       font-family: 'Instrument Serif', serif;
-      font-size: 22px; line-height: 1.5; color: var(--ink);
-      margin: 28px auto 0; text-align: center; max-width: 1600px;
+      font-size: 22px; line-height: 1.45; color: var(--ink);
+      margin: 24px auto 0; text-align: center; max-width: 1600px;
       letter-spacing: -0.005em;
     }
     [data-screen-label="04 Market bottom up"] .mkt-spine strong {
@@ -485,7 +439,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-style: italic; color: var(--ink-soft);
       font-size: 17px;
       display: block;
-      margin-top: 6px;
+      margin-top: 4px;
     }
   </style>
 </section>
