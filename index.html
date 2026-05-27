@@ -310,167 +310,184 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 4. MARKET: BOTTOM UP (placeholder) -->
 <section class="slide" data-screen-label="04 Market bottom up">
   <div class="pageno"><svg><use href="#mark"/></svg>04 / 14</div>
-  <div class="frame" style="padding-top: 64px; padding-bottom: 110px;">
-    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Market: bottom-up</p>
-    <h1 class="h1" style="margin: 0 0 32px; max-width: 1700px; font-size: 46px; line-height: 1.1;">The clinic-led wedge is a $2.16M business at ~30 clinics (7% penetration). The category behind it is $92.6B.</h1>
+  <div class="frame" style="padding-top: 72px; padding-bottom: 100px;">
+    <p class="eyebrow" style="margin-bottom: 10px; color: var(--accent);">Market</p>
+    <h1 class="h1" style="margin: 0 0 36px; max-width: 1700px; font-size: 48px; line-height: 1.1;">The clinic is the wedge in. The market behind it is ~106M employer-funded covered lives.</h1>
 
-    <div class="bu-funnel">
+    <div class="mkt-tiers">
 
-      <div class="bu-tier bu-tier--tam">
-        <div class="bu-spine">TAM</div>
-        <div class="bu-left">
-          <span class="bu-label">Clinic-led entry market</span>
-          <span class="bu-num">~$37M<span class="bu-num-sm"> / year</span></span>
+      <div class="mkt-tier mkt-tier--opportunity">
+        <p class="mkt-eyebrow">The opportunity</p>
+        <p class="mkt-title">The employer-funded fertility market</p>
+        <div class="mkt-big">
+          <span class="mkt-big-num">~106M</span>
+          <span class="mkt-big-sub">covered lives</span>
         </div>
-        <div class="bu-right">
-          <p class="bu-logic">457 US fertility clinics &times; ~$80K blended ACV.</p>
-          <p class="bu-source">CDC ART Surveillance 2022</p>
-        </div>
+        <p class="mkt-caption">Progyny&rsquo;s stated total addressable market. They&rsquo;re at ~6.7M lives &mdash; mid-single-digit penetration. The space is enormous and unconsolidated.</p>
+        <p class="mkt-support">Fertility benefits management: <strong>$3.7B (2024) &rarr; $9.6B (2033)</strong>, 10.2% CAGR. 42% of US employers offer fertility benefits today &mdash; up from 30% in 2020.</p>
+        <p class="mkt-source">Progyny 10-Q &middot; DataIntelo &middot; IFEBP 2024</p>
       </div>
 
-      <div class="bu-tier bu-tier--sam">
-        <div class="bu-spine">SAM</div>
-        <div class="bu-left">
-          <span class="bu-label">Serviceable US clinics</span>
-          <span class="bu-num">~$32M<span class="bu-num-sm"> / year</span></span>
-        </div>
-        <div class="bu-right">
-          <p class="bu-logic">~400 serviceable (SART-reporting) clinics &times; ~$80K ACV.</p>
-          <p class="bu-source">SART 2022&ndash;2023</p>
-        </div>
+      <div class="mkt-arrow" aria-hidden="true">
+        <svg viewBox="0 0 60 24" preserveAspectRatio="none">
+          <line x1="0" y1="12" x2="52" y2="12" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <polyline points="46,5 56,12 46,19" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
       </div>
 
-      <div class="bu-tier bu-tier--som">
-        <div class="bu-spine">SOM</div>
-        <div class="bu-left">
-          <span class="bu-label">Obtainable &middot; clinic-led</span>
-          <span class="bu-num">~$2.16M ARR<span class="bu-num-sm"> &middot; net, by Series A</span></span>
+      <div class="mkt-tier mkt-tier--entry">
+        <p class="mkt-eyebrow">Where Carousel enters</p>
+        <p class="mkt-title">The clinic channel</p>
+        <div class="mkt-big">
+          <span class="mkt-big-num">~500</span>
+          <span class="mkt-big-sub">clinics &middot; 251,542 patients/yr</span>
         </div>
-        <div class="bu-right">
-          <p class="bu-logic">~30 clinics &times; ~$80K ACV, net of churn &asymp; ~7% of US fertility clinics.</p>
-          <p class="bu-source">Bottoms-up from clinic-SaaS economics &middot; penetration, not a hockey stick</p>
-        </div>
+        <p class="mkt-caption">US fertility clinics report ~435K ART cycles annually &mdash; 184K of those are egg/embryo freezing. Where willingness-to-pay is fastest to validate; where founder access is real.</p>
+        <p class="mkt-source">CDC ART Surveillance 2022</p>
+      </div>
+
+      <div class="mkt-arrow" aria-hidden="true">
+        <svg viewBox="0 0 60 24" preserveAspectRatio="none">
+          <line x1="0" y1="12" x2="52" y2="12" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <polyline points="46,5 56,12 46,19" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </div>
+
+      <div class="mkt-tier mkt-tier--expand">
+        <p class="mkt-eyebrow">Where Carousel expands</p>
+        <p class="mkt-title">The same product, multiple payers</p>
+        <ul class="mkt-comps">
+          <li><span class="mkt-comp-name">Maven</span><span class="mkt-comp-val">$1.7B</span><span class="mkt-comp-tag">valuation, Series F</span></li>
+          <li><span class="mkt-comp-name">Progyny</span><span class="mkt-comp-val">$1.29B</span><span class="mkt-comp-tag">FY24 revenue</span></li>
+          <li><span class="mkt-comp-name">Carrot</span><span class="mkt-comp-val">$115M+</span><span class="mkt-comp-tag">raised; 55+ countries</span></li>
+        </ul>
+        <p class="mkt-caption">Billion-dollar businesses serving employers in fertility &mdash; none built for the patient herself, longitudinally. Same product, the payer evolves.</p>
+        <p class="mkt-source">Public filings &middot; Sacra &middot; Maven press</p>
       </div>
 
     </div>
 
-    <div class="bu-audit">
-      <p class="bu-audit-label">Assumptions &amp; sources</p>
-      <ul class="bu-audit-list">
-        <li><span class="bu-audit-tag bu-audit-tag--src">SOURCED</span> ~457 US fertility clinics (CDC ART Surveillance 2022). ~400 SART-reporting clinics is the serviceable subset.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--asm">ASSUMPTION</span> ~$80K blended ACV = ~$50K platform fee + per-patient usage (~400 patients &times; ~$75). Platform pricing &mdash; validated in pilot.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--src">DERIVED</span> ~30 paying clinics &times; ~$80K ACV, net of churn &rarr; ~$2.16M ARR &rarr; ~7% of US fertility clinics.</li>
-        <li><span class="bu-audit-tag bu-audit-tag--floor">FLOOR</span> At point-tool pricing (~$42K ACV), the same ramp produces ~$1.14M. $2.16M is the platform-pricing case, validated in pilot.</li>
-      </ul>
-    </div>
-
-    <p class="bu-footer">Clinic-led entry market. Category context: Slide 3. Payer expansion is the venture-scale path (Slide 12).</p>
+    <p class="mkt-spine">One product. The payer changes &mdash; <em>Carousel enters through the clinic because that&rsquo;s where willingness-to-pay is fastest to validate. The market behind it is ~$9.6B in fertility benefits management by 2033.</em></p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="04 Market bottom up"] .bu-funnel {
-      display: flex; flex-direction: column; align-items: center;
-      gap: 14px; margin: 0 auto; max-width: 1700px;
+    [data-screen-label="04 Market bottom up"] .mkt-tiers {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr 60px 1fr;
+      gap: 0;
+      align-items: stretch;
+      max-width: 1700px; margin: 0 auto;
     }
-    [data-screen-label="04 Market bottom up"] .bu-tier {
-      display: grid; grid-template-columns: 100px 1fr 1fr;
-      gap: 32px; align-items: center;
-      padding: 22px 36px 22px 28px; border-radius: 10px;
-      min-height: 130px;
+    [data-screen-label="04 Market bottom up"] .mkt-tier {
+      display: flex; flex-direction: column;
+      padding: 26px 30px;
+      border-radius: 10px;
+      min-height: 380px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-spine {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
+    [data-screen-label="04 Market bottom up"] .mkt-tier--opportunity {
+      background: var(--accent); color: #F7F1E4;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-tier--entry {
+      background: #C99477; color: #F7F1E4;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-tier--expand {
+      background: #5C2E1C; color: #F7F1E4;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-eyebrow {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 54px; font-weight: 700;
-      letter-spacing: 0.14em;
-      line-height: 1;
-      align-self: stretch;
-      display: flex; align-items: center; justify-content: center;
-      padding: 6px 0;
-      color: rgba(247,241,228,0.95);
-      border-right: 1px solid rgba(247,241,228,0.18);
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      opacity: 0.75; margin: 0 0 6px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-tier--tam { width: 100%; background: var(--accent); color: #F7F1E4; }
-    [data-screen-label="04 Market bottom up"] .bu-tier--sam { width: 82%; background: #C99477; color: #F7F1E4; }
-    [data-screen-label="04 Market bottom up"] .bu-tier--som { width: 64%; background: #5C2E1C; color: #F7F1E4; }
-
-    [data-screen-label="04 Market bottom up"] .bu-left {
-      display: flex; flex-direction: column; gap: 5px;
+    [data-screen-label="04 Market bottom up"] .mkt-title {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 22px; line-height: 1.15; letter-spacing: -0.005em;
+      margin: 0 0 18px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-label {
-      font-family: 'Inter Tight', sans-serif; font-size: 13px;
-      font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+    [data-screen-label="04 Market bottom up"] .mkt-big {
+      display: flex; flex-direction: column; gap: 4px;
+      margin: 0 0 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(247,241,228,0.22);
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-big-num {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 64px; font-weight: 500;
+      letter-spacing: -0.04em; line-height: 1;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-big-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px; font-weight: 400;
+      letter-spacing: 0.02em;
+      opacity: 0.85;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-comps {
+      list-style: none; margin: 0 0 16px; padding: 0 0 14px;
+      display: flex; flex-direction: column; gap: 8px;
+      border-bottom: 1px solid rgba(247,241,228,0.22);
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-comps li {
+      display: grid;
+      grid-template-columns: 90px auto 1fr;
+      gap: 12px;
+      align-items: baseline;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-comp-name {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 22px; opacity: 0.85;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-comp-val {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 32px; font-weight: 500;
+      letter-spacing: -0.03em;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-comp-tag {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 12px; font-weight: 400;
       opacity: 0.7;
     }
-    [data-screen-label="04 Market bottom up"] .bu-num {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 42px; line-height: 1.05; letter-spacing: -0.01em;
-    }
-    [data-screen-label="04 Market bottom up"] .bu-num-sm {
-      font-family: 'Inter Tight', sans-serif; font-style: normal;
-      font-size: 16px; font-weight: 300; opacity: 0.8; letter-spacing: 0;
-    }
-    [data-screen-label="04 Market bottom up"] .bu-right {
-      display: flex; flex-direction: column; gap: 6px;
-    }
-    [data-screen-label="04 Market bottom up"] .bu-logic {
-      font-family: 'Inter Tight', sans-serif; font-size: 17px;
-      font-weight: 300; line-height: 1.35; margin: 0;
-      color: rgba(247,241,228,0.92);
-    }
-    [data-screen-label="04 Market bottom up"] .bu-source {
-      font-family: 'Inter Tight', sans-serif; font-size: 12px;
-      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(247,241,228,0.6); margin: 0;
-    }
-    [data-screen-label="04 Market bottom up"] .bu-audit {
-      margin: 20px auto 0; max-width: 1500px;
-      padding: 16px 22px;
-      border: 1px dashed rgba(60,40,30,0.25);
-      border-radius: 8px;
-      background: rgba(247,241,228,0.4);
-    }
-    [data-screen-label="04 Market bottom up"] .bu-audit-label {
+    [data-screen-label="04 Market bottom up"] .mkt-caption {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 11px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-mute);
-      margin: 0 0 8px;
+      font-size: 14px; font-weight: 300;
+      line-height: 1.45; color: rgba(247,241,228,0.94);
+      margin: 0 0 12px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-audit-list {
-      list-style: none; margin: 0; padding: 0;
-      display: flex; flex-direction: column; gap: 5px;
-    }
-    [data-screen-label="04 Market bottom up"] .bu-audit-list li {
+    [data-screen-label="04 Market bottom up"] .mkt-support {
       font-family: 'Inter Tight', sans-serif;
       font-size: 13px; font-weight: 300;
-      line-height: 1.45; color: var(--ink-soft);
-      display: flex; align-items: flex-start; gap: 10px;
+      line-height: 1.45; color: rgba(247,241,228,0.92);
+      margin: 0 0 12px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-audit-tag {
-      flex: 0 0 auto;
+    [data-screen-label="04 Market bottom up"] .mkt-support strong {
+      font-weight: 500;
+    }
+    [data-screen-label="04 Market bottom up"] .mkt-source {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 0.16em; text-transform: uppercase;
-      padding: 3px 7px; border-radius: 3px;
-      line-height: 1;
-      margin-top: 2px;
+      font-size: 10px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(247,241,228,0.65);
+      margin: auto 0 0;
+      padding-top: 10px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-audit-tag--src {
-      background: rgba(149,74,45,0.14); color: var(--accent);
+    [data-screen-label="04 Market bottom up"] .mkt-arrow {
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-mute);
     }
-    [data-screen-label="04 Market bottom up"] .bu-audit-tag--asm {
-      background: rgba(60,40,30,0.10); color: var(--ink-mute);
+    [data-screen-label="04 Market bottom up"] .mkt-arrow svg {
+      width: 100%; height: 24px;
     }
-    [data-screen-label="04 Market bottom up"] .bu-audit-tag--floor {
-      background: rgba(60,40,30,0.18); color: var(--ink);
+    [data-screen-label="04 Market bottom up"] .mkt-spine {
+      font-family: 'Instrument Serif', serif;
+      font-size: 22px; line-height: 1.45; color: var(--ink);
+      margin: 28px auto 0; text-align: center; max-width: 1500px;
+      letter-spacing: -0.005em;
     }
-    [data-screen-label="04 Market bottom up"] .bu-footer {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 18px; line-height: 1.4; color: var(--ink);
-      margin: 18px auto 0; text-align: center; max-width: 1300px;
+    [data-screen-label="04 Market bottom up"] .mkt-spine em {
+      font-style: italic; color: var(--ink-soft);
+      font-size: 17px;
+      display: block;
+      margin-top: 4px;
     }
   </style>
 </section>
