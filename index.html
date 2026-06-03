@@ -310,142 +310,105 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 4. MARKET: WEDGE & PRIZE (combined) -->
 <section class="slide" data-screen-label="04 Market bottom up" style="background: #FBF6EC;">
   <div class="pageno"><svg><use href="#mark"/></svg>04 / 13</div>
-  <div class="frame" style="padding: 88px 110px 110px;">
-    <p class="eyebrow" style="margin-bottom: 14px; color: #993C1D;">Market &middot; the wedge and the prize</p>
-    <h1 class="h1" style="margin: 0 0 56px; max-width: 1700px; font-size: 60px; line-height: 1.08; color: #4A1B0C;">The clinic is the wedge. The market behind it is proven &mdash; and barely touched.</h1>
+  <div class="frame" style="padding: 72px 110px 100px;">
+    <p class="eyebrow" style="margin-bottom: 14px; color: #993C1D;">Market: Clinic to Employer</p>
+    <h1 class="h1" style="margin: 0 0 40px; max-width: 1700px; font-size: 52px; line-height: 1.1; color: #4A1B0C;">The clinic is the wedge to the employer market, a $20B+ opportunity.</h1>
 
-    <div class="wp-grid">
+    <div class="wp-tiers">
 
-      <div class="wp-left">
-        <div class="wp-wedge-box">
-          <svg class="wp-wedge" viewBox="0 0 700 360" aria-hidden="true">
-            <path d="M 0 180 L 224 116 L 224 244 Z" fill="#D85A30"/>
-            <path d="M 224 116 L 700 0 L 700 360 L 224 244 Z" fill="#4A1B0C"/>
-            <text x="130" y="178" text-anchor="middle" class="wp-tip-num">~500</text>
-            <text x="130" y="205" text-anchor="middle" class="wp-tip-lbl">clinics enter</text>
-            <text x="300" y="174" text-anchor="start" class="wp-body-num">THE MARKET</text>
-            <text x="300" y="200" text-anchor="start" class="wp-body-lbl">opens behind it</text>
-          </svg>
+      <div class="wp-tier wp-tier--wedge">
+        <div class="wp-tier-text">
+          <p class="wp-label">U.S. Clinic SaaS Wedge</p>
+          <p class="wp-math">~400 SART-reporting clinics &times; ~$80K blended ACV</p>
         </div>
-        <p class="wp-caption">251K patients/yr &middot; CDC ART Surveillance 2022</p>
+        <p class="wp-hero">~$32M</p>
       </div>
 
-      <div class="wp-right">
-        <div class="wp-row">
-          <p class="wp-num">~106M</p>
-          <p class="wp-desc">covered lives &middot; Progyny&rsquo;s stated market, ~6% in</p>
+      <div class="wp-tier wp-tier--proof">
+        <div class="wp-tier-text">
+          <p class="wp-label">Proof it Pays</p>
+          <p class="wp-math">Progyny FY25 revenue &middot; ~100% client retention &middot; ~6% market penetration</p>
         </div>
-        <div class="wp-row">
-          <p class="wp-num">$1.29B</p>
-          <p class="wp-desc">Progyny FY25 revenue &middot; proof it pays</p>
+        <p class="wp-hero">$1.29B</p>
+      </div>
+
+      <div class="wp-tier wp-tier--prize">
+        <div class="wp-tier-text">
+          <p class="wp-label">Employer Market at Saturation</p>
+          <p class="wp-math">~106M covered lives &times; ~$200 per life &middot; Progyny&rsquo;s stated TAM</p>
         </div>
-        <div class="wp-row">
-          <p class="wp-num wp-num--comps">Progyny &middot; Maven &middot; Carrot</p>
-          <p class="wp-desc">three billion-dollar businesses &mdash; none built for her</p>
-        </div>
-        <p class="wp-source">Progyny 10-K FY24 &middot; FY25 earnings</p>
+        <p class="wp-hero">~$20B</p>
       </div>
 
     </div>
 
-    <p class="wp-foot"><em>One product. The payer evolves &mdash; clinic, then employer.</em></p>
+    <p class="wp-source-line">CDC ART Surveillance 2022 &middot; Progyny 10-K FY24 &middot; Progyny FY25 earnings</p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="04 Market bottom up"] .wp-grid {
+    [data-screen-label="04 Market bottom up"] .wp-tiers {
+      display: flex; flex-direction: column;
+      max-width: 1700px; margin: 0 auto;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier {
       display: grid;
-      grid-template-columns: 45% 1fr;
-      gap: 80px;
+      grid-template-columns: 1fr auto;
+      gap: 64px;
       align-items: center;
+      padding: 36px 0;
+      border-top: 1px solid rgba(74,27,12,0.14);
     }
-    [data-screen-label="04 Market bottom up"] .wp-left {
+    [data-screen-label="04 Market bottom up"] .wp-tier:last-child {
+      border-bottom: 1px solid rgba(74,27,12,0.14);
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier--prize {
+      padding: 48px 0;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier-text {
       display: flex; flex-direction: column;
-      align-items: stretch;
+      gap: 10px;
     }
-    [data-screen-label="04 Market bottom up"] .wp-wedge-box {
-      width: 100%;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-wedge {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-tip-num {
-      font-family: 'Instrument Serif', serif;
-      font-size: 36px;
-      font-weight: 400;
-      fill: #FFF1E3;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-tip-lbl {
+    [data-screen-label="04 Market bottom up"] .wp-label {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      fill: rgba(255,241,227,0.92);
-    }
-    [data-screen-label="04 Market bottom up"] .wp-body-num {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      fill: #F5C4B3;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-body-lbl {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 14px;
-      font-weight: 400;
-      fill: rgba(245,196,179,0.85);
-    }
-    [data-screen-label="04 Market bottom up"] .wp-caption {
-      margin: 32px 0 0;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 15px; font-weight: 400;
-      color: #888780;
-      text-align: left;
-      padding-left: 6%;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-right {
-      display: flex; flex-direction: column;
-      gap: 36px;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-row {
-      display: flex; flex-direction: column;
-      gap: 8px;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-num {
-      font-family: 'Instrument Serif', serif;
-      font-size: 96px; font-weight: 400;
-      letter-spacing: -0.012em; line-height: 1;
-      color: #4A1B0C;
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: #993C1D;
       margin: 0;
     }
-    [data-screen-label="04 Market bottom up"] .wp-num--comps {
-      font-size: 56px;
-      font-style: italic;
-      color: #993C1D;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-desc {
+    [data-screen-label="04 Market bottom up"] .wp-math {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 20px; font-weight: 400;
+      font-size: 19px; font-weight: 400;
       line-height: 1.4;
       color: #5F5E5A;
       margin: 0;
+      max-width: 720px;
     }
-    [data-screen-label="04 Market bottom up"] .wp-source {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 13px; font-weight: 400;
-      color: #888780;
-      margin: 8px 0 0;
-    }
-    [data-screen-label="04 Market bottom up"] .wp-foot {
-      position: absolute;
-      left: 110px; bottom: 88px;
+    [data-screen-label="04 Market bottom up"] .wp-hero {
       font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 22px; line-height: 1.3;
-      color: #5F5E5A;
+      font-weight: 400;
+      letter-spacing: -0.018em; line-height: 0.9;
+      color: #4A1B0C;
       margin: 0;
-      max-width: 1200px;
+      text-align: right;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier--wedge .wp-hero {
+      font-size: 72px;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier--proof .wp-hero {
+      font-size: 132px;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-tier--prize .wp-hero {
+      font-size: 208px;
+    }
+    [data-screen-label="04 Market bottom up"] .wp-source-line {
+      margin: 24px 0 0;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: #888780;
+      text-align: right;
+      max-width: 1700px;
     }
   </style>
 </section>
