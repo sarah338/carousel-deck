@@ -614,7 +614,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>08 / 13</div>
   <div class="frame" style="padding-top: 72px; padding-bottom: 90px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1">Carousel&rsquo;s entry point is with the &ldquo;fertility-curious&rdquo; woman, and Carousel stays with her through her non-linear fertility journey, from egg freezing through IVF and beyond.</h1>
+    <h1 class="h1">Carousel&rsquo;s wedge is the <em>Egg Freeze Curious</em> woman &mdash; white space no one else is targeting &mdash; then stays with her through her non-linear journey, from egg freezing through IVF and beyond.</h1>
 
     <div class="ja-stack">
 
@@ -650,8 +650,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-frag-cos">Frame &middot; Conceive</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 6; grid-row: 7;">
-          <p class="ja-frag-cat">Employer-funded fertility benefits &middot; employer &middot; health-plan &middot; partial D2C</p>
+        <div class="ja-frag ja-frag--incumbent" style="grid-column: 2 / span 5; grid-row: 7;">
+          <p class="ja-frag-cat">Employer-funded fertility benefits</p>
           <p class="ja-frag-cos ja-frag-cos--logos">
             <img class="ja-incum-logo ja-incum-logo--maven" src="assets/logos/maven.png?v=3" alt="Maven Clinic">
             <span class="ja-incum-sep">&middot;</span>
@@ -670,7 +670,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="ja-carousel-features">
           <span class="ja-feature">AI-first</span>
           <span class="ja-feature-dot"></span>
+          <span class="ja-feature">App-native</span>
+          <span class="ja-feature-dot"></span>
           <span class="ja-feature">Always-on</span>
+          <span class="ja-feature-dot"></span>
+          <span class="ja-feature">Real-time cycle tracking</span>
+          <span class="ja-feature-dot"></span>
+          <span class="ja-feature">Personalized education</span>
           <span class="ja-feature-dot"></span>
           <span class="ja-feature">Community</span>
           <span class="ja-feature-dot"></span>
@@ -684,9 +690,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
       <!-- Layer 3: journey arc -->
       <div class="ja-arc">
-        <div class="ja-stage" style="grid-column: 1;">
+        <div class="ja-stage ja-stage--wedge" style="grid-column: 1;">
           <div class="ja-dot"></div>
-          <p class="ja-num">01</p>
+          <p class="ja-num">01 &middot; Carousel&rsquo;s wedge</p>
           <p class="ja-label">Egg Freeze Curious</p>
         </div>
         <div class="ja-stage" style="grid-column: 2;">
@@ -814,8 +820,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="08 Journey"] .ja-incum-text {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 19px; font-weight: 600;
-      color: var(--ink);
+      font-size: 15px; font-weight: 400;
+      color: var(--ink-soft);
     }
     [data-screen-label="08 Journey"] .ja-frag-thin {
       font-style: italic; font-weight: 400;
@@ -910,7 +916,18 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--ink-mute);
-      margin: 14px 0 4px;
+      margin: 28px 0 4px;
+    }
+    [data-screen-label="08 Journey"] .ja-stage--wedge .ja-num {
+      color: var(--accent);
+    }
+    [data-screen-label="08 Journey"] .ja-stage--wedge .ja-label {
+      color: var(--accent);
+      font-weight: 700;
+    }
+    [data-screen-label="08 Journey"] .ja-stage--wedge .ja-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 5px var(--bg), 0 0 0 7px rgba(149,74,45,0.35);
     }
     [data-screen-label="08 Journey"] .ja-label {
       font-family: 'Inter Tight', sans-serif;
@@ -958,15 +975,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="08 Journey"] .ja-carousel-features {
       display: flex; align-items: center; justify-content: center;
-      gap: 14px;
+      flex-wrap: wrap;
+      row-gap: 8px;
+      column-gap: 10px;
       margin: 0 0 12px;
     }
     [data-screen-label="08 Journey"] .ja-feature {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase;
+      font-size: 11.5px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--accent);
-      padding: 6px 14px;
+      padding: 5px 11px;
       border: 1px solid rgba(149,74,45,0.45);
       border-radius: 999px;
       background: rgba(247,241,228,0.6);
