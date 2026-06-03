@@ -632,7 +632,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         </div>
         <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 3;">
           <p class="ja-frag-cat">Direct-to-patient egg freezing</p>
-          <p class="ja-frag-cos">Cofertility</p>
+          <p class="ja-frag-cos">Cofertility &middot; Sunfish</p>
           <div class="ja-frag-bar"></div>
         </div>
         <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 4;">
@@ -645,14 +645,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-frag-cos">CCRM &middot; Shady Grove &middot; Kindbody &middot; Spring Fertility</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag" style="grid-column: 1 / span 2; grid-row: 6;">
+        <div class="ja-frag" style="grid-column: 4 / span 2; grid-row: 6;">
           <p class="ja-frag-cat">IVF preconception coaching <span class="ja-frag-thin">&mdash; IVF path only</span></p>
           <p class="ja-frag-cos">Frame &middot; Conceive</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 5; grid-row: 7;">
+        <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 6; grid-row: 7;">
           <p class="ja-frag-cat">Employer-funded fertility benefits &middot; employer &middot; health-plan &middot; partial D2C</p>
-          <p class="ja-frag-cos">Maven Clinic &middot; Progyny &middot; Carrot &middot; Pendant Health <span class="ja-frag-thin">(Emerging)</span></p>
+          <p class="ja-frag-cos ja-frag-cos--logos">
+            <img class="ja-incum-logo ja-incum-logo--maven" src="assets/logos/maven.png?v=3" alt="Maven Clinic">
+            <span class="ja-incum-sep">&middot;</span>
+            <img class="ja-incum-logo ja-incum-logo--progyny" src="assets/logos/Progyny.png?v=3" alt="Progyny">
+            <span class="ja-incum-sep">&middot;</span>
+            <img class="ja-incum-logo ja-incum-logo--carrot" src="assets/logos/carrot.png?v=3" alt="Carrot Fertility">
+            <span class="ja-incum-sep">&middot;</span>
+            <span class="ja-incum-text">Pendant Health <span class="ja-frag-thin">(Emerging)</span></span>
+          </p>
           <div class="ja-frag-bar ja-frag-bar-bold"></div>
         </div>
       </div>
@@ -670,8 +678,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <span class="ja-feature-dot"></span>
           <span class="ja-feature">Longitudinal</span>
         </div>
+        <p class="ja-carousel-name">Carousel</p>
         <div class="ja-carousel-line"></div>
-        <p class="ja-carousel-label">Carousel is the patient-centric AI app &mdash; community-led mental health support, always-on, across her non-linear fertility journey.</p>
       </div>
 
       <!-- Layer 3: journey arc -->
@@ -679,8 +687,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="ja-stage" style="grid-column: 1;">
           <div class="ja-dot"></div>
           <p class="ja-num">01</p>
-          <p class="ja-label">Egg Freeze<br>Curious</p>
-          <p class="ja-label ja-label-or">or IVF-Curious</p>
+          <p class="ja-label">Egg Freeze Curious</p>
         </div>
         <div class="ja-stage" style="grid-column: 2;">
           <div class="ja-dot"></div>
@@ -690,16 +697,21 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="ja-stage" style="grid-column: 3;">
           <div class="ja-dot"></div>
           <p class="ja-num">03</p>
-          <p class="ja-label">Active cycle <span class="ja-label-sub">freeze or IVF</span></p>
+          <p class="ja-label">Active cycle <span class="ja-label-sub">freeze</span></p>
         </div>
         <div class="ja-stage" style="grid-column: 4;">
           <div class="ja-dot"></div>
           <p class="ja-num">04</p>
-          <p class="ja-label">Decision to use / return</p>
+          <p class="ja-label">IVF-Curious</p>
         </div>
         <div class="ja-stage" style="grid-column: 5;">
           <div class="ja-dot"></div>
           <p class="ja-num">05</p>
+          <p class="ja-label">Decision to use / return</p>
+        </div>
+        <div class="ja-stage" style="grid-column: 6;">
+          <div class="ja-dot"></div>
+          <p class="ja-num">06</p>
           <p class="ja-label">Treatment</p>
         </div>
       </div>
@@ -725,7 +737,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Layer 1: brackets ============ */
     [data-screen-label="08 Journey"] .ja-frags {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       row-gap: 6px;
       column-gap: 0;
       padding: 0 0 16px;
@@ -782,6 +794,29 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-weight: 600;
       color: var(--ink);
     }
+    [data-screen-label="08 Journey"] .ja-frag-cos--logos {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 14px;
+      line-height: 1;
+    }
+    [data-screen-label="08 Journey"] .ja-incum-logo {
+      height: auto; width: auto;
+      object-fit: contain;
+      display: inline-block;
+    }
+    [data-screen-label="08 Journey"] .ja-incum-logo--maven { max-height: 18px; max-width: 110px; }
+    [data-screen-label="08 Journey"] .ja-incum-logo--progyny { max-height: 28px; max-width: 130px; }
+    [data-screen-label="08 Journey"] .ja-incum-logo--carrot { max-height: 30px; max-width: 90px; }
+    [data-screen-label="08 Journey"] .ja-incum-sep {
+      color: var(--ink-mute);
+      font-size: 18px;
+      opacity: 0.55;
+    }
+    [data-screen-label="08 Journey"] .ja-incum-text {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 19px; font-weight: 600;
+      color: var(--ink);
+    }
     [data-screen-label="08 Journey"] .ja-frag-thin {
       font-style: italic; font-weight: 400;
       text-transform: none;
@@ -793,7 +828,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Secondary entry door ============ */
     [data-screen-label="08 Journey"] .ja-second-door {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       padding: 0 0 6px;
     }
     [data-screen-label="08 Journey"] .ja-second-entry {
@@ -842,7 +877,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Layer 2: arc ============ */
     [data-screen-label="08 Journey"] .ja-arc {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       position: relative;
       padding: 16px 0 16px;
     }
@@ -875,7 +910,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-size: 11px; font-weight: 600;
       letter-spacing: 0.22em; text-transform: uppercase;
       color: var(--ink-mute);
-      margin: 30px 0 6px;
+      margin: 14px 0 4px;
     }
     [data-screen-label="08 Journey"] .ja-label {
       font-family: 'Inter Tight', sans-serif;
@@ -943,25 +978,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       background: rgba(149,74,45,0.45);
       flex-shrink: 0;
     }
+    [data-screen-label="08 Journey"] .ja-carousel-name {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 22px; font-weight: 700;
+      letter-spacing: 0.02em;
+      color: #C26B45;
+      margin: 0 0 10px;
+      text-align: center;
+    }
     [data-screen-label="08 Journey"] .ja-carousel-line {
       height: 12px;
-      background: var(--accent);
+      background: #C26B45;
       border-radius: 6px;
       box-shadow:
-        0 0 0 1px rgba(149,74,45,0.18),
-        0 12px 40px rgba(149,74,45,0.5),
-        0 4px 16px rgba(149,74,45,0.35);
-    }
-    [data-screen-label="08 Journey"] .ja-carousel-label {
-      text-align: center;
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 17px; font-weight: 400;
-      color: var(--ink-soft);
-      margin: 14px auto 0;
-      letter-spacing: -0.005em;
-      max-width: 1300px;
-      line-height: 1.4;
+        0 0 0 1px rgba(194,107,69,0.18),
+        0 10px 32px rgba(194,107,69,0.35),
+        0 4px 14px rgba(194,107,69,0.25);
     }
 
     /* ============ Foot copy ============ */
@@ -989,7 +1021,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 
     <div class="rule" style="margin-bottom: 14px;"></div>
 
-    <div style="display:grid; grid-template-columns: repeat(5, 1fr); gap: 24px;">
+    <div style="display:grid; grid-template-columns: repeat(6, 1fr); gap: 24px;">
 
       <!-- 01 · PERSONALIZED FORECASTING — corrected SART data -->
       <div class="prod-col" style="text-align:center;">
