@@ -711,10 +711,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-num">05</p>
           <p class="ja-label">Treatment</p>
         </div>
-        <div class="ja-stage ja-stage-abyss" style="grid-column: 7;">
-          <p class="ja-num ja-num-abyss">The abyss</p>
-          <p class="ja-label ja-label-abyss">And it happens<br/>again.</p>
-        </div>
       </div>
 
       <!-- Layer 3: continuous Carousel line -->
@@ -740,19 +736,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       width: 100%;
       background: linear-gradient(to right,
         transparent 0,
-        transparent 42.857%,
-        rgba(60,40,30,0.028) 42.857%,
-        rgba(60,40,30,0.028) 57.143%,
-        transparent 57.143%,
-        transparent 85.714%,
-        rgba(60,40,30,0.028) 85.714%,
-        rgba(60,40,30,0.028) 100%);
+        transparent 50%,
+        rgba(60,40,30,0.028) 50%,
+        rgba(60,40,30,0.028) 66.667%,
+        transparent 66.667%,
+        transparent 100%);
     }
 
     /* ============ Layer 1: brackets ============ */
     [data-screen-label="08 Journey"] .ja-frags {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       row-gap: 6px;
       column-gap: 0;
       padding: 0 0 16px;
@@ -820,7 +814,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Secondary entry door ============ */
     [data-screen-label="08 Journey"] .ja-second-door {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       padding: 0 0 6px;
     }
     [data-screen-label="08 Journey"] .ja-second-entry {
@@ -869,7 +863,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     /* ============ Layer 2: arc ============ */
     [data-screen-label="08 Journey"] .ja-arc {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       position: relative;
       padding: 16px 0 16px;
     }
