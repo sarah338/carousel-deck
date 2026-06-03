@@ -612,7 +612,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 9. COMPETITIVE LANDSCAPE -->
 <section class="slide" data-screen-label="08 Journey">
   <div class="pageno"><svg><use href="#mark"/></svg>08 / 13</div>
-  <div class="frame" style="padding-top: 76px; padding-bottom: 180px;">
+  <div class="frame" style="padding-top: 72px; padding-bottom: 90px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
     <h1 class="h1">Carousel&rsquo;s entry point is with the &ldquo;fertility-curious&rdquo; woman, and Carousel stays with her through her non-linear fertility journey, from egg freezing through IVF and beyond.</h1>
 
@@ -645,28 +645,15 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-frag-cos">CCRM &middot; Shady Grove &middot; Kindbody &middot; Spring Fertility</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag" style="grid-column: 4 / span 2; grid-row: 6;">
-          <p class="ja-frag-cat">IVF preconception coaching</p>
+        <div class="ja-frag" style="grid-column: 1 / span 2; grid-row: 6;">
+          <p class="ja-frag-cat">IVF preconception coaching <span class="ja-frag-thin">&mdash; IVF path only</span></p>
           <p class="ja-frag-cos">Frame &middot; Conceive</p>
           <div class="ja-frag-bar"></div>
         </div>
         <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 5; grid-row: 7;">
-          <p class="ja-frag-cat">Established billion-dollar players &middot; employer &middot; health-plan &middot; partial D2C</p>
-          <p class="ja-frag-cos">Maven Clinic &middot; Progyny &middot; Carrot</p>
+          <p class="ja-frag-cat">Employer-funded fertility benefits &middot; employer &middot; health-plan &middot; partial D2C</p>
+          <p class="ja-frag-cos">Maven Clinic &middot; Progyny &middot; Carrot &middot; Pendant Health <span class="ja-frag-thin">(Emerging)</span></p>
           <div class="ja-frag-bar ja-frag-bar-bold"></div>
-        </div>
-        <div class="ja-frag" style="grid-column: 1 / span 5; grid-row: 8;">
-          <p class="ja-frag-cat">Emerging employer-benefit player &middot; ex-Kindbody &middot; ex-Progyny team</p>
-          <p class="ja-frag-cos">Pendant Health</p>
-          <div class="ja-frag-bar"></div>
-        </div>
-      </div>
-
-      <!-- Secondary entry door -->
-      <div class="ja-second-door">
-        <div class="ja-second-entry" style="grid-column: 4;">
-          <p class="ja-second-text">or enters here</p>
-          <p class="ja-second-sub">straight to IVF &mdash; no freeze</p>
         </div>
       </div>
 
@@ -692,7 +679,8 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="ja-stage" style="grid-column: 1;">
           <div class="ja-dot"></div>
           <p class="ja-num">01</p>
-          <p class="ja-label">Fertility-curious</p>
+          <p class="ja-label">Egg Freeze<br>Curious</p>
+          <p class="ja-label ja-label-or">or IVF-Curious</p>
         </div>
         <div class="ja-stage" style="grid-column: 2;">
           <div class="ja-dot"></div>
@@ -899,6 +887,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-weight: 300; font-style: italic;
       color: var(--ink-soft); font-size: 13px;
       display: block; margin-top: 2px;
+    }
+    [data-screen-label="08 Journey"] .ja-label-or {
+      font-weight: 400;
+      color: var(--ink-soft); font-size: 14px;
+      margin-top: 4px;
+      font-style: italic;
+    }
+    [data-screen-label="08 Journey"] .ja-label-or::before {
+      content: "↳ ";
+      opacity: 0.55;
+      margin-right: 2px;
     }
     [data-screen-label="08 Journey"] .ja-stage-abyss .ja-num-abyss {
       font-family: 'Instrument Serif', serif;
