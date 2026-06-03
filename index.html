@@ -614,7 +614,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>08 / 13</div>
   <div class="frame" style="padding-top: 88px; padding-bottom: 140px;">
     <p class="eyebrow" style="margin-bottom: 8px; color: var(--accent);">Competitive landscape</p>
-    <h1 class="h1">Others span the journey too &mdash; but theirs is employer-gated. Carousel is <em>hers</em>, directly, and stays.</h1>
+    <h1 class="h1">Carousel&rsquo;s entry point is with the &ldquo;fertility-curious&rdquo; woman, and Carousel stays with her through her non-linear fertility journey, from egg freezing through IVF and beyond.</h1>
 
     <div class="ja-stack">
 
@@ -635,25 +635,25 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="ja-frag-cos">Sunfish &middot; Gaia &middot; Future Family</p>
           <div class="ja-frag-bar"></div>
         </div>
-        <div class="ja-frag" style="grid-column: 1 / span 3; grid-row: 4;">
-          <p class="ja-frag-cat">Employer-gated benefits</p>
+        <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 3; grid-row: 4;">
+          <p class="ja-frag-cat">Employer-gated benefits &middot; $1B+ players</p>
           <p class="ja-frag-cos">Progyny &middot; Carrot</p>
-          <div class="ja-frag-bar ja-frag-bar-thin"></div>
+          <div class="ja-frag-bar ja-frag-bar-bold"></div>
         </div>
-        <div class="ja-frag ja-frag--ghost" style="grid-column: 5 / span 2; grid-row: 4;">
+        <div class="ja-frag ja-frag--incumbent ja-frag--ghost" style="grid-column: 5 / span 2; grid-row: 4;">
           <p class="ja-frag-cat">&nbsp;</p>
           <p class="ja-frag-cos">Progyny &middot; Carrot <span class="ja-frag-thin">(cont.)</span></p>
-          <div class="ja-frag-bar ja-frag-bar-thin"></div>
+          <div class="ja-frag-bar ja-frag-bar-bold"></div>
         </div>
-        <div class="ja-frag" style="grid-column: 1 / span 3; grid-row: 7;">
-          <p class="ja-frag-cat">Employer &amp; health-plan platform</p>
-          <p class="ja-frag-cos">Maven</p>
-          <div class="ja-frag-bar ja-frag-bar-thin"></div>
+        <div class="ja-frag ja-frag--incumbent" style="grid-column: 1 / span 3; grid-row: 7;">
+          <p class="ja-frag-cat">Employer &amp; health-plan platform &middot; $1.7B leader</p>
+          <p class="ja-frag-cos">Maven Clinic</p>
+          <div class="ja-frag-bar ja-frag-bar-bold"></div>
         </div>
-        <div class="ja-frag ja-frag--ghost" style="grid-column: 5 / span 2; grid-row: 7;">
+        <div class="ja-frag ja-frag--incumbent ja-frag--ghost" style="grid-column: 5 / span 2; grid-row: 7;">
           <p class="ja-frag-cat">&nbsp;</p>
-          <p class="ja-frag-cos">Maven <span class="ja-frag-thin">(cont.)</span></p>
-          <div class="ja-frag-bar ja-frag-bar-thin"></div>
+          <p class="ja-frag-cos">Maven Clinic <span class="ja-frag-thin">(cont.)</span></p>
+          <div class="ja-frag-bar ja-frag-bar-bold"></div>
         </div>
         <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 5;">
           <p class="ja-frag-cat">Clinical AI &amp; workflow</p>
@@ -663,6 +663,11 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
         <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 6;">
           <p class="ja-frag-cat">Clinic networks</p>
           <p class="ja-frag-cos">CCRM &middot; Shady Grove &middot; Kindbody &middot; Spring Fertility</p>
+          <div class="ja-frag-bar"></div>
+        </div>
+        <div class="ja-frag" style="grid-column: 3 / span 1; grid-row: 8;">
+          <p class="ja-frag-cat">Direct-to-patient egg freezing</p>
+          <p class="ja-frag-cos">Cofertility</p>
           <div class="ja-frag-bar"></div>
         </div>
       </div>
@@ -787,6 +792,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       border-top: 1.5px dashed rgba(60,40,30,0.32);
       border-left: 1.5px dashed rgba(60,40,30,0.32);
       border-right: 1.5px dashed rgba(60,40,30,0.32);
+    }
+    [data-screen-label="08 Journey"] .ja-frag-bar-bold {
+      height: 14px;
+      border-top: 3px solid var(--accent);
+      border-left: 3px solid var(--accent);
+      border-right: 3px solid var(--accent);
+    }
+    [data-screen-label="08 Journey"] .ja-frag--incumbent .ja-frag-cat {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    [data-screen-label="08 Journey"] .ja-frag--incumbent .ja-frag-cos {
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--ink);
     }
     [data-screen-label="08 Journey"] .ja-frag-thin {
       font-style: italic; font-weight: 400;
