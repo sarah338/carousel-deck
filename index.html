@@ -255,140 +255,181 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 <!-- 3. THE MARKET (Progyny-anchored) -->
 <section class="slide" data-screen-label="03 Market">
   <div class="pageno"><svg><use href="#mark"/></svg>03 / 12</div>
-  <div class="frame" style="padding: 72px 110px 100px;">
-    <p class="eyebrow" style="margin-bottom: 20px; color: var(--accent);">The market</p>
+  <div class="frame" style="padding: 76px 110px 96px;">
+    <p class="eyebrow" style="margin-bottom: 16px; color: #9E4A2E;">The market</p>
 
-    <h1 class="h1" style="margin: 0 0 20px; max-width: 1700px; font-size: 54px; line-height: 1.1;">One company has already built a $1.2&nbsp;billion business here &mdash; and says it&rsquo;s barely begun.</h1>
+    <h1 class="h1" style="margin: 0 0 44px; max-width: 1700px; font-size: 54px; line-height: 1.1;">One company already built a $1.2&nbsp;billion business here &mdash; and says it&rsquo;s barely begun.</h1>
 
-    <p class="mkt-kicker">Progyny proved employers will pay for fertility at scale. The longitudinal experience layer is still wide open.</p>
+    <!-- Body: circle hero left, satellites right -->
+    <div class="mkt-body">
 
-    <div class="mkt-tiers">
-
-      <!-- Tier 1: PROOF IT PAYS — light tan -->
-      <div class="mkt-tier mkt-tier--1">
-        <div class="mkt-tier-left">
-          <p class="mkt-tier-label">Proof it pays</p>
-          <p class="mkt-tier-hero">$1.17B</p>
-        </div>
-        <div class="mkt-tier-right">
-          <p class="mkt-tier-body">Progyny&rsquo;s FY2024 revenue &mdash; with ~100% client retention. Today&rsquo;s product is point-in-time and employer-gated. People already pay, at scale.</p>
-          <p class="mkt-tier-src">Progyny FY2024 results &middot; SEC-filed</p>
+      <!-- Hero circle -->
+      <div class="mkt-orb-wrap">
+        <div class="mkt-orb">
+          <p class="mkt-orb-num">$1.17B</p>
+          <p class="mkt-orb-label">Progyny revenue</p>
+          <div class="mkt-orb-rule"></div>
+          <p class="mkt-orb-note">~100% client retention</p>
+          <p class="mkt-orb-quote">&ldquo;the earliest stages&rdquo;</p>
         </div>
       </div>
 
-      <!-- Tier 2: BARELY PENETRATED — mid terracotta -->
-      <div class="mkt-tier mkt-tier--2">
-        <div class="mkt-tier-left">
-          <p class="mkt-tier-label">Barely penetrated</p>
-          <p class="mkt-tier-hero">150M+</p>
+      <!-- Satellites -->
+      <div class="mkt-sats">
+
+        <div class="mkt-sat">
+          <span class="mkt-sat-dot"></span>
+          <div class="mkt-sat-text">
+            <p class="mkt-sat-lead"><span class="mkt-sat-lead-em">Headroom</span> &mdash; 100M+ lives addressed today &middot; 50M+ more underway</p>
+            <p class="mkt-sat-sub">Progyny&rsquo;s own expansion path &mdash; large employers &rarr; small business</p>
+          </div>
         </div>
-        <div class="mkt-tier-right">
-          <p class="mkt-tier-body">Covered lives Progyny is going after &mdash; 100M+ addressed today, 50M+ more underway in small and mid-sized businesses. Still, in its own words, &ldquo;the earliest stages.&rdquo;</p>
-          <p class="mkt-tier-src">Progyny Q3 2025 earnings call</p>
+
+        <div class="mkt-sat">
+          <span class="mkt-sat-dot"></span>
+          <div class="mkt-sat-text">
+            <p class="mkt-sat-lead"><span class="mkt-sat-lead-em">Category is venture-proven</span> &mdash; Maven &middot; Carrot &middot; Midi &middot; Kindbody</p>
+            <p class="mkt-sat-sub">The model is established.</p>
+          </div>
         </div>
+
+        <div class="mkt-sat">
+          <span class="mkt-sat-dot"></span>
+          <div class="mkt-sat-text">
+            <p class="mkt-sat-lead"><span class="mkt-sat-lead-em">The wedge</span> &mdash; Carousel enters one layer earlier, through the clinic</p>
+            <p class="mkt-sat-sub">Where she already is, and grows with her.</p>
+          </div>
+        </div>
+
       </div>
 
     </div>
 
-    <!-- Category-proven quiet row -->
-    <div class="mkt-cat">
-      <span class="mkt-cat-label">Category is venture-proven</span>
-      <span class="mkt-cat-line">Maven &middot; Carrot &middot; Midi &middot; Kindbody &mdash; the model is established; the longitudinal experience layer is open.</span>
-    </div>
+    <!-- Thesis line -->
+    <p class="mkt-thesis">The medicine is solved. The relationship across the journey isn&rsquo;t &mdash; and it&rsquo;s the layer no one owns.</p>
 
-    <!-- Bridge line -->
-    <div class="mkt-bridge">
-      <p class="mkt-bridge-text">The payer evolves &mdash; Progyny is proving it right now, expanding from large employers to small businesses. <span class="mkt-bridge-em">Carousel enters one layer earlier: through the clinic, where she already is &mdash; and grows with her.</span></p>
-    </div>
+    <!-- Source -->
+    <p class="mkt-src">Progyny FY2024 results (SEC-filed) &middot; Q3 2025 earnings call</p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
   <style>
-    [data-screen-label="03 Market"] .mkt-kicker {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 24px; line-height: 1.35; color: var(--ink-soft);
-      margin: 0 0 40px; max-width: 1500px; letter-spacing: -0.005em;
+    [data-screen-label="03 Market"] .mkt-body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 40% 1fr;
+      align-items: center;
+      gap: 80px;
+      min-height: 0;
     }
-    [data-screen-label="03 Market"] .mkt-tiers {
-      display: flex; flex-direction: column; gap: 12px;
-      margin-bottom: 22px;
+
+    /* ---- Hero circle ---- */
+    [data-screen-label="03 Market"] .mkt-orb-wrap {
+      display: flex; align-items: center; justify-content: center;
     }
-    [data-screen-label="03 Market"] .mkt-cat {
-      display: flex; align-items: baseline; gap: 20px;
-      padding: 0 4px 20px;
-      border-bottom: 1px solid rgba(74,40,28,0.10);
-      margin-bottom: 22px;
-      flex-wrap: wrap;
+    [data-screen-label="03 Market"] .mkt-orb {
+      width: 520px; height: 520px;
+      border-radius: 50%;
+      background: #F2EBDD;
+      border: 1.5px solid rgba(158,74,46,0.55);
+      box-shadow: 0 30px 60px rgba(74,40,28,0.08),
+                  inset 0 0 0 8px rgba(158,74,46,0.06);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 0 60px;
+      box-sizing: border-box;
+      text-align: center;
     }
-    [data-screen-label="03 Market"] .mkt-cat-label {
+    [data-screen-label="03 Market"] .mkt-orb-num {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 132px; font-weight: 600;
+      letter-spacing: -0.05em; line-height: 0.9;
+      color: var(--ink); margin: 0;
+    }
+    [data-screen-label="03 Market"] .mkt-orb-label {
       font-family: 'Inter Tight', sans-serif;
       font-size: 12px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: #9E4A2E;
-      white-space: nowrap;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: #9E4A2E; margin: 14px 0 0;
     }
-    [data-screen-label="03 Market"] .mkt-cat-line {
+    [data-screen-label="03 Market"] .mkt-orb-rule {
+      width: 60px; height: 1px;
+      background: rgba(74,40,28,0.28);
+      margin: 20px 0 16px;
+    }
+    [data-screen-label="03 Market"] .mkt-orb-note {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 16px; font-weight: 300; line-height: 1.4;
-      color: var(--ink-soft);
-      letter-spacing: -0.003em;
+      font-size: 15px; font-weight: 400; line-height: 1.35;
+      color: var(--ink-soft); margin: 0; letter-spacing: -0.003em;
     }
-    [data-screen-label="03 Market"] .mkt-tier {
-      display: grid; grid-template-columns: 380px 1fr;
-      align-items: center;
-      padding: 40px 56px;
-      border-radius: 8px;
-      gap: 56px;
-    }
-    [data-screen-label="03 Market"] .mkt-tier--1 { background: #E6D8C0; color: var(--ink); }
-    [data-screen-label="03 Market"] .mkt-tier--2 { background: #B0714A; color: #F7F1E4; }
-    [data-screen-label="03 Market"] .mkt-tier-left {
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    [data-screen-label="03 Market"] .mkt-tier-label {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 13px; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      margin: 0;
-    }
-    [data-screen-label="03 Market"] .mkt-tier--1 .mkt-tier-label { color: var(--accent); }
-    [data-screen-label="03 Market"] .mkt-tier--2 .mkt-tier-label { color: #F7F1E4; opacity: 0.85; }
-    [data-screen-label="03 Market"] .mkt-tier-hero {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 100px; font-weight: 600;
-      letter-spacing: -0.045em; line-height: 0.95;
-      margin: 0;
-    }
-    [data-screen-label="03 Market"] .mkt-tier-right {
-      display: flex; flex-direction: column; gap: 12px;
-    }
-    [data-screen-label="03 Market"] .mkt-tier-body {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 19px; font-weight: 300; line-height: 1.5;
-      margin: 0; letter-spacing: -0.003em;
-    }
-    [data-screen-label="03 Market"] .mkt-tier--2 .mkt-tier-body { color: rgba(247,241,228,0.94); }
-    [data-screen-label="03 Market"] .mkt-tier-src {
+    [data-screen-label="03 Market"] .mkt-orb-quote {
       font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 15px; margin: 0; text-align: right;
+      font-size: 18px; line-height: 1.3;
+      color: var(--ink-mute); margin: 18px 0 0;
+      letter-spacing: -0.005em;
     }
-    [data-screen-label="03 Market"] .mkt-tier--1 .mkt-tier-src { color: var(--ink-mute); }
-    [data-screen-label="03 Market"] .mkt-tier--2 .mkt-tier-src { color: rgba(247,241,228,0.72); }
-    [data-screen-label="03 Market"] .mkt-bridge {
-      background: #4A2214;
-      padding: 22px 44px;
-      border-radius: 6px;
+
+    /* ---- Satellites ---- */
+    [data-screen-label="03 Market"] .mkt-sats {
+      display: flex; flex-direction: column;
+      gap: 38px;
+      padding-left: 8px;
     }
-    [data-screen-label="03 Market"] .mkt-bridge-text {
+    [data-screen-label="03 Market"] .mkt-sat {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      column-gap: 20px;
+      align-items: start;
+    }
+    [data-screen-label="03 Market"] .mkt-sat-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #9E4A2E;
+      margin-top: 10px;
+      justify-self: center;
+      box-shadow: 0 0 0 4px rgba(158,74,46,0.10);
+    }
+    [data-screen-label="03 Market"] .mkt-sat-text {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    [data-screen-label="03 Market"] .mkt-sat-lead {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 22px; font-weight: 300; line-height: 1.35;
+      color: var(--ink); margin: 0;
+      letter-spacing: -0.005em;
+      max-width: 900px;
+    }
+    [data-screen-label="03 Market"] .mkt-sat-lead-em {
+      font-weight: 600;
+      color: #9E4A2E;
+      letter-spacing: 0.02em;
+    }
+    [data-screen-label="03 Market"] .mkt-sat-sub {
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 17px; line-height: 1.35;
+      color: var(--ink-mute); margin: 0;
+      letter-spacing: -0.003em;
+      max-width: 900px;
+    }
+
+    /* ---- Thesis ---- */
+    [data-screen-label="03 Market"] .mkt-thesis {
       font-family: 'Instrument Serif', serif;
-      font-size: 20px; line-height: 1.45;
-      color: rgba(247,241,228,0.86);
-      margin: 0; letter-spacing: -0.003em;
-      max-width: 1580px;
+      font-size: 30px; line-height: 1.35;
+      color: var(--ink);
+      margin: 44px 0 0;
+      max-width: 1600px;
+      letter-spacing: -0.008em;
     }
-    [data-screen-label="03 Market"] .mkt-bridge-em {
-      color: #F7F1E4;
-      font-style: italic;
+
+    /* ---- Source ---- */
+    [data-screen-label="03 Market"] .mkt-src {
+      position: absolute;
+      right: 110px; bottom: 92px;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 14px; line-height: 1.3;
+      color: var(--ink-mute); margin: 0;
+      text-align: right;
     }
   </style>
 </section>
