@@ -269,8 +269,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <p class="mkt-orb-num">$1.17B</p>
           <p class="mkt-orb-label">Progyny revenue</p>
           <div class="mkt-orb-rule"></div>
-          <p class="mkt-orb-quote">&ldquo;the earliest stages&rdquo;</p>
-          <p class="mkt-orb-src">Progyny FY2024 &middot; SEC-filed</p>
+          <p class="mkt-orb-src">Progyny FY2024 results (SEC-filed)<br/>&middot; Q3 2025 earnings call</p>
         </div>
       </div>
 
@@ -304,9 +303,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       </div>
 
     </div>
-
-    <!-- Source -->
-    <p class="mkt-src">Progyny FY2024 results (SEC-filed) &middot; Q3 2025 earnings call</p>
 
   </div>
   <div class="confidential">Carousel 2026 &middot; Confidential</div>
@@ -354,17 +350,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       background: rgba(74,40,28,0.28);
       margin: 20px 0 16px;
     }
-    [data-screen-label="03 Market"] .mkt-orb-quote {
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 20px; line-height: 1.3;
-      color: var(--ink-soft); margin: 0;
-      letter-spacing: -0.005em;
-    }
     [data-screen-label="03 Market"] .mkt-orb-src {
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 12px; font-weight: 400;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--ink-mute); margin: 16px 0 0;
+      font-family: 'Instrument Serif', serif; font-style: italic;
+      font-size: 18px; line-height: 1.45;
+      color: var(--ink-soft); margin: 0;
+      letter-spacing: -0.003em;
+      max-width: 340px;
     }
 
     /* ---- Satellites ---- */
@@ -410,15 +401,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       max-width: 900px;
     }
 
-    /* ---- Source ---- */
-    [data-screen-label="03 Market"] .mkt-src {
-      position: absolute;
-      right: 110px; bottom: 92px;
-      font-family: 'Instrument Serif', serif; font-style: italic;
-      font-size: 14px; line-height: 1.3;
-      color: var(--ink-mute); margin: 0;
-      text-align: right;
-    }
   </style>
 </section>
 
