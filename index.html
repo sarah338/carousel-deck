@@ -269,14 +269,13 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
           <svg class="mkt-ring-svg" viewBox="0 0 560 560" aria-hidden="true">
             <!-- track: the empty ~94% -->
             <circle cx="280" cy="280" r="230" fill="none"
-                    stroke="rgba(158,74,46,0.15)" stroke-width="38"/>
-            <!-- filled arc: ~6%, rounded caps, starts 12 o'clock -->
+                    stroke="#E2DDD2" stroke-width="38"/>
+            <!-- filled arc: ~6% (22°) of the SAME path — identical r + stroke-width, flush on the ring -->
             <circle cx="280" cy="280" r="230" fill="none"
                     stroke="#9E4A2E" stroke-width="38" stroke-linecap="round"
                     stroke-dasharray="86.7 1358.4"
                     transform="rotate(-90 280 280)"/>
           </svg>
-          <span class="mkt-ring-arclabel">penetrated</span>
           <div class="mkt-ring-center">
             <p class="mkt-ring-num">$1.17B</p>
             <p class="mkt-ring-label">Progyny revenue</p>
@@ -337,14 +336,6 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       width: 100%; height: 100%;
       display: block;
     }
-    [data-screen-label="03 Market"] .mkt-ring-arclabel {
-      position: absolute;
-      top: 30px; left: 63%;
-      font-family: 'Inter Tight', sans-serif;
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase;
-      color: #9E4A2E;
-    }
     [data-screen-label="03 Market"] .mkt-ring-center {
       position: absolute; inset: 0;
       display: flex; flex-direction: column;
@@ -398,7 +389,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       margin-bottom: 36px;
     }
     [data-screen-label="03 Market"] .mkt-proof-orb {
-      width: 220px; height: 220px;
+      width: 187px; height: 187px;
       border-radius: 50%;
       border: 2px solid rgba(158,74,46,0.55);
       display: flex; flex-direction: column;
@@ -408,7 +399,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="03 Market"] .mkt-proof-num {
       font-family: 'Inter Tight', sans-serif;
-      font-size: 52px; font-weight: 600;
+      font-size: 44px; font-weight: 600;
       letter-spacing: 0.01em; line-height: 1;
       color: var(--ink); margin: 0;
     }
@@ -458,7 +449,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>05 / 12</div>
   <div class="frame">
     <p class="eyebrow" style="margin-bottom: 12px; color: var(--accent);">Problem: the woman</p>
-    <h1 class="h1" style="font-size: 56px; line-height: 1.08; margin: 0 0 20px; max-width: 1620px;">The key unlock no one has solved: the patient experience itself.</h1>
+    <h1 class="h1" style="font-size: 56px; line-height: 1.08; margin: 0 0 20px; max-width: 1620px;">Women describe egg freezing and IVF as the most emotionally, physically, and logistically challenging experience they have ever faced.</h1>
     <p style="font-family: 'Inter Tight', sans-serif; font-weight: 400; font-size: 16px; color: var(--ink-soft); margin: 0 0 24px; letter-spacing: 0.005em; line-height: 1.5; text-align: center;">
       Verbatim quotes from 30 patient interviews across NYU Langone, Weill Cornell, Spring Fertility, CCRM, Kindbody, Shady Grove &amp; RMA &mdash; Q1 2026.
     </p>
