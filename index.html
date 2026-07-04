@@ -193,7 +193,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   <div class="pageno"><svg><use href="#mark"/></svg>02 / 12</div>
   <div class="frame">
     <p class="eyebrow" style="margin-bottom: 36px; color: var(--accent);">Founder</p>
-    <h1 class="h1" style="margin: 0 0 56px; max-width: 1740px !important; font-size: 48px; line-height: 1.1;">~17 years across consumer product, marketing, and healthcare &mdash; including Talkspace, SonderMind, and Amazon &mdash;<br/>plus her own four-round egg-freezing journey make Sarah uniquely right to lead.</h1>
+    <h1 class="h1" style="margin: 0 0 56px; max-width: 1740px !important; font-size: 42px; line-height: 1.15;">~17 years across consumer product, marketing, and healthcare &mdash; including Talkspace, SonderMind, and Amazon &mdash; plus her own four-round egg-freezing journey make Sarah uniquely right to lead.</h1>
 
     <div style="display:grid; grid-template-columns: 320px 1fr; gap: 64px; flex: 1; align-items: start;">
       <div>
@@ -273,7 +273,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <p class="mkt-caption-src">Progyny FY2024 &middot; SEC-filed &middot;<br/>Q3 2025 earnings call</p>
     </div>
     <!-- the emptiness, labeled inside the ring -->
-    <p class="mkt-open-line">still open</p>
+    <div class="mkt-open">
+      <p class="mkt-open-line">the other ~94%</p>
+      <p class="mkt-open-sub">still open</p>
+    </div>
   </div>
 
   <!-- right margin note -->
@@ -295,7 +298,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   </div>
 
   <!-- floor -->
-  <p class="mkt-floor">Each $1B+ company is built to hold the woman<br/>across her journey &mdash; exactly in line with<br/>Carousel&rsquo;s longitudinal vision.</p>
+  <p class="mkt-floor">Each $1B+ company is built to hold the woman<br/>across her journey &mdash; consistent with<br/>Carousel&rsquo;s longitudinal vision.</p>
 
   <div class="confidential" style="z-index: 3;">Carousel 2026 &middot; Confidential</div>
   <style>
@@ -304,8 +307,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       width: 700px; height: 700px;
       left: 170px; top: 270px;
       border-radius: 50%;
-      background: #F2EBDD;
-      box-shadow: inset 0 0 0 1.5px rgba(158,74,46,0.35);
+      background: #E8D5C4;
+      box-shadow: inset 0 0 0 1.5px rgba(158,74,46,0.4),
+                  inset 0 -40px 90px rgba(201,148,119,0.35);
       z-index: 1;
     }
     [data-screen-label="03 Market"] .mkt-captured {
@@ -347,13 +351,22 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       font-size: 13px; line-height: 1.35;
       color: var(--ink-mute); margin: 8px 0 0;
     }
-    [data-screen-label="03 Market"] .mkt-open-line {
+    [data-screen-label="03 Market"] .mkt-open {
       position: absolute;
-      left: 380px; top: 210px;
+      left: 330px; top: 200px;
+      text-align: left;
+    }
+    [data-screen-label="03 Market"] .mkt-open-line {
       font-family: 'Instrument Serif', serif; font-style: italic;
       font-size: 36px; line-height: 1.15;
       color: #9E4A2E; margin: 0;
       letter-spacing: -0.008em;
+    }
+    [data-screen-label="03 Market"] .mkt-open-sub {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 13px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-soft); margin: 8px 0 0 2px;
     }
     [data-screen-label="03 Market"] .mkt-proof {
       position: absolute;
