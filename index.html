@@ -2325,12 +2325,17 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
       <div class="ask-fact ask-fact--1">
         <p class="ask-fact-eyebrow">Round</p>
         <p class="ask-fact-val">$1.5M pre-seed</p>
+        <p class="ask-fact-sub">Friends &amp; family &middot; Angels &middot; Institutional</p>
       </div>
       <div class="ask-fact ask-fact--2">
         <p class="ask-fact-eyebrow">Instrument</p>
         <p class="ask-fact-val">SAFE &middot; post-money cap</p>
       </div>
       <div class="ask-fact ask-fact--3">
+        <p class="ask-fact-eyebrow">Minimum check</p>
+        <p class="ask-fact-val">$10,000</p>
+      </div>
+      <div class="ask-fact ask-fact--4">
         <p class="ask-fact-eyebrow">Timeline</p>
         <p class="ask-fact-val">Closing in 30 days</p>
       </div>
@@ -2374,7 +2379,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     }
     [data-screen-label="12 The ask"] .ask-hl-amt { color: var(--ink); }
     [data-screen-label="12 The ask"] .ask-facts {
-      display: grid; grid-template-columns: repeat(3, 1fr);
+      display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 10px; margin-bottom: 12px;
     }
     [data-screen-label="12 The ask"] .ask-fact {
@@ -2383,6 +2388,12 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     [data-screen-label="12 The ask"] .ask-fact--1 { background: #C99477; }
     [data-screen-label="12 The ask"] .ask-fact--2 { background: #C99477; }
     [data-screen-label="12 The ask"] .ask-fact--3 { background: #C99477; }
+    [data-screen-label="12 The ask"] .ask-fact--4 { background: #C99477; }
+    [data-screen-label="12 The ask"] .ask-fact-sub {
+      font-family: 'Inter Tight', sans-serif; font-size: 13px; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: #2A1508; opacity: 0.75; margin: 8px 0 0;
+    }
     [data-screen-label="12 The ask"] .ask-fact-eyebrow {
       font-family: 'Inter Tight', sans-serif; font-size: 16px; letter-spacing: 0.15em; text-transform: uppercase;
       margin: 0 0 10px; font-weight: 700;
